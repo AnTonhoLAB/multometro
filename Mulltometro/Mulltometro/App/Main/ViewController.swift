@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func gotoLa(_ sender: Any) {
+        performSegue(withIdentifier: "toLa", sender: nil)
+    }
+    
 }
 
