@@ -18,6 +18,7 @@
 		5ED085B6215AFF9D00293516 /* MulltometroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085B5215AFF9D00293516 /* MulltometroUITests.swift */; };
 		5ED085CA215B00C600293516 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085C9215B00C600293516 /* Model.swift */; };
 		5ED085CC215B00E900293516 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085CB215B00E900293516 /* FirebaseAuthManager.swift */; };
+		5ED085D2215B05A900293516 /* Com.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085D1215B05A900293516 /* Com.swift */; };
 		CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */; };
 		E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		5ED085B7215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085C9215B00C600293516 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5ED085CB215B00E900293516 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		5ED085D1215B05A900293516 /* Com.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Com.swift; sourceTree = "<group>"; };
 		8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.debug.xcconfig"; sourceTree = "<group>"; };
 		922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mulltometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 		5ED085C3215AFFCC00293516 /* Com */ = {
 			isa = PBXGroup;
 			children = (
-				5ED08596215AFF9B00293516 /* Main.storyboard */,
+				5ED085D1215B05A900293516 /* Com.swift */,
 			);
 			path = Com;
 			sourceTree = "<group>";
@@ -194,9 +196,18 @@
 		5ED085C8215B00B100293516 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5ED08594215AFF9B00293516 /* ViewController.swift */,
+				5ED085D0215B059000293516 /* Main */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		5ED085D0215B059000293516 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5ED08596215AFF9B00293516 /* Main.storyboard */,
+				5ED08594215AFF9B00293516 /* ViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A972C9646904D407794A56DB /* Frameworks */ = {
@@ -441,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED08595215AFF9B00293516 /* ViewController.swift in Sources */,
+				5ED085D2215B05A900293516 /* Com.swift in Sources */,
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5ED085CA215B00C600293516 /* Model.swift in Sources */,
