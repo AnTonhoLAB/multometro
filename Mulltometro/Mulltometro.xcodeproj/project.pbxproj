@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
+		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
 		5ED08595215AFF9B00293516 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* ViewController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.release.xcconfig"; sourceTree = "<group>"; };
 		541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
+		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5ED0858F215AFF9A00293516 /* Mulltometro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mulltometro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED08594215AFF9B00293516 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				5ED08592215AFF9B00293516 /* AppDelegate.swift */,
 				5ED085A1215AFF9D00293516 /* Info.plist */,
+				5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */,
 				5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */,
 				5ED0859C215AFF9D00293516 /* Assets.xcassets */,
 			);
@@ -357,6 +360,7 @@
 			files = (
 				5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */,
 				5ED0859D215AFF9D00293516 /* Assets.xcassets in Resources */,
+				5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */,
 				5ED08598215AFF9B00293516 /* Main.storyboard in Resources */,
 				5ED085D7215B06F300293516 /* Login.storyboard in Resources */,
 			);
