@@ -8,6 +8,7 @@ target 'Mulltometro' do
   # Pods for Mulltometro
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+	pod 'Firebase/Functions'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
