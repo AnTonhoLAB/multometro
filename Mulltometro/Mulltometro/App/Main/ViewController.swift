@@ -18,30 +18,18 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func gotoLa(_ sender: Any) {
-        var ref: DocumentReference? = nil
-        let db = Firestore.firestore()
-        
-        ref = db.collection("user").addDocument(data: [
-            "first": "Ada",
-            "last": "Lovelace",
-            "born": 1815
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
+       
+        let datas = ["name": "George", "idade": "23"]
+
+        function.httpsCallable("addAUser").call(["name": "Giorgino", "idade": "23"]) { res, err in
+            print("res ",res?.data ?? "nao tem res")
+            print("err", err ?? "nao tem err")
         }
         
-
-
-
-        function.httpsCallable("addGeorge").call { res, err in
-            print(res)
-            print(err)
+        function.httpsCallable("addAUser").call(datas) { res, err in
+            print("res ",res?.data ?? "nao tem res")
+            print("err", err ?? "nao tem err")
         }
-
-        
     }
     
 }
