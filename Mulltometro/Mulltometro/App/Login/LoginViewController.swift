@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        }
     
     
     
@@ -26,12 +26,8 @@ class LoginViewController: UIViewController {
         AuthManager.login(user: tfEmail, password: tfPassword) {
             switch $0 {
             case .success(let user):
-                guard let usser = user as? AuthDataResult else { return }
-                
-           
-                
-                
-                
+                guard let user = user as? AuthDataResult, let email = user.user.email else { return }
+  
             case .failure(let err):
                 print(err)
             }
