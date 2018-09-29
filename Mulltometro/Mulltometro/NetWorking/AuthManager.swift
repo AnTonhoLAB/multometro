@@ -14,6 +14,14 @@ class AuthManager {
     
     private init() {}
     
+    static func configureService() {
+         FirebaseApp.configure()
+    }
+    
+    static func isLogged() -> Bool {
+        return Auth.auth().currentUser == nil ? false : true
+    }
+    
     static func login (user: String, password: String, completion: @escaping (Response<Any>) -> Void) {
         Auth.auth().signIn(withEmail: user, password: password) { (res, err) in
             if let err = err {

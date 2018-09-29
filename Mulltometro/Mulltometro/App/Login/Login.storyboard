@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="cby-4d-e9r">
             <objects>
-                <viewController id="xG8-85-5bH" customClass="LoginViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="xG8-85-5bH" customClass="LoginViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vY5-aK-6gF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

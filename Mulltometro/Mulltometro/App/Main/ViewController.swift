@@ -21,8 +21,7 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
     
         if Auth.auth().currentUser == nil {
-            
-//            performSegue(withIdentifier: R., sender: <#T##Any?#>)
+            performSegue(withIdentifier: R.segue.mainViewController.toLogin, sender: nil)
         }
     }
 
