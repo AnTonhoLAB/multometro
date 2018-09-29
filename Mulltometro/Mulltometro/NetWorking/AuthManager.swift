@@ -22,6 +22,12 @@ class AuthManager {
         return Auth.auth().currentUser == nil ? false : true
     }
     
+    static func eraseLogData() {
+        do {
+            try Auth.auth().signOut()
+        } catch { }
+    }
+    
     static func login (user: String, password: String, completion: @escaping (Response<Any>) -> Void) {
         Auth.auth().signIn(withEmail: user, password: password) { (res, err) in
             if let err = err {

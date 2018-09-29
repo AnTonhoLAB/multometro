@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         AuthManager.configureService()
         
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if !launchedBefore  { //First time in app
+            AuthManager.eraseLogData()
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        } else {
+    
+        }
+        
         if !AuthManager.isLogged() {
             let rootController = R.storyboard.login().instantiateViewController(withIdentifier: "LoginViewController")
             self.window?.rootViewController = rootController
