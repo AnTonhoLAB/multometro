@@ -11,6 +11,7 @@
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E85F14C215ECAD000918BA5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14B215ECAD000918BA5 /* Response.swift */; };
 		5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14F215ED2A300918BA5 /* UserCredentials.swift */; };
+		5E92EA9A215FC47D000E0EE4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EA99215FC47C000E0EE4 /* R.generated.swift */; };
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
 		5ED08595215AFF9B00293516 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* ViewController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E85F14B215ECAD000918BA5 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5E85F14F215ED2A300918BA5 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
+		5E92EA99215FC47C000E0EE4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5ED0858F215AFF9A00293516 /* Mulltometro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mulltometro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED08594215AFF9B00293516 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */,
 				5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */,
 				5ED0859C215AFF9D00293516 /* Assets.xcassets */,
+				5E92EA99215FC47C000E0EE4 /* R.generated.swift */,
 			);
 			path = Supp;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildConfigurationList = 5ED085BA215AFF9D00293516 /* Build configuration list for PBXNativeTarget "Mulltometro" */;
 			buildPhases = (
 				5C12BAD3C222E0F83EB9E432 /* [CP] Check Pods Manifest.lock */,
+				5EE20D59215EE069000FCF61 /* Rswift */,
 				5ED0858B215AFF9A00293516 /* Sources */,
 				5ED0858C215AFF9A00293516 /* Frameworks */,
 				5ED0858D215AFF9A00293516 /* Resources */,
@@ -407,6 +411,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5EE20D59215EE069000FCF61 /* Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Rswift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n\n";
+		};
 		C4C2321B1082FED4B880B0FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,6 +519,7 @@
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
+				5E92EA9A215FC47D000E0EE4 /* R.generated.swift in Sources */,
 				5ED085CA215B00C600293516 /* Model.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Rswift
 
 class MainViewController: UIViewController {
     
@@ -18,7 +19,11 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+    
+        if Auth.auth().currentUser == nil {
+            
+//            performSegue(withIdentifier: R., sender: <#T##Any?#>)
+        }
     }
 
     @IBAction func gotoLa(_ sender: Any) {

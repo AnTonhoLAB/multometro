@@ -38,7 +38,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="RnX-e2-fk0" kind="show" identifier="toLa" id="3C5-lD-YAs"/>
+                        <segue destination="RnX-e2-fk0" kind="show" identifier="toLogin" id="3C5-lD-YAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
