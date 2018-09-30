@@ -17,28 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-HK-dk5">
-                                <rect key="frame" x="43" y="327" width="290" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-HK-dk5">
+                                <rect key="frame" x="18" y="318.5" width="339" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHl-WK-AHt">
-                                <rect key="frame" x="49" y="617" width="289" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHl-WK-AHt">
+                                <rect key="frame" x="18" y="609" width="339" height="30"/>
                                 <state key="normal" title="Criar Conta"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-Np-QyR">
-                                <rect key="frame" x="43" y="259" width="290" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-Np-QyR">
+                                <rect key="frame" x="18" y="260.5" width="339" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLy-JU-cye">
-                                <rect key="frame" x="49" y="146" width="289" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLy-JU-cye">
+                                <rect key="frame" x="18" y="398.5" width="339" height="30"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <action selector="btLogin:" destination="xG8-85-5bH" eventType="touchUpInside" id="E1L-h2-K45"/>
@@ -46,6 +42,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zNG-bD-swo" firstAttribute="bottom" secondItem="RHl-WK-AHt" secondAttribute="bottom" constant="28" id="3hd-EA-acX"/>
+                            <constraint firstItem="zNG-bD-swo" firstAttribute="trailing" secondItem="CLy-JU-cye" secondAttribute="trailing" constant="18" id="D8c-pb-ZCn"/>
+                            <constraint firstItem="zNG-bD-swo" firstAttribute="trailing" secondItem="9ez-HK-dk5" secondAttribute="trailing" constant="18" id="Dit-iU-mK5"/>
+                            <constraint firstItem="zfe-Np-QyR" firstAttribute="leading" secondItem="zNG-bD-swo" secondAttribute="leading" constant="18" id="F10-3T-X27"/>
+                            <constraint firstItem="CLy-JU-cye" firstAttribute="top" secondItem="9ez-HK-dk5" secondAttribute="bottom" constant="50" id="GYG-yB-i7p"/>
+                            <constraint firstItem="CLy-JU-cye" firstAttribute="leading" secondItem="zNG-bD-swo" secondAttribute="leading" constant="18" id="LWu-xx-LGn"/>
+                            <constraint firstItem="9ez-HK-dk5" firstAttribute="top" secondItem="zfe-Np-QyR" secondAttribute="bottom" constant="28" id="U0M-Jw-k44"/>
+                            <constraint firstItem="9ez-HK-dk5" firstAttribute="centerY" secondItem="vY5-aK-6gF" secondAttribute="centerY" id="YIN-EF-yJq"/>
+                            <constraint firstItem="RHl-WK-AHt" firstAttribute="leading" secondItem="zNG-bD-swo" secondAttribute="leading" constant="18" id="Z0U-LI-ttv"/>
+                            <constraint firstItem="9ez-HK-dk5" firstAttribute="leading" secondItem="zNG-bD-swo" secondAttribute="leading" constant="18" id="h9Q-5G-3qg"/>
+                            <constraint firstItem="zNG-bD-swo" firstAttribute="trailing" secondItem="RHl-WK-AHt" secondAttribute="trailing" constant="18" id="tZb-NC-zN3"/>
+                            <constraint firstItem="zNG-bD-swo" firstAttribute="trailing" secondItem="zfe-Np-QyR" secondAttribute="trailing" constant="18" id="uDg-Sf-V04"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zNG-bD-swo"/>
                     </view>
                     <connections>

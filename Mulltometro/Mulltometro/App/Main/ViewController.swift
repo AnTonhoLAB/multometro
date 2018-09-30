@@ -20,9 +20,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
     
-        if Auth.auth().currentUser == nil {
-            performSegue(withIdentifier: R.segue.mainViewController.toLogin, sender: nil)
-        }
+ 
     }
 
     @IBAction func gotoLa(_ sender: Any) {

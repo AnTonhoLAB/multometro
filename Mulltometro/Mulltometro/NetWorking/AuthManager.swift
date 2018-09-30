@@ -33,7 +33,8 @@ class AuthManager {
             if let err = err {
                 completion(Response.failure(err))
             } else if let res = res {
-                completion(Response.success(res))
+                guard let user = res.user.email else { return }
+                completion(Response.success(user))
             }
         }
     }

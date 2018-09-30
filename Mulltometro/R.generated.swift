@@ -102,8 +102,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
+    /// This `R.string.strings` struct is generated, and contains static references to 1 localization keys.
+    struct strings {
+      /// Value: UnwindToMainViewController
+      static let unwindToMainViewController = Rswift.StringResource(key: "UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: UnwindToMainViewController
+      static func unwindToMainViewController(_: Void = ()) -> String {
+        return NSLocalizedString("UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
