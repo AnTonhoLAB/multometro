@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Rswift
 
 class MainViewController: UIViewController {
     
@@ -15,6 +16,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+    
+ 
     }
 
     @IBAction func gotoLa(_ sender: Any) {
@@ -32,5 +38,6 @@ class MainViewController: UIViewController {
         }
     }
     
+
 }
 

@@ -1,0 +1,11 @@
+/* 
+  Strings.strings
+  Mulltometro
+
+  Created by George Gomes on 30/09/18.
+  Copyright © 2018 CrowCode. All rights reserved.
+*/
+
+// Unwind
+
+UnwindToMainViewController = "UnwindToMainViewController";

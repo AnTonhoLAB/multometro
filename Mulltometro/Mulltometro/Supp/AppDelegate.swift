@@ -8,16 +8,29 @@
 
 import UIKit
 import CoreData
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
+       
+        AuthManager.configureService()
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if !launchedBefore  { //First time in app
+            AuthManager.eraseLogData()
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        } else {
+    
+        }
+        
+        if !AuthManager.isLogged() {
+            let rootController = R.storyboard.login().instantiateViewController(withIdentifier: "LoginViewController")
+            self.window?.rootViewController = rootController
+        }
+        
         return true
     }
 
