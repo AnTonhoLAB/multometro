@@ -6,6 +6,18 @@
   Copyright © 2018 CrowCode. All rights reserved.
 */
 
+// AppDelegate
+
+launchedBefore = "launchedBefore";
+
+//LoginViewController
+
+LoginIdentifier = "LoginViewController";
+
+//MainViewController
+
+MainIdentifier = "MainViewController";
+
 // Unwind
 
 UnwindToMainViewController = "UnwindToMainViewController";

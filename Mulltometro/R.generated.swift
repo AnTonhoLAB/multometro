@@ -104,14 +104,35 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.strings` struct is generated, and contains static references to 1 localization keys.
+    /// This `R.string.strings` struct is generated, and contains static references to 4 localization keys.
     struct strings {
+      /// Value: LoginViewController
+      static let loginIdentifier = Rswift.StringResource(key: "LoginIdentifier", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: MainViewController
+      static let mainIdentifier = Rswift.StringResource(key: "MainIdentifier", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: UnwindToMainViewController
       static let unwindToMainViewController = Rswift.StringResource(key: "UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: launchedBefore
+      static let launchedBefore = Rswift.StringResource(key: "launchedBefore", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: LoginViewController
+      static func loginIdentifier(_: Void = ()) -> String {
+        return NSLocalizedString("LoginIdentifier", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: MainViewController
+      static func mainIdentifier(_: Void = ()) -> String {
+        return NSLocalizedString("MainIdentifier", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
       
       /// Value: UnwindToMainViewController
       static func unwindToMainViewController(_: Void = ()) -> String {
         return NSLocalizedString("UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: launchedBefore
+      static func launchedBefore(_: Void = ()) -> String {
+        return NSLocalizedString("launchedBefore", tableName: "Strings", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
