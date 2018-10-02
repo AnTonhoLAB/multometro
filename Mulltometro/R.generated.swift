@@ -136,7 +136,7 @@ struct R: Rswift.Validatable {
     struct strings {
       /// Value: LoginViewController
       static let loginIdentifier = Rswift.StringResource(key: "LoginIdentifier", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: MainViewController
+      /// Value: MainTabBar
       static let mainIdentifier = Rswift.StringResource(key: "MainIdentifier", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: UnwindToMainViewController
       static let unwindToMainViewController = Rswift.StringResource(key: "UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -148,7 +148,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("LoginIdentifier", tableName: "Strings", bundle: R.hostingBundle, comment: "")
       }
       
-      /// Value: MainViewController
+      /// Value: MainTabBar
       static func mainIdentifier(_: Void = ()) -> String {
         return NSLocalizedString("MainIdentifier", tableName: "Strings", bundle: R.hostingBundle, comment: "")
       }
@@ -193,14 +193,25 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try main.validate()
       try login.validate()
+      try groups.validate()
     }
     
-    struct groups: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = UIKit.UIViewController
+    struct groups: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
+      let groupsNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "GroupsNavigationController")
       let name = "Groups"
+      
+      func groupsNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: groupsNavigationController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.groups().groupsNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'groupsNavigationController' could not be loaded from storyboard 'Groups' as 'UIKit.UINavigationController'.") }
+      }
       
       fileprivate init() {}
     }
@@ -232,11 +243,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = MainTabBarController
       
       let bundle = R.hostingBundle
+      let mainTabBar = StoryboardViewControllerResource<MainTabBarController>(identifier: "MainTabBar")
       let name = "Main"
+      
+      func mainTabBar(_: Void = ()) -> MainTabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainTabBar)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.main().mainTabBar() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBar' could not be loaded from storyboard 'Main' as 'MainTabBarController'.") }
+      }
       
       fileprivate init() {}
     }
