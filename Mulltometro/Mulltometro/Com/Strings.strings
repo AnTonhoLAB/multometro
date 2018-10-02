@@ -16,7 +16,7 @@ LoginIdentifier = "LoginViewController";
 
 //MainViewController
 
-MainIdentifier = "MainViewController";
+MainIdentifier = "MainTabBar";
 
 // Unwind
 

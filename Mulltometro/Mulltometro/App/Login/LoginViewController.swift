@@ -34,13 +34,15 @@ class LoginViewController: UIViewController {
     
     func openApp() {
         guard let window = UIApplication.shared.keyWindow else { return }
+
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let mainStoryboard: UIStoryboard = R.storyboard.main()
+        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
+        let tabVC =    UINavigationController(rootViewController: tabBarController)
+        appdelegate.window!.rootViewController = tabVC
         
-        let rootController = R.storyboard.main().instantiateViewController(withIdentifier: R.string.strings.mainIdentifier())
-        window.rootViewController = rootController
-        
-        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = rootController
+        UIView.transition(with: window, duration: 0.6, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = tabVC
         }, completion: nil)
     }
-    
 }

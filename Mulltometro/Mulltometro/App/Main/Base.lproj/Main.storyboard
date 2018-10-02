@@ -41,7 +41,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="PeO-dG-pLx">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IQj-FW-MsV" customClass="MainTabBarController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" automaticallyAdjustsScrollViewInsets="NO" id="IQj-FW-MsV" customClass="MainTabBarController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q2B-ku-ehX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
