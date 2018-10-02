@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         let tabVC =    UINavigationController(rootViewController: tabBarController)
         appdelegate.window!.rootViewController = tabVC
         
-        UIView.transition(with: window, duration: 4.3, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: window, duration: 0.6, options: .transitionCrossDissolve, animations: {
             window.rootViewController = tabVC
         }, completion: nil)
     }
