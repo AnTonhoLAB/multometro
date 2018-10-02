@@ -42,7 +42,7 @@
                         <viewLayoutGuide key="safeArea" id="b66-ez-ihi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grupos" id="BkF-iK-66O">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nQs-90-YlN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wp-0F-E2w"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpJ-m9-fTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
