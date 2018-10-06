@@ -14,5 +14,12 @@ class Room: Codable {
     var name: String!
     var taxesTypes: [Tax]!
     var adminUid: String!
-    var users: [User]!
+    var users: [MulltometroUser]!
+    
+    init(name: String, taxesTypes: [Tax], adminUid: String, users: [MulltometroUser] ) {
+        self.name = name
+        self.taxesTypes = taxesTypes
+        self.adminUid = adminUid
+        self.users = users
+    }
 }

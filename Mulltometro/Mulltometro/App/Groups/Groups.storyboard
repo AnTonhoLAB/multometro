@@ -12,7 +12,7 @@
         <!--Grupos-->
         <scene sceneID="0aZ-0L-luk">
             <objects>
-                <viewController id="Ol8-h9-dQd" sceneMemberID="viewController">
+                <viewController id="Ol8-h9-dQd" customClass="GroupsViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sN6-Bb-6CB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,11 @@
                         <viewLayoutGuide key="safeArea" id="b66-ez-ihi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grupos" id="BkF-iK-66O">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wp-0F-E2w"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wp-0F-E2w">
+                            <connections>
+                                <action selector="addGroup:" destination="Ol8-h9-dQd" id="OKx-8H-M9x"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpJ-m9-fTv" userLabel="First Responder" sceneMemberID="firstResponder"/>

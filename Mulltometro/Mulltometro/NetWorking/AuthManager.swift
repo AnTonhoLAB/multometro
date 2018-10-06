@@ -25,6 +25,12 @@ class AuthManager {
         return Auth.auth().currentUser == nil ? false : true
     }
     
+    static func getCurrentUserId() -> String {
+//        guard let user = Auth.auth().currentUser else { return "" }
+//        return user.uid
+        return Auth.auth().currentUser?.uid ?? ""
+    }
+    
     static func eraseLogData() {
         do {
             try Auth.auth().signOut()

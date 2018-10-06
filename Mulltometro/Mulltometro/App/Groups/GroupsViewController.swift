@@ -13,4 +13,10 @@ class GroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    @IBAction func addGroup(_ sender: Any) {
+        
+        CloudCommunication.createRoom(with: "ope")
+    }
 }
