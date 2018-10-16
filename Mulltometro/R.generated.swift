@@ -40,8 +40,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `group`.
+    static let group = Rswift.ImageResource(bundle: R.hostingBundle, name: "group")
+    /// Image `profile`.
+    static let profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "profile")
+    /// Image `stats`.
+    static let stats = Rswift.ImageResource(bundle: R.hostingBundle, name: "stats")
+    
+    /// `UIImage(named: "group", bundle: ..., traitCollection: ...)`
+    static func group(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.group, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "profile", bundle: ..., traitCollection: ...)`
+    static func profile(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "stats", bundle: ..., traitCollection: ...)`
+    static func stats(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.stats, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -55,34 +77,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
   struct segue {
-    /// This struct is generated for `MainViewController`, and contains static references to 1 segues.
-    struct mainViewController {
-      /// Segue identifier `toLogin`.
-      static let toLogin: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MainViewController, LoginViewController> = Rswift.StoryboardSegueIdentifier(identifier: "toLogin")
-      
-      /// Optionally returns a typed version of segue `toLogin`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func toLogin(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MainViewController, LoginViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mainViewController.toLogin, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
+    /// Storyboard `Groups`.
+    static let groups = _R.storyboard.groups()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
     static let login = _R.storyboard.login()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `Profile`.
+    static let profile = _R.storyboard.profile()
+    /// Storyboard `Statistics`.
+    static let statistics = _R.storyboard.statistics()
+    
+    /// `UIStoryboard(name: "Groups", bundle: ...)`
+    static func groups(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.groups)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -99,19 +117,50 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     
+    /// `UIStoryboard(name: "Profile", bundle: ...)`
+    static func profile(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.profile)
+    }
+    
+    /// `UIStoryboard(name: "Statistics", bundle: ...)`
+    static func statistics(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.statistics)
+    }
+    
     fileprivate init() {}
   }
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.strings` struct is generated, and contains static references to 1 localization keys.
+    /// This `R.string.strings` struct is generated, and contains static references to 4 localization keys.
     struct strings {
+      /// Value: LoginViewController
+      static let loginIdentifier = Rswift.StringResource(key: "LoginIdentifier", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: MainTabBar
+      static let mainIdentifier = Rswift.StringResource(key: "MainIdentifier", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: UnwindToMainViewController
       static let unwindToMainViewController = Rswift.StringResource(key: "UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: launchedBefore
+      static let launchedBefore = Rswift.StringResource(key: "launchedBefore", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: LoginViewController
+      static func loginIdentifier(_: Void = ()) -> String {
+        return NSLocalizedString("LoginIdentifier", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: MainTabBar
+      static func mainIdentifier(_: Void = ()) -> String {
+        return NSLocalizedString("MainIdentifier", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
       
       /// Value: UnwindToMainViewController
       static func unwindToMainViewController(_: Void = ()) -> String {
         return NSLocalizedString("UnwindToMainViewController", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: launchedBefore
+      static func launchedBefore(_: Void = ()) -> String {
+        return NSLocalizedString("launchedBefore", tableName: "Strings", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
@@ -146,6 +195,25 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try main.validate()
       try login.validate()
+      try groups.validate()
+    }
+    
+    struct groups: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let groupsNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "GroupsNavigationController")
+      let name = "Groups"
+      
+      func groupsNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: groupsNavigationController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.groups().groupsNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'groupsNavigationController' could not be loaded from storyboard 'Groups' as 'UIKit.UINavigationController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -176,19 +244,37 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = MainViewController
+      typealias InitialController = MainTabBarController
       
       let bundle = R.hostingBundle
-      let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
+      let mainTabBar = StoryboardViewControllerResource<MainTabBarController>(identifier: "MainTabBar")
       let name = "Main"
       
-      func mainViewController(_: Void = ()) -> MainViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
+      func mainTabBar(_: Void = ()) -> MainTabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainTabBar)
       }
       
       static func validate() throws {
-        if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
+        if _R.storyboard.main().mainTabBar() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBar' could not be loaded from storyboard 'Main' as 'MainTabBarController'.") }
       }
+      
+      fileprivate init() {}
+    }
+    
+    struct profile: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = ProfileViewController
+      
+      let bundle = R.hostingBundle
+      let name = "Profile"
+      
+      fileprivate init() {}
+    }
+    
+    struct statistics: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = StatisticsViewController
+      
+      let bundle = R.hostingBundle
+      let name = "Statistics"
       
       fileprivate init() {}
     }

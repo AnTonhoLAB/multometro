@@ -9,8 +9,11 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import Rswift
 
 class AuthManager {
+    
+    private static var function = Functions.functions()
     
     private init() {}
     
@@ -20,6 +23,12 @@ class AuthManager {
     
     static func isLogged() -> Bool {
         return Auth.auth().currentUser == nil ? false : true
+    }
+    
+    static func getCurrentUserId() -> String {
+//        guard let user = Auth.auth().currentUser else { return "" }
+//        return user.uid
+        return Auth.auth().currentUser?.uid ?? ""
     }
     
     static func eraseLogData() {
@@ -36,6 +45,20 @@ class AuthManager {
                 guard let user = res.user.email else { return }
                 completion(Response.success(user))
             }
+        }
+    }
+    
+    static func add() {
+        let datas = ["name": "George", "idade": "23"]
+        
+        function.httpsCallable("addAUser").call(["name": "Giorgino", "idade": "23"]) { res, err in
+            print("res ",res?.data ?? "nao tem res")
+            print("err", err ?? "nao tem err")
+        }
+        
+        function.httpsCallable("addAUser").call(datas) { res, err in
+            print("res ",res?.data ?? "nao tem res")
+            print("err", err ?? "nao tem err")
         }
     }
 }

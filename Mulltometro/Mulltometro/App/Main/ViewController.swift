@@ -20,7 +20,6 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
     
- 
     }
 
     @IBAction func gotoLa(_ sender: Any) {

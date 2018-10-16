@@ -9,19 +9,28 @@
 /* Begin PBXBuildFile section */
 		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
+		5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E972163815600AE8260 /* MulltometroUser.swift */; };
+		5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Tax.swift */; };
+		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
+		5E6C7E9E21638BAF00AE8260 /* CloudCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */; };
 		5E85F14C215ECAD000918BA5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14B215ECAD000918BA5 /* Response.swift */; };
 		5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14F215ED2A300918BA5 /* UserCredentials.swift */; };
 		5E92EA9A215FC47D000E0EE4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EA99215FC47C000E0EE4 /* R.generated.swift */; };
 		5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EA9B21607437000E0EE4 /* Strings.strings */; };
+		5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA121624235000E0EE4 /* Groups.storyboard */; };
+		5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */; };
+		5E92EAA6216242A6000E0EE4 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA5216242A6000E0EE4 /* Statistics.storyboard */; };
+		5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAA7216242E7000E0EE4 /* StatisticsViewController.swift */; };
+		5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA921624324000E0EE4 /* Profile.storyboard */; };
+		5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAAB21624333000E0EE4 /* ProfileViewController.swift */; };
+		5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAB321627F57000E0EE4 /* Assets.xcassets */; };
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
-		5ED08595215AFF9B00293516 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* ViewController.swift */; };
+		5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* MainTabBarController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
 		5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */; };
-		5ED0859D215AFF9D00293516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0859C215AFF9D00293516 /* Assets.xcassets */; };
 		5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */; };
 		5ED085AB215AFF9D00293516 /* MulltometroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085AA215AFF9D00293516 /* MulltometroTests.swift */; };
 		5ED085B6215AFF9D00293516 /* MulltometroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085B5215AFF9D00293516 /* MulltometroUITests.swift */; };
-		5ED085CA215B00C600293516 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085C9215B00C600293516 /* Model.swift */; };
 		5ED085CC215B00E900293516 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085CB215B00E900293516 /* AuthManager.swift */; };
 		5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085D4215B06E300293516 /* LoginViewController.swift */; };
 		5ED085D7215B06F300293516 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED085D6215B06F300293516 /* Login.storyboard */; };
@@ -53,16 +62,26 @@
 		541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E6C7E972163815600AE8260 /* MulltometroUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUser.swift; sourceTree = "<group>"; };
+		5E6C7E99216388D100AE8260 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCommunication.swift; sourceTree = "<group>"; };
 		5E85F14B215ECAD000918BA5 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5E85F14F215ED2A300918BA5 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		5E92EA99215FC47C000E0EE4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E92EA9B21607437000E0EE4 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
+		5E92EAA121624235000E0EE4 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		5E92EAA5216242A6000E0EE4 /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
+		5E92EAA7216242E7000E0EE4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		5E92EAA921624324000E0EE4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5E92EAAB21624333000E0EE4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5E92EAB321627F57000E0EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ED0858F215AFF9A00293516 /* Mulltometro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mulltometro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5ED08594215AFF9B00293516 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5ED08594215AFF9B00293516 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5ED08597215AFF9B00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5ED0859A215AFF9B00293516 /* Mulltometro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mulltometro.xcdatamodel; sourceTree = "<group>"; };
-		5ED0859C215AFF9D00293516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ED0859F215AFF9D00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ED085A1215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085A6215AFF9D00293516 /* MulltometroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MulltometroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +90,6 @@
 		5ED085B1215AFF9D00293516 /* MulltometroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MulltometroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED085B5215AFF9D00293516 /* MulltometroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUITests.swift; sourceTree = "<group>"; };
 		5ED085B7215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5ED085C9215B00C600293516 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5ED085CB215B00E900293516 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5ED085D4215B06E300293516 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ED085D6215B06F300293516 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -109,6 +127,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E92EA9D21623ECF000E0EE4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5E92EAA921624324000E0EE4 /* Profile.storyboard */,
+				5E92EAAB21624333000E0EE4 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5E92EA9F21624075000E0EE4 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				5E92EAA121624235000E0EE4 /* Groups.storyboard */,
+				5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		5E92EAA0216241FF000E0EE4 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				5E92EAA5216242A6000E0EE4 /* Statistics.storyboard */,
+				5E92EAA7216242E7000E0EE4 /* StatisticsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		5ED08586215AFF9A00293516 = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +220,9 @@
 		5ED085C4215B000B00293516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5ED085C9215B00C600293516 /* Model.swift */,
+				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
+				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
+				5E6C7E99216388D100AE8260 /* Tax.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED085CB215B00E900293516 /* AuthManager.swift */,
+				5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */,
 			);
 			path = NetWorking;
 			sourceTree = "<group>";
@@ -191,11 +239,11 @@
 		5ED085C6215B003B00293516 /* Supp */ = {
 			isa = PBXGroup;
 			children = (
+				5E92EAB321627F57000E0EE4 /* Assets.xcassets */,
 				5ED08592215AFF9B00293516 /* AppDelegate.swift */,
 				5ED085A1215AFF9D00293516 /* Info.plist */,
 				5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */,
 				5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */,
-				5ED0859C215AFF9D00293516 /* Assets.xcassets */,
 				5E92EA99215FC47C000E0EE4 /* R.generated.swift */,
 			);
 			path = Supp;
@@ -212,8 +260,11 @@
 		5ED085C8215B00B100293516 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5ED085D0215B059000293516 /* Main */,
 				5ED085D3215B06CE00293516 /* Login */,
+				5ED085D0215B059000293516 /* Main */,
+				5E92EA9F21624075000E0EE4 /* Groups */,
+				5E92EAA0216241FF000E0EE4 /* Statistics */,
+				5E92EA9D21623ECF000E0EE4 /* Profile */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -222,7 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED08596215AFF9B00293516 /* Main.storyboard */,
-				5ED08594215AFF9B00293516 /* ViewController.swift */,
+				5ED08594215AFF9B00293516 /* MainTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -369,11 +420,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */,
-				5ED0859D215AFF9D00293516 /* Assets.xcassets in Resources */,
 				5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */,
 				5ED08598215AFF9B00293516 /* Main.storyboard in Resources */,
 				5ED085D7215B06F300293516 /* Login.storyboard in Resources */,
+				5E92EAA6216242A6000E0EE4 /* Statistics.storyboard in Resources */,
+				5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */,
 				5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */,
+				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,
+				5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,15 +567,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */,
 				5E85F14C215ECAD000918BA5 /* Response.swift in Sources */,
 				5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */,
-				5ED08595215AFF9B00293516 /* ViewController.swift in Sources */,
+				5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */,
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
+				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,
+				5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */,
+				5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */,
+				5E6C7E9E21638BAF00AE8260 /* CloudCommunication.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5E92EA9A215FC47D000E0EE4 /* R.generated.swift in Sources */,
-				5ED085CA215B00C600293516 /* Model.swift in Sources */,
+				5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
+				5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
