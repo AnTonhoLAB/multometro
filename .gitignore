@@ -291,8 +291,10 @@ $RECYCLE.BIN/
 .runtimeconfig.json
 ### Firebase Patch ###
 .runtimeconfig.json
-
 GoogleService-Info.plist
+
+# R.Swift
+*.generated.swift
 
 
 # End of https://www.gitignore.io/api/node,swift,linux,macos,windows,cocoapods,objective-c,visualstudiocode
