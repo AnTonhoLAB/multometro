@@ -19,22 +19,20 @@ class CloudCommunication {
     static func createRoom(with name: String) {
         
         let adminUid = AuthManager.getCurrentUserId()
-        let data = ["name": name, "adminUid": adminUid]
+    
+        let dd = ["adminId": "123",
+                  "name": "ARinha"]
         
-//        function.httpsCallable("addRoom").call(data) { (res, err) in
-//            print(err)
-//            print(res)
+//        function.httpsCallable("addRoom").call(dd) { (res, eer) in
+//
+//            print(eer ?? "Sem erro")
+//            print(res ?? "sem response")
 //        }
-    
-        let dd = ["name": "Georgito",
-                  "idade": "33",
-                  "uid": adminUid]
-        
-        function.httpsCallable("callHome").call(dd) { (res, eer) in
+        function.httpsCallable("addRoom").call(dd) { (res, eer) in
+            
             print(eer ?? "Sem erro")
-            print(res.debugDescription)
+            print(res ?? "sem response")
         }
-    
     }
    
   
