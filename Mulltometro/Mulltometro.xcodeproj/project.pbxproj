@@ -15,7 +15,6 @@
 		5E6C7E9E21638BAF00AE8260 /* CloudCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */; };
 		5E85F14C215ECAD000918BA5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14B215ECAD000918BA5 /* Response.swift */; };
 		5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14F215ED2A300918BA5 /* UserCredentials.swift */; };
-		5E92EA9A215FC47D000E0EE4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EA99215FC47C000E0EE4 /* R.generated.swift */; };
 		5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EA9B21607437000E0EE4 /* Strings.strings */; };
 		5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA121624235000E0EE4 /* Groups.storyboard */; };
 		5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */; };
@@ -68,7 +67,6 @@
 		5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCommunication.swift; sourceTree = "<group>"; };
 		5E85F14B215ECAD000918BA5 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5E85F14F215ED2A300918BA5 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
-		5E92EA99215FC47C000E0EE4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E92EA9B21607437000E0EE4 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 		5E92EAA121624235000E0EE4 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 				5ED085A1215AFF9D00293516 /* Info.plist */,
 				5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */,
 				5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */,
-				5E92EA99215FC47C000E0EE4 /* R.generated.swift */,
 			);
 			path = Supp;
 			sourceTree = "<group>";
@@ -578,7 +575,6 @@
 				5E6C7E9E21638BAF00AE8260 /* CloudCommunication.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
-				5E92EA9A215FC47D000E0EE4 /* R.generated.swift in Sources */,
 				5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
 				5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */,
