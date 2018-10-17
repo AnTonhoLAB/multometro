@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController {
         do {
             try userRegister.validate()
         } catch  {
-            print(error.localizedDescription)
+            alertSimpleMessage(message: error.localizedDescription)
         }
     }
 }

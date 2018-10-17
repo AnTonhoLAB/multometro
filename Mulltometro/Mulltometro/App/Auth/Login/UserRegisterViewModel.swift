@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Rswift
 
 struct UserRegisterViewModel {
     
@@ -23,36 +24,25 @@ struct UserRegisterViewModel {
     }
     
     func validate() throws {
+        //RegEx to test email
+        let emailRegEx = R.string.strings.emailRegEx()
+        let emailTest = NSPredicate(format: R.string.strings.format("%@"), emailRegEx)
         
         if name.count < 3 {
             throw ValidatingError.invalidName
         }
-        
-        
-        
-    }
-    
-}
-
-enum ValidatingError: Error {
-    case invalidName
-    case invalidEmail
-    case invalidPassword
-    case samePassword
-}
-
-extension ValidatingError: LocalizedError {
-    
-    public var errorDescription: String? {
-        switch self {
-        case .invalidName:
-            return NSLocalizedString(R.string.localizable.errorName(), comment: R.string.localizable.error())
-        case .invalidEmail:
-            return NSLocalizedString(R.string.localizable.errorEmail(), comment: R.string.localizable.error())
-        case .invalidPassword:
-            return NSLocalizedString(R.string.localizable.errorPassword(), comment: R.string.localizable.error())
-        case .samePassword:
-             return NSLocalizedString(R.string.localizable.errorPassword(), comment: R.string.localizable.error())
+        if !emailTest.evaluate(with: email){
+            throw ValidatingError.invalidEmail
         }
+        if password.count > 6 {
+            throw ValidatingError.invalidPassword
+        }
+        if password != confirmPassword {
+            throw ValidatingError.samePassword
+        }
+        
     }
+    
 }
+
+
