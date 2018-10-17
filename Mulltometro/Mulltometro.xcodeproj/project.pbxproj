@@ -15,6 +15,7 @@
 		5E6C7E9E21638BAF00AE8260 /* CloudCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */; };
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
 		5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6352176B8100029E035 /* RegisterViewController.swift */; };
+		5E7FE6382176B9940029E035 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FE6372176B9940029E035 /* Localizable.strings */; };
 		5E85F14C215ECAD000918BA5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14B215ECAD000918BA5 /* Response.swift */; };
 		5E85F150215ED2A300918BA5 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14F215ED2A300918BA5 /* UserCredentials.swift */; };
 		5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EA9B21607437000E0EE4 /* Strings.strings */; };
@@ -69,6 +70,7 @@
 		5E6C7E9D21638BAF00AE8260 /* CloudCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCommunication.swift; sourceTree = "<group>"; };
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E7FE6352176B8100029E035 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5E7FE6372176B9940029E035 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5E85F14B215ECAD000918BA5 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5E85F14F215ED2A300918BA5 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		5E92EA9B21607437000E0EE4 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				5E85F14F215ED2A300918BA5 /* UserCredentials.swift */,
 				5E85F14B215ECAD000918BA5 /* Response.swift */,
 				5E92EA9B21607437000E0EE4 /* Strings.strings */,
+				5E7FE6372176B9940029E035 /* Localizable.strings */,
 			);
 			path = Com;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				5ED08598215AFF9B00293516 /* Main.storyboard in Resources */,
 				5ED085D7215B06F300293516 /* Login.storyboard in Resources */,
 				5E92EAA6216242A6000E0EE4 /* Statistics.storyboard in Resources */,
+				5E7FE6382176B9940029E035 /* Localizable.strings in Resources */,
 				5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */,
 				5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */,
 				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,

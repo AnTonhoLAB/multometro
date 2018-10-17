@@ -32,6 +32,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func didTapRegister(_ sender: Any) {
+        performSegue(withIdentifier: "toRegister", sender: nil)
+    }
+    
     func openApp() {
         guard let window = UIApplication.shared.keyWindow else { return }
 

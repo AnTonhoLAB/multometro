@@ -26,6 +26,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHl-WK-AHt">
                                 <rect key="frame" x="18" y="609" width="339" height="30"/>
                                 <state key="normal" title="Criar Conta"/>
+                                <connections>
+                                    <action selector="didTapRegister:" destination="xG8-85-5bH" eventType="touchUpInside" id="tUE-bS-NkT"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-Np-QyR">
                                 <rect key="frame" x="18" y="260.5" width="339" height="30"/>
@@ -61,7 +64,7 @@
                     <connections>
                         <outlet property="tfEmail" destination="zfe-Np-QyR" id="5My-ZI-SEX"/>
                         <outlet property="tfPassword" destination="9ez-HK-dk5" id="doR-Th-1oW"/>
-                        <segue destination="njV-UD-hWv" kind="show" id="neD-5N-Opg"/>
+                        <segue destination="njV-UD-hWv" kind="show" identifier="toRegister" id="neD-5N-Opg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjS-A5-QU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZJ-eP-DfT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZJ-eP-DfT">
                                 <rect key="frame" x="22" y="214.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -138,6 +141,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qpz-rj-uH0"/>
                     </view>
+                    <connections>
+                        <outlet property="tfConfirmPassoword" destination="5YG-oo-NWk" id="UrV-x5-Zqq"/>
+                        <outlet property="tfEmail" destination="lxH-pK-EKF" id="JVc-ee-Fx1"/>
+                        <outlet property="tfName" destination="SZJ-eP-DfT" id="BK3-J1-nk4"/>
+                        <outlet property="tfPassword" destination="CfA-ew-BbP" id="rhV-qa-rrL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqG-Pa-9YD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
