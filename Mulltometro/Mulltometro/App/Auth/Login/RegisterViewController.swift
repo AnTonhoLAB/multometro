@@ -39,4 +39,20 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func didTapRegister(_ sender: Any) {
+    
+        guard let name = tfName.text,
+            let email = tfEmail.text,
+            let password = tfPassword.text,
+            let confirmPassword = tfConfirmPassoword.text else { return }
+        
+        let userRegister = UserRegisterViewModel(name: name, email: email, password: password, confirmPassword: confirmPassword)
+        
+        do {
+            try userRegister.validate()
+        } catch  {
+            print(error)
+        }
+    }
 }

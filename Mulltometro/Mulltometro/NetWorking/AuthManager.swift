@@ -48,6 +48,10 @@ class AuthManager {
         }
     }
     
+    static func createUser() {
+        
+    }
+    
     static func add() {
         let datas = ["name": "George", "idade": "23"]
         
