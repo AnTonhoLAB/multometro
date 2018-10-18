@@ -6,14 +6,19 @@
   Copyright © 2018 CrowCode. All rights reserved.
 */
 
+Success="Success";
 Error="Error";
 Ok="Ok";
+
 
 //RegisterViewController
 PlaceholderUsername="Choose your username";
 PlaceholderEmail="Type your E-mail";
 PlaceholderPassowrd="Type your Password";
 PlaceholderRepeatPassword="Repeat your Password";
+
+//Done
+RegisterSucess="Registered user successfully";
 
 //RegisterErrors
 ErrorName="The name must have at least one letter";

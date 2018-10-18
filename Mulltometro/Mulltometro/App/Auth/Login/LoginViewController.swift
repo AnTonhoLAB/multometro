@@ -47,4 +47,7 @@ class LoginViewController: UIViewController {
             window.rootViewController = tabBarController
         }, completion: nil)
     }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
+
 }

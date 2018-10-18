@@ -51,18 +51,32 @@ class RegisterViewController: UIViewController {
         
         do {
             try userRegister.validate()
-            AuthManager.createUser(with: email, password: password) { res in
+            AuthManager.createUser(with: email, password: password) { [weak self] res in
+                guard let self = self else { return }
                 switch res {
-                    
-                case .success(let user):
-                    print("USERINO", user)
-                case .failure(let err):
-                    print("ERRRINO", err)
+                case .success(_):
+                    self.finishRegister()
+                case .failure(let error):
+                    self.errorRegister(error: error)
                 }
             }
-            
         } catch  {
-            alertSimpleMessage(message: error.localizedDescription)
+            errorRegister(error: error)
         }
     }
+    
+    func finishRegister() {
+        alertSimpleMessage(message: R.string.localizable.registerSucess()) { [weak self] _ in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: R.segue.registerViewController.unwindToLogin.identifier, sender: nil)
+        }
+    }
+    
+    func errorRegister(error: Error){
+         alertSimpleMessage(message: error.localizedDescription)
+    }
+    
+    
+    
+    
 }

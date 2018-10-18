@@ -149,9 +149,11 @@
                         <outlet property="tfEmail" destination="lxH-pK-EKF" id="JVc-ee-Fx1"/>
                         <outlet property="tfName" destination="SZJ-eP-DfT" id="BK3-J1-nk4"/>
                         <outlet property="tfPassword" destination="CfA-ew-BbP" id="rhV-qa-rrL"/>
+                        <segue destination="paJ-dJ-yYk" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="XpY-Fi-Pbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqG-Pa-9YD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="paJ-dJ-yYk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="884" y="-54.422788605697157"/>
         </scene>
