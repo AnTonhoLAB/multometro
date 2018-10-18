@@ -60,15 +60,19 @@ class RegisterViewController: UIViewController {
                     self.errorRegister(error: error)
                 }
             }
-        } catch  {
+        } catch {
             errorRegister(error: error)
         }
+    }
+    
+    @IBAction func didTapCancel(_ sender: Any) {
+        unwindToLogin()
     }
     
     func finishRegister() {
         alertSimpleMessage(message: R.string.localizable.registerSucess()) { [weak self] _ in
             guard let self = self else { return }
-            self.performSegue(withIdentifier: R.segue.registerViewController.unwindToLogin.identifier, sender: nil)
+            self.unwindToLogin()
         }
     }
     
@@ -76,7 +80,7 @@ class RegisterViewController: UIViewController {
          alertSimpleMessage(message: error.localizedDescription)
     }
     
-    
-    
-    
+    func unwindToLogin() {
+        self.performSegue(withIdentifier: R.segue.registerViewController.unwindToLogin.identifier, sender: nil)
+    }
 }
