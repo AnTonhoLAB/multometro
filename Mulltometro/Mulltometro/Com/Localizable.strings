@@ -6,10 +6,18 @@
   Copyright © 2018 CrowCode. All rights reserved.
 */
 
+Cancel="Cancel";
+Create="Create";
+Save="Save";
+
 Success="Success";
 Error="Error";
 Ok="Ok";
 
+//NewRoomViewController
+RoomName="Room Name";
+WillParticipate="Will you participate?";
+DueDate="Due Date";
 
 //RegisterViewController
 PlaceholderUsername="Choose your username";
