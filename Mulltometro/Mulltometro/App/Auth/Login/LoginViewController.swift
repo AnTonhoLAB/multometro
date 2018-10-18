@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func btLogin(_ sender: Any) {
@@ -32,6 +33,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func didTapRegister(_ sender: Any) {
+        performSegue(withIdentifier: "toRegister", sender: nil)
+    }
+    
     func openApp() {
         guard let window = UIApplication.shared.keyWindow else { return }
 
@@ -43,4 +48,7 @@ class LoginViewController: UIViewController {
             window.rootViewController = tabBarController
         }, completion: nil)
     }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
+
 }
