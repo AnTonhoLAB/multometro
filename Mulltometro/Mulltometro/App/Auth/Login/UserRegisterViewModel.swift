@@ -34,7 +34,7 @@ struct UserRegisterViewModel {
         if !emailTest.evaluate(with: email){
             throw ValidatingError.invalidEmail
         }
-        if password.count > 6 {
+        if password.count <= 6 {
             throw ValidatingError.invalidPassword
         }
         if password != confirmPassword {
@@ -42,7 +42,6 @@ struct UserRegisterViewModel {
         }
         
     }
-    
 }
 
 

@@ -51,6 +51,16 @@ class RegisterViewController: UIViewController {
         
         do {
             try userRegister.validate()
+            AuthManager.createUser(with: email, password: password) { res in
+                switch res {
+                    
+                case .success(let user):
+                    print("USERINO", user)
+                case .failure(let err):
+                    print("ERRRINO", err)
+                }
+            }
+            
         } catch  {
             alertSimpleMessage(message: error.localizedDescription)
         }
