@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" title="Grupos" id="BkF-iK-66O">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wp-0F-E2w">
                             <connections>
-                                <action selector="didTapAddGroup:" destination="Ol8-h9-dQd" id="kwj-jJ-NN3"/>
+                                <action selector="didTapAddRoom:" destination="Ol8-h9-dQd" id="0Wu-BK-MQl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

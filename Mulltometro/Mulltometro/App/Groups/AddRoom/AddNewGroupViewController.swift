@@ -39,6 +39,13 @@ class AddNewGroupViewController: UIViewController {
     
     @IBAction func didTapCreate(_ sender: Any) {
         
+        guard let roomName = tfRoomName.text else { return }
+        let dueDate = dayPicker.selectedRow(inComponent: 0) + 1
+
+        let room = stParticipate.isOn ? Room(likeUserTo: roomName, dueDate: dueDate)
+                                      : Room(name: roomName, dueDate: dueDate)
+        
+        RoomRequester.addRoom(with: room.toData())
     }
 }
 
