@@ -37,6 +37,7 @@
 		5ED085CC215B00E900293516 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085CB215B00E900293516 /* AuthManager.swift */; };
 		5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085D4215B06E300293516 /* LoginViewController.swift */; };
 		5ED085D7215B06F300293516 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED085D6215B06F300293516 /* Login.storyboard */; };
+		5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */; };
 		5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */; };
 		CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */; };
 		E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */; };
@@ -100,6 +101,7 @@
 		5ED085CB215B00E900293516 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5ED085D4215B06E300293516 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ED085D6215B06F300293516 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
 		5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.debug.xcconfig"; sourceTree = "<group>"; };
 		922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mulltometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 			children = (
 				5E92EAA121624235000E0EE4 /* Groups.storyboard */,
 				5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */,
+				5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */,
 				5E85F14C215ECAD000918BA5 /* Response.swift in Sources */,
 				5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */,
+				5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
 				5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */,

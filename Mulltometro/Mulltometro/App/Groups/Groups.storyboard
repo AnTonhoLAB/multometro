@@ -44,14 +44,44 @@
                     <navigationItem key="navigationItem" title="Grupos" id="BkF-iK-66O">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wp-0F-E2w">
                             <connections>
-                                <action selector="addGroup:" destination="Ol8-h9-dQd" id="OKx-8H-M9x"/>
+                                <action selector="didTapAddGroup:" destination="Ol8-h9-dQd" id="kwj-jJ-NN3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="H6o-NK-fJY" kind="presentation" identifier="toAddGroup" id="CBT-DR-JLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpJ-m9-fTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="-9.4452773613193415"/>
+        </scene>
+        <!--Add New Group View Controller-->
+        <scene sceneID="ZyP-Vt-3aW">
+            <objects>
+                <viewController id="fGb-4y-sTb" customClass="AddNewGroupViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bC6-OT-0co">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qeQ-yt-FWW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ptH-cF-Kst">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wGZ-Zd-th3">
+                            <connections>
+                                <action selector="didTapCancel:" destination="fGb-4y-sTb" id="DxJ-iE-z7L"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="tS7-dm-58M">
+                            <connections>
+                                <action selector="didTapCreate:" destination="fGb-4y-sTb" id="jFz-Iq-rcd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wW1-NG-oQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2663" y="-221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0SC-EV-LgL">
@@ -70,6 +100,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCS-fk-dhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-143.19999999999999" y="-9.4452773613193415"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="575-7T-VIL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H6o-NK-fJY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xEp-Cj-Uka">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fGb-4y-sTb" kind="relationship" relationship="rootViewController" id="d2g-yY-Kki"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGx-dL-mxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727" y="-220"/>
         </scene>
     </scenes>
 </document>

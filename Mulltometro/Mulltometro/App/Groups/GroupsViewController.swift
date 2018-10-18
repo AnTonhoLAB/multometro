@@ -19,4 +19,8 @@ class GroupsViewController: UIViewController {
         
         CloudCommunication.createRoom(with: "ope")
     }
+    
+    @IBAction func didTapAddGroup(_ sender: Any) {
+        performSegue(withIdentifier: R.segue.groupsViewController.toAddGroup, sender: nil)
+    }
 }
