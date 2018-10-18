@@ -11,12 +11,6 @@ import Rswift
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var tfName: UITextField! {
-        didSet{
-            tfName.textAlignment = .center
-            tfName.placeholder = R.string.localizable.placeholderUsername()
-        }
-    }
     @IBOutlet weak var tfEmail: UITextField! {
         didSet{
             tfEmail.textAlignment = .center
@@ -38,16 +32,16 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func didTapRegister(_ sender: Any) {
     
-        guard let name = tfName.text,
-            let email = tfEmail.text,
+        guard let email = tfEmail.text,
             let password = tfPassword.text,
             let confirmPassword = tfConfirmPassoword.text else { return }
         
-        let userRegister = UserRegisterViewModel(name: name, email: email, password: password, confirmPassword: confirmPassword)
+        let userRegister = UserRegisterViewModel(email: email, password: password, confirmPassword: confirmPassword)
         
         do {
             try userRegister.validate()
