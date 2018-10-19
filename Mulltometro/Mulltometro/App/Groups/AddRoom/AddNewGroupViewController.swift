@@ -14,31 +14,18 @@ class AddNewGroupViewController: UIViewController {
     @IBOutlet weak var btCancel: UIBarButtonItem! { didSet { btCancel.title = R.string.localizable.cancel() } }
     @IBOutlet weak var btCreate: UIBarButtonItem! { didSet { btCreate.title = R.string.localizable.create() } }
     
-    @IBOutlet weak var lbRoomName: UILabel!{ didSet { lbRoomName.text = R.string.localizable.roomName() } }
-    @IBOutlet weak var lbParticipate: UILabel!{ didSet { lbParticipate.text = R.string.localizable.willParticipate()} }
-    @IBOutlet weak var lbDueDate: UILabel!{ didSet { lbDueDate.text = R.string.localizable.dueDate() } }
-    
-    @IBOutlet weak var tfRoomName: UITextField!
-    @IBOutlet weak var stParticipate: UISwitch!
-    
-    let pickerDataSize = 100_000
-    var pickerValues = [Int]()
-    
-    @IBOutlet weak var dayPicker: UIPickerView!{
-        didSet{
-            dayPicker.dataSource = self
-            dayPicker.delegate = self
-            dayPicker.selectRow((pickerDataSize/2) + 14, inComponent: 0, animated: true)
-            dayPicker.roundedCornerColor(radius: 10)
+    @IBOutlet weak var registerTableView: UITableView! {
+        didSet {
+            registerTableView.dataSource = self
+            registerTableView.delegate = self
+            registerTableView.estimatedRowHeight = 100
+            registerTableView.rowHeight = UITableView.automaticDimension
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for i in 1...30 {
-            pickerValues.append(i)
-        }
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
@@ -47,58 +34,49 @@ class AddNewGroupViewController: UIViewController {
     
     @IBAction func didTapCreate(_ sender: Any) {
         
-        guard let roomName = tfRoomName.text else { return }
-        let dueDate = dayPicker.selectedRow(inComponent: 0) - 1
-
-        let room = stParticipate.isOn ? Room(likeUserTo: roomName, dueDate: dueDate)
-                                      : Room(name: roomName, dueDate: dueDate)
-        
-        RoomRequester.addRoom(with: room.toData())
+//        guard let roomName = tfRoomName.text else { return }
+//        let dueDate = (dayPicker.selectedRow(inComponent: 0) + 1) % 30
+//
+//        let room = stParticipate.isOn ? Room(likeUserTo: roomName, dueDate: dueDate)
+//                                      : Room(name: roomName, dueDate: dueDate)
+//
+//        RoomRequester.addRoom(with: room.toData())
     }
 }
 
-extension AddNewGroupViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+extension AddNewGroupViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSize
-    }
-}
-
-extension AddNewGroupViewController: UIPickerViewDelegate {
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var label = view as? UILabel
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if label == nil {
-            
-            let width = pickerView.rowSize(forComponent: component).width
-            let height = pickerView.rowSize(forComponent: component).height
-            
-            label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: width , height: height))
-            label?.textAlignment = .center
-            label?.font = UIFont(name: "ArialMT", size: 30)
-            label?.textColor = UIColor.white
-            let value = row % 30
-            if pickerValues.count > 0 {
-                label?.text = String(pickerValues[value])
-            }
+
+        
+        switch indexPath.row {
+        case 0:
+            return tableView.dequeueReusableCell(withIdentifier: "roomRegisterCell", for: indexPath) as! RoomRegisterCell
+        case 1:
+            return tableView.dequeueReusableCell(withIdentifier: "addFeeHeaderCell", for: indexPath) as! AddFeeHeaderCell
+        default:
+            return RoomRegisterCell()
         }
-        
-        return label!
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 30
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.row {
+//        case 0:
+//            return 500
+//        default:
+//            return 20
+//        }
+//    }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // do something with the resulting selected row
-        
-        // reset the picker to the middle of the long list
-        let position = pickerDataSize/2 + row
-        pickerView.selectRow(position, inComponent: 0, animated: false)
-    }
+    
 }
+
+extension AddNewGroupViewController: UITableViewDelegate {
+    
+}
+
