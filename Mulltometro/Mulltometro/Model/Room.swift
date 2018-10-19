@@ -20,6 +20,7 @@ class Room: Codable {
     init(name: String, dueDate: Int) {
         self.adminUid = AuthManager.getCurrentUserId()
         self.name = name
+        self.dueDate = dueDate
     }
     
     init(likeUserTo name: String, dueDate: Int) {
@@ -45,7 +46,7 @@ class Room: Codable {
             data["id"] = id
         }
         
-        data["adminUid"] = adminUid
+        data["adminId"] = adminUid
         data["name"] = name
         data["dueDate"] = String(dueDate)
         

@@ -18,7 +18,6 @@ class RoomRequester {
     
     static func addRoom(with room: [String: Any]) {
 
-        
         function.httpsCallable("addRoom").call(room) { (res, err) in
           print(res ?? "nao tem res")
           print(err ?? "nao tem err")

@@ -40,7 +40,7 @@ class AddNewGroupViewController: UIViewController {
     @IBAction func didTapCreate(_ sender: Any) {
         
         guard let roomName = tfRoomName.text else { return }
-        let dueDate = dayPicker.selectedRow(inComponent: 0) + 1
+        let dueDate = dayPicker.selectedRow(inComponent: 0) - 1
 
         let room = stParticipate.isOn ? Room(likeUserTo: roomName, dueDate: dueDate)
                                       : Room(name: roomName, dueDate: dueDate)
@@ -60,7 +60,26 @@ extension AddNewGroupViewController: UIPickerViewDataSource {
 }
 
 extension AddNewGroupViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(row + 1)
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = view as? UILabel
+        
+        if label == nil {
+            
+            let width = pickerView.rowSize(forComponent: component).width
+            let height = pickerView.rowSize(forComponent: component).height
+            
+            label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: width , height: height))
+            label?.textAlignment = .center
+            label?.font = UIFont(name: "ArialMT", size: 30)
+            label?.textColor = UIColor.white
+            label?.text = String(row + 1)
+        }
+        
+        return label!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 30
     }
 }
