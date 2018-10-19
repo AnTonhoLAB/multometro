@@ -21,16 +21,24 @@ class AddNewGroupViewController: UIViewController {
     @IBOutlet weak var tfRoomName: UITextField!
     @IBOutlet weak var stParticipate: UISwitch!
     
+    let pickerDataSize = 100_000
+    var pickerValues = [Int]()
+    
     @IBOutlet weak var dayPicker: UIPickerView!{
         didSet{
             dayPicker.dataSource = self
             dayPicker.delegate = self
-            dayPicker.selectRow(4, inComponent: 0, animated: true)
+            dayPicker.selectRow((pickerDataSize/2) + 14, inComponent: 0, animated: true)
+            dayPicker.roundedCornerColor(radius: 10)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 1...30 {
+            pickerValues.append(i)
+        }
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
@@ -55,12 +63,12 @@ extension AddNewGroupViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 30
+        return pickerDataSize
     }
 }
 
 extension AddNewGroupViewController: UIPickerViewDelegate {
-
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = view as? UILabel
         
@@ -73,7 +81,10 @@ extension AddNewGroupViewController: UIPickerViewDelegate {
             label?.textAlignment = .center
             label?.font = UIFont(name: "ArialMT", size: 30)
             label?.textColor = UIColor.white
-            label?.text = String(row + 1)
+            let value = row % 30
+            if pickerValues.count > 0 {
+                label?.text = String(pickerValues[value])
+            }
         }
         
         return label!
@@ -81,5 +92,13 @@ extension AddNewGroupViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 30
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // do something with the resulting selected row
+        
+        // reset the picker to the middle of the long list
+        let position = pickerDataSize/2 + row
+        pickerView.selectRow(position, inComponent: 0, animated: false)
     }
 }

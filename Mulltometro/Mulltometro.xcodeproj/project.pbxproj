@@ -27,6 +27,7 @@
 		5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA921624324000E0EE4 /* Profile.storyboard */; };
 		5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAAB21624333000E0EE4 /* ProfileViewController.swift */; };
 		5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAB321627F57000E0EE4 /* Assets.xcassets */; };
+		5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC89765217A501500C65CF9 /* ExtensionUIView.swift */; };
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
 		5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* MainTabBarController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		5E92EAA921624324000E0EE4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5E92EAAB21624333000E0EE4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5E92EAB321627F57000E0EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EC89765217A501500C65CF9 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		5ED0858F215AFF9A00293516 /* Mulltometro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mulltometro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED08594215AFF9B00293516 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */,
+				5EC89765217A501500C65CF9 /* ExtensionUIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */,
 				5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */,
+				5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */,
 				5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */,
