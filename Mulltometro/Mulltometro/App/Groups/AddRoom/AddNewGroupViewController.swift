@@ -23,6 +23,10 @@ class AddNewGroupViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var expandedView: UIView!
+    
+    var fees = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -44,10 +48,30 @@ class AddNewGroupViewController: UIViewController {
     }
 }
 
+extension AddNewGroupViewController: RegisterRequester {
+    func addFee() {
+        self.expandedView.frame.size.height = 1000
+        self.registerTableView.reloadData()
+        fees.append("newValue")
+        
+        registerTableView.scrollToRow(at: IndexPath(item: 1, section: 0), at: .top, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+            guard let self = self else { return }
+
+            self.registerTableView.beginUpdates()
+            self.registerTableView.insertRows(at: [IndexPath(item: 2, section: 0)], with: .bottom)
+            self.registerTableView.endUpdates()
+        }
+    
+    }
+    
+}
+
 extension AddNewGroupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return fees.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,25 +82,18 @@ extension AddNewGroupViewController: UITableViewDataSource {
         case 0:
             return tableView.dequeueReusableCell(withIdentifier: "roomRegisterCell", for: indexPath) as! RoomRegisterCell
         case 1:
-            return tableView.dequeueReusableCell(withIdentifier: "addFeeHeaderCell", for: indexPath) as! AddFeeHeaderCell
+            let addFeeHeaderCell = tableView.dequeueReusableCell(withIdentifier: "addFeeHeaderCell", for: indexPath) as! AddFeeHeaderCell
+            addFeeHeaderCell.delegate = self
+            return addFeeHeaderCell
         default:
-            return RoomRegisterCell()
+            return tableView.dequeueReusableCell(withIdentifier: "addFeeRegisterCell", for: indexPath) as! AddFeeRegisterCelll
         }
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.row {
-//        case 0:
-//            return 500
-//        default:
-//            return 20
-//        }
-//    }
-    
     
 }
 
 extension AddNewGroupViewController: UITableViewDelegate {
     
 }
+
 

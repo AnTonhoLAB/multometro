@@ -9,6 +9,16 @@
 import UIKit
 
 class AddFeeHeaderCell: UITableViewCell {
+    
+    var delegate: RegisterRequester!
 
+    @IBOutlet weak var lbFeeType: UILabel!
+    
+    @IBAction func didTapAdd(_ sender: Any) {
+        delegate.addFee()
+    }
+}
 
+protocol RegisterRequester {
+    func addFee()
 }

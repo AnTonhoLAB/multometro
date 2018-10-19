@@ -30,6 +30,7 @@
 		5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC89765217A501500C65CF9 /* ExtensionUIView.swift */; };
 		5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC89767217A69AD00C65CF9 /* RoomRegisterCell.swift */; };
 		5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC89769217A73DB00C65CF9 /* AddFeeHeaderCell.swift */; };
+		5EC8976C217A7C0700C65CF9 /* AddFeeRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC8976B217A7C0700C65CF9 /* AddFeeRegisterCell.swift */; };
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
 		5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* MainTabBarController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		5EC89765217A501500C65CF9 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		5EC89767217A69AD00C65CF9 /* RoomRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRegisterCell.swift; sourceTree = "<group>"; };
 		5EC89769217A73DB00C65CF9 /* AddFeeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeeHeaderCell.swift; sourceTree = "<group>"; };
+		5EC8976B217A7C0700C65CF9 /* AddFeeRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeeRegisterCell.swift; sourceTree = "<group>"; };
 		5ED0858F215AFF9A00293516 /* Mulltometro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mulltometro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED08594215AFF9B00293516 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				5EC89767217A69AD00C65CF9 /* RoomRegisterCell.swift */,
 				5EC89769217A73DB00C65CF9 /* AddFeeHeaderCell.swift */,
+				5EC8976B217A7C0700C65CF9 /* AddFeeRegisterCell.swift */,
 				5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */,
 			);
 			path = AddRoom;
@@ -642,6 +645,7 @@
 				5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */,
 				5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */,
 				5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */,
+				5EC8976C217A7C0700C65CF9 /* AddFeeRegisterCell.swift in Sources */,
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */,
