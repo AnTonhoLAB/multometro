@@ -58,9 +58,8 @@ extension AddNewGroupViewController: RegisterRequester {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
             guard let self = self else { return }
-
             self.registerTableView.beginUpdates()
-            self.registerTableView.insertRows(at: [IndexPath(item: 2, section: 0)], with: .bottom)
+            self.registerTableView.insertRows(at: [IndexPath(item: 2, section: 0)], with: .automatic)
             self.registerTableView.endUpdates()
         }
     
