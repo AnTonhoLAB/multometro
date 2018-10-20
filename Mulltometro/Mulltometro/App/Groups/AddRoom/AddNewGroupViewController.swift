@@ -62,7 +62,16 @@ extension AddNewGroupViewController: RegisterRequester {
             self.registerTableView.insertRows(at: [IndexPath(item: 2, section: 0)], with: .automatic)
             self.registerTableView.endUpdates()
         }
+    }
     
+    func cancelFee() {
+        fees.removeLast()
+        registerTableView.deleteRows(at: [IndexPath(item: 2, section: 0)], with: .automatic)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+            guard let self = self else { return }
+            self.registerTableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+            self.expandedView.frame.size.height = 1
+        }
     }
     
 }

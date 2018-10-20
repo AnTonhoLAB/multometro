@@ -165,29 +165,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIl-iV-pet">
+                                                    <rect key="frame" x="306" y="8" width="47" height="47"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="hIl-iV-pet" secondAttribute="height" multiplier="10:10" id="fAq-wg-CAZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <state key="normal" title="+">
+                                                        <color key="titleColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapAdd:" destination="QEj-g9-vXm" eventType="touchUpInside" id="r0M-q3-zpQ"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fee Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivy-tC-qM2">
                                                     <rect key="frame" x="152.5" y="16" width="70" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="highlightedColor" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIl-iV-pet">
-                                                    <rect key="frame" x="306" y="8" width="47" height="47"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="hIl-iV-pet" secondAttribute="height" multiplier="10:10" id="fAq-wg-CAZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                                    <state key="normal" title="+">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgF-cp-fTJ">
+                                                    <rect key="frame" x="16" y="15" width="53" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="didTapAdd:" destination="QEj-g9-vXm" eventType="touchUpInside" id="r0M-q3-zpQ"/>
+                                                        <action selector="didTapCancel:" destination="QEj-g9-vXm" eventType="touchUpInside" id="RMk-Wi-YlC"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="hIl-iV-pet" secondAttribute="trailing" constant="22" id="2r7-eO-0IP"/>
+                                                <constraint firstItem="WgF-cp-fTJ" firstAttribute="leading" secondItem="vTJ-uQ-NQb" secondAttribute="leading" constant="16" id="LGZ-wm-LIU"/>
+                                                <constraint firstItem="WgF-cp-fTJ" firstAttribute="centerY" secondItem="vTJ-uQ-NQb" secondAttribute="centerY" id="NLg-FA-Xg4"/>
                                                 <constraint firstItem="Ivy-tC-qM2" firstAttribute="top" secondItem="vTJ-uQ-NQb" secondAttribute="top" constant="16" id="NLg-Wq-EGv"/>
                                                 <constraint firstItem="hIl-iV-pet" firstAttribute="top" secondItem="vTJ-uQ-NQb" secondAttribute="top" constant="8" id="dCt-NI-zVS"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ivy-tC-qM2" secondAttribute="bottom" constant="16" id="kGN-iL-Ega"/>
@@ -197,6 +209,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="btAdd" destination="hIl-iV-pet" id="WYd-qJ-X07"/>
+                                            <outlet property="btCancel" destination="WgF-cp-fTJ" id="lOW-4B-Tba"/>
                                             <outlet property="lbFeeType" destination="Ivy-tC-qM2" id="KDk-zZ-why"/>
                                         </connections>
                                     </tableViewCell>
@@ -249,7 +263,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ptH-cF-Kst">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="wGZ-Zd-th3">
-                            <color key="tintColor" red="0.85191871640788297" green="0.23902015116008715" blue="0.1991143502111693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="fGb-4y-sTb" id="DxJ-iE-z7L"/>
                             </connections>
