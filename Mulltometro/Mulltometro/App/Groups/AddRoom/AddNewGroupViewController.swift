@@ -11,8 +11,6 @@ import Rswift
 
 class AddNewGroupViewController: UIViewController {
     
- 
-    
     @IBOutlet weak var btCancel: UIBarButtonItem! {
         didSet {
             btCancel.title = R.string.localizable.cancel()
@@ -49,14 +47,9 @@ class AddNewGroupViewController: UIViewController {
     }
     
     @IBAction func didTapCreate(_ sender: Any) {
-        
-//        guard let roomName = tfRoomName.text else { return }
-//        let dueDate = (dayPicker.selectedRow(inComponent: 0) + 1) % 30
-//
-//        let room = stParticipate.isOn ? Room(likeUserTo: roomName, dueDate: dueDate)
-//                                      : Room(name: roomName, dueDate: dueDate)
-//
-//        RoomRequester.addRoom(with: room.toData())
+        let cell = registerTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! RoomRegisterCell
+        let newRoom = cell.createRoom(with: fees)
+        print(newRoom)
     }
 }
 

@@ -13,7 +13,7 @@ class Room: Codable {
     var id: String?
     var adminUid: String!
     var name: String!
-    var taxesTypes: [Fee]?
+    var fees: [Fee]?
     var users: [String]?
     var dueDate: Int!
     
@@ -23,18 +23,26 @@ class Room: Codable {
         self.dueDate = dueDate
     }
     
-    init(likeUserTo name: String, dueDate: Int) {
+    init(likeUserTo name: String, fees: [Fee]?, dueDate: Int) {
         self.adminUid = AuthManager.getCurrentUserId()
         self.name = name
+        self.fees = fees
         self.dueDate = dueDate
         self.users = [AuthManager.getCurrentUserId()]
     }
     
-    init(name: String, taxesTypes: [Fee], adminUid: String, users: [String], dueDate:Int ) {
+    init(name: String, fees: [Fee]?, dueDate: Int) {
+        self.adminUid = AuthManager.getCurrentUserId()
+        self.name = name
+        self.fees = fees
+        self.dueDate = dueDate
+    }
+    
+    init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int ) {
         self.adminUid = AuthManager.getCurrentUserId()
         self.name = name
         self.dueDate = dueDate
-        self.taxesTypes = taxesTypes
+        self.fees = fees
         self.adminUid = adminUid
         self.users = users
     }
@@ -50,7 +58,7 @@ class Room: Codable {
         data["name"] = name
         data["dueDate"] = String(dueDate)
         
-        if let taxesTypes = taxesTypes {
+        if let taxesTypes = fees {
             data["taxesTypes"] = taxesTypes
         }
         
