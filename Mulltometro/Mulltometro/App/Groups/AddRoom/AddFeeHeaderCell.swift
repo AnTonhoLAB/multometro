@@ -29,7 +29,9 @@ class AddFeeHeaderCell: UITableViewCell {
             btAdd.setTitle("Save", for: .normal)
             delegate.addFee()
         } else {
-            
+            btCancel.isHidden = true
+            btAdd.setTitle("+", for: .normal)
+            delegate.saveFee()
         }
     }
     

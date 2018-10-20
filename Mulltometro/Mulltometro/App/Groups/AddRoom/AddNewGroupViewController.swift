@@ -11,6 +11,8 @@ import Rswift
 
 class AddNewGroupViewController: UIViewController {
     
+ 
+    
     @IBOutlet weak var btCancel: UIBarButtonItem! { didSet { btCancel.title = R.string.localizable.cancel() } }
     @IBOutlet weak var btCreate: UIBarButtonItem! { didSet { btCreate.title = R.string.localizable.create() } }
     
@@ -77,7 +79,8 @@ extension AddNewGroupViewController: RegisterRequester {
     }
     
     func saveFee() {
-        
+       let cell = registerTableView.cellForRow(at: IndexPath(item: 2, section: 0)) as! AddFeeRegisterCelll
+        cell.animationSave()
     }
     
 }
@@ -89,9 +92,7 @@ extension AddNewGroupViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-
-        
+ 
         switch indexPath.row {
         case 0:
             return tableView.dequeueReusableCell(withIdentifier: "roomRegisterCell", for: indexPath) as! RoomRegisterCell
