@@ -13,8 +13,18 @@ class AddNewGroupViewController: UIViewController {
     
  
     
-    @IBOutlet weak var btCancel: UIBarButtonItem! { didSet { btCancel.title = R.string.localizable.cancel() } }
-    @IBOutlet weak var btCreate: UIBarButtonItem! { didSet { btCreate.title = R.string.localizable.create() } }
+    @IBOutlet weak var btCancel: UIBarButtonItem! {
+        didSet {
+            btCancel.title = R.string.localizable.cancel()
+            btCancel.tintColor = .redSystem
+        }
+    }
+    @IBOutlet weak var btCreate: UIBarButtonItem! {
+        didSet {
+            btCreate.title = R.string.localizable.create()
+            btCreate.tintColor = .redSystem
+        }
+    }
     
     @IBOutlet weak var registerTableView: UITableView! {
         didSet {
@@ -79,8 +89,9 @@ extension AddNewGroupViewController: RegisterRequester {
     }
     
     func saveFee() {
-       let cell = registerTableView.cellForRow(at: IndexPath(item: 2, section: 0)) as! AddFeeRegisterCelll
-        cell.animationSave()
+        let cell = registerTableView.cellForRow(at: IndexPath(item: 2, section: 0)) as! AddFeeRegisterCelll
+        cell.animationSave(with: registerTableView)
+//        registerTableView.reloadData()
     }
     
 }
