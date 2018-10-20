@@ -37,7 +37,7 @@ class AddNewGroupViewController: UIViewController {
     
     @IBOutlet weak var expandedView: UIView!
     
-    var fees = [String]()
+    var fees = [Fee]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ extension AddNewGroupViewController: RegisterRequester {
     func addFee() {
         self.expandedView.frame.size.height = 1000
         self.registerTableView.reloadData()
-        fees.append("newValue")
+        fees.append(Fee())
         
         registerTableView.scrollToRow(at: IndexPath(item: 1, section: 0), at: .top, animated: true)
         
@@ -85,6 +85,8 @@ extension AddNewGroupViewController: RegisterRequester {
     
     func saveFee() {
         let cell = registerTableView.cellForRow(at: IndexPath(item: 2, section: 0)) as! AddFeeRegisterCelll
+        let newFee = cell.createFee()
+        fees[fees.count - 1] = newFee
         cell.animationSave(with: registerTableView)
         closeFees()
     }

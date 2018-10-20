@@ -10,17 +10,17 @@ import Foundation
 
 class Fee: Codable {
 
-    var id: String!
     var name: String!
     var valuePerType: Int!
     var valueType: String!
     var simbleType: String!
     
-    init(id: String, name: String, valuePerType: Int, valueType: String!, simbleType: String) {
-        self.id = id
+    init(name: String, valuePerType: Int, valueType: String!, simbleType: String) {
         self.name  = name
         self.valuePerType = valuePerType
         self.simbleType = simbleType
     }
+    
+    init() {}
     
 }

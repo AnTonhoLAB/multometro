@@ -244,7 +244,7 @@
                                                                             </constraints>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
                                                                         </textField>
                                                                     </subviews>
                                                                 </stackView>
@@ -265,7 +265,7 @@
                                                                             </constraints>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                                                         </textField>
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.2898864847" green="0.73830837010000006" blue="0.27687504210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -288,7 +288,7 @@
                                                                             </constraints>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                                                                         </textField>
                                                                     </subviews>
                                                                 </stackView>
@@ -320,7 +320,7 @@
                                                                     </constraints>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert" textContentType="name"/>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
