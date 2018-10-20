@@ -13,7 +13,7 @@ class Room: Codable {
     var id: String?
     var adminUid: String!
     var name: String!
-    var taxesTypes: [Tax]?
+    var taxesTypes: [Fee]?
     var users: [String]?
     var dueDate: Int!
     
@@ -30,7 +30,7 @@ class Room: Codable {
         self.users = [AuthManager.getCurrentUserId()]
     }
     
-    init(name: String, taxesTypes: [Tax], adminUid: String, users: [String], dueDate:Int ) {
+    init(name: String, taxesTypes: [Fee], adminUid: String, users: [String], dueDate:Int ) {
         self.adminUid = AuthManager.getCurrentUserId()
         self.name = name
         self.dueDate = dueDate

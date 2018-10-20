@@ -22,9 +22,15 @@ class AddFeeHeaderCell: UITableViewCell {
     @IBOutlet weak var lbFeeType: UILabel!
     
     @IBAction func didTapAdd(_ sender: Any) {
-        self.btCancel.isHidden = false
-        btAdd.setTitle("Save", for: .normal)
-        delegate.addFee()
+        
+        guard let title = btAdd.titleLabel, let text = title.text else { return }
+        if text == "+" {
+            self.btCancel.isHidden = false
+            btAdd.setTitle("Save", for: .normal)
+            delegate.addFee()
+        } else {
+            
+        }
     }
     
     @IBAction func didTapCancel(_ sender: Any) {
@@ -37,4 +43,5 @@ class AddFeeHeaderCell: UITableViewCell {
 protocol RegisterRequester {
     func addFee()
     func cancelFee()
+    func saveFee()
 }

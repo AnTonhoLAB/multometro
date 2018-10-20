@@ -10,7 +10,7 @@
 		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E972163815600AE8260 /* MulltometroUser.swift */; };
-		5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Tax.swift */; };
+		5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Fee.swift */; };
 		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
 		5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */; };
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
@@ -72,7 +72,7 @@
 		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E6C7E972163815600AE8260 /* MulltometroUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUser.swift; sourceTree = "<group>"; };
-		5E6C7E99216388D100AE8260 /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		5E6C7E99216388D100AE8260 /* Fee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fee.swift; sourceTree = "<group>"; };
 		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequester.swift; sourceTree = "<group>"; };
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -261,7 +261,7 @@
 			children = (
 				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
-				5E6C7E99216388D100AE8260 /* Tax.swift */,
+				5E6C7E99216388D100AE8260 /* Fee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -648,7 +648,7 @@
 				5EC8976C217A7C0700C65CF9 /* AddFeeRegisterCell.swift in Sources */,
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
-				5E6C7E9A216388D100AE8260 /* Tax.swift in Sources */,
+				5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
 				5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */,
 			);

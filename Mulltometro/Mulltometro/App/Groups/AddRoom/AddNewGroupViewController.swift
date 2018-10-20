@@ -49,6 +49,7 @@ class AddNewGroupViewController: UIViewController {
 }
 
 extension AddNewGroupViewController: RegisterRequester {
+    
     func addFee() {
         self.expandedView.frame.size.height = 1000
         self.registerTableView.reloadData()
@@ -71,7 +72,12 @@ extension AddNewGroupViewController: RegisterRequester {
             guard let self = self else { return }
             self.registerTableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
             self.expandedView.frame.size.height = 1
+            self.registerTableView.reloadData()
         }
+    }
+    
+    func saveFee() {
+        
     }
     
 }

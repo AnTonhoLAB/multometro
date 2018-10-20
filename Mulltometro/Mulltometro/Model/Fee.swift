@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Tax: Codable {
+class Fee: Codable {
 
     var id: String!
     var name: String!
