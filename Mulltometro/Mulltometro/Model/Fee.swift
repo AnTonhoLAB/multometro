@@ -23,4 +23,15 @@ class Fee: Codable {
     
     init() {}
     
+    func toData() -> [String: Any] {
+        var data = [String: Any]()
+        
+        data["name"] = name
+        data["valuePerType"] = String(valuePerType)
+        data["valueType"] = valueType
+        data["simbleType"] = simbleType
+        
+        return data
+    }
+    
 }

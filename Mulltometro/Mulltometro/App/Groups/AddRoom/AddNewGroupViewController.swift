@@ -49,7 +49,8 @@ class AddNewGroupViewController: UIViewController {
     @IBAction func didTapCreate(_ sender: Any) {
         let cell = registerTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! RoomRegisterCell
         let newRoom = cell.createRoom(with: fees)
-        print(newRoom)
+  
+        RoomRequester.addRoom(with: newRoom.toData())
     }
 }
 
@@ -119,5 +120,3 @@ extension AddNewGroupViewController: UITableViewDataSource {
 extension AddNewGroupViewController: UITableViewDelegate {
     
 }
-
-

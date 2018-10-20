@@ -261,8 +261,8 @@
 		5ED085C4215B000B00293516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
+				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E6C7E99216388D100AE8260 /* Fee.swift */,
 			);
 			path = Model;

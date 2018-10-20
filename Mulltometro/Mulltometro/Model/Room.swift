@@ -58,8 +58,9 @@ class Room: Codable {
         data["name"] = name
         data["dueDate"] = String(dueDate)
         
-        if let taxesTypes = fees {
-            data["taxesTypes"] = taxesTypes
+        if let fees = fees {
+            let feesData = fees.map{$0.toData()}
+            data["feeTypes"] = feesData
         }
         
         if let users = users {
