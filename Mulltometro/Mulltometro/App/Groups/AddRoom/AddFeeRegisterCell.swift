@@ -53,16 +53,31 @@ class AddFeeRegisterCelll: UITableViewCell {
             self.layoutIfNeeded()
         })
         
+        UIView.transition(with: tfValuePerFee, duration: 0.6, options: UIView.AnimationOptions.transitionCrossDissolve , animations: {
+            self.tfValuePerFee.isEnabled = false
+            self.tfValuePerFee.textColor = .black
+            self.tfValuePerFee.textAlignment = .center
+        })
+        UIView.transition(with: tfValueType, duration: 0.6, options: UIView.AnimationOptions.transitionCrossDissolve , animations: {
+            self.tfValueType.isEnabled = false
+            self.tfValueType.textColor = .black
+            self.tfValueType.textAlignment = .center
+        })
+        UIView.transition(with: tfSimble, duration: 0.6, options: UIView.AnimationOptions.transitionCrossDissolve , animations: {
+            self.tfSimble.isEnabled = false
+            self.tfSimble.textColor = .black
+            self.tfSimble.textAlignment = .center
+        })
+        
         UIView.transition(with: lbName, duration: 0.6, options: UIView.AnimationOptions.transitionCrossDissolve , animations: {
             self.lbName.text = self.tfName.text?.count == 0 ? "New Fee" : self.tfName.text
+            self.lbName.font = self.lbName.font.withSize(20)
             self.lbName.textAlignment = .center
+    
+            self.tfSimble.textAlignment = .center
             self.layoutIfNeeded()
         }){ (_) in
             tableView.reloadData()
         }
-        
-
-        
-       
     }
 }

@@ -16,7 +16,11 @@ class RoomRegisterCell: UITableViewCell {
     
     
     @IBOutlet weak var tfRoomName: UITextField!
-    @IBOutlet weak var stParticipate: UISwitch!
+    @IBOutlet weak var stParticipate: UISwitch! {
+        didSet {
+            stParticipate.onTintColor = .redSystem
+        }
+    }
     @IBOutlet weak var dayPicker: UIPickerView!{
         didSet{
             dayPicker.dataSource = self

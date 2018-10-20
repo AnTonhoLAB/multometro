@@ -10,10 +10,15 @@ import UIKit
 
 class AddFeeHeaderCell: UITableViewCell {
     
-    @IBOutlet weak var btAdd: UIButton!
+    @IBOutlet weak var btAdd: UIButton! {
+        didSet {
+            btAdd.titleLabel?.textColor = .redSystem
+        }
+    }
     @IBOutlet weak var btCancel: UIButton! {
         didSet {
             btCancel.isHidden = true
+            btCancel.titleLabel?.textColor = .redSystem
         }
     }
     

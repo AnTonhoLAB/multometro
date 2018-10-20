@@ -80,20 +80,23 @@ extension AddNewGroupViewController: RegisterRequester {
     func cancelFee() {
         fees.removeLast()
         registerTableView.deleteRows(at: [IndexPath(item: 2, section: 0)], with: .automatic)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+        closeFees()
+    }
+    
+    func saveFee() {
+        let cell = registerTableView.cellForRow(at: IndexPath(item: 2, section: 0)) as! AddFeeRegisterCelll
+        cell.animationSave(with: registerTableView)
+        closeFees()
+    }
+    
+    func closeFees() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { [weak self] in
             guard let self = self else { return }
             self.registerTableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
             self.expandedView.frame.size.height = 1
             self.registerTableView.reloadData()
         }
     }
-    
-    func saveFee() {
-        let cell = registerTableView.cellForRow(at: IndexPath(item: 2, section: 0)) as! AddFeeRegisterCelll
-        cell.animationSave(with: registerTableView)
-//        registerTableView.reloadData()
-    }
-    
 }
 
 extension AddNewGroupViewController: UITableViewDataSource {
