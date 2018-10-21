@@ -6,6 +6,7 @@
   Copyright © 2018 CrowCode. All rights reserved.
 */
 
+int="%@";
 // AppDelegate
 
 launchedBefore = "launchedBefore";
@@ -13,6 +14,11 @@ launchedBefore = "launchedBefore";
 //LoginViewController
 
 LoginIdentifier = "LoginViewController";
+
+//RegisterViewController
+EmailRegEx="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}";
+Format="SELF MATCHES %@";
+Formats="%@";
 
 //MainViewController
 

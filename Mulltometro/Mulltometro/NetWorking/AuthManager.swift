@@ -26,8 +26,6 @@ class AuthManager {
     }
     
     static func getCurrentUserId() -> String {
-//        guard let user = Auth.auth().currentUser else { return "" }
-//        return user.uid
         return Auth.auth().currentUser?.uid ?? ""
     }
     
@@ -44,6 +42,21 @@ class AuthManager {
             } else if let res = res {
                 guard let user = res.user.email else { return }
                 completion(Response.success(user))
+            }
+        }
+    }
+    
+    static func createUser(with email: String, password: String, completion: @escaping(Response<AuthDataResult>) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (res, error) in
+            if let error = error {
+                completion(Response.failure(error))
+            } else if let res = res {
+                do{
+                    try Auth.auth().signOut()
+                    completion(Response.success(res))
+                }catch{
+                     completion(Response.failure(error))
+                }
             }
         }
     }
