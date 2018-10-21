@@ -35,6 +35,7 @@ class AddNewGroupViewController: UIViewController {
     
     @IBOutlet weak var expandedView: UIView!
     
+    var delegate: RegisterForNewGroup!
     var fees = [Fee]()
     
     override func viewDidLoad() {
@@ -50,8 +51,16 @@ class AddNewGroupViewController: UIViewController {
         let cell = registerTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! RoomRegisterCell
         let newRoom = cell.createRoom(with: fees)
   
-        RoomRequester.addRoom(with: newRoom.dictionary) { _ in
-            
+        RoomRequester.addRoom(with: newRoom.dictionary) { [weak self] response in
+            guard let self = self else { return }
+
+            switch response {
+            case .success(let group):
+                self.delegate.added(new: group)
+                self.dismiss(animated: true, completion: nil)
+            case .failure(_):
+                break
+            }
         }
     }
 }
