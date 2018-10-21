@@ -50,7 +50,9 @@ class AddNewGroupViewController: UIViewController {
         let cell = registerTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! RoomRegisterCell
         let newRoom = cell.createRoom(with: fees)
   
-        RoomRequester.addRoom(with: newRoom.toData())
+        RoomRequester.addRoom(with: newRoom.dictionary) { _ in
+            
+        }
     }
 }
 

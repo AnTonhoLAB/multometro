@@ -10,7 +10,7 @@ import Foundation
 
 class MulltometroUser: Codable {
    
-    var id: String!
+    var id: String?
     var name: String!
     var email: String!
     var type: String?

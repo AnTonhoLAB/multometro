@@ -16,11 +16,23 @@ class RoomRequester {
     
     private init() {}
     
-    static func addRoom(with room: [String: Any]) {
+    static func addRoom(with room: [String: Any], completion: @escaping (Response<Room>) -> Void) {
 
         function.httpsCallable("addRoom").call(room) { (res, err) in
-          print(res ?? "nao tem res")
-          print(err ?? "nao tem err")
+            
+            if let err = err {
+                completion(.failure(err))
+            }
+            if let res = res {
+                guard let value = res.data as? [String: Any] else { return }
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                    let room = try JSONDecoder().decode(Room.self, from: jsonData)
+                    completion(.success(room))
+                } catch let error {
+                    completion(.failure(error))
+                }
+            }
         }
     }
    
