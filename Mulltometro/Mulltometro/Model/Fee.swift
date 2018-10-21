@@ -8,19 +8,18 @@
 
 import Foundation
 
-class Tax: Codable {
+class Fee: Codable {
 
-    var id: String!
-    var name: String!
+    var nameFee: String!
     var valuePerType: Int!
     var valueType: String!
     var simbleType: String!
     
-    init(id: String, name: String, valuePerType: Int, valueType: String!, simbleType: String) {
-        self.id = id
-        self.name  = name
+    init(name: String, valuePerType: Int, valueType: String!, simbleType: String) {
+        self.nameFee  = name
         self.valuePerType = valuePerType
         self.simbleType = simbleType
     }
     
+    init() {}
 }
