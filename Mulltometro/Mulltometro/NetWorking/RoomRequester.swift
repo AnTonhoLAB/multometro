@@ -55,6 +55,10 @@ class RoomRequester {
                 } catch let error {
                     completion(.failure(error))
                 }
+                
+                if let err = err {
+                    completion(.failure(err))
+                }
             }
             
         }
