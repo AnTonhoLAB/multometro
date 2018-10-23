@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
+		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
@@ -73,6 +74,7 @@
 		49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.release.xcconfig"; sourceTree = "<group>"; };
 		541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
+		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0AE3A2217FD22B00E49FA4 /* DetailRoom */ = {
+			isa = PBXGroup;
+			children = (
+				5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */,
+			);
+			path = DetailRoom;
+			sourceTree = "<group>";
+		};
 		5E7FE6392177523D0029E035 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +194,7 @@
 				5E92EAA121624235000E0EE4 /* Groups.storyboard */,
 				5E66B86C217C0BAA002BB3AF /* GroupCell.swift */,
 				5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */,
+				5E0AE3A2217FD22B00E49FA4 /* DetailRoom */,
 				5EDAD568217922FE008E4609 /* AddRoom */,
 			);
 			path = Groups;
@@ -648,6 +659,7 @@
 				5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */,
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
+				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
 				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,
 				5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */,
 				5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */,
