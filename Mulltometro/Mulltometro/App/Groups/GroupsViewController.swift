@@ -24,7 +24,18 @@ class GroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rooms.append(Room(name: "Minha sala", fees: nil, adminUid: AuthManager.getCurrentUserId(), users: ["sad"], dueDate: 2))
+        
+        RoomRequester.getAllRooms {[weak self] res in
+            guard let self = self else { return }
+            
+            switch res {
+            case .success(let rooms):
+                self.rooms = rooms
+                self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
+            case .failure(_):
+                print("TODO")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

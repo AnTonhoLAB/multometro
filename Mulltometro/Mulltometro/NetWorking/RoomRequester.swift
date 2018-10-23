@@ -35,6 +35,30 @@ class RoomRequester {
             }
         }
     }
+    
+    static func getAllRooms(completion: @escaping(Response<[Room]>) -> Void) {
+        let user = ["adminId": AuthManager.getCurrentUserId()]
+        
+        function.httpsCallable("getAllRooms").call(user) { (res, err) in
+            print(res ?? "nao tem res")
+            print(err ?? "nao tem err")
+            
+            if let res = res {
+                
+               guard let roomsData = res.data as? [[String: Any]] else { return }
+                
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: roomsData, options: [])
+                    let rooms = try JSONDecoder().decode([Room].self, from: jsonData)
+                    
+                    completion(.success(rooms))
+                } catch let error {
+                    completion(.failure(error))
+                }
+            }
+            
+        }
+    }
    
   
     
