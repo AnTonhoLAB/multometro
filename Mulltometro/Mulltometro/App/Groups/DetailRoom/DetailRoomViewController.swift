@@ -12,9 +12,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.navigationItem.rightBarButtonItem?.tintColor = .redSystem
+
     }
     
 }

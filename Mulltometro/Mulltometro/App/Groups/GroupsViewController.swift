@@ -10,12 +10,18 @@ import UIKit
 
 class GroupsViewController: UIViewController {
     
+    @IBOutlet weak var btAddRoom: UIBarButtonItem! {
+        didSet {
+            btAddRoom.tintColor = .redSystem
+        }
+    }
     @IBOutlet weak var tableViewRooms: UITableView! {
         didSet {
             tableViewRooms.dataSource = self
             tableViewRooms.delegate = self
             tableViewRooms.estimatedRowHeight = 180
             tableViewRooms.rowHeight = UITableView.automaticDimension
+            tableViewRooms.allowsSelection = true
         }
     }
     
@@ -24,6 +30,9 @@ class GroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let navController = navigationController {
+            navController.navigationBar.tintColor = .redSystem
+        }
         
         RoomRequester.getAllRooms {[weak self] res in
             guard let self = self else { return }
@@ -91,7 +100,12 @@ extension GroupsViewController: UITableViewDataSource {
 
 extension GroupsViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         performSegue(withIdentifier: R.segue.groupsViewController.toRoomDetail, sender: rooms[indexPath.row])
+    }
+    
 }
+
 protocol RegisterForNewGroup {
     func added(new group: Room )
 }

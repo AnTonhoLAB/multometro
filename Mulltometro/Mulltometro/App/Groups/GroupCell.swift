@@ -23,6 +23,10 @@ class GroupCell: UITableViewCell {
     
     var group: Room?
     
+    override func awakeFromNib() {
+        self.selectionStyle = .none
+    }
+    
     func setUpRoom() {
         guard let group = group else { return }
         
