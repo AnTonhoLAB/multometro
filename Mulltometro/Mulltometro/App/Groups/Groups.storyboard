@@ -133,10 +133,17 @@
                         <color key="tintColor" red="0.29411764709999999" green="0.72941176470000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="446-3L-DHq"/>
                     </view>
+                    <connections>
+                        <outlet property="QRView" destination="61b-s5-ZXT" id="RyZ-xU-32G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGg-sT-q6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="61b-s5-ZXT">
+                    <rect key="frame" x="0.0" y="0.0" width="368" height="176"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
-            <point key="canvasLocation" x="1745" y="448"/>
+            <point key="canvasLocation" x="1892" y="548"/>
         </scene>
         <!--Add New Group View Controller-->
         <scene sceneID="ZyP-Vt-3aW">

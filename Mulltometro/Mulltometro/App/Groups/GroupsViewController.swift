@@ -60,8 +60,13 @@ class GroupsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationNavigationController = segue.destination as? UINavigationController {
-            guard let destinationController = destinationNavigationController.viewControllers.first as? AddNewGroupViewController else { return }
-            destinationController.delegate = self
+            if let destinationController = destinationNavigationController.viewControllers.first as? AddNewGroupViewController {
+                destinationController.delegate = self
+            }
+            if let destinationController = destinationNavigationController.viewControllers.first as? DetailViewController {
+                destinationController.room = sender as! Room
+            }
+            
         }
     }
     
