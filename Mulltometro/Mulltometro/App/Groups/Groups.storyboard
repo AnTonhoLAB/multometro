@@ -134,16 +134,59 @@
                         <viewLayoutGuide key="safeArea" id="446-3L-DHq"/>
                     </view>
                     <connections>
-                        <outlet property="QRView" destination="61b-s5-ZXT" id="RyZ-xU-32G"/>
+                        <segue destination="5Cm-gu-7oN" kind="presentation" identifier="toQRView" id="UAj-8t-cZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGg-sT-q6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="61b-s5-ZXT">
-                    <rect key="frame" x="0.0" y="0.0" width="368" height="176"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </objects>
             <point key="canvasLocation" x="1892" y="548"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wj9-y0-miG">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="5Cm-gu-7oN" customClass="QRViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8iU-Y1-MSu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61b-s5-ZXT">
+                                <rect key="frame" x="26" y="172" width="323" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="61b-s5-ZXT" secondAttribute="height" multiplier="16:16" id="nWq-p2-Mkr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0l-8E-PVO">
+                                <rect key="frame" x="112.5" y="545" width="150" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.55752354452054798" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3zC-2Y-XEQ"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapClose:" destination="5Cm-gu-7oN" eventType="touchUpInside" id="9cX-aC-ZMG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o0l-8E-PVO" firstAttribute="top" secondItem="61b-s5-ZXT" secondAttribute="bottom" constant="50" id="1ez-o0-9Au"/>
+                            <constraint firstItem="61b-s5-ZXT" firstAttribute="leading" secondItem="OBk-il-KpI" secondAttribute="leading" constant="26" id="Guf-wL-mlG"/>
+                            <constraint firstItem="OBk-il-KpI" firstAttribute="trailing" secondItem="61b-s5-ZXT" secondAttribute="trailing" constant="26" id="L8R-eL-onb"/>
+                            <constraint firstItem="o0l-8E-PVO" firstAttribute="centerX" secondItem="8iU-Y1-MSu" secondAttribute="centerX" id="YcK-bj-Or3"/>
+                            <constraint firstItem="61b-s5-ZXT" firstAttribute="centerY" secondItem="8iU-Y1-MSu" secondAttribute="centerY" id="hpt-i1-crX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OBk-il-KpI"/>
+                    </view>
+                    <connections>
+                        <outlet property="QRView" destination="61b-s5-ZXT" id="niH-H7-K3A"/>
+                        <outlet property="btClose" destination="o0l-8E-PVO" id="BbP-0A-Elj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNX-dM-iVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2784.8000000000002" y="546.47676161919048"/>
         </scene>
         <!--Add New Group View Controller-->
         <scene sceneID="ZyP-Vt-3aW">

@@ -12,7 +12,7 @@ class GroupCell: UITableViewCell {
     
     @IBOutlet weak var backGroundView: UIView! {
         didSet {
-            backGroundView.roundedCornerColor(radius: 5)
+            backGroundView.roundedCornerColor(radius: 15)
         }
     }
     @IBOutlet weak var lbNameRoom: UILabel!
