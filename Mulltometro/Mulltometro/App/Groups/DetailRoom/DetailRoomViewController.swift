@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     }
     
     func setupQRView() {
-//        guard let room = room, let id = room.id else { return }
+        guard let room = room, let id = room.id else { return }
         let midX = self.view.frame.midX
         let midY = self.view.frame.midY
         let frame = self.view.frame
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         QRView.frame = CGRect(x: viewPositionX, y: viewPositionY, width: frame.width / 1.5, height: frame.height / 2)
        
         QRView.alpha = 0
-        QRView.image = generateQRCode(from: "www.facebook.com.br")
+        QRView.image = generateQRCode(from: id)
         let blurEffectView = blur()
         
         blurEffectView.alpha = 0

@@ -63,11 +63,12 @@ class GroupsViewController: UIViewController {
             if let destinationController = destinationNavigationController.viewControllers.first as? AddNewGroupViewController {
                 destinationController.delegate = self
             }
-            if let destinationController = destinationNavigationController.viewControllers.first as? DetailViewController {
-                destinationController.room = sender as! Room
-            }
-            
         }
+        
+        if let destinationController = segue.destination as? DetailViewController {
+            destinationController.room = sender as? Room
+        }
+
     }
     
     @IBAction func didTapAddRoom(_ sender: Any) {
