@@ -580,14 +580,28 @@
                                     <action selector="didTapCancel:" destination="5qW-Hc-9LH" eventType="touchUpInside" id="OwW-jc-p78"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-1P-92K">
+                                <rect key="frame" x="50" y="196" width="275" height="275"/>
+                                <color key="backgroundColor" red="0.2898864847" green="0.73830837010000006" blue="0.27687504210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D0a-1P-92K" secondAttribute="height" multiplier="1:1" id="h80-qF-KbX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5eD-3Z-rEO" firstAttribute="leading" secondItem="JJl-gA-Pau" secondAttribute="leading" constant="16" id="6sH-ro-b18"/>
+                            <constraint firstItem="D0a-1P-92K" firstAttribute="leading" secondItem="JJl-gA-Pau" secondAttribute="leading" constant="50" id="L9p-k5-YcT"/>
+                            <constraint firstItem="JJl-gA-Pau" firstAttribute="trailing" secondItem="D0a-1P-92K" secondAttribute="trailing" constant="50" id="LGd-qb-2eJ"/>
+                            <constraint firstItem="D0a-1P-92K" firstAttribute="centerY" secondItem="XUh-ZS-7Ot" secondAttribute="centerY" id="Ohx-Fm-Gt1"/>
                             <constraint firstItem="5eD-3Z-rEO" firstAttribute="top" secondItem="JJl-gA-Pau" secondAttribute="top" id="SCB-B5-07N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JJl-gA-Pau"/>
                     </view>
+                    <connections>
+                        <outlet property="btCancel" destination="5eD-3Z-rEO" id="L0X-Wb-abW"/>
+                        <outlet property="vwFocous" destination="D0a-1P-92K" id="RAY-b0-fOQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyj-Za-5Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

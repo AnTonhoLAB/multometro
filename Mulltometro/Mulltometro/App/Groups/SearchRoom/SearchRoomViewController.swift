@@ -11,6 +11,9 @@ import AVFoundation
 
 class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{
     
+    @IBOutlet weak var btCancel: UIButton!
+    @IBOutlet weak var vwFocous: UIView!
+    
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
@@ -51,7 +54,14 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
+        
+        vwFocous.backgroundColor = .clear
+        vwFocous.layer.borderWidth = 2
+        vwFocous.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+
         view.layer.addSublayer(previewLayer)
+        view.addSubview(vwFocous)
+        view.bringSubviewToFront(btCancel)
         
         captureSession.startRunning()
     }
