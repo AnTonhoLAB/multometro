@@ -74,6 +74,10 @@ class GroupsViewController: UIViewController {
     @IBAction func didTapAddRoom(_ sender: Any) {
         performSegue(withIdentifier: R.segue.groupsViewController.toAddGroup, sender: nil)
     }
+    
+    @IBAction func didTapScanQR(_ sender: Any) {
+        performSegue(withIdentifier: R.segue.groupsViewController.toScanQR, sender: nil)
+    }
 }
 
 extension GroupsViewController: RegisterForNewGroup {

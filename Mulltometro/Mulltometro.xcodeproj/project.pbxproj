@@ -14,6 +14,7 @@
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
 		5E66B86D217C0BAA002BB3AF /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86C217C0BAA002BB3AF /* GroupCell.swift */; };
 		5E6BC3DF2180B2BD004DD9A7 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BC3DD2180AFC6004DD9A7 /* QRViewController.swift */; };
+		5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */; };
 		5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E972163815600AE8260 /* MulltometroUser.swift */; };
 		5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Fee.swift */; };
 		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
@@ -81,6 +82,7 @@
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
 		5E66B86C217C0BAA002BB3AF /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		5E6BC3DD2180AFC6004DD9A7 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomViewController.swift; sourceTree = "<group>"; };
 		5E6C7E972163815600AE8260 /* MulltometroUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUser.swift; sourceTree = "<group>"; };
 		5E6C7E99216388D100AE8260 /* Fee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fee.swift; sourceTree = "<group>"; };
 		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			path = DetailRoom;
 			sourceTree = "<group>";
 		};
+		5E6BC3E02180E368004DD9A7 /* SearchRoom */ = {
+			isa = PBXGroup;
+			children = (
+				5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */,
+			);
+			path = SearchRoom;
+			sourceTree = "<group>";
+		};
 		5E7FE6392177523D0029E035 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 				5E66B86C217C0BAA002BB3AF /* GroupCell.swift */,
 				5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */,
 				5E0AE3A2217FD22B00E49FA4 /* DetailRoom */,
+				5E6BC3E02180E368004DD9A7 /* SearchRoom */,
 				5EDAD568217922FE008E4609 /* AddRoom */,
 			);
 			path = Groups;
@@ -662,6 +673,7 @@
 				5E66B86D217C0BAA002BB3AF /* GroupCell.swift in Sources */,
 				5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */,
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
+				5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */,
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
 				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
 				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,
