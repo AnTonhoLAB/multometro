@@ -17,6 +17,8 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
+    var delegate: RegisterForNewGroup!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,8 +107,15 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
     func found(code: String) {
         print(code)
         
-        RoomRequester.addUserInRoom(roomId: code) { (res) in
-            
+        RoomRequester.enterRoom(roomId: code) {[weak self] (res) in
+            guard let self = self else { return }
+            switch res {
+            case .success(let room):
+                self.delegate.added(new: room)
+                self.dismiss(animated: true, completion: nil)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     

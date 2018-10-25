@@ -68,6 +68,10 @@ class GroupsViewController: UIViewController {
         if let destinationController = segue.destination as? DetailViewController {
             destinationController.room = sender as? Room
         }
+        
+        if let destinationController = segue.destination as? SearchRoomViewController {
+            destinationController.delegate = self
+        }
 
     }
     

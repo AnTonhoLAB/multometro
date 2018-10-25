@@ -53,25 +53,41 @@ class RoomRequester {
                 } catch let error {
                     completion(.failure(error))
                 }
-                
-                if let err = err {
-                    completion(.failure(err))
-                }
+            }
+            
+            if let err = err {
+                completion(.failure(err))
             }
         }
     }
     
-    static func addUserInRoom(roomId: String, completion: @escaping (Response<Room>) -> Void) {
+    static func enterRoom(roomId: String, completion: @escaping (Response<Room>) -> Void) {
         let enterInRoom = ["uid": AuthManager.getCurrentUserId(), "roomId": roomId]
         
         function.httpsCallable("enterRoom").call(enterInRoom) { (res, err) in
-            print(res ?? "nao tem res")
-            print(err ?? "nao tem err")
+            if let res = res, let roomData = res.data as? [String: Any] {
+                do{
+                    let jsonData = try JSONSerialization.data(withJSONObject: roomData, options: [])
+                    let room = try JSONDecoder().decode(Room.self, from: jsonData)
+                    completion(.success(room))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
         }
         
     }
    
-  
+//    func jsonToObject<T>(from: HTTPSCallableResult, object: T ) where T: Decodable {
+//        guard let data = from.data as? [[String: Any]] else { return }
+//
+//        do {
+//            let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+//            let returnable = try JSONDecoder().decode(object.self, from: jsonData)
+//            return returnable
+//        } catch {
+//
+//        }
+//    }
     
-//    function.httpsCallable("addAUser").call(["name": "Giorgino", "idade": "23"]) { res, err in}
 }
