@@ -40,8 +40,6 @@ class RoomRequester {
         let user = ["adminId": AuthManager.getCurrentUserId()]
         
         function.httpsCallable("getAllRooms").call(user) { (res, err) in
-            print(res ?? "nao tem res")
-            print(err ?? "nao tem err")
             
             if let res = res {
                 
@@ -60,8 +58,17 @@ class RoomRequester {
                     completion(.failure(err))
                 }
             }
-            
         }
+    }
+    
+    static func addUserInRoom(roomId: String, completion: @escaping (Response<Room>) -> Void) {
+        let enterInRoom = ["uid": AuthManager.getCurrentUserId(), "roomId": roomId]
+        
+        function.httpsCallable("enterRoom").call(enterInRoom) { (res, err) in
+            print(res ?? "nao tem res")
+            print(err ?? "nao tem err")
+        }
+        
     }
    
   

@@ -104,6 +104,10 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
     
     func found(code: String) {
         print(code)
+        
+        RoomRequester.addUserInRoom(roomId: code) { (res) in
+            
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
