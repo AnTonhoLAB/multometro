@@ -74,6 +74,10 @@ class RoomRequester {
                     completion(.failure(error))
                 }
             }
+            
+            if let err = err {
+                completion(.failure(err))
+            }
         }
         
     }

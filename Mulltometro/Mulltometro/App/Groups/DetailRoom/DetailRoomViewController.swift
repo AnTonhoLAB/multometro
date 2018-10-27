@@ -16,7 +16,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapCreateQR))
+        
+        if let room = room {
+            navigationItem.title = room.nameRoom
+            
 
+        }
+        
     }
     
     @objc func didTapCreateQR() {
@@ -29,5 +35,11 @@ class DetailViewController: UIViewController {
                 destinationNavigationController.QRString = sender as? String
         }
         
+    }
+}
+
+extension UINavigationItem {
+    func backBarButtonItem() -> UIBarButtonItem {
+        return UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }

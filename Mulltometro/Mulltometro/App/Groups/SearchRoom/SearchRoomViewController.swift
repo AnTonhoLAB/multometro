@@ -114,7 +114,9 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
                 self.delegate.added(new: room)
                 self.dismiss(animated: true, completion: nil)
             case .failure(let error):
-                print(error)
+                self.alertSimpleMessage(message: error.localizedDescription, action: { action in
+                    self.captureSession.startRunning()
+                })
             }
         }
     }

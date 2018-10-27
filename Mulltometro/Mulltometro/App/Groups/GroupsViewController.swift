@@ -32,6 +32,7 @@ class GroupsViewController: UIViewController {
         super.viewDidLoad()
         if let navController = navigationController {
             navController.navigationBar.tintColor = .redSystem
+            self.navigationController?.navigationBar.backItem?.title = ""
         }
         
         RoomRequester.getAllRooms {[weak self] res in
@@ -49,7 +50,6 @@ class GroupsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if newAddFlag {
             newAddFlag.toggle()
             self.tableViewRooms.beginUpdates()
