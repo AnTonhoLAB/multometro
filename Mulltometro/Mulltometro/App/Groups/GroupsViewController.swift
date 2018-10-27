@@ -32,6 +32,7 @@ class GroupsViewController: UIViewController {
         super.viewDidLoad()
         if let navController = navigationController {
             navController.navigationBar.tintColor = .redSystem
+            self.navigationController?.navigationBar.backItem?.title = ""
         }
         
         RoomRequester.getAllRooms {[weak self] res in
@@ -49,7 +50,6 @@ class GroupsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if newAddFlag {
             newAddFlag.toggle()
             self.tableViewRooms.beginUpdates()
@@ -68,11 +68,19 @@ class GroupsViewController: UIViewController {
         if let destinationController = segue.destination as? DetailViewController {
             destinationController.room = sender as? Room
         }
+        
+        if let destinationController = segue.destination as? SearchRoomViewController {
+            destinationController.delegate = self
+        }
 
     }
     
     @IBAction func didTapAddRoom(_ sender: Any) {
         performSegue(withIdentifier: R.segue.groupsViewController.toAddGroup, sender: nil)
+    }
+    
+    @IBAction func didTapScanQR(_ sender: Any) {
+        performSegue(withIdentifier: R.segue.groupsViewController.toScanQR, sender: nil)
     }
 }
 
