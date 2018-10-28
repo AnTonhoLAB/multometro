@@ -12,3 +12,7 @@ cometidas, tendo um demonstrativo mensal sobre suas penalidades.
 
 O aplicativo se destina a grupos que queiram controlar atrasos, faltas, mau comportamento e etc.. na tentativa 
 de diminuir estas ocorrências.
+
+Swift 4 
+iOS 11+
+XCode 10+
