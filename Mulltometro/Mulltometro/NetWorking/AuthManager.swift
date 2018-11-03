@@ -60,18 +60,4 @@ class AuthManager {
             }
         }
     }
-    
-    static func add() {
-        let datas = ["name": "George", "idade": "23"]
-        
-        function.httpsCallable("addAUser").call(["name": "Giorgino", "idade": "23"]) { res, err in
-            print("res ",res?.data ?? "nao tem res")
-            print("err", err ?? "nao tem err")
-        }
-        
-        function.httpsCallable("addAUser").call(datas) { res, err in
-            print("res ",res?.data ?? "nao tem res")
-            print("err", err ?? "nao tem err")
-        }
-    }
 }
