@@ -11,6 +11,8 @@ import Rswift
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var room: Room?
     
     override func viewDidLoad() {
