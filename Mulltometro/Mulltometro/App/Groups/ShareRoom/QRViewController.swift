@@ -55,7 +55,6 @@ class QRViewController: UIViewController {
     
     func generateQRCode() -> UIImage? {
         let data = QRString.data(using: String.Encoding.ascii)
-        
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
             let transform = CGAffineTransform(scaleX: 10, y: 10)
@@ -64,13 +63,11 @@ class QRViewController: UIViewController {
                 return UIImage(ciImage: output)
             }
         }
-        
         return nil
     }
     
     func blur() -> UIVisualEffectView {
         let blurEffect = UIBlurEffect(style:.dark)
-        
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
