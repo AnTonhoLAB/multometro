@@ -16,38 +16,43 @@ class Room: Codable {
     var fees: [Fee]?
     var users: [String]?
     var dueDate: Int!
+    var created: Date!
     
     init() {
         
     }
     
-    init(name: String, dueDate: Int) {
+    init(name: String, dueDate: Int, created: Date? = Date()) {
         self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.dueDate = dueDate
+        self.created = created
     }
     
-    init(likeUserTo name: String, fees: [Fee]?, dueDate: Int) {
+    init(likeUserTo name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
         self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
         self.users = [AuthManager.getCurrentUserId()]
+        self.created = created
     }
     
-    init(name: String, fees: [Fee]?, dueDate: Int) {
+    init(name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
         self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
+        self.created = created
     }
     
-    init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int ) {
+    init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
         self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.dueDate = dueDate
         self.fees = fees
         self.adminId = adminUid
         self.users = users
+        self.created = created
     }
 }

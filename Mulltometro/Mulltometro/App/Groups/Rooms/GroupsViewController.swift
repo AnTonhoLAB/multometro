@@ -115,7 +115,7 @@ extension GroupsViewController: UITableViewDataSource {
 extension GroupsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         performSegue(withIdentifier: R.segue.groupsViewController.toRoomDetail, sender: rooms[indexPath.row])
+         performSegue(withIdentifier: R.segue.groupsViewController.toRoomDetail, sender: rooms[(rooms.count - 1) - indexPath.row])
     }
     
 }
