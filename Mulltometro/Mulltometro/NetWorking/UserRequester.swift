@@ -24,4 +24,8 @@ class UserRequester {
             }
         }
     }
+    
+    class func createUser() {
+        
+    }
 }
