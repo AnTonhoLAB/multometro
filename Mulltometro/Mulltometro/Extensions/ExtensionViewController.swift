@@ -9,6 +9,14 @@
 import UIKit
 
 extension UIViewController {
+    
+    func alertSimpleWarning(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: R.string.localizable.ok(), style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func alertSimpleMessage(message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: R.string.localizable.ok(), style: .default, handler: nil)

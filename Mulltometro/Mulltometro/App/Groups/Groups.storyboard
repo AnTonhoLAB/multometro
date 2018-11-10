@@ -159,7 +159,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIK-Ur-31O">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIK-Ur-31O" customClass="DetailRoomFields" customModule="Mulltometro" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.68235294120000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,6 +170,7 @@
                         <viewLayoutGuide key="safeArea" id="446-3L-DHq"/>
                     </view>
                     <connections>
+                        <outlet property="detailRoomFields" destination="FIK-Ur-31O" id="pt6-zI-G9k"/>
                         <outlet property="tableView" destination="SNa-ph-tIk" id="dbh-P1-Ns5"/>
                         <segue destination="5Cm-gu-7oN" kind="presentation" identifier="toQRView" id="UAj-8t-cZL"/>
                     </connections>
@@ -441,7 +442,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SPv-4m-u1B">
                                                                     <rect key="frame" x="253" y="0.0" width="106" height="68.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-92-IjN">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-92-IjN">
                                                                             <rect key="frame" x="1" y="0.0" width="104.5" height="30.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

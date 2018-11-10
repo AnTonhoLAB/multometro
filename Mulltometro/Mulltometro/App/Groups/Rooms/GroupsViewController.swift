@@ -35,16 +35,20 @@ class GroupsViewController: UIViewController {
             self.navigationController?.navigationBar.backItem?.title = ""
         }
         
-        RoomRequester.getAllRooms {[weak self] res in
-            guard let self = self else { return }
-            
-            switch res {
-            case .success(let rooms):
-                self.rooms = rooms
-                self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
-            case .failure(_):
-                print("TODO")
+        if NetworkingManager.isConnected {
+            RoomRequester.getAllRooms {[weak self] res in
+                guard let self = self else { return }
+                
+                switch res {
+                case .success(let rooms):
+                    self.rooms = rooms
+                    self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
+                case .failure(_):
+                    self.alertSimpleWarning(title: "Error Connection", message: "Check your connection and return try!")
+                }
             }
+        } else {
+            self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!")
         }
     }
     

@@ -20,6 +20,7 @@
 		5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Fee.swift */; };
 		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
 		5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */; };
+		5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D0C2195F49000186390 /* NetworkingManager.swift */; };
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
 		5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6352176B8100029E035 /* RegisterViewController.swift */; };
 		5E7FE6382176B9940029E035 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FE6372176B9940029E035 /* Localizable.strings */; };
@@ -49,6 +50,8 @@
 		5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085D4215B06E300293516 /* LoginViewController.swift */; };
 		5ED085D7215B06F300293516 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED085D6215B06F300293516 /* Login.storyboard */; };
 		5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */; };
+		5EE430BA219255C200923BD6 /* DetailRoomFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE430B8219255C200923BD6 /* DetailRoomFields.swift */; };
+		5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE430B9219255C200923BD6 /* DetailRoomFields.xib */; };
 		5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */; };
 		CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */; };
 		E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */; };
@@ -89,6 +92,7 @@
 		5E6C7E99216388D100AE8260 /* Fee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fee.swift; sourceTree = "<group>"; };
 		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequester.swift; sourceTree = "<group>"; };
+		5E6D0D0C2195F49000186390 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E7FE6352176B8100029E035 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E7FE6372176B9940029E035 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		5ED085D4215B06E300293516 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ED085D6215B06F300293516 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
+		5EE430B8219255C200923BD6 /* DetailRoomFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoomFields.swift; sourceTree = "<group>"; };
+		5EE430B9219255C200923BD6 /* DetailRoomFields.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailRoomFields.xib; sourceTree = "<group>"; };
 		5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.debug.xcconfig"; sourceTree = "<group>"; };
 		922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mulltometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +168,7 @@
 		5E0AE3A2217FD22B00E49FA4 /* DetailRoom */ = {
 			isa = PBXGroup;
 			children = (
+				5EE430BC219255CD00923BD6 /* Fields */,
 				5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */,
 			);
 			path = DetailRoom;
@@ -319,6 +326,7 @@
 		5ED085C5215B001200293516 /* NetWorking */ = {
 			isa = PBXGroup;
 			children = (
+				5E6D0D0C2195F49000186390 /* NetworkingManager.swift */,
 				5ED085CB215B00E900293516 /* AuthManager.swift */,
 				5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */,
 			);
@@ -386,6 +394,15 @@
 				5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */,
 			);
 			path = AddRoom;
+			sourceTree = "<group>";
+		};
+		5EE430BC219255CD00923BD6 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				5EE430B9219255C200923BD6 /* DetailRoomFields.xib */,
+				5EE430B8219255C200923BD6 /* DetailRoomFields.swift */,
+			);
+			path = Fields;
 			sourceTree = "<group>";
 		};
 		5EE56AFC2177E5E6006CC532 /* Extensions */ = {
@@ -542,6 +559,7 @@
 				5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */,
 				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,
 				5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */,
+				5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +708,7 @@
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
 				5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */,
 				5E66B86D217C0BAA002BB3AF /* GroupCell.swift in Sources */,
+				5EE430BA219255C200923BD6 /* DetailRoomFields.swift in Sources */,
 				5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */,
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
 				5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */,
@@ -701,6 +720,7 @@
 				5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */,
 				5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */,
+				5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */,
 				5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */,
 				5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */,
 				5EC8976C217A7C0700C65CF9 /* AddFeeRegisterCell.swift in Sources */,

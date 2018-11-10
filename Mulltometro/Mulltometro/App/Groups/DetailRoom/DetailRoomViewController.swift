@@ -11,6 +11,7 @@ import Rswift
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var detailRoomFields: DetailRoomFields!
     @IBOutlet weak var tableView: UITableView!
     
     var room: Room?
@@ -22,7 +23,7 @@ class DetailViewController: UIViewController {
         if let room = room {
             navigationItem.title = room.nameRoom
             
-
+//            detailRoomFields.lbAdmin.text = "OPPPA"
         }
         
     }
