@@ -21,6 +21,10 @@
 		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
 		5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */; };
 		5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D0C2195F49000186390 /* NetworkingManager.swift */; };
+		5E6D0D0F219736CD00186390 /* UserRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D0E219736CD00186390 /* UserRequester.swift */; };
+		5E6D0D11219753D400186390 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D10219753D400186390 /* CoreDataManager.swift */; };
+		5E6D0D14219754F200186390 /* RegisterUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6D0D13219754F200186390 /* RegisterUser.storyboard */; };
+		5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D152197551800186390 /* RegisterUserViewController.swift */; };
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
 		5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6352176B8100029E035 /* RegisterViewController.swift */; };
 		5E7FE6382176B9940029E035 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FE6372176B9940029E035 /* Localizable.strings */; };
@@ -93,6 +97,10 @@
 		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequester.swift; sourceTree = "<group>"; };
 		5E6D0D0C2195F49000186390 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		5E6D0D0E219736CD00186390 /* UserRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequester.swift; sourceTree = "<group>"; };
+		5E6D0D10219753D400186390 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5E6D0D13219754F200186390 /* RegisterUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterUser.storyboard; sourceTree = "<group>"; };
+		5E6D0D152197551800186390 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E7FE6352176B8100029E035 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E7FE6372176B9940029E035 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -197,6 +205,15 @@
 				5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */,
 			);
 			path = SearchRoom;
+			sourceTree = "<group>";
+		};
+		5E6D0D12219754CB00186390 /* RegisterUser */ = {
+			isa = PBXGroup;
+			children = (
+				5E6D0D13219754F200186390 /* RegisterUser.storyboard */,
+				5E6D0D152197551800186390 /* RegisterUserViewController.swift */,
+			);
+			path = RegisterUser;
 			sourceTree = "<group>";
 		};
 		5E7FE6392177523D0029E035 /* Login */ = {
@@ -328,6 +345,7 @@
 			children = (
 				5E6D0D0C2195F49000186390 /* NetworkingManager.swift */,
 				5ED085CB215B00E900293516 /* AuthManager.swift */,
+				5E6D0D0E219736CD00186390 /* UserRequester.swift */,
 				5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */,
 			);
 			path = NetWorking;
@@ -350,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */,
+				5E6D0D10219753D400186390 /* CoreDataManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -358,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED085D3215B06CE00293516 /* Auth */,
+				5E6D0D12219754CB00186390 /* RegisterUser */,
 				5ED085D0215B059000293516 /* Main */,
 				5E92EA9F21624075000E0EE4 /* Groups */,
 				5E92EAA0216241FF000E0EE4 /* Statistics */,
@@ -555,6 +575,7 @@
 				5ED085D7215B06F300293516 /* Login.storyboard in Resources */,
 				5E92EAA6216242A6000E0EE4 /* Statistics.storyboard in Resources */,
 				5E7FE6382176B9940029E035 /* Localizable.strings in Resources */,
+				5E6D0D14219754F200186390 /* RegisterUser.storyboard in Resources */,
 				5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */,
 				5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */,
 				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,
@@ -703,6 +724,7 @@
 				5E85F14C215ECAD000918BA5 /* Response.swift in Sources */,
 				5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */,
 				5E6BC3DF2180B2BD004DD9A7 /* QRViewController.swift in Sources */,
+				5E6D0D11219753D400186390 /* CoreDataManager.swift in Sources */,
 				5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
@@ -714,10 +736,12 @@
 				5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */,
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
 				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
+				5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */,
 				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,
 				5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */,
 				5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */,
 				5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */,
+				5E6D0D0F219736CD00186390 /* UserRequester.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */,
 				5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */,
 				5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */,
