@@ -11,10 +11,17 @@ import Firebase
 import Rswift
 
 class UserRequester {
+    private static var function = Functions.functions()
     
-    class func configUser() {
+    class func configUser(completion: @escaping (Bool) -> Void) {
+        let uid = ["uid": AuthManager.getCurrentUserId()]
         
+         function.httpsCallable("setupUser").call(uid) { _, err in
+            if err != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
-    
-    
 }

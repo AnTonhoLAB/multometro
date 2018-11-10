@@ -39,14 +39,27 @@ class LoginViewController: UIViewController {
     
     func openApp() {
         guard let window = UIApplication.shared.keyWindow else { return }
-
-        let mainStoryboard: UIStoryboard = R.storyboard.main()
-        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
-        window.rootViewController = tabBarController
         
-        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = tabBarController
-        }, completion: nil)
+        UserRequester.configUser { haveAcc in
+            if haveAcc {
+                let mainStoryboard: UIStoryboard = R.storyboard.main()
+                guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
+                window.rootViewController = tabBarController
+                
+                UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                    window.rootViewController = tabBarController
+                }, completion: nil)
+                
+            } else {
+                let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
+                let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
+                
+                UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                    window.rootViewController = viewController
+                }, completion: nil)
+                
+            }
+        }
     }
     
     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
