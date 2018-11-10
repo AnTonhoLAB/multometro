@@ -10,12 +10,13 @@ import UIKit
 
 class DetailRoomFields: UIView {
     
-    @IBOutlet var contentView: DetailRoomFields!
+//    @IBOutlet var contentView: DetailRoomFields!
     @IBOutlet weak var lbAdmin: UILabel!
+    var roomFields: Room?
     
     override init( frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        commonInit() 
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +25,12 @@ class DetailRoomFields: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("DetailRoomFields", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        let bundle = Bundle.init(for: type(of: self))
+        let nib = UINib(nibName: "DetailRoomFields", bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        view.frame = bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        addSubview(view)
     }
 }
