@@ -12,6 +12,7 @@ class Room: Codable {
     
     var id: String?
     var adminId: String!
+    var adminName: String!
     var nameRoom: String!
     var fees: [Fee]?
     var users: [String]?

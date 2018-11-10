@@ -22,10 +22,9 @@ class DetailViewController: UIViewController {
         
         if let room = room {
             navigationItem.title = room.nameRoom
-            
-//            detailRoomFields.lbAdmin.text = "OPPPA"
+            detailRoomFields.roomFields = room
+            detailRoomFields.setupFields()
         }
-        
     }
     
     @objc func didTapCreateQR() {
