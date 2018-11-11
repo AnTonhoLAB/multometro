@@ -21,4 +21,10 @@ extension UIView {
         roundedCornerColor(radius: frame.size.height/2.0)
     }
     
+    func circleView(_ border: CGFloat = 0) {
+        layer.cornerRadius = frame.height / 2
+        clipsToBounds = true
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = border
+    }
 }
