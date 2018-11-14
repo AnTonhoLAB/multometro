@@ -27,19 +27,21 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gqn-Av-umP">
                                                 <rect key="frame" x="80" y="-133.66666666666666" width="214" height="214"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-58-QMN">
-                                                        <rect key="frame" x="5" y="5" width="204" height="204"/>
-                                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orK-nW-OPc">
+                                                        <rect key="frame" x="10" y="10" width="194" height="194"/>
                                                         <state key="normal" image="addImage"/>
+                                                        <connections>
+                                                            <action selector="didTapAddPhoto:" destination="kYf-LA-l36" eventType="touchUpInside" id="I0b-jd-ouV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="fEk-58-QMN" secondAttribute="bottom" constant="5" id="BFR-mP-sdD"/>
                                                     <constraint firstAttribute="width" secondItem="Gqn-Av-umP" secondAttribute="height" multiplier="1:1" id="C6x-dc-VAe"/>
-                                                    <constraint firstItem="fEk-58-QMN" firstAttribute="top" secondItem="Gqn-Av-umP" secondAttribute="top" constant="5" id="Djp-3O-SYR"/>
-                                                    <constraint firstAttribute="trailing" secondItem="fEk-58-QMN" secondAttribute="trailing" constant="5" id="thx-bp-rSk"/>
-                                                    <constraint firstItem="fEk-58-QMN" firstAttribute="leading" secondItem="Gqn-Av-umP" secondAttribute="leading" constant="5" id="ydn-xt-h2B"/>
+                                                    <constraint firstItem="orK-nW-OPc" firstAttribute="top" secondItem="Gqn-Av-umP" secondAttribute="top" constant="10" id="FFr-20-ioL"/>
+                                                    <constraint firstItem="orK-nW-OPc" firstAttribute="leading" secondItem="Gqn-Av-umP" secondAttribute="leading" constant="10" id="WYi-zk-CPm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="orK-nW-OPc" secondAttribute="bottom" constant="10" id="fwC-FJ-QFD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="orK-nW-OPc" secondAttribute="trailing" constant="10" id="lJS-yi-kDE"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-oO-hfg">
@@ -119,12 +121,12 @@
                         <outlet property="constraintToBot" destination="fvE-mj-4dk" id="YRG-a2-w59"/>
                         <outlet property="fieldsView" destination="lF4-zT-FO3" id="Wfa-EF-mE7"/>
                         <outlet property="iconView" destination="Gqn-Av-umP" id="t3B-md-1uM"/>
-                        <outlet property="imageIconButton" destination="fEk-58-QMN" id="ptg-RR-yCC"/>
+                        <outlet property="imageIconButton" destination="orK-nW-OPc" id="3GB-2M-OaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okm-8t-fMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-21.600000000000001" y="112.89355322338831"/>
+            <point key="canvasLocation" x="-21.739130434782609" y="112.50000000000001"/>
         </scene>
     </scenes>
     <resources>

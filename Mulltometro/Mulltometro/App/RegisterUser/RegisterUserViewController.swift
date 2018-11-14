@@ -25,6 +25,7 @@ class RegisterUserViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        fieldsView.bringSubviewToFront(imageIconButton)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +33,10 @@ class RegisterUserViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         iconView.circleView()
         imageIconButton.circleView(2)
+    }
+    @IBAction func didTapAddPhoto(_ sender: Any) {
+        
+        print("TAP")
     }
     
     @objc func keyboardWillShow(sender: NSNotification) {

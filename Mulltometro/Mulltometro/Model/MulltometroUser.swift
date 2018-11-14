@@ -13,6 +13,7 @@ class MulltometroUser: Codable {
     var id: String?
     var name: String!
     var email: String!
+    var photoURL: String?
     var rooms: [String]?
     var taxes: [Fee]?
     
