@@ -54,11 +54,21 @@ class RegisterUserViewController: UIViewController {
     }
     
     @IBAction func didTapSaveUser(_ sender: Any) {
+       saveUser()
+    }
+    
+    func saveUser() {
         let m = MulltometroUser()
         m.name = nameTextField.text
         
-        UserRequester.createUser(with: m, and: (self.imageIconButton.imageView?.image)!) { (us) in
-            print(us)
+        UserRequester.createUser(with: m, and: (self.imageIconButton.imageView?.image)!) { [weak self] in
+            guard let self = self else { return }
+            switch($0) {
+            case .success(let user):
+                break
+            case .errorOnImage(let responseError), .errorOnUser(let responseError), .error(let responseError):
+                self.alertSimpleWarning(title: "ERROR", message: responseError.localizedDescription)
+            }
         }
     }
     
