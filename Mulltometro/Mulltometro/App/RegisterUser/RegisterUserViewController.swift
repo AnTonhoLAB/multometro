@@ -26,6 +26,12 @@ class RegisterUserViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.roundedCornerColor(radius: 8)
+        }
+    }
+    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -47,7 +53,14 @@ class RegisterUserViewController: UIViewController {
         choosePhoto()
     }
     
-    
+    @IBAction func didTapSaveUser(_ sender: Any) {
+        let m = MulltometroUser()
+        m.name = nameTextField.text
+        
+        UserRequester.createUser(with: m, and: (self.imageIconButton.imageView?.image)!) { (us) in
+            print(us)
+        }
+    }
     
     func choosePhoto() {
         let alertController = UIAlertController(title: nil, message: R.string.localizable.chosePhoto(), preferredStyle: .actionSheet)
@@ -70,7 +83,6 @@ class RegisterUserViewController: UIViewController {
         loadImageFrom(sourceType: .savedPhotosAlbum)
     }
    
-    
     func loadImageFromCamera(alertAction: UIAlertAction) {
         loadImageFrom(sourceType: .camera)
     }

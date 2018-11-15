@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
             
             switch $0 {
             case .success(_):
-                self.openApp()
+                self.checkUser()
             case .failure(let err):
                 print(err)
             }
@@ -37,11 +37,12 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "toRegister", sender: nil)
     }
     
-    func openApp() {
-        guard let window = UIApplication.shared.keyWindow else { return }
-        
-        UserRequester.configUser { haveAcc in
-            if haveAcc {
+    func checkUser() {
+        UserRequester.checkUser { isCreated in
+            guard let window = UIApplication.shared.keyWindow else { return }
+            
+            if isCreated {
+                
                 let mainStoryboard: UIStoryboard = R.storyboard.main()
                 guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
                 window.rootViewController = tabBarController
@@ -49,17 +50,20 @@ class LoginViewController: UIViewController {
                 UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
                     window.rootViewController = tabBarController
                 }, completion: nil)
-                
             } else {
-                let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
-                let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
-                
-                UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                    window.rootViewController = viewController
-                }, completion: nil)
-                
+              self.registerUser()
             }
         }
+    }
+    
+    func registerUser() {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
+        let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
+    
+        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = viewController
+        }, completion: nil)
     }
     
     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }

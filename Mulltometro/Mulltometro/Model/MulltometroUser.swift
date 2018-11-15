@@ -10,7 +10,7 @@ import Foundation
 
 class MulltometroUser: Codable {
    
-    var id: String?
+    var uid: String?
     var name: String!
     var email: String!
     var photoURL: String?
@@ -24,4 +24,7 @@ class MulltometroUser: Codable {
         self.taxes = taxes
     }
     
+    init() {
+        
+    }
 }

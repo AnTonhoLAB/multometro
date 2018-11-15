@@ -66,6 +66,9 @@
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="didTapSaveUser:" destination="kYf-LA-l36" eventType="touchUpInside" id="HKC-f4-HoP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -122,6 +125,7 @@
                         <outlet property="fieldsView" destination="lF4-zT-FO3" id="Wfa-EF-mE7"/>
                         <outlet property="iconView" destination="Gqn-Av-umP" id="t3B-md-1uM"/>
                         <outlet property="imageIconButton" destination="orK-nW-OPc" id="3GB-2M-OaJ"/>
+                        <outlet property="nameTextField" destination="S1O-HY-Azb" id="HVe-14-kBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okm-8t-fMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
