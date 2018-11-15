@@ -19,13 +19,20 @@ class RegisterUserViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var imageIconButton: UIButton!
+    @IBOutlet weak var imageIconButton: UIButton! {
+        didSet {
+            imageIconButton.imageView?.contentMode = .scaleAspectFill
+        }
+    }
+    
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         fieldsView.bringSubviewToFront(imageIconButton)
+        imagePicker.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,21 +41,69 @@ class RegisterUserViewController: UIViewController {
         iconView.circleView()
         imageIconButton.circleView(2)
     }
+    
     @IBAction func didTapAddPhoto(_ sender: Any) {
-        
-        print("TAP")
+        choosePhoto()
     }
     
+    
+    
+    func choosePhoto() {
+        let alertController = UIAlertController(title: nil, message: "Chose photo", preferredStyle: .actionSheet)
+        let actionGallery = UIAlertAction(title: "Gallery", style: .default, handler: { [weak self] in
+            guard let self = self else { return }
+            self.loadImageFromGallery(alertAction: $0) } )
+        let actionCamera = UIAlertAction(title: "Camera", style: .default,handler: { [weak self] in
+            guard let self = self else { return }
+            self.loadImageFromCamera(alertAction: $0) } )
+
+        
+        alertController.addAction(actionGallery)
+        alertController.addAction(actionCamera)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func loadImageFromGallery(alertAction: UIAlertAction) {
+        loadImageFrom(sourceType: .savedPhotosAlbum)
+    }
+   
+    
+    func loadImageFromCamera(alertAction: UIAlertAction) {
+        loadImageFrom(sourceType: .camera)
+    }
+    
+    func loadImageFrom(sourceType: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            
+            imagePicker.sourceType = sourceType
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+}
+
+extension RegisterUserViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage  {
+            dismiss(animated: true, completion: nil)
+            imageIconButton.setImage(image, for: .normal)
+        }
+        
+    }
+}
+
+// MARK: - Keyboard
+extension RegisterUserViewController {
     @objc func keyboardWillShow(sender: NSNotification) {
         let sizeToKeyboard = view.frame.maxY - fieldsView.frame.maxY
         if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let keyBoardheight = keyboardSize.height
             UIView.animate(withDuration: 0.8) { [weak self] in
                 guard let self = self else { return }
-                
                 let constant = (sizeToKeyboard - keyBoardheight)
                 self.constraintToBot.constant = Swift.abs(constant) + 40
-            
                 self.view.layoutIfNeeded()
             }
         }
