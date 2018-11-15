@@ -14,6 +14,11 @@ Success="Success";
 Error="Error";
 Ok="Ok";
 
+//RegisterUserViewController
+ChosePhoto="Chose Phote";
+Galery="Gallery";
+Camera="Camera";
+
 //NewRoomViewController
 RoomName="Room Name";
 WillParticipate="Will you participate?";

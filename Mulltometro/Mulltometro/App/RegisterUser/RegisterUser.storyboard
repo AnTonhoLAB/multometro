@@ -77,7 +77,7 @@
                                         <rect key="frame" x="100" y="132.5" width="175" height="175"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orK-nW-OPc">
-                                                <rect key="frame" x="10" y="10" width="155" height="155"/>
+                                                <rect key="frame" x="5" y="5" width="165" height="165"/>
                                                 <state key="normal" image="addImage"/>
                                                 <connections>
                                                     <action selector="didTapAddPhoto:" destination="kYf-LA-l36" eventType="touchUpInside" id="I0b-jd-ouV"/>
@@ -86,11 +86,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="orK-nW-OPc" secondAttribute="trailing" constant="5" id="4hF-yG-Lji"/>
                                             <constraint firstAttribute="width" secondItem="Gqn-Av-umP" secondAttribute="height" multiplier="1:1" id="Cop-cn-cCE"/>
-                                            <constraint firstItem="orK-nW-OPc" firstAttribute="top" secondItem="Gqn-Av-umP" secondAttribute="top" constant="10" id="Cre-ZO-nXL"/>
-                                            <constraint firstAttribute="bottom" secondItem="orK-nW-OPc" secondAttribute="bottom" constant="10" id="YR3-g2-gjR"/>
-                                            <constraint firstItem="orK-nW-OPc" firstAttribute="leading" secondItem="Gqn-Av-umP" secondAttribute="leading" constant="10" id="ffk-2L-gRg"/>
-                                            <constraint firstAttribute="trailing" secondItem="orK-nW-OPc" secondAttribute="trailing" constant="10" id="uhk-if-xV8"/>
+                                            <constraint firstAttribute="bottom" secondItem="orK-nW-OPc" secondAttribute="bottom" constant="5" id="YId-NM-lZJ"/>
+                                            <constraint firstItem="orK-nW-OPc" firstAttribute="top" secondItem="Gqn-Av-umP" secondAttribute="top" constant="5" id="gUJ-TS-hPA"/>
+                                            <constraint firstItem="orK-nW-OPc" firstAttribute="leading" secondItem="Gqn-Av-umP" secondAttribute="leading" constant="5" id="zLp-Ww-ARa"/>
                                         </constraints>
                                     </view>
                                 </subviews>

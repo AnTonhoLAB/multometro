@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class RegisterUserViewController: UIViewController {
     
@@ -49,17 +50,18 @@ class RegisterUserViewController: UIViewController {
     
     
     func choosePhoto() {
-        let alertController = UIAlertController(title: nil, message: "Chose photo", preferredStyle: .actionSheet)
-        let actionGallery = UIAlertAction(title: "Gallery", style: .default, handler: { [weak self] in
+        let alertController = UIAlertController(title: nil, message: R.string.localizable.chosePhoto(), preferredStyle: .actionSheet)
+        let actionGallery = UIAlertAction(title: R.string.localizable.galery(), style: .default, handler: { [weak self] in
             guard let self = self else { return }
             self.loadImageFromGallery(alertAction: $0) } )
-        let actionCamera = UIAlertAction(title: "Camera", style: .default,handler: { [weak self] in
+        let actionCamera = UIAlertAction(title: R.string.localizable.camera(), style: .default,handler: { [weak self] in
             guard let self = self else { return }
             self.loadImageFromCamera(alertAction: $0) } )
-
+        let cancel = UIAlertAction(title: R.string.localizable.cancel(), style: .destructive, handler: nil)
         
         alertController.addAction(actionGallery)
         alertController.addAction(actionCamera)
+        alertController.addAction(cancel)
         
         present(alertController, animated: true, completion: nil)
     }
