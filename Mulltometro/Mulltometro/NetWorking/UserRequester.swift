@@ -20,13 +20,12 @@ class UserRequester {
             if err == nil {
                 completion(false)
             } else { //has error
-                print(err)
                 completion(true) // is first time in app
             }
         }
     }
     
-    class func createUser(with user: MulltometroUser, and image: UIImage,completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
+    class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")
         let reference = Storage.storage().reference()
