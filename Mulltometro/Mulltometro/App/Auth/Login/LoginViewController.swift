@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     @IBAction func btLogin(_ sender: Any) {
         guard let tfEmail = tfEmail.text, let tfPassword = tfPassword.text else { return }
 
-        self.showLoader(nil)
+        self.showLoader()
         AuthManager.login(user: tfEmail, password: tfPassword) { [weak self] in
             guard let self = self else { return }
             switch $0 {

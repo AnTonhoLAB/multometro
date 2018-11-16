@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailRoomFields" customModule="Mulltometro" customModuleProvider="target">
             <connections>
                 <outlet property="lbAdmin" destination="P3y-ll-UGg" id="ULi-Uq-m0I"/>
+                <outlet property="lbDueDate" destination="mJK-i7-Ndp" id="xua-RM-fhz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

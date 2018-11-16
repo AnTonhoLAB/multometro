@@ -34,7 +34,7 @@ class GroupsViewController: UIViewController {
             navController.navigationBar.tintColor = .redSystem
             self.navigationController?.navigationBar.backItem?.title = ""
         }
-        
+        showLoader()
         if NetworkingManager.isConnected {
             RoomRequester.getAllRooms {[weak self] res in
                 guard let self = self else { return }
@@ -46,6 +46,7 @@ class GroupsViewController: UIViewController {
                 case .failure(_):
                     self.alertSimpleWarning(title: "Error Connection", message: "Check your connection and return try!", action: nil)
                 }
+                self.dismissLoader()
             }
         } else {
             self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
@@ -54,12 +55,13 @@ class GroupsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if newAddFlag {
-            newAddFlag.toggle()
-            self.tableViewRooms.beginUpdates()
-            self.tableViewRooms.insertRows(at: [IndexPath(item: 0, section: 0)], with: .automatic)
-            self.tableViewRooms.endUpdates()
-        }
+        print("LOADING")
+//        if newAddFlag {
+//            newAddFlag.toggle()
+//            self.tableViewRooms.beginUpdates()
+//            self.tableViewRooms.insertRows(at: [IndexPath(item: 0, section: 0)], with: .automatic)
+//            self.tableViewRooms.endUpdates()
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,7 +78,6 @@ class GroupsViewController: UIViewController {
         if let destinationController = segue.destination as? SearchRoomViewController {
             destinationController.delegate = self
         }
-
     }
     
     @IBAction func didTapAddRoom(_ sender: Any) {
@@ -92,7 +93,7 @@ extension GroupsViewController: RegisterForNewGroup {
     func added(new group: Room) {
         newAddFlag.toggle()
         rooms.append(group)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
             guard let self = self else { return }
 
             self.tableViewRooms.beginUpdates()
@@ -124,6 +125,6 @@ extension GroupsViewController: UITableViewDelegate {
     
 }
 
-protocol RegisterForNewGroup {
+protocol RegisterForNewGroup: class {
     func added(new group: Room )
 }

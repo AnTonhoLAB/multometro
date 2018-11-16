@@ -106,7 +106,7 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
     
     func found(code: String) {
         print(code)
-        
+        showLoader()
         RoomRequester.enterRoom(roomId: code) {[weak self] (res) in
             guard let self = self else { return }
             switch res {
@@ -118,6 +118,7 @@ class SearchRoomViewController: UIViewController, AVCaptureMetadataOutputObjects
                     self.captureSession.startRunning()
                 })
             }
+            self.dismissLoader()
         }
     }
     

@@ -18,20 +18,21 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGR-sc-3bS">
                     <rect key="frame" x="100" y="275" width="175" height="117"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="0.74074272260273977" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="175" id="0tB-st-6zk"/>
                         <constraint firstAttribute="height" constant="117" id="Fwm-OY-Wql"/>
                     </constraints>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-9w-QCG">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-9w-QCG">
                     <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34808433219178081" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="qQt-9w-QCG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Wu-Nw-Lls"/>
+                <constraint firstItem="qQt-9w-QCG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1uo-az-duz"/>
                 <constraint firstItem="CGR-sc-3bS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6ej-wb-kj3"/>
                 <constraint firstItem="CGR-sc-3bS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V2F-Zp-uoy"/>
             </constraints>
