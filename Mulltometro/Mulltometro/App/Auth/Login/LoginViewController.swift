@@ -10,8 +10,22 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var constraintToBot: NSLayoutConstraint!
+    
+    @IBOutlet weak var fieldsView: UIView! {
+        didSet {
+            fieldsView.roundedCornerColor(radius: roundRadius)
+        }
+    }
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var btEnter: UIButton! {
+        didSet {
+            btEnter.roundedCornerColor(radius: roundRadius)
+        }
+    }
+    
+    private let roundRadius: CGFloat = 8.0
     
     override func viewDidLoad() {
         super.viewDidLoad()

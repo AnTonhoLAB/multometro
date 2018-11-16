@@ -11,6 +11,11 @@ import Rswift
 
 class RegisterViewController: UIViewController {
     
+    @IBOutlet weak var fieldsView: UIView! {
+        didSet {
+            fieldsView.roundedCornerColor(radius: roundRadius)
+        }
+    }
     @IBOutlet weak var tfEmail: UITextField! {
         didSet{
             tfEmail.textAlignment = .center
@@ -29,6 +34,8 @@ class RegisterViewController: UIViewController {
             tfConfirmPassoword.placeholder = R.string.localizable.placeholderRepeatPassword()
         }
     }
+    
+    private let roundRadius: CGFloat = 8.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
