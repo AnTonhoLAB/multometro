@@ -138,9 +138,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNa-ph-tIk">
-                                <rect key="frame" x="0.0" y="253" width="375" height="350"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNa-ph-tIk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="OIW-IC-9UG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -167,6 +166,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.29411764709999999" green="0.72941176470000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SNa-ph-tIk" firstAttribute="leading" secondItem="446-3L-DHq" secondAttribute="leading" id="EBv-qd-Phz"/>
+                            <constraint firstItem="SNa-ph-tIk" firstAttribute="top" secondItem="446-3L-DHq" secondAttribute="top" id="VI8-BG-8yl"/>
+                            <constraint firstItem="SNa-ph-tIk" firstAttribute="trailing" secondItem="446-3L-DHq" secondAttribute="trailing" id="u4A-he-9Ac"/>
+                            <constraint firstItem="SNa-ph-tIk" firstAttribute="bottom" secondItem="446-3L-DHq" secondAttribute="bottom" id="wL5-oF-wOc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="446-3L-DHq"/>
                     </view>
                     <connections>

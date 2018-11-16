@@ -10,19 +10,21 @@ import Foundation
 
 class MulltometroUser: Codable {
    
-    var id: String?
+    var uid: String?
     var name: String!
     var email: String!
-    var type: String?
+    var photoURL: String?
     var rooms: [String]?
     var taxes: [Fee]?
     
-    init(name: String, email: String, type: String, rooms: [String], taxes: [Fee]) {
+    init(name: String, email: String, rooms: [String], taxes: [Fee]) {
         self.name = name
         self.email = email
-        self.type = type
         self.rooms = rooms
         self.taxes = taxes
     }
     
+    init() {
+        
+    }
 }

@@ -14,6 +14,18 @@ Success="Success";
 Error="Error";
 Ok="Ok";
 
+//RegisterUserViewController
+ChosePhoto="Chose Phote";
+Galery="Gallery";
+Camera="Camera";
+
+    //Errors
+    ImageError="Error while saving the image.";
+    UserError="Error while saving the user";
+
+    ImageErrorDescription="Your photo was not saved but you can try again later";
+    UserErrorDescription="Your user was not saved but you can try again later";
+
 //NewRoomViewController
 RoomName="Room Name";
 WillParticipate="Will you participate?";

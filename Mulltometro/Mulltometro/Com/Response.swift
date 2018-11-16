@@ -12,3 +12,30 @@ enum Response<T> {
     case success(T)
     case failure(Error)
 }
+
+enum SaveUserResponse<T> {
+    case success(T)
+    case errorOnImage(Error)
+    case errorOnUser(Error)
+    case error(Error)
+}
+
+enum SaveUserError {
+    case errorOnImage
+    case errorOnUser
+    case error
+}
+
+extension SaveUserError: LocalizedError {
+    
+    public var errorDescription: String? {
+        switch self {
+        case .errorOnImage:
+            return NSLocalizedString(R.string.localizable.imageError(), comment: R.string.localizable.imageErrorDescription())
+        case .errorOnUser:
+            return NSLocalizedString(R.string.localizable.userError(), comment: R.string.localizable.userErrorDescription())
+        case .error:
+            return NSLocalizedString(R.string.localizable.userError(), comment: R.string.localizable.userErrorDescription())
+        }
+    }
+}

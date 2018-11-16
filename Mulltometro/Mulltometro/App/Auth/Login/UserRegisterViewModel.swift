@@ -35,7 +35,6 @@ struct UserRegisterViewModel {
         if password != confirmPassword {
             throw ValidatingError.samePassword
         }
-        
     }
 }
 
