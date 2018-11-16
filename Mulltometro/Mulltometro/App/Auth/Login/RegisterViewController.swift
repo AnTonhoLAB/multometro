@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func didTapRegister(_ sender: Any) {
-    
+        showLoader()
         guard let email = tfEmail.text,
             let password = tfPassword.text,
             let confirmPassword = tfConfirmPassoword.text else { return }
@@ -60,6 +60,7 @@ class RegisterViewController: UIViewController {
                 case .failure(let error):
                     self.errorRegister(error: error)
                 }
+                self.dismissLoader()
             }
         } catch {
             errorRegister(error: error)

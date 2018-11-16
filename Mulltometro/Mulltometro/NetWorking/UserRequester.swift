@@ -20,13 +20,12 @@ class UserRequester {
             if err == nil {
                 completion(false)
             } else { //has error
-                print(err)
                 completion(true) // is first time in app
             }
         }
     }
     
-    class func createUser(with user: MulltometroUser, and image: UIImage,completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
+    class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")
         let reference = Storage.storage().reference()
@@ -39,6 +38,16 @@ class UserRequester {
         user.email = AuthManager.getCurrentEmail()
         
         var userRes: MulltometroUser?
+        
+        // SEMAFORO
+        
+        // SEMAFORO DOWN
+        // Fazer upload da imagem { // SE ERRO = Chamar Completion ELSE SEMAFORO UP }
+        // SEMAFORO DOWN
+        // Criar usuário { // SE ERRO = Chamar Completion ELSE SEMAFORO UP}
+        
+        //SEMAFORO DOWN
+        // Chamar completion
         
         if let uploadData = image.jpegData(compressionQuality: 0.5){
             storageRef.putData(uploadData, metadata: nil, completion: { metadata, err in

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
+		5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA73219F32E80005FA43 /* LoadingView.xib */; };
+		5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA75219F32FD0005FA43 /* LoadingView.swift */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E26A256218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
@@ -84,6 +86,8 @@
 		49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.release.xcconfig"; sourceTree = "<group>"; };
 		541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
+		5E01AA73219F32E80005FA43 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		5E01AA75219F32FD0005FA43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E01AA72219F32C20005FA43 /* LoadingIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				5E01AA73219F32E80005FA43 /* LoadingView.xib */,
+				5E01AA75219F32FD0005FA43 /* LoadingView.swift */,
+			);
+			path = LoadingIndicator;
+			sourceTree = "<group>";
+		};
 		5E0AE3A2217FD22B00E49FA4 /* DetailRoom */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +335,7 @@
 		5ED085C3215AFFCC00293516 /* Com */ = {
 			isa = PBXGroup;
 			children = (
+				5E01AA72219F32C20005FA43 /* LoadingIndicator */,
 				5E85F14F215ED2A300918BA5 /* ValidatingError.swift */,
 				5E85F14B215ECAD000918BA5 /* Response.swift */,
 				5E92EA9B21607437000E0EE4 /* Strings.strings */,
@@ -579,6 +593,7 @@
 				5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */,
 				5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */,
 				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,
+				5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */,
 				5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */,
 				5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */,
 			);
@@ -737,6 +752,7 @@
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
 				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
 				5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */,
+				5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */,
 				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,
 				5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */,
 				5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */,

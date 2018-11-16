@@ -36,7 +36,6 @@ class DetailViewController: UIViewController {
         if let destinationNavigationController = segue.destination as? QRViewController{
                 destinationNavigationController.QRString = sender as? String
         }
-        
     }
 }
 

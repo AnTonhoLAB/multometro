@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="LoadingView" id="iN0-l3-epB" customClass="LoadingView" customModule="Mulltometro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGR-sc-3bS">
+                    <rect key="frame" x="100" y="275" width="175" height="117"/>
+                    <color key="backgroundColor" white="1" alpha="0.74074272260273977" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="175" id="0tB-st-6zk"/>
+                        <constraint firstAttribute="height" constant="117" id="Fwm-OY-Wql"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-9w-QCG">
+                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                    <color key="color" red="1" green="0.0" blue="0.056107677719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34808433219178081" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qQt-9w-QCG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Wu-Nw-Lls"/>
+                <constraint firstItem="qQt-9w-QCG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1uo-az-duz"/>
+                <constraint firstItem="CGR-sc-3bS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6ej-wb-kj3"/>
+                <constraint firstItem="CGR-sc-3bS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V2F-Zp-uoy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backGroundView" destination="CGR-sc-3bS" id="euc-AK-3D9"/>
+                <outlet property="loadingIndicator" destination="qQt-9w-QCG" id="tUD-Fp-eBt"/>
+            </connections>
+        </view>
+    </objects>
+</document>

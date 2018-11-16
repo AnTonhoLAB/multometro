@@ -35,14 +35,15 @@ class LoginViewController: UIViewController {
     @IBAction func btLogin(_ sender: Any) {
         guard let tfEmail = tfEmail.text, let tfPassword = tfPassword.text else { return }
 
+        self.showLoader()
         AuthManager.login(user: tfEmail, password: tfPassword) { [weak self] in
             guard let self = self else { return }
-            
             switch $0 {
             case .success(_):
                 self.checkUser()
             case .failure(let err):
-               self.alertSimpleWarning(title: "Error", message: err.localizedDescription)
+                self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
+                self.dismissLoader()
             }
         }
     }
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController {
     func checkUser() {
         UserRequester.checkUser { isFirstTimeInApp in
             guard let window = UIApplication.shared.keyWindow else { return }
-            
+            self.dismissLoader()
             if isFirstTimeInApp {
                 
                 let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()

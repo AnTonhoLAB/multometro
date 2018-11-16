@@ -12,6 +12,8 @@ class DetailRoomFields: UIView {
     
 //    @IBOutlet var contentView: DetailRoomFields!
     @IBOutlet weak var lbAdmin: UILabel!
+    @IBOutlet weak var lbDueDate: UILabel!
+    
     var roomFields: Room?
     
     override init( frame: CGRect) {
@@ -32,8 +34,6 @@ class DetailRoomFields: UIView {
         view.frame = bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
-        
-       
     }
     
     func setupFields() {
@@ -43,8 +43,7 @@ class DetailRoomFields: UIView {
             } else {
                 lbAdmin.text = room.adminId
             }
-            
+            lbDueDate.text = String(room.dueDate)
         }
     }
-
 }
