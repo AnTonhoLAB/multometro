@@ -29,6 +29,10 @@ class AuthManager {
         return Auth.auth().currentUser?.uid ?? ""
     }
     
+    static func getCurrentEmail() -> String {
+        return Auth.auth().currentUser?.email ?? ""
+    }
+    
     static func eraseLogData() {
         do {
             try Auth.auth().signOut()

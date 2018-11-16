@@ -18,33 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         AuthManager.configureService()
         
-//        guard let window = UIApplication.shared.keyWindow else { return true }
+//        let controller = R.storyboard.registerUser().instantiateViewController(withIdentifier : "RegisterUserViewController")
+//        self.window?.rootViewController = controller
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
+        if !launchedBefore  { //First time in app
+            AuthManager.eraseLogData()
+            UserDefaults.standard.set(true, forKey: R.string.strings.launchedBefore())
+        }
 
-//        let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
-//        let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
-//
-//        UIView.transition(with: window?, duration: 0.4, options: .transitionCrossDissolve, animations: {
-//            window?.rootViewController = viewController
-//        }, completion: nil)
-        
-        let controller = R.storyboard.registerUser().instantiateViewController(withIdentifier : "RegisterUserViewController")
-        self.window?.rootViewController = controller
-        
-        
-        
-//        let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
-//        if !launchedBefore  { //First time in app
-//            AuthManager.eraseLogData()
-//            UserDefaults.standard.set(true, forKey: R.string.strings.launchedBefore())
-//        }
-//
-//        if !AuthManager.isLogged() {
-//            let rootController = R.storyboard.login().instantiateViewController(withIdentifier: R.string.strings.loginIdentifier())
-//            self.window?.rootViewController = rootController
-//        }
-//
-//        //Apparece
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        if !AuthManager.isLogged() {
+            let rootController = R.storyboard.login().instantiateViewController(withIdentifier: R.string.strings.loginIdentifier())
+            self.window?.rootViewController = rootController
+        }
+
+        //Apparece
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         return true
     }

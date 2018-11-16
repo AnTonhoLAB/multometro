@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             case .success(_):
                 self.checkUser()
             case .failure(let err):
-                print(err)
+               self.alertSimpleWarning(title: "Error", message: err.localizedDescription)
             }
         }
     }
@@ -38,32 +38,33 @@ class LoginViewController: UIViewController {
     }
     
     func checkUser() {
-        UserRequester.checkUser { isCreated in
+        UserRequester.checkUser { isFirstTimeInApp in
             guard let window = UIApplication.shared.keyWindow else { return }
             
-            if isCreated {
+            if isFirstTimeInApp {
                 
-                let mainStoryboard: UIStoryboard = R.storyboard.main()
-                guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
-                window.rootViewController = tabBarController
+                let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
+                let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
                 
                 UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                    window.rootViewController = tabBarController
+                    window.rootViewController = viewController
                 }, completion: nil)
             } else {
-              self.registerUser()
+              self.openApp()
             }
         }
     }
     
-    func registerUser() {
+    func openApp() {
         guard let window = UIApplication.shared.keyWindow else { return }
-        let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
-        let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
-    
+        let mainStoryboard: UIStoryboard = R.storyboard.main()
+        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
+        window.rootViewController = tabBarController
+        
         UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = viewController
+            window.rootViewController = tabBarController
         }, completion: nil)
+        
     }
     
     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }

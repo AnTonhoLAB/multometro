@@ -53,6 +53,10 @@ class RegisterUserViewController: UIViewController {
         choosePhoto()
     }
     
+    @IBAction func didTapSkip(_ sender: Any) {
+        openApp()
+    }
+    
     @IBAction func didTapSaveUser(_ sender: Any) {
        saveUser()
     }
@@ -65,11 +69,22 @@ class RegisterUserViewController: UIViewController {
             guard let self = self else { return }
             switch($0) {
             case .success(let user):
-                break
+                self.openApp()
             case .errorOnImage(let responseError), .errorOnUser(let responseError), .error(let responseError):
                 self.alertSimpleWarning(title: "ERROR", message: responseError.localizedDescription)
             }
         }
+    }
+    
+    func openApp() {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let mainStoryboard: UIStoryboard = R.storyboard.main()
+        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
+        window.rootViewController = tabBarController
+        
+        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = tabBarController
+        }, completion: nil)
     }
     
     func choosePhoto() {
@@ -119,6 +134,7 @@ extension RegisterUserViewController: UINavigationControllerDelegate, UIImagePic
 }
 
 // MARK: - Keyboard
+
 extension RegisterUserViewController {
     @objc func keyboardWillShow(sender: NSNotification) {
         let sizeToKeyboard = view.frame.maxY - fieldsView.frame.maxY

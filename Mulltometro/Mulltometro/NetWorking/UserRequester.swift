@@ -16,11 +16,12 @@ class UserRequester {
     class func checkUser(completion: @escaping (Bool) -> Void) {
         let uid = ["uid": AuthManager.getCurrentUserId()]
         
-         function.httpsCallable("setupUser").call(uid) { _, err in
-            if err != nil {
+         function.httpsCallable("setupUser").call(uid) { res, err in
+            if err == nil {
                 completion(false)
-            } else {
-                completion(true)
+            } else { //has error
+                print(err)
+                completion(true) // is first time in app
             }
         }
     }
@@ -35,6 +36,7 @@ class UserRequester {
         var saveUserRes = 0
         user.photoURL = imageName
         user.uid = uid
+        user.email = AuthManager.getCurrentEmail()
         
         var userRes: MulltometroUser?
         
@@ -62,8 +64,8 @@ class UserRequester {
         let userToSave = user.dictionary
         function.httpsCallable("addUser").call(userToSave) { (res, err) in
             if err == nil {
-                let value = res!.data as! [String: Any]
-//
+                var value = res!.data as! [String: Any]
+                value["firstTime"] = false
                 let jsonData = try! JSONSerialization.data(withJSONObject: value, options: [])
                 userRes = try! JSONDecoder().decode(MulltometroUser.self, from: jsonData)
                 saveUserRes = 1
