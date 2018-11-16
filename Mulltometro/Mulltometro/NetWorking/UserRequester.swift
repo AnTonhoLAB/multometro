@@ -39,6 +39,16 @@ class UserRequester {
         
         var userRes: MulltometroUser?
         
+        // SEMAFORO
+        
+        // SEMAFORO DOWN
+        // Fazer upload da imagem { // SE ERRO = Chamar Completion ELSE SEMAFORO UP }
+        // SEMAFORO DOWN
+        // Criar usuário { // SE ERRO = Chamar Completion ELSE SEMAFORO UP}
+        
+        //SEMAFORO DOWN
+        // Chamar completion
+        
         if let uploadData = image.jpegData(compressionQuality: 0.5){
             storageRef.putData(uploadData, metadata: nil, completion: { metadata, err in
                 if err == nil {

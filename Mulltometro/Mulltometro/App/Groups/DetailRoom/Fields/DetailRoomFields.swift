@@ -32,8 +32,6 @@ class DetailRoomFields: UIView {
         view.frame = bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
-        
-       
     }
     
     func setupFields() {
@@ -43,8 +41,6 @@ class DetailRoomFields: UIView {
             } else {
                 lbAdmin.text = room.adminId
             }
-            
         }
     }
-
 }

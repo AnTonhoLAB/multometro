@@ -10,10 +10,10 @@ import UIKit
 
 extension UIViewController {
     
-    func alertSimpleWarning(title: String, message: String) {
+    func alertSimpleWarning(title: String, message: String, action:((UIAlertAction) -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: R.string.localizable.ok(), style: .default, handler: nil)
-        alertController.addAction(action)
+        let alertAction = UIAlertAction(title: R.string.localizable.ok(), style: .default, handler: action)
+        alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
     }
     

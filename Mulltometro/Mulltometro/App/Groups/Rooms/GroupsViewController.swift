@@ -44,11 +44,11 @@ class GroupsViewController: UIViewController {
                     self.rooms = rooms
                     self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
                 case .failure(_):
-                    self.alertSimpleWarning(title: "Error Connection", message: "Check your connection and return try!")
+                    self.alertSimpleWarning(title: "Error Connection", message: "Check your connection and return try!", action: nil)
                 }
             }
         } else {
-            self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!")
+            self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
         }
     }
     

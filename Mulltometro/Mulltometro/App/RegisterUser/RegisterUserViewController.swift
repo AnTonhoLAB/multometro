@@ -71,7 +71,7 @@ class RegisterUserViewController: UIViewController {
             case .success(let user):
                 self.openApp()
             case .errorOnImage(let responseError), .errorOnUser(let responseError), .error(let responseError):
-                self.alertSimpleWarning(title: "ERROR", message: responseError.localizedDescription)
+                self.alertSimpleWarning(title: "ERROR", message: responseError.localizedDescription, action: nil)
             }
         }
     }
