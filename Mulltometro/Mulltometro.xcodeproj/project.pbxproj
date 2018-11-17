@@ -31,6 +31,8 @@
 		5E6D0D11219753D400186390 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D10219753D400186390 /* CoreDataManager.swift */; };
 		5E6D0D14219754F200186390 /* RegisterUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6D0D13219754F200186390 /* RegisterUser.storyboard */; };
 		5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D152197551800186390 /* RegisterUserViewController.swift */; };
+		5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E755C1221A0A40500E405FB /* FeeCell.swift */; };
+		5E755C1521A0A40500E405FB /* FeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755C1321A0A40500E405FB /* FeeCell.xib */; };
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
 		5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6352176B8100029E035 /* RegisterViewController.swift */; };
 		5E7FE6382176B9940029E035 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FE6372176B9940029E035 /* Localizable.strings */; };
@@ -113,6 +115,8 @@
 		5E6D0D10219753D400186390 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5E6D0D13219754F200186390 /* RegisterUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterUser.storyboard; sourceTree = "<group>"; };
 		5E6D0D152197551800186390 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
+		5E755C1221A0A40500E405FB /* FeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeCell.swift; sourceTree = "<group>"; };
+		5E755C1321A0A40500E405FB /* FeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeCell.xib; sourceTree = "<group>"; };
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E7FE6352176B8100029E035 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E7FE6372176B9940029E035 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			children = (
 				5E01AA8A21A0861F0005FA43 /* UserCell.xib */,
 				5E01AA8921A0861F0005FA43 /* UserCell.swift */,
+				5E755C1321A0A40500E405FB /* FeeCell.xib */,
+				5E755C1221A0A40500E405FB /* FeeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */,
 				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,
 				5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */,
+				5E755C1521A0A40500E405FB /* FeeCell.xib in Resources */,
 				5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */,
 				5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */,
 				5E01AA8C21A0861F0005FA43 /* UserCell.xib in Resources */,
@@ -798,6 +805,7 @@
 				5EC8976C217A7C0700C65CF9 /* AddFeeRegisterCell.swift in Sources */,
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */,
+				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
 				5E26A256218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */,

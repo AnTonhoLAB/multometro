@@ -71,8 +71,7 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewData = tableViewData else { return UITableViewCell() }
     
-    
-    if indexPath.row == 0 { // "HEADER"
+        if indexPath.row == 0 { // "HEADER"
             let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
             cell.title = tableViewData[indexPath.section].title
             cell.setup()
@@ -80,14 +79,15 @@ extension DetailViewController: UITableViewDataSource {
         } else {
         
             if let fees = tableViewData[indexPath.section].sectionData as? [Fee] {
-             
+                let cell = Bundle.main.loadNibNamed(FeeCell.identifier, owner: self, options: nil)?.first as! FeeCell
+                cell.update(with: fees[indexPath.row - 1])
+                return cell
             }
         
             let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
             cell.setup()
             return cell
         }
-        
     }
 }
 
@@ -120,5 +120,4 @@ struct TableViewData {
     var opened: Bool!
     var title: String!
     var sectionData: [Any]?
-    
 }
