@@ -12,8 +12,6 @@
 		5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA75219F32FD0005FA43 /* LoadingView.swift */; };
 		5E01AA81219F684F0005FA43 /* ParticipantsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA7F219F684F0005FA43 /* ParticipantsGroupCell.swift */; };
 		5E01AA82219F684F0005FA43 /* ParticipantsGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA80219F684F0005FA43 /* ParticipantsGroupCell.xib */; };
-		5E01AA8621A052F70005FA43 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA8421A052F70005FA43 /* ParticipantCell.swift */; };
-		5E01AA8721A052F70005FA43 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA8521A052F70005FA43 /* ParticipantCell.xib */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E26A256218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
@@ -94,8 +92,6 @@
 		5E01AA75219F32FD0005FA43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5E01AA7F219F684F0005FA43 /* ParticipantsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsGroupCell.swift; sourceTree = "<group>"; };
 		5E01AA80219F684F0005FA43 /* ParticipantsGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantsGroupCell.xib; sourceTree = "<group>"; };
-		5E01AA8421A052F70005FA43 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
-		5E01AA8521A052F70005FA43 /* ParticipantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantCell.xib; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -199,18 +195,8 @@
 			children = (
 				5E01AA80219F684F0005FA43 /* ParticipantsGroupCell.xib */,
 				5E01AA7F219F684F0005FA43 /* ParticipantsGroupCell.swift */,
-				5E01AA8321A052B50005FA43 /* Participants */,
 			);
 			path = Headers;
-			sourceTree = "<group>";
-		};
-		5E01AA8321A052B50005FA43 /* Participants */ = {
-			isa = PBXGroup;
-			children = (
-				5E01AA8521A052F70005FA43 /* ParticipantCell.xib */,
-				5E01AA8421A052F70005FA43 /* ParticipantCell.swift */,
-			);
-			path = Participants;
 			sourceTree = "<group>";
 		};
 		5E0AE3A2217FD22B00E49FA4 /* DetailRoom */ = {
@@ -624,7 +610,6 @@
 				5E92EAB421627F57000E0EE4 /* Assets.xcassets in Resources */,
 				5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */,
 				5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */,
-				5E01AA8721A052F70005FA43 /* ParticipantCell.xib in Resources */,
 				5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,7 +767,6 @@
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
 				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
 				5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */,
-				5E01AA8621A052F70005FA43 /* ParticipantCell.swift in Sources */,
 				5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */,
 				5E01AA81219F684F0005FA43 /* ParticipantsGroupCell.swift in Sources */,
 				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,

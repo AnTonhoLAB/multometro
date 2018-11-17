@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+            tableView.delegate = self
             let nib = UINib(nibName: ParticipantsGroupCell.identifier, bundle: nil)
             tableView.register(nib, forCellReuseIdentifier: ParticipantsGroupCell.identifier)
             tableView.estimatedRowHeight = 180
@@ -54,19 +55,11 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell  = (tableView.dequeueReusableCell( withIdentifier:ParticipantsGroupCell.identifier ) as! ParticipantsGroupCell)
-//        if let room = room, let users = room.users {
-//            cell.users = users
-//        }
-//        cell.setup()
-
         let cell = Bundle.main.loadNibNamed(ParticipantsGroupCell.identifier, owner: self, options: nil)?.first as! ParticipantsGroupCell
             if let room = room, let users = room.users {
                 cell.users = users
             }
-            cell.setup()
-
+        cell.setup()
         return cell
     }
     
@@ -75,5 +68,11 @@ extension DetailViewController: UITableViewDataSource {
 extension UINavigationItem {
     func backBarButtonItem() -> UIBarButtonItem {
         return UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
+
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected")
     }
 }
