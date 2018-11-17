@@ -12,7 +12,16 @@ import Rswift
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailRoomFields: DetailRoomFields!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            let nib = UINib(nibName: ParticipantsGroupCell.identifier, bundle: nil)
+            tableView.register(nib, forCellReuseIdentifier: ParticipantsGroupCell.identifier)
+            tableView.estimatedRowHeight = 180
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.allowsSelection = true
+        }
+    }
     
     var room: Room?
     
@@ -37,6 +46,30 @@ class DetailViewController: UIViewController {
                 destinationNavigationController.QRString = sender as? String
         }
     }
+}
+
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell  = (tableView.dequeueReusableCell( withIdentifier:ParticipantsGroupCell.identifier ) as! ParticipantsGroupCell)
+//        if let room = room, let users = room.users {
+//            cell.users = users
+//        }
+//        cell.setup()
+
+        let cell = Bundle.main.loadNibNamed(ParticipantsGroupCell.identifier, owner: self, options: nil)?.first as! ParticipantsGroupCell
+            if let room = room, let users = room.users {
+                cell.users = users
+            }
+            cell.setup()
+
+        return cell
+    }
+    
 }
 
 extension UINavigationItem {
