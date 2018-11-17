@@ -16,15 +16,15 @@ class DetailViewController: UIViewController {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            let nib = UINib(nibName: ParticipantsGroupCell.identifier, bundle: nil)
-            tableView.register(nib, forCellReuseIdentifier: ParticipantsGroupCell.identifier)
+            let nib = UINib(nibName: HeaderCell.identifier, bundle: nil)
+            tableView.register(nib, forCellReuseIdentifier: HeaderCell.identifier)
             tableView.estimatedRowHeight = 180
             tableView.rowHeight = UITableView.automaticDimension
-            tableView.allowsSelection = true
-        }
+       }
     }
     
     var room: Room?
+    var tableViewData: [TableViewData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,8 @@ class DetailViewController: UIViewController {
         
         if let room = room {
             navigationItem.title = room.nameRoom
+            tableViewData = [TableViewData(opened: false, title: "Participants", sectionData: room.users),
+                             TableViewData(opened: false,title: "Fees", sectionData: room.fees)]
             detailRoomFields.roomFields = room
             detailRoomFields.setupFields()
         }
@@ -50,19 +52,74 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableViewData?.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let tableViewData = tableViewData else { return 0 }
+        
+        if tableViewData[section].opened == true {
+            guard let sectionData = tableViewData[section].sectionData else { return 0}
+            return sectionData.count + 1
+        } else {
+            return 1
+        }
+        
+//        guard let room = room else { return 0 }
+//        switch section {
+//        case 0:
+//            guard let users = room.users else { return 0}
+//            return users.count
+//        default:
+//            guard let fees = room.fees else { return 0 }
+//            return fees.count
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed(ParticipantsGroupCell.identifier, owner: self, options: nil)?.first as! ParticipantsGroupCell
-            if let room = room, let users = room.users {
-                cell.users = users
+        
+        if indexPath.row == 0 {
+            let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
+            if let tableViewData = tableViewData {
+                
+                cell.title = tableViewData[indexPath.section].title
+                
             }
-        cell.setup()
-        return cell
+            cell.setup()
+            return cell
+        } else {
+        
+            let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
+            if let tableViewData = tableViewData {
+                cell.title = "o que o titulo mandar"
+            }
+            cell.setup()
+            return cell
+        }
+        
     }
     
+}
+
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        guard var tableViewData = tableViewData else { return }
+    
+        if tableViewData[indexPath.section].opened {
+            tableViewData[indexPath.section].opened = false
+            self.tableViewData = tableViewData
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        } else {
+            tableViewData[indexPath.section].opened = true
+            self.tableViewData = tableViewData
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }
+    }
 }
 
 extension UINavigationItem {
@@ -71,8 +128,9 @@ extension UINavigationItem {
     }
 }
 
-extension DetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected")
-    }
+struct TableViewData {
+    var opened: Bool!
+    var title: String!
+    var sectionData: [Any]?
+    
 }
