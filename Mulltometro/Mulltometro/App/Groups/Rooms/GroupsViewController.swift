@@ -50,18 +50,12 @@ class GroupsViewController: UIViewController {
             }
         } else {
             self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
+            self.dismissLoader()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("LOADING")
-//        if newAddFlag {
-//            newAddFlag.toggle()
-//            self.tableViewRooms.beginUpdates()
-//            self.tableViewRooms.insertRows(at: [IndexPath(item: 0, section: 0)], with: .automatic)
-//            self.tableViewRooms.endUpdates()
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
