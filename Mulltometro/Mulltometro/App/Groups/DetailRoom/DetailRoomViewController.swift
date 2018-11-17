@@ -66,41 +66,29 @@ extension DetailViewController: UITableViewDataSource {
         } else {
             return 1
         }
-        
-//        guard let room = room else { return 0 }
-//        switch section {
-//        case 0:
-//            guard let users = room.users else { return 0}
-//            return users.count
-//        default:
-//            guard let fees = room.fees else { return 0 }
-//            return fees.count
-//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 0 {
+        guard let tableViewData = tableViewData else { return UITableViewCell() }
+    
+    
+    if indexPath.row == 0 { // "HEADER"
             let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
-            if let tableViewData = tableViewData {
-                
-                cell.title = tableViewData[indexPath.section].title
-                
-            }
+            cell.title = tableViewData[indexPath.section].title
             cell.setup()
             return cell
         } else {
         
-            let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
-            if let tableViewData = tableViewData {
-                cell.title = "o que o titulo mandar"
+            if let fees = tableViewData[indexPath.section].sectionData as? [Fee] {
+             
             }
+        
+            let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
             cell.setup()
             return cell
         }
         
     }
-    
 }
 
 extension DetailViewController: UITableViewDelegate {
