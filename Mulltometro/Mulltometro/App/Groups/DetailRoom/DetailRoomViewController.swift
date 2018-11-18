@@ -105,19 +105,22 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        guard var tableViewData = tableViewData else { return }
+       guard var tableViewData = tableViewData else { return }
     
-        if tableViewData[indexPath.section].opened {
-            tableViewData[indexPath.section].opened = false
-            self.tableViewData = tableViewData
-            let sections = IndexSet.init(integer: indexPath.section)
-            tableView.reloadSections(sections, with: .none)
-        } else {
-            tableViewData[indexPath.section].opened = true
-            self.tableViewData = tableViewData
-            let sections = IndexSet.init(integer: indexPath.section)
-            tableView.reloadSections(sections, with: .none)
-        }
+       if indexPath.row == 0 {
+       
+          if tableViewData[indexPath.section].opened {
+             tableViewData[indexPath.section].opened = false
+             self.tableViewData = tableViewData
+             let sections = IndexSet.init(integer: indexPath.section)
+             tableView.reloadSections(sections, with: .none)
+          } else {
+             tableViewData[indexPath.section].opened = true
+             self.tableViewData = tableViewData
+             let sections = IndexSet.init(integer: indexPath.section)
+             tableView.reloadSections(sections, with: .none)
+          }
+       }
     }
 }
 
