@@ -138,10 +138,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIK-Ur-31O" customClass="DetailRoomFields" customModule="Mulltometro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIK-Ur-31O" customClass="DetailRoomFields" customModule="Mulltometro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.68235294120000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FIK-Ur-31O" secondAttribute="height" multiplier="3:1" id="PpJ-jY-lIK"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNa-ph-tIk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -157,7 +159,10 @@
                         <color key="tintColor" red="0.29411764709999999" green="0.72941176470000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="leading" secondItem="446-3L-DHq" secondAttribute="leading" id="EBv-qd-Phz"/>
+                            <constraint firstItem="FIK-Ur-31O" firstAttribute="top" secondItem="446-3L-DHq" secondAttribute="top" id="Ma9-5D-ACv"/>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="top" secondItem="446-3L-DHq" secondAttribute="top" id="VI8-BG-8yl"/>
+                            <constraint firstItem="FIK-Ur-31O" firstAttribute="leading" secondItem="446-3L-DHq" secondAttribute="leading" id="hsa-WQ-JzT"/>
+                            <constraint firstItem="FIK-Ur-31O" firstAttribute="trailing" secondItem="446-3L-DHq" secondAttribute="trailing" id="iWh-Po-dtR"/>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="trailing" secondItem="446-3L-DHq" secondAttribute="trailing" id="u4A-he-9Ac"/>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="bottom" secondItem="446-3L-DHq" secondAttribute="bottom" id="wL5-oF-wOc"/>
                         </constraints>
@@ -165,6 +170,7 @@
                     </view>
                     <connections>
                         <outlet property="detailRoomFields" destination="FIK-Ur-31O" id="pt6-zI-G9k"/>
+                        <outlet property="detailTransparent" destination="OIW-IC-9UG" id="ijK-fR-gOn"/>
                         <outlet property="tableView" destination="SNa-ph-tIk" id="dbh-P1-Ns5"/>
                         <segue destination="5Cm-gu-7oN" kind="presentation" identifier="toQRView" id="UAj-8t-cZL"/>
                     </connections>

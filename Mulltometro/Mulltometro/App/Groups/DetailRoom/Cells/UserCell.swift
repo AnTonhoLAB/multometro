@@ -9,6 +9,8 @@
 import UIKit
 
 class UserCell: UITableViewCell {
+    
+    static let identifier: String = "UserCell"
 
     @IBOutlet weak var lbUserName: UILabel!
     
@@ -25,10 +27,8 @@ class UserCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup() {
-        if let name = name {
-            lbUserName.text = name
-        }
+    func setup(with name: String) {
+        lbUserName.text = name
     }
     
 }

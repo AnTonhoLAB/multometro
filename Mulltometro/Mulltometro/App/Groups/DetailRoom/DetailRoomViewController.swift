@@ -12,6 +12,11 @@ import Rswift
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailRoomFields: DetailRoomFields!
+    @IBOutlet weak var detailTransparent: UIView! {
+        didSet {
+           detailTransparent.frame.size = detailRoomFields.frame.size
+        }
+    }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -80,7 +85,13 @@ extension DetailViewController: UITableViewDataSource {
         
             if let fees = tableViewData[indexPath.section].sectionData as? [Fee] {
                 let cell = Bundle.main.loadNibNamed(FeeCell.identifier, owner: self, options: nil)?.first as! FeeCell
-                cell.update(with: fees[indexPath.row - 1])
+                cell.setup(with: fees[indexPath.row - 1])
+                return cell
+            }
+        
+            if let users = tableViewData[indexPath.section].sectionData as? [String] {
+                let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
+                cell.setup(with: users[indexPath.row - 1])
                 return cell
             }
         
