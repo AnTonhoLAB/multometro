@@ -11,11 +11,10 @@ import Foundation
 class Room: Codable {
     
     var id: String?
-    var adminId: String!
-    var adminName: String!
+    var admin: MulltometroUser?
     var nameRoom: String!
     var fees: [Fee]?
-    var users: [String]?
+    var users: [MulltometroUser]?
     var dueDate: Int!
     var created: Date!
     
@@ -24,23 +23,23 @@ class Room: Codable {
     }
     
     init(name: String, dueDate: Int, created: Date? = Date()) {
-        self.adminId = AuthManager.getCurrentUserId()
+//        self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.dueDate = dueDate
         self.created = created
     }
     
     init(likeUserTo name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-        self.adminId = AuthManager.getCurrentUserId()
+//        self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
-        self.users = [AuthManager.getCurrentUserId()]
+//        self.users = [AuthManager.getCurrentUserId()]
         self.created = created
     }
     
     init(name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-        self.adminId = AuthManager.getCurrentUserId()
+//        self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
@@ -48,12 +47,12 @@ class Room: Codable {
     }
     
     init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
-        self.adminId = AuthManager.getCurrentUserId()
+//        self.adminId = AuthManager.getCurrentUserId()
         self.nameRoom = name
         self.dueDate = dueDate
         self.fees = fees
-        self.adminId = adminUid
-        self.users = users
+//        self.adminId = adminUid
+//        self.users = users
         self.created = created
     }
 }
