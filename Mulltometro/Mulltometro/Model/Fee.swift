@@ -18,6 +18,7 @@ class Fee: Codable {
     init(name: String, valuePerType: Int, valueType: String!, simbleType: String) {
         self.nameFee  = name
         self.valuePerType = valuePerType
+        self.valueType = valueType
         self.simbleType = simbleType
     }
     
