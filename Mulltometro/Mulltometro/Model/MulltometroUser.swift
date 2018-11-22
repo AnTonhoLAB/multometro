@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class MulltometroUser: Codable {
    
@@ -27,4 +28,15 @@ class MulltometroUser: Codable {
     init() {
         
     }
+    
+    func toCDObject() -> User {
+        let user: User = CDManager.Object()
+        user.email = self.email
+        user.uid = self.uid
+        user.firstTime = false
+        user.name = self.name
+        
+        return user
+    }
+    
 }

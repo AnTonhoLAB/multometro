@@ -13,6 +13,7 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserRequester.startSync()
         setup()
     }
     
