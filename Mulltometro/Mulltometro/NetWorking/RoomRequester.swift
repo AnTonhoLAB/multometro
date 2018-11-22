@@ -37,14 +37,12 @@ class RoomRequester {
     }
     
     static func getAllRooms(completion: @escaping(Response<[Room]>) -> Void) {
-//        let user = ["adminId": AuthManager.getCurrentUserId()]
                 let user = [
                             "email":AuthManager.getCurrentEmail(),
                             "name":AuthManager.getCurrentEmail(),
                             "firstTime": false,
                             "uid": AuthManager.getCurrentUserId()
                             ] as [String : Any]
-        
 
         function.httpsCallable("getAllRooms").call(user) { (res, err) in
 
@@ -85,57 +83,4 @@ class RoomRequester {
             }
         }
     }
-   
-//    func jsonToObject<T>(from: HTTPSCallableResult, object: T ) where T: Decodable {
-//        guard let data = from.data as? [[String: Any]] else { return }
-//
-//        do {
-//            let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
-//            let returnable = try JSONDecoder().decode(object.self, from: jsonData)
-//            return returnable
-//        } catch {
-//
-//        }
-//    }
-    
-//    static func getAllRooms(completion: @escaping(Response<[Room]>) -> Void) {
-//        let user = [
-//                    "email":AuthManager.getCurrentEmail(),
-//                    "name":AuthManager.getCurrentEmail(),
-//                    "firstTime": false,
-//                    "uid": AuthManager.getCurrentUserId()
-//                    ] as [String : Any]
-//
-//
-//        let ref  = Firestore.firestore().collection("room")
-//
-//        let query = ref.whereField("users", arrayContains: user)
-//
-//        query.getDocuments { (res, err) in
-//
-//
-//            if let res = res {
-//    //            let i = res.documents.map{ return $0.data()}
-//                let roomsData = res.documents.map{ return $0.data() } //as? [[String: Any]] else { return }
-//
-//                do {
-//                    let jsonData = try JSONSerialization.data(withJSONObject: roomsData, options: [])
-//                    let rooms = try JSONDecoder().decode([Room].self, from: jsonData)
-//
-//                    completion(.success(rooms))
-//                } catch let error {
-//                    completion(.failure(error))
-//                }
-//    //        }
-//
-//            }
-//
-//        }
-//
-//        let ref = Database.database().reference(withPath: "user")
-//
-//        var usersQuery = ref.queryOrderedByKey()
-//        usersQuery.whe
-//    }
-    
 }

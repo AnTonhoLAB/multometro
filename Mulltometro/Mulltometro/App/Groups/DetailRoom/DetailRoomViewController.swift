@@ -89,9 +89,9 @@ extension DetailViewController: UITableViewDataSource {
                 return cell
             }
         
-            if let users = tableViewData[indexPath.section].sectionData as? [String] {
+            if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-                cell.setup(with: users[indexPath.row - 1])
+                cell.setup(with: users[indexPath.row - 1].name)
                 return cell
             }
         
