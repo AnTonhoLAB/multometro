@@ -12,26 +12,22 @@ import Rswift
 class RegisterUserViewController: UIViewController {
     
     @IBOutlet weak var constraintToBot: NSLayoutConstraint!
-    
     @IBOutlet weak var fieldsView: UIView!   
     @IBOutlet weak var iconView: UIView! {
         didSet {
             iconView.backgroundColor = fieldsView.backgroundColor
         }
     }
-    
     @IBOutlet weak var imageIconButton: UIButton! {
         didSet {
             imageIconButton.imageView?.contentMode = .scaleAspectFill
         }
     }
-    
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.roundedCornerColor(radius: 8)
         }
     }
-    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -74,7 +70,6 @@ class RegisterUserViewController: UIViewController {
                 self.alertSimpleWarning(title: "ERROR", message: responseError.localizedDescription, action: nil)
                 self.dismissLoader()
             }
-            
         }
     }
     
