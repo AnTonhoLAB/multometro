@@ -10,6 +10,7 @@ import CoreData
 import UIKit
 
 enum ManagedType: String {
+    case user = "User"
     case person = "Person"
     case car = "Car"
 }

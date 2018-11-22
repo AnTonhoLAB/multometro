@@ -25,6 +25,37 @@ class UserRequester {
         }
     }
     
+    private static var timer = Timer()
+    class func startSync(){
+        syncUser()
+        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
+    }
+    
+    @objc private class func syncUser() {
+        let uid = ["uid": AuthManager.getCurrentUserId()]
+        function.httpsCallable("syncUser").call(uid) { res, _ in
+
+            if let res = res {
+                do {
+                    guard let value = res.data as? [String: Any] else { return }
+                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                    let user = try JSONDecoder().decode(MulltometroUser.self, from: jsonData)
+                    
+                    let userToSave = user.toCDObject()
+                    CDManager.saveThis(userToSave, .user, completionHandler: { (err) in
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                            syncUser()
+                        })
+                    })
+                } catch {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                        syncUser()
+                    })
+                }
+            }
+        }
+    }
+    
     class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")
@@ -70,7 +101,9 @@ class UserRequester {
         } else {
             imageRes = -1
         }
+        
         let userToSave = user.dictionary
+     
         function.httpsCallable("addUser").call(userToSave) { (res, err) in
             if err == nil {
                 var value = res!.data as! [String: Any]
@@ -93,4 +126,15 @@ class UserRequester {
             }
         }
     }
+}
+
+extension User {
+    
+//    func setData(name: String, email: String, uid: String, firstTime: Bool) {
+//        self.name = name
+//        self.email = email
+//        self.uid = uid
+//        self.firstTime = firstTime
+//    }
+    
 }
