@@ -19,7 +19,7 @@ class Room: Codable {
     var created: Date!
     
     init() {
-        
+ 
     }
     
     init(name: String, dueDate: Int, created: Date? = Date()) {
