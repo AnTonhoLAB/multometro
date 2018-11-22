@@ -37,13 +37,13 @@ class DetailRoomFields: UIView {
     }
     
     func setupFields() {
-        if let room = roomFields {
-            if room.adminId == AuthManager.getCurrentUserId() {
-                 lbAdmin.text = "You"
-            } else {
-                lbAdmin.text = room.adminId
-            }
-            lbDueDate.text = String(room.dueDate)
-        }
+//        if let room = roomFields {
+//            if room.adminId == AuthManager.getCurrentUserId() {
+//                 lbAdmin.text = "You"
+//            } else {
+//                lbAdmin.text = room.adminId
+//            }
+//            lbDueDate.text = String(room.dueDate)
+//        }
     }
 }
