@@ -13,18 +13,6 @@ import Rswift
 class UserRequester {
     private static var function = Functions.functions()
     
-    class func checkUser(completion: @escaping (Bool) -> Void) {
-        let uid = ["uid": AuthManager.getCurrentUserId()]
-        
-         function.httpsCallable("setupUser").call(uid) { res, err in
-            if err == nil {
-                completion(false)
-            } else { //has error
-                completion(true) // is first time in app
-            }
-        }
-    }
-    
     private static var timer = Timer()
     class func startSync(){
         syncUser()
@@ -34,7 +22,7 @@ class UserRequester {
     @objc private class func syncUser() {
         let uid = ["uid": AuthManager.getCurrentUserId()]
         function.httpsCallable("syncUser").call(uid) { res, _ in
-
+            
             if let res = res {
                 do {
                     guard let value = res.data as? [String: Any] else { return }
@@ -56,6 +44,18 @@ class UserRequester {
         }
     }
     
+    class func checkUser(completion: @escaping (Bool) -> Void) {
+        let uid = ["uid": AuthManager.getCurrentUserId()]
+        
+         function.httpsCallable("setupUser").call(uid) { res, err in
+            if err == nil {
+                completion(false)
+            } else { //has error
+                completion(true) // is first time in app
+            }
+        }
+    }
+
     class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")

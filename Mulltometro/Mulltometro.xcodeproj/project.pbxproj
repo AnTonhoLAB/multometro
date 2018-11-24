@@ -61,6 +61,7 @@
 		5ED085CC215B00E900293516 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085CB215B00E900293516 /* AuthManager.swift */; };
 		5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085D4215B06E300293516 /* LoginViewController.swift */; };
 		5ED085D7215B06F300293516 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED085D6215B06F300293516 /* Login.storyboard */; };
+		5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED462B721A86A730041EE23 /* ApplyFeeViewController.swift */; };
 		5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */; };
 		5EE430BA219255C200923BD6 /* DetailRoomFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE430B8219255C200923BD6 /* DetailRoomFields.swift */; };
 		5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE430B9219255C200923BD6 /* DetailRoomFields.xib */; };
@@ -151,6 +152,7 @@
 		5ED085CB215B00E900293516 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5ED085D4215B06E300293516 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ED085D6215B06F300293516 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5ED462B721A86A730041EE23 /* ApplyFeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyFeeViewController.swift; sourceTree = "<group>"; };
 		5EDAD5662178FAA9008E4609 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
 		5EE430B8219255C200923BD6 /* DetailRoomFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoomFields.swift; sourceTree = "<group>"; };
 		5EE430B9219255C200923BD6 /* DetailRoomFields.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailRoomFields.xib; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 		5E0E84AA218BEB4600A8157D /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
-				5E66B86C217C0BAA002BB3AF /* GroupCell.swift */,
+				5ED462B921A8A3EC0041EE23 /* Cells */,
 				5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */,
 			);
 			path = Rooms;
@@ -296,6 +298,7 @@
 				5E92EAA121624235000E0EE4 /* Groups.storyboard */,
 				5E0E84AA218BEB4600A8157D /* Rooms */,
 				5E0AE3A2217FD22B00E49FA4 /* DetailRoom */,
+				5ED462B621A869960041EE23 /* ApplyFee */,
 				5E0E84A9218BEAC600A8157D /* ShareRoom */,
 				5E6BC3E02180E368004DD9A7 /* SearchRoom */,
 				5EDAD568217922FE008E4609 /* AddRoom */,
@@ -451,6 +454,22 @@
 				5E7FE63A2177525F0029E035 /* Register */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		5ED462B621A869960041EE23 /* ApplyFee */ = {
+			isa = PBXGroup;
+			children = (
+				5ED462B721A86A730041EE23 /* ApplyFeeViewController.swift */,
+			);
+			path = ApplyFee;
+			sourceTree = "<group>";
+		};
+		5ED462B921A8A3EC0041EE23 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5E66B86C217C0BAA002BB3AF /* GroupCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5EDAD568217922FE008E4609 /* AddRoom */ = {
@@ -808,6 +827,7 @@
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
 				5E26A256218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
+				5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */,
 				5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
 				5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */,

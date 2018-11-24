@@ -27,6 +27,10 @@ class UserCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func didTapApplyFee(_ sender: Any) {
+        print("DID TA APPLY")
+    }
+    
     func setup(with name: String) {
         lbUserName.text = name
     }
