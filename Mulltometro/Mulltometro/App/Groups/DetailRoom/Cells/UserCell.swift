@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserCell: UITableViewCell {
     
     static let identifier: String = "UserCell"
 
     @IBOutlet weak var lbUserName: UILabel!
+    @IBOutlet weak var imageUser: UIImageView!
     
     var name: String?
     
@@ -31,8 +33,10 @@ class UserCell: UITableViewCell {
         print("DID TA APPLY")
     }
     
-    func setup(with name: String) {
+    func setup(with name: String, photoURL: String?) {
         lbUserName.text = name
+        print(photoURL)
+        let url = URL(string: "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/4/4/4/2/44426ec60227fed134090948322b475d.jpg")
+        imageUser.kf.setImage(with: url)
     }
-    
 }

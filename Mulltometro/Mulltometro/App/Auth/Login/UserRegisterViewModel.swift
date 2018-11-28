@@ -36,6 +36,34 @@ struct UserRegisterViewModel {
             throw ValidatingError.samePassword
         }
     }
+    
+    func onCadastrar(dados: Dados){
+        
+        do {
+            try valida(nome: dados.nome)
+            try valida(senha: dados.senha)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
+    func valida(nome: String) throws {
+        if nome.count < 3{
+            throw ValidatingError.invalidName
+        }
+    }
+    
+    func valida(senha: String) throws {
+        if senha.count < 6{
+            throw ValidatingError.invalidPassword
+        }
+    }
+}
+
+struct Dados {
+   var nome: String
+   var senha: String
 }
 
 

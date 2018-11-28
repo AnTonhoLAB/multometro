@@ -342,7 +342,7 @@
 			children = (
 				5EE56AFC2177E5E6006CC532 /* Extensions */,
 				5ED085C3215AFFCC00293516 /* Com */,
-				5ED085C5215B001200293516 /* NetWorking */,
+				5ED085C5215B001200293516 /* Networking */,
 				5ED085C7215B007500293516 /* Persistence */,
 				5ED085C4215B000B00293516 /* Model */,
 				5ED085C8215B00B100293516 /* App */,
@@ -391,7 +391,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5ED085C5215B001200293516 /* NetWorking */ = {
+		5ED085C5215B001200293516 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				5E6D0D0C2195F49000186390 /* NetworkingManager.swift */,
@@ -399,7 +399,7 @@
 				5E6D0D0E219736CD00186390 /* UserRequester.swift */,
 				5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */,
 			);
-			path = NetWorking;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		5ED085C6215B003B00293516 /* Supp */ = {
@@ -736,6 +736,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -751,6 +752,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
