@@ -15,45 +15,54 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="74" id="KGk-i7-Jjw" customClass="UserCell" customModule="Mulltometro" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="366" height="74"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="366" height="73.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ix-wT-n0i">
-                        <rect key="frame" x="16" y="27" width="294" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="aKP-Vd-5aU"/>
-                        </constraints>
+                        <rect key="frame" x="73" y="27.5" width="237" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spz-IX-8bc">
-                        <rect key="frame" x="318" y="19" width="40" height="40"/>
+                        <rect key="frame" x="318" y="19.5" width="40" height="40"/>
                         <color key="backgroundColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="H0T-Hh-Yrn"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="OLQ-WD-2A0"/>
-                            <constraint firstAttribute="height" constant="40" id="Rq7-aj-AvF"/>
                             <constraint firstAttribute="width" constant="40" id="bMA-Ku-xqC"/>
                         </constraints>
                         <state key="normal" title="M">
                             <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="didTapApplyFee:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NOW-F5-Q9G"/>
+                        </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ua-6m-8fm">
+                        <rect key="frame" x="5" y="5.5" width="56" height="65"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="0Ua-6m-8fm" secondAttribute="height" multiplier="56:65" id="8lT-Kp-STm"/>
+                            <constraint firstAttribute="height" constant="65" id="Wgi-ei-8VI"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7ix-wT-n0i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="1W0-tG-nae"/>
-                    <constraint firstItem="7ix-wT-n0i" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BoC-Ks-Upk"/>
+                    <constraint firstItem="0Ua-6m-8fm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="91Y-yT-Om1"/>
+                    <constraint firstItem="0Ua-6m-8fm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="AZW-Ts-AJe"/>
                     <constraint firstItem="spz-IX-8bc" firstAttribute="leading" secondItem="7ix-wT-n0i" secondAttribute="trailing" constant="8" id="Fus-PS-mhS"/>
-                    <constraint firstItem="7ix-wT-n0i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Rr9-Il-UKx"/>
+                    <constraint firstAttribute="bottom" secondItem="0Ua-6m-8fm" secondAttribute="bottom" constant="5" id="MkZ-3E-pPe"/>
+                    <constraint firstItem="7ix-wT-n0i" firstAttribute="leading" secondItem="0Ua-6m-8fm" secondAttribute="trailing" constant="12" id="MtZ-3x-2LY"/>
+                    <constraint firstItem="7ix-wT-n0i" firstAttribute="centerY" secondItem="0Ua-6m-8fm" secondAttribute="centerY" id="Rki-bZ-2D5"/>
+                    <constraint firstItem="0Ua-6m-8fm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Vbd-td-z2X"/>
                     <constraint firstItem="spz-IX-8bc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="VmU-yM-I65"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="spz-IX-8bc" secondAttribute="bottom" constant="8" id="cgB-jJ-ENg"/>
                     <constraint firstItem="spz-IX-8bc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="gpf-RA-54j"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="imageUser" destination="0Ua-6m-8fm" id="8hf-Nh-VXt"/>
                 <outlet property="lbUserName" destination="7ix-wT-n0i" id="ny1-dF-ZJh"/>
             </connections>
             <point key="canvasLocation" x="121.59999999999999" y="61.169415292353825"/>

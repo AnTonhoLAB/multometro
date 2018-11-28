@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ota-ZF-m3b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ota-ZF-m3b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +22,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="3YS-PP-cGc">
+                                    <rect key="frame" x="0.0" y="250" width="375" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyP-4r-Dgr">
+                                            <rect key="frame" x="20" y="10" width="335" height="60"/>
+                                            <color key="backgroundColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="2Iw-Lk-i4C"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Add Room"/>
+                                            <connections>
+                                                <action selector="didTapAddRoom:" destination="Ol8-h9-dQd" eventType="touchUpInside" id="knM-Ms-8SD"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="LyP-4r-Dgr" firstAttribute="leading" secondItem="3YS-PP-cGc" secondAttribute="leading" constant="20" id="3Pu-Ng-jcN"/>
+                                        <constraint firstAttribute="bottom" secondItem="LyP-4r-Dgr" secondAttribute="bottom" id="Mmx-fn-rIa"/>
+                                        <constraint firstAttribute="trailing" secondItem="LyP-4r-Dgr" secondAttribute="trailing" constant="20" id="TtY-gJ-8IS"/>
+                                        <constraint firstItem="LyP-4r-Dgr" firstAttribute="top" secondItem="3YS-PP-cGc" secondAttribute="top" constant="10" id="prG-ty-vjJ"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="222" id="gXK-94-KOE" customClass="GroupCell" customModule="Mulltometro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="222"/>
@@ -96,8 +121,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="b66-ez-ihi" firstAttribute="bottom" secondItem="27H-V1-9nF" secondAttribute="bottom" id="0yg-wR-CzY"/>
                             <constraint firstItem="b66-ez-ihi" firstAttribute="trailing" secondItem="27H-V1-9nF" secondAttribute="trailing" id="Be0-Ux-pyO"/>
-                            <constraint firstItem="b66-ez-ihi" firstAttribute="bottom" secondItem="27H-V1-9nF" secondAttribute="bottom" id="leG-LP-ZgM"/>
                             <constraint firstItem="27H-V1-9nF" firstAttribute="top" secondItem="b66-ez-ihi" secondAttribute="top" id="tIp-IO-8VD"/>
                             <constraint firstItem="27H-V1-9nF" firstAttribute="leading" secondItem="b66-ez-ihi" secondAttribute="leading" id="xTO-02-PgV"/>
                         </constraints>
@@ -105,21 +130,17 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="BkF-iK-66O">
                         <barButtonItem key="backBarButtonItem" title="ㅤㅤ ㅤㅤ ㅤㅤ " id="ijs-w8-1zC"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="V8F-tn-Ktz">
+                        <barButtonItem key="leftBarButtonItem" image="qr" id="V8F-tn-Ktz">
+                            <inset key="landscapeImageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                            <inset key="largeContentSizeImageInsets" minX="-2" minY="0.0" maxX="1" maxY="9"/>
                             <color key="tintColor" red="0.85191871640000005" green="0.2390201512" blue="0.19911435020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapScanQR:" destination="Ol8-h9-dQd" id="7Qq-pc-xmI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wp-0F-E2w">
-                            <color key="tintColor" red="1" green="0.25160612850000003" blue="0.1429654313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="didTapAddRoom:" destination="Ol8-h9-dQd" id="0Wu-BK-MQl"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btAddRoom" destination="0wp-0F-E2w" id="YxW-Fp-nYL"/>
+                        <outlet property="btAddRoom" destination="LyP-4r-Dgr" id="zze-Yu-adc"/>
                         <outlet property="tableViewRooms" destination="27H-V1-9nF" id="30z-rW-lpS"/>
                         <segue destination="H6o-NK-fJY" kind="presentation" identifier="toAddGroup" id="CBT-DR-JLz"/>
                         <segue destination="08v-Yb-8RH" kind="show" identifier="toRoomDetail" id="8DD-rs-m02"/>
@@ -159,12 +180,12 @@
                         <color key="tintColor" red="0.29411764709999999" green="0.72941176470000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="leading" secondItem="446-3L-DHq" secondAttribute="leading" id="EBv-qd-Phz"/>
+                            <constraint firstItem="446-3L-DHq" firstAttribute="bottom" secondItem="SNa-ph-tIk" secondAttribute="bottom" id="KDV-GO-Rss"/>
                             <constraint firstItem="FIK-Ur-31O" firstAttribute="top" secondItem="446-3L-DHq" secondAttribute="top" id="Ma9-5D-ACv"/>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="top" secondItem="446-3L-DHq" secondAttribute="top" id="VI8-BG-8yl"/>
                             <constraint firstItem="FIK-Ur-31O" firstAttribute="leading" secondItem="446-3L-DHq" secondAttribute="leading" id="hsa-WQ-JzT"/>
                             <constraint firstItem="FIK-Ur-31O" firstAttribute="trailing" secondItem="446-3L-DHq" secondAttribute="trailing" id="iWh-Po-dtR"/>
                             <constraint firstItem="SNa-ph-tIk" firstAttribute="trailing" secondItem="446-3L-DHq" secondAttribute="trailing" id="u4A-he-9Ac"/>
-                            <constraint firstItem="SNa-ph-tIk" firstAttribute="bottom" secondItem="446-3L-DHq" secondAttribute="bottom" id="wL5-oF-wOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="446-3L-DHq"/>
                     </view>
@@ -173,11 +194,27 @@
                         <outlet property="detailTransparent" destination="OIW-IC-9UG" id="ijK-fR-gOn"/>
                         <outlet property="tableView" destination="SNa-ph-tIk" id="dbh-P1-Ns5"/>
                         <segue destination="5Cm-gu-7oN" kind="presentation" identifier="toQRView" id="UAj-8t-cZL"/>
+                        <segue destination="rjH-b4-7lU" kind="presentation" identifier="toApplyFee" id="qOA-LJ-jf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGg-sT-q6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1892" y="547.37631184407803"/>
+        </scene>
+        <!--Apply Fee View Controller-->
+        <scene sceneID="SNu-04-Ae4">
+            <objects>
+                <viewController id="rjH-b4-7lU" customClass="ApplyFeeViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WRQ-Vf-Gvp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UU3-Tf-yem"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huN-kZ-XM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="1424"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wj9-y0-miG">
@@ -223,6 +260,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNX-dM-iVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="I9K-kU-p3q">
+                    <rect key="frame" x="0.0" y="0.0" width="368" height="301"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="Yvs-k0-C8N"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="2784.8000000000002" y="546.47676161919048"/>
         </scene>
@@ -574,7 +617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wW1-NG-oQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="-397"/>
+            <point key="canvasLocation" x="2785" y="-397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0SC-EV-LgL">
@@ -636,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyj-Za-5Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-1103"/>
+            <point key="canvasLocation" x="1892" y="-1265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="575-7T-VIL">
@@ -656,7 +699,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGx-dL-mxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-397"/>
+            <point key="canvasLocation" x="1892" y="-397"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="qr" width="30" height="30"/>
+    </resources>
 </document>

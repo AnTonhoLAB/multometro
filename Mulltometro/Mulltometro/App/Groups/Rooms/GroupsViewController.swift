@@ -10,9 +10,11 @@ import UIKit
 
 class GroupsViewController: UIViewController {
     
-    @IBOutlet weak var btAddRoom: UIBarButtonItem! {
+    @IBOutlet weak var btAddRoom: UIButton! {
         didSet {
             btAddRoom.tintColor = .redSystem
+//            btAddRoom.setTitle("Add Room", for: .normal)
+            btAddRoom.roundedCornerColor(radius: 8)
         }
     }
     @IBOutlet weak var tableViewRooms: UITableView! {

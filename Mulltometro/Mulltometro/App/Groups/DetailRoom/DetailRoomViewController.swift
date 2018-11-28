@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         
         if let room = room {
             navigationItem.title = room.nameRoom
-            tableViewData = [TableViewData(opened: false, title: "Participants", sectionData: room.users),
+            tableViewData = [TableViewData(opened: true, title: "Participants", sectionData: room.users),
                              TableViewData(opened: false,title: "Fees", sectionData: room.fees)]
             detailRoomFields.roomFields = room
             detailRoomFields.setupFields()
@@ -91,7 +91,7 @@ extension DetailViewController: UITableViewDataSource {
         
             if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-                cell.setup(with: users[indexPath.row - 1].name)
+            cell.setup(with: users[indexPath.row - 1].name, photoURL: users[indexPath.row - 1].photoURL)
                 return cell
             }
         
