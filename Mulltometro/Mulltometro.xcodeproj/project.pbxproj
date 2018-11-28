@@ -256,13 +256,13 @@
 			path = SearchRoom;
 			sourceTree = "<group>";
 		};
-		5E6D0D12219754CB00186390 /* RegisterUser */ = {
+		5E6D0D12219754CB00186390 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
 				5E6D0D13219754F200186390 /* RegisterUser.storyboard */,
 				5E6D0D152197551800186390 /* RegisterUserViewController.swift */,
 			);
-			path = RegisterUser;
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		5E7FE6392177523D0029E035 /* Login */ = {
@@ -428,7 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED085D3215B06CE00293516 /* Auth */,
-				5E6D0D12219754CB00186390 /* RegisterUser */,
+				5E6D0D12219754CB00186390 /* OnBoarding */,
 				5ED085D0215B059000293516 /* Main */,
 				5E92EA9F21624075000E0EE4 /* Groups */,
 				5E92EAA0216241FF000E0EE4 /* Statistics */,
@@ -938,7 +938,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -993,7 +993,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1008,7 +1008,8 @@
 			baseConfigurationReference = 8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J8JPD2534R;
 				INFOPLIST_FILE = "$(SRCROOT)/Mulltometro/Supp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1016,8 +1017,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Mulltometro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = developmentProfile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1028,7 +1030,8 @@
 			baseConfigurationReference = 586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J8JPD2534R;
 				INFOPLIST_FILE = "$(SRCROOT)/Mulltometro/Supp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1036,8 +1039,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Mulltometro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = distributionProfile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
