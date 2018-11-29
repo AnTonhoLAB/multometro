@@ -15,7 +15,6 @@
 		5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA8921A0861F0005FA43 /* UserCell.swift */; };
 		5E01AA8C21A0861F0005FA43 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA8A21A0861F0005FA43 /* UserCell.xib */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
-		5E26A256218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
@@ -100,7 +99,6 @@
 		5E01AA8921A0861F0005FA43 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5E01AA8A21A0861F0005FA43 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; indentWidth = 0; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
-		5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
@@ -499,7 +497,6 @@
 				5EC89765217A501500C65CF9 /* ExtensionUIView.swift */,
 				5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */,
 				5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */,
-				5E26A255218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -827,7 +824,6 @@
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */,
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
-				5E26A256218933AC00C6F31E /* ExtensionNVActivityIndicatorViewable.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */,
 				5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */,
