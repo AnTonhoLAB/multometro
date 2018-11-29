@@ -5,12 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.029417">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.032407">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: slack" time="1.688848">
+      <testcase classname="fastlane.lanes" name="1: last_git_commit" time="0.100956">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: slack" time="0.836283">
         
       </testcase>
     

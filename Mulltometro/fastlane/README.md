@@ -26,6 +26,11 @@ This lane generate .ipa file to app upload
 fastlane ios slackMessage
 ```
 
+### ios uploadToTestFlight
+```
+fastlane ios uploadToTestFlight
+```
+
 
 ----
 
