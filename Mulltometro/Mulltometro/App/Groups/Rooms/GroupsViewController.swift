@@ -12,8 +12,8 @@ class GroupsViewController: UIViewController {
     
     @IBOutlet weak var btAddRoom: UIButton! {
         didSet {
-            btAddRoom.tintColor = .redSystem
-//            btAddRoom.setTitle("Add Room", for: .normal)
+            btAddRoom.backgroundColor = .redSystem
+            btAddRoom.setTitle("Add Room", for: .normal)
             btAddRoom.roundedCornerColor(radius: 8)
         }
     }
@@ -54,6 +54,7 @@ class GroupsViewController: UIViewController {
             self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
             self.dismissLoader()
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

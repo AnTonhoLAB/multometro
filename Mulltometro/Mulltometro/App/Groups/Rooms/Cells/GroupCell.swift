@@ -34,9 +34,10 @@ class GroupCell: UITableViewCell {
         if let users = group.users {
             lbNumberOfUsers.text =  String(users.count)
         }
-//        if group.adminId == AuthManager.getCurrentUserId() {
-//            lbIsAdmin.text = "Admin"
-//        }
+        
+        if group.admin?.uid == AuthManager.getCurrentUserId() {
+            lbIsAdmin.text = "Admin"
+        }
     }
 
 }
