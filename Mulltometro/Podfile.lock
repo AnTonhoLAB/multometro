@@ -132,9 +132,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.1)
-  - R.swift (4.0.0):
-    - R.swift.Library (~> 4.0.0)
-  - R.swift.Library (4.0.0)
+  - R.swift (5.0.0.alpha.2):
+    - R.swift.Library (~> 5.0.0.alpha.2)
+  - R.swift.Library (5.0.0.alpha.2)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -144,7 +144,7 @@ DEPENDENCIES:
   - Firebase/Functions
   - Firebase/Storage
   - Kingfisher (~> 4.0)
-  - R.swift
+  - R.swift (= 5.0.0.alpha.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -198,9 +198,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
-  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  R.swift: 31fa1bd537fa81307815cc622122f33331f32174
+  R.swift.Library: 3c21b823839bf5a6769dc7f96cb44479dab51b1b
 
-PODFILE CHECKSUM: b342688e3908345d5f0707a4b8134bc0be61b05b
+PODFILE CHECKSUM: 1aa50fa01b6a5a89696a8a4dbbf2397cd4becace
 
 COCOAPODS: 1.5.3
