@@ -17,13 +17,6 @@ default_platform(:ios)
 
 platform :ios do
   desc "This lane generate .ipa file to app upload"
-  
-  lane :bumpVersion do
-    increment_build_number(
-      build_number: app_store_build_number + 1,
-      xcodeproj: "Mulltometro.xcodeproj"
-    )
-  end
 
   lane :generateIPA do
     # add actions here: https://docs.fastlane.tools/actions
@@ -37,4 +30,13 @@ platform :ios do
       	output_name: "mulltometroBuild.ipa",
     )
   end
+  
+  lane :slackMessage do
+       slack(
+           message: "Master updated with a new version",
+           success: true,
+           slack_url: "https://hooks.slack.com/services/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"
+       )
+   end
+
 end
