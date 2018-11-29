@@ -1037,7 +1037,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = distributionProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "com.crowcode.Multometro AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

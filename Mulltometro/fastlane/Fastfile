@@ -22,31 +22,58 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
 
     build_ios_app(
-      configuration: "Debug",
+      configuration: "Release",
       scheme: "Mulltometro",
      	clean: true,
-     	export_method: 'development',
+     	export_method: 'app-store',
       output_directory: "~/Desktop", # Destination directory. Defaults to current directory.
       output_name: "mulltometroBuild.ipa",
     )
   end
-  
-  lane :slackMessage do
-       slack(
-           message: "Master updated with a new version",
-           success: true,
-           slack_url: "https://hooks.slack.com/services/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"
-       )
-   end
 
   lane :uploadToTestFlight do
     commit = last_git_commit
-
-    slack(
-           message: commit[:message],
-           success: true,
-           slack_url: "https://hooks.slack.com/services/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"
-       )
+    
+    upload_to_testflight(
+      ipa: "~/Desktop/mulltometroBuild.ipa",
+      username: "georgegomees@gmail.com",
+      team_id: "118596484",
+      app_identifier: "com.crowcode.Multometro",
+      changelog: "Change textfield color text to white and missing rounded corner in buttons",
+      beta_app_description: "Change textfield color text to white and missing rounded corner in buttons"
+    )
   end
   
+  lane :beta do 
+    increment_build_number
+
+    gym(
+      export_method: "app-store"
+    )
+
+    pilot(skip_wainting_for_build_processing: true)
+  end
+
+  lane :codeSign do
+    cert(
+      username: "georgegomees@gmail.com",
+      team_id: "J8JPD2534R"
+    )
+    sigh(
+      force: true,
+      username: "georgegomees@gmail.com",
+      app_identifier: "com.crowcode.Multometro",
+      team_id: "J8JPD2534R"
+    )
+  end
+
+  lane :slackMessage do
+    commit = last_git_commit
+    slack(
+      message: commit[:message],
+      success: true,
+      slack_url: "https://hooks.slack.com/services/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"
+    )
+  end
 end
+

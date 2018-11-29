@@ -21,14 +21,24 @@ or alternatively using `brew cask install fastlane`
 fastlane ios generateIPA
 ```
 This lane generate .ipa file to app upload
-### ios slackMessage
-```
-fastlane ios slackMessage
-```
-
 ### ios uploadToTestFlight
 ```
 fastlane ios uploadToTestFlight
+```
+
+### ios beta
+```
+fastlane ios beta
+```
+
+### ios codeSign
+```
+fastlane ios codeSign
+```
+
+### ios slackMessage
+```
+fastlane ios slackMessage
 ```
 
 
