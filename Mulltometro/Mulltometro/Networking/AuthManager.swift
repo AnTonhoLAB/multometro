@@ -17,6 +17,14 @@ class AuthManager {
     
     private init() {}
     
+//    static var selfUser: MulltometroUser = {
+//
+//        let user: User = CDManager.fetchAll(User, completionHandler: { (t, err) in
+//            print(t)
+//        })
+////        return MulltometroUser(name: , email: <#T##String#>, rooms: <#T##[String]#>, taxes: <#T##[Fee]#>)
+//    }()
+    
     static func configureService() {
          FirebaseApp.configure()
     }

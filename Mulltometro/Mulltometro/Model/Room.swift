@@ -31,6 +31,7 @@ class Room: Codable {
     
     init(likeUserTo name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
 //        self.adminId = AuthManager.getCurrentUserId()
+//        self.admin = AuthManager.selfUser
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
@@ -55,4 +56,11 @@ class Room: Codable {
 //        self.users = users
         self.created = created
     }
+}
+
+struct SimpleUser {
+    var name: String
+    var email: String
+    var firstTime: Bool
+    var uid: String
 }

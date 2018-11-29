@@ -17,6 +17,7 @@ class MulltometroUser: Codable {
     var photoURL: String?
     var rooms: [String]?
     var taxes: [Fee]?
+    var firstTime: Bool?
     
     init(name: String, email: String, rooms: [String], taxes: [Fee]) {
         self.name = name
