@@ -34,6 +34,16 @@ class RegisterViewController: UIViewController {
             tfConfirmPassoword.placeholder = R.string.localizable.placeholderRepeatPassword()
         }
     }
+    @IBOutlet weak var btRegister: UIButton! {
+        didSet {
+            btRegister.roundedCornerColor(radius: roundRadius)
+        }
+    }
+    @IBOutlet weak var btCancel: UIButton! {
+        didSet {
+            btCancel.roundedCornerColor(radius: roundRadius)
+        }
+    }
     
     private let roundRadius: CGFloat = 8.0
     
