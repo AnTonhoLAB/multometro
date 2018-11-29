@@ -24,6 +24,11 @@ class LoginViewController: UIViewController {
             btEnter.roundedCornerColor(radius: roundRadius)
         }
     }
+    @IBOutlet weak var btRegister: UIButton! {
+        didSet {
+            btRegister.roundedCornerColor(radius: roundRadius)
+        }
+    }
     
     private let roundRadius: CGFloat = 8.0
     

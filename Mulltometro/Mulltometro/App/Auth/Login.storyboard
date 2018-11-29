@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xG8-85-5bH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xG8-85-5bH">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -112,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="btEnter" destination="CLy-JU-cye" id="qY6-Rh-Ci7"/>
+                        <outlet property="btRegister" destination="RHl-WK-AHt" id="cfe-Qf-hJX"/>
                         <outlet property="constraintToBot" destination="IGk-w4-QcE" id="AVB-jU-NJS"/>
                         <outlet property="fieldsView" destination="QQI-KM-phw" id="mjd-zw-uuT"/>
                         <outlet property="tfEmail" destination="zfe-Np-QyR" id="5My-ZI-SEX"/>
@@ -143,7 +144,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="YlA-Ed-bbo"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" textContentType="email"/>
                                             </textField>
@@ -153,7 +154,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Hx1-27-ooy"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
@@ -163,7 +164,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="8o3-1v-u0z"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
@@ -237,6 +238,8 @@
                         <viewLayoutGuide key="safeArea" id="Qpz-rj-uH0"/>
                     </view>
                     <connections>
+                        <outlet property="btCancel" destination="IzH-Rw-ACp" id="T8l-lq-bOu"/>
+                        <outlet property="btRegister" destination="BaX-zc-cbx" id="uEM-Yt-T6c"/>
                         <outlet property="fieldsView" destination="LAj-WV-HsW" id="tEb-NM-mg3"/>
                         <outlet property="tfConfirmPassoword" destination="5YG-oo-NWk" id="UrV-x5-Zqq"/>
                         <outlet property="tfEmail" destination="lxH-pK-EKF" id="JVc-ee-Fx1"/>
