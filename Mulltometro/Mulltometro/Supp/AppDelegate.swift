@@ -25,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("A", t.last)
         })
         
+        CDManager.getSinlgeObject(user) { resp in
+            switch resp {
+            case .success(let user):
+                print(user)
+            case .failure(let err):
+                print(err)
+            }
+        }
+        
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         if !launchedBefore  { //First time in app
             AuthManager.eraseLogData()

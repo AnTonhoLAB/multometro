@@ -40,6 +40,25 @@ class CDManager: CDManagerProtocol{
         
     }
     
+    static func getSinlgeObject<T>(_ objectType: T, completionHandler: @escaping(Response<T>) -> Void) where T:NSManagedObject {
+        
+        let context: NSManagedObjectContext = getContext()
+        let fetch = NSFetchRequest<T>()
+        let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: context)
+        fetch.entity = entityDescription
+        do {
+            let arrayOfFetch = try context.fetch(fetch)
+            let response = arrayOfFetch[0]
+            completionHandler(.success(response))
+        } catch {
+            completionHandler(.failure(error))
+        }
+    }
+    
+    static func readSelectedInstall<T>(_ objectType: T, _ projIDString: String?) where T:NSManagedObject {
+
+    }
+
     static func fetchAll<T>(_ objectType: T, completionHandler: @escaping([T], Error?) -> Void) where T:NSManagedObject {
         let context = getContext()
         
