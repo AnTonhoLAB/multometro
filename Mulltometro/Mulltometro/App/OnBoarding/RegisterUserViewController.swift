@@ -65,6 +65,8 @@ class RegisterUserViewController: UIViewController {
             guard let self = self else { return }
             switch($0) {
             case .success(let user):
+                let userToSave = user.toCDObject()
+                CDManager.saveThis(userToSave)
                 self.openApp()
             case .errorOnImage(let responseError), .errorOnUser(let responseError), .error(let responseError):
                 self.alertSimpleWarning(title: "ERROR", message: responseError.localizedDescription, action: nil)

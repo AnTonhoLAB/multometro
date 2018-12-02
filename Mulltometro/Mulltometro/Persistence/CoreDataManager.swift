@@ -20,18 +20,21 @@ enum RequestType: String{
 }
 
 protocol CDManagerProtocol{
-    static func saveThis<T: NSManagedObject>(_ obj: T,_ managedType: ManagedType, completionHandler: @escaping(Error?) -> Void)
+//    static func saveThis<T: NSManagedObject>(_ obj: T,_ managedType: ManagedType, completionHandler: @escaping(Error?) -> Void)
 }
 
 class CDManager: CDManagerProtocol{
-    
-    static func saveThis<T: NSManagedObject>(_ obj: T,_ managedType: ManagedType, completionHandler: @escaping(Error?) -> Void){
+//    ((Bool) -> Void)? = nil) -> Void
+    static func saveThis<T: NSManagedObject>(_ obj: T, completionHandler: ((Error?) -> Void)? = nil) -> Void {
         let context = getContext()
         do {
             try context.save()
+            guard let completionHandler = completionHandler else { return }
             completionHandler(nil)
         } catch let err {
             print("Fatal ERROR")
+            
+            guard let completionHandler = completionHandler else { return }
             completionHandler(err)
         }
     }
@@ -40,7 +43,7 @@ class CDManager: CDManagerProtocol{
         
     }
     
-    static func getSinlgeObject<T>(_ objectType: T, completionHandler: @escaping(Response<T>) -> Void) where T:NSManagedObject {
+    static func getSinlgeObject<T>(_ object: T, completionHandler: @escaping(Response<T>) -> Void) where T:NSManagedObject {
         
         let context: NSManagedObjectContext = getContext()
         let fetch = NSFetchRequest<T>()
@@ -53,10 +56,6 @@ class CDManager: CDManagerProtocol{
         } catch {
             completionHandler(.failure(error))
         }
-    }
-    
-    static func readSelectedInstall<T>(_ objectType: T, _ projIDString: String?) where T:NSManagedObject {
-
     }
 
     static func fetchAll<T>(_ objectType: T, completionHandler: @escaping([T], Error?) -> Void) where T:NSManagedObject {
@@ -80,13 +79,13 @@ class CDManager: CDManagerProtocol{
         }
     }
     
+    static func Object<T>() -> T where T: NSManagedObject{
+        return T(context: getContext())
+    }
+    
     static func getContext() -> NSManagedObjectContext{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
-    }
-    
-    static func Object<T>() -> T where T: NSManagedObject{
-        return T(context: getContext())
     }
 }
 

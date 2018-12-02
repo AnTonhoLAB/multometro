@@ -15,13 +15,17 @@ class UserRequester {
     
     private static var timer = Timer()
     class func startSync(){
-//        syncUser()
-//        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
+         syncUser()
+        //timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
+    }
+    
+    class func oneSyncUser() {
+        syncUser()
     }
     
     @objc private class func syncUser() {
         let uid = ["uid": AuthManager.getCurrentUserId()]
-        function.httpsCallable("syncUser").call(uid) { res, _ in
+        function.httpsCallable("syncUser").call(uid) { res, err in
             
             if let res = res {
                 do {
@@ -30,16 +34,24 @@ class UserRequester {
                     let user = try JSONDecoder().decode(MulltometroUser.self, from: jsonData)
                     
                     let userToSave = user.toCDObject()
-                    CDManager.saveThis(userToSave, .user, completionHandler: { (err) in
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 240 , execute: {
-                            syncUser()
-                        })
+                    
+                    CDManager.saveThis(userToSave, completionHandler: { (err) in
+                        guard (err == nil) else {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                                syncUser()
+                            })
+                            return
+                        }
                     })
                 } catch {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 240 , execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
                         syncUser()
                     })
                 }
+            }
+            
+            if let err = err {
+                
             }
         }
     }
@@ -56,7 +68,7 @@ class UserRequester {
         }
     }
 
-    class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
+    class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser>) -> Void) {
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")
         let reference = Storage.storage().reference()
@@ -68,7 +80,7 @@ class UserRequester {
         user.uid = uid
         user.email = AuthManager.getCurrentEmail()
         
-        var userRes: MulltometroUser?
+        var userRes: MulltometroUser = MulltometroUser()
         
         // SEMAFORO
         

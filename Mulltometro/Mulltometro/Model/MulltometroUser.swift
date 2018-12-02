@@ -41,6 +41,7 @@ class MulltometroUser: Codable {
         user.uid = self.uid
         user.firstTime = false
         user.name = self.name
+        user.pthotoURL = self.photoURL
         
         return user
     }
