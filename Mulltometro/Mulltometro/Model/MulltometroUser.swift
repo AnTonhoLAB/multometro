@@ -15,15 +15,20 @@ class MulltometroUser: Codable {
     var name: String!
     var email: String!
     var photoURL: String?
-    var rooms: [String]?
-    var taxes: [Fee]?
+    var rooms: [Room]?
     var firstTime: Bool?
     
-    init(name: String, email: String, rooms: [String], taxes: [Fee]) {
+    init(name: String, email: String, rooms: [Room]) {
         self.name = name
         self.email = email
         self.rooms = rooms
-        self.taxes = taxes
+    }
+    
+    init(uid: String, name: String, email: String) {
+        self.uid = uid
+        self.name = name
+        self.email = email
+        self.firstTime = false
     }
     
     init() {
@@ -39,5 +44,4 @@ class MulltometroUser: Codable {
         
         return user
     }
-    
 }

@@ -15,8 +15,8 @@ class UserRequester {
     
     private static var timer = Timer()
     class func startSync(){
-        syncUser()
-        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
+//        syncUser()
+//        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
     }
     
     @objc private class func syncUser() {
@@ -31,12 +31,12 @@ class UserRequester {
                     
                     let userToSave = user.toCDObject()
                     CDManager.saveThis(userToSave, .user, completionHandler: { (err) in
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 240 , execute: {
                             syncUser()
                         })
                     })
                 } catch {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 240 , execute: {
                         syncUser()
                     })
                 }
@@ -60,7 +60,7 @@ class UserRequester {
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")
         let reference = Storage.storage().reference()
-        let storageRef = reference.child("profilePic").child(imageName)
+        let storageRef = reference.child(imageName)
         
         var imageRes = 0
         var saveUserRes = 0

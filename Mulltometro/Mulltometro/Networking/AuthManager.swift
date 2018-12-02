@@ -17,13 +17,19 @@ class AuthManager {
     
     private init() {}
     
-//    static var selfUser: MulltometroUser = {
+    static var selfUser: MulltometroUser = {
 //
-//        let user: User = CDManager.fetchAll(User, completionHandler: { (t, err) in
-//            print(t)
-//        })
-////        return MulltometroUser(name: , email: <#T##String#>, rooms: <#T##[String]#>, taxes: <#T##[Fee]#>)
-//    }()
+        let user: User =  CDManager.Object()
+        
+        CDManager.fetchAll(user, completionHandler: { (t, err) in
+            print("Amigo estou aqui", t)
+        })
+        return MulltometroUser(uid: AuthManager.getCurrentUserId(), name: AuthManager.getCurrentEmail(), email: AuthManager.getCurrentEmail())
+    }()
+    
+    static func garb() {
+       print( Auth.auth().currentUser?.refreshToken)
+    }
     
     static func configureService() {
          FirebaseApp.configure()
@@ -35,6 +41,15 @@ class AuthManager {
     
     static func getCurrentUserId() -> String {
         return Auth.auth().currentUser?.uid ?? ""
+    }
+    
+    static func setUser(name: String, completion: @escaping (Error?) -> Void) {
+        guard let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() else { return completion(nil) }
+        
+        changeRequest.displayName = name
+        changeRequest.commitChanges { err in
+            completion(err)
+        }
     }
     
     static func getCurrentEmail() -> String {

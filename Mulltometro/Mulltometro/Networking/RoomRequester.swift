@@ -65,7 +65,16 @@ class RoomRequester {
     }
     
     static func enterRoom(roomId: String, completion: @escaping (Response<Room>) -> Void) {
-        let enterInRoom = ["uid": AuthManager.getCurrentUserId(), "roomId": roomId]
+       
+        let user = [
+            "email":AuthManager.getCurrentEmail(),
+            "name":AuthManager.getCurrentEmail(),
+            "firstTime": false,
+            "uid": AuthManager.getCurrentUserId()
+            ] as [String : Any]
+        
+        let enterInRoom = ["user": user, "roomId": roomId] as [String : Any]
+        
         
         function.httpsCallable("enterRoom").call(enterInRoom) { (res, err) in
             if let res = res, let roomData = res.data as? [String: Any] {

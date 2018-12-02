@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Rswift
 
 class UserCell: UITableViewCell {
     
@@ -33,10 +34,17 @@ class UserCell: UITableViewCell {
         print("DID TA APPLY")
     }
     
-    func setup(with name: String, photoURL: String?) {
-        lbUserName.text = name
-        print(photoURL)
-        let url = URL(string: "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/4/4/4/2/44426ec60227fed134090948322b475d.jpg")
-        imageUser.kf.setImage(with: url)
+    func setup(with user: MulltometroUser) {
+        var urlString: String
+        if let userImageURL = user.photoURL {
+            urlString = userImageURL
+            let url = URL(string: urlString)
+            imageUser.kf.setImage(with: url)
+        } else {
+            urlString = "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/4/4/4/2/44426ec60227fed134090948322b475d.jpg"
+            imageUser.image = R.image.addImage()
+        }
+        
+        lbUserName.text = user.name
     }
 }

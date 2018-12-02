@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
         AuthManager.configureService()
+        
+        let user: User =  CDManager.Object()
+        
+        CDManager.fetchAll(user, completionHandler: { (t, err) in
+            print("A", t.last)
+        })
         
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         if !launchedBefore  { //First time in app

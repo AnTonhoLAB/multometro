@@ -45,7 +45,7 @@ class DetailViewController: UIViewController {
     }
     
     @objc func didTapCreateQR() {
-        guard let room = room, let id = room.id else { return }
+        guard let room = room, let id = room.uid else { return }
         performSegue(withIdentifier: R.segue.detailViewController.toQRView, sender: id)
     }
     
@@ -91,8 +91,8 @@ extension DetailViewController: UITableViewDataSource {
         
             if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-            cell.setup(with: users[indexPath.row - 1].name, photoURL: users[indexPath.row - 1].photoURL)
-                return cell
+            cell.setup(with: users[indexPath.row - 1])
+            return cell
             }
         
             let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell

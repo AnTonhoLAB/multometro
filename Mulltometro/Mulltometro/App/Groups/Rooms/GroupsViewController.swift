@@ -46,7 +46,7 @@ class GroupsViewController: UIViewController {
                     self.rooms = rooms
                     self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
                 case .failure(_):
-                    self.alertSimpleWarning(title: "Error Connection", message: "Check your connection and return try!", action: nil)
+                    self.alertSimpleWarning(title: "Error to get rooms", message: "error", action: nil)
                 }
                 self.dismissLoader()
             }

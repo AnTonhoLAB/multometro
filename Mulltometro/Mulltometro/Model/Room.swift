@@ -10,7 +10,7 @@ import Foundation
 
 class Room: Codable {
     
-    var id: String?
+    var uid: String?
     var admin: MulltometroUser?
     var nameRoom: String!
     var fees: [Fee]?
@@ -23,24 +23,24 @@ class Room: Codable {
     }
     
     init(name: String, dueDate: Int, created: Date? = Date()) {
-//        self.adminId = AuthManager.getCurrentUserId()
+        self.admin = AuthManager.selfUser
         self.nameRoom = name
         self.dueDate = dueDate
         self.created = created
     }
     
     init(likeUserTo name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-//        self.adminId = AuthManager.getCurrentUserId()
-//        self.admin = AuthManager.selfUser
+
+        self.admin = AuthManager.selfUser
+        self.users = [AuthManager.selfUser]
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
-//        self.users = [AuthManager.getCurrentUserId()]
         self.created = created
     }
     
     init(name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-//        self.adminId = AuthManager.getCurrentUserId()
+        self.admin = AuthManager.selfUser
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
@@ -48,7 +48,7 @@ class Room: Codable {
     }
     
     init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
-//        self.adminId = AuthManager.getCurrentUserId()
+        self.admin = AuthManager.selfUser
         self.nameRoom = name
         self.dueDate = dueDate
         self.fees = fees
