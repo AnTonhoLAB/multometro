@@ -29,6 +29,7 @@ class CDManager: CDManagerProtocol{
         let context = getContext()
         do {
             try context.save()
+            obj.didSave()
             guard let completionHandler = completionHandler else { return }
             completionHandler(nil)
         } catch let err {

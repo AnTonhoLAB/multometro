@@ -35,15 +35,11 @@ class RegisterUserViewController: UIViewController {
     }
     
     private let roundRadius: CGFloat = 8.0
-    private let imagePicker = UIImagePickerController()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-//        fieldsView.bringSubviewToFront(imageIconButton)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,8 +47,6 @@ class RegisterUserViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//        iconView.circleView()
-//        imageIconButton.circleView(2)
     }
         
     @IBAction func didTapSkip(_ sender: Any) {
@@ -60,10 +54,27 @@ class RegisterUserViewController: UIViewController {
     }
     
     @IBAction func didTapSaveUser(_ sender: Any) {
-        performSegue(withIdentifier: "toRegisterPhoto", sender: nil)
-//       saveUser()
+        guard let name = nameTextField.text else { return }
+        setUserName(with: name)
     }
     
+    func setUserName(with name: String) {
+        
+        if name.count <= 3 {
+            
+        } else {
+            UserRequester.uploadUser(name: name) {res in
+//                guard let self = self else { return }
+                
+                switch res {
+                case .success(let userRes):
+                    UserRequester.saveLocally(user: userRes)
+                case .failure(_):
+                    self.alertSimpleMessage(message: "Upload image error")
+                }
+            }
+        }
+    }
     
     func openApp() {
         self.dismissLoader()
@@ -76,8 +87,6 @@ class RegisterUserViewController: UIViewController {
             window.rootViewController = tabBarController
         }, completion: nil)
     }
-    
-    
 }
 
 // MARK: - Keyboard
