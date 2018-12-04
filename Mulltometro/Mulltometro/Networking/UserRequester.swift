@@ -80,8 +80,11 @@ class UserRequester {
         user.uid = uid
         user.email = AuthManager.getCurrentEmail()
         
-        var userRes: MulltometroUser = MulltometroUser()
+        var userRes: MulltometroUser = MulltometroUser() // delete after refactoring
         
+        let userToSave = user.dictionary
+        
+        let userMetadata = StorageMetadata(dictionary: userToSave)
         // SEMAFORO
         
         // SEMAFORO DOWN
@@ -93,7 +96,7 @@ class UserRequester {
         // Chamar completion
         
         if let uploadData = image.jpegData(compressionQuality: 0.5){
-            storageRef.putData(uploadData, metadata: nil, completion: { metadata, err in
+            storageRef.putData(uploadData, metadata: userMetadata, completion: { metadata, err in
                 if err == nil {
                     imageRes = 1
                     if saveUserRes == 1 {
@@ -114,7 +117,6 @@ class UserRequester {
             imageRes = -1
         }
         
-        let userToSave = user.dictionary
      
         function.httpsCallable("addUser").call(userToSave) { (res, err) in
             if err == nil {
