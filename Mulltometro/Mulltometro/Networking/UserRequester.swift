@@ -15,12 +15,12 @@ class UserRequester {
     
     private static var timer = Timer()
     class func startSync(){
-         syncUser()
+//         syncUser()
         //timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
     }
     
     class func oneSyncUser() {
-        syncUser()
+//        syncUser()
     }
     
     @objc private class func syncUser() {

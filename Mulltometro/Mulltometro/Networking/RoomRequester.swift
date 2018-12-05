@@ -48,7 +48,7 @@ class RoomRequester {
                     "name": admin.name ?? AuthManager.getCurrentEmail(),
                     "firstTime": false,
                     "uid": AuthManager.getCurrentUserId(),
-                    "imageURL": admin.pthotoURL ?? ""
+                    "photoURL": admin.pthotoURL ?? ""
                     ] as [String : Any]
                 
                 function.httpsCallable("getAllRooms").call(user) { (res, err) in

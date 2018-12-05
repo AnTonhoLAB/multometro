@@ -22,39 +22,50 @@ class Room: Codable {
  
     }
     
-    init(name: String, dueDate: Int, created: Date? = Date()) {
-        self.admin = AuthManager.selfUser
+    init(admin: MulltometroUser, name: String, dueDate: Int, created: Date? = Date()) {
+        self.admin = admin
         self.nameRoom = name
         self.dueDate = dueDate
         self.created = created
     }
     
-    init(likeUserTo name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-
-        self.admin = AuthManager.selfUser
-        self.users = [AuthManager.selfUser]
+    init(likeUserTo admin: User, name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
+        
+//        self.admin = admin
+//        self.users = [admin]
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
         self.created = created
+        if let uidAdm = admin.uid, let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
+            let user = MulltometroUser(uid: uidAdm, name: name, email: email, photoURL: photo)
+            self.admin = user
+            self.users = [user]
+        }
     }
     
-    init(name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-        self.admin = AuthManager.selfUser
+    init(admin: User, name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
         self.nameRoom = name
         self.fees = fees
         self.dueDate = dueDate
         self.created = created
+        if let uidAdm = admin.uid, let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
+            self.admin = MulltometroUser(uid: uidAdm, name: name, email: email, photoURL: photo)
+        }
     }
     
     init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
-        self.admin = AuthManager.selfUser
+//        self.admin = AuthManager.selfUser
         self.nameRoom = name
         self.dueDate = dueDate
         self.fees = fees
 //        self.adminId = adminUid
 //        self.users = users
         self.created = created
+    }
+    
+    init(completion: @escaping (Response<Bool>) -> Void) {
+        
     }
 }
 

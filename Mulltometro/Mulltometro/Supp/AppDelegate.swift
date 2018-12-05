@@ -18,49 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
         AuthManager.configureService()
-        UserRequester.oneSyncUser()
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last as! URL)
         
+//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
-        let user: User =  CDManager.Object()
-        CDManager.getSinlgeObject(user) { resp in
-            switch resp {
-            case .success(let user):
-                print("first entry ",user)
-            case .failure(let err):
-                print(err)
-            }
+        let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
+        if !launchedBefore  { //First time in app
+            AuthManager.eraseLogData()
+            UserDefaults.standard.set(true, forKey: R.string.strings.launchedBefore())
         }
-        
-        if let window = window {
-            
-            
-            let storyboard : UIStoryboard = UIStoryboard(name: "RegisterUser", bundle: nil)
-            let vc : RegisterPhotoViewController = storyboard.instantiateViewController(withIdentifier: "RegisterUserViewController") as! RegisterPhotoViewController
-//            vc.teststring = "hello"
-            
-            let navigationController = UINavigationController(rootViewController: vc)
-            
-//            self.present(navigationController, animated: true, completion: nil)
-            window.rootViewController = navigationController
-            
-            
-//            let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
-//            let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
-//            window.rootViewController = viewController
+
+        if !AuthManager.isLogged() {
+            let rootController = R.storyboard.login().instantiateViewController(withIdentifier: R.string.strings.loginIdentifier())
+            self.window?.rootViewController = rootController
         }
-        
-     
-        
-//        let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
-//        if !launchedBefore  { //First time in app
-//            AuthManager.eraseLogData()
-//            UserDefaults.standard.set(true, forKey: R.string.strings.launchedBefore())
-//        }
-//
-//        if !AuthManager.isLogged() {
-//            let rootController = R.storyboard.login().instantiateViewController(withIdentifier: R.string.strings.loginIdentifier())
-//            self.window?.rootViewController = rootController
-//        }
 
         //Apparece
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]

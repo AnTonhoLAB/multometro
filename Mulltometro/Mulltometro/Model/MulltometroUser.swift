@@ -31,6 +31,14 @@ class MulltometroUser: Codable {
         self.firstTime = false
     }
     
+    init(uid: String, name: String, email: String, photoURL: String) {
+        self.uid = uid
+        self.name = name
+        self.email = email
+        self.photoURL = photoURL
+        self.firstTime = false
+    }
+    
     init() {
         
     }

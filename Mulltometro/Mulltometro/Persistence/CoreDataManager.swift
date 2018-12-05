@@ -24,7 +24,7 @@ protocol CDManagerProtocol{
 }
 
 class CDManager: CDManagerProtocol{
-//    ((Bool) -> Void)? = nil) -> Void
+    
     static func saveThis<T: NSManagedObject>(_ obj: T, completionHandler: ((Error?) -> Void)? = nil) -> Void {
         let context = getContext()
         do {
@@ -45,17 +45,13 @@ class CDManager: CDManagerProtocol{
     }
     
     static func getSinlgeObject<T>(_ object: T, completionHandler: @escaping(Response<T>) -> Void) where T:NSManagedObject {
-        
-        let context: NSManagedObjectContext = getContext()
-        let fetch = NSFetchRequest<T>()
-        let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: context)
-        fetch.entity = entityDescription
-        do {
-            let arrayOfFetch = try context.fetch(fetch)
-            let response = arrayOfFetch[0]
-            completionHandler(.success(response))
-        } catch {
-            completionHandler(.failure(error))
+        fetchAll(object) { (arr, err) in
+            if let err = err {
+                completionHandler(.failure(err))
+            } else {
+                guard let user = arr.last else { completionHandler(.failure(SaveUserError.errorOnUser)); return }
+                completionHandler(.success(user))
+            }
         }
     }
 

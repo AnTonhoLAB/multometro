@@ -64,11 +64,10 @@ class RegisterUserViewController: UIViewController {
             
         } else {
             UserRequester.uploadUser(name: name) {res in
-//                guard let self = self else { return }
-                
                 switch res {
                 case .success(let userRes):
                     UserRequester.saveLocally(user: userRes)
+                    self.openApp()
                 case .failure(_):
                     self.alertSimpleMessage(message: "Upload image error")
                 }
