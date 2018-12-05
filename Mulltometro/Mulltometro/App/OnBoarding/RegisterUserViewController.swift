@@ -72,7 +72,7 @@ class RegisterUserViewController: UIViewController {
                     self.openApp()
                 case .failure(_):
                     self.dismissLoader()
-                    self.alertSimpleMessage(message: "Upload image error")
+                    self.alertSimpleMessage(message: "Error when save the user")
                 }
             }
         }

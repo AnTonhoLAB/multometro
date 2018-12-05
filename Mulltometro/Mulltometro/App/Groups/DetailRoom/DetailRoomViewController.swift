@@ -10,7 +10,7 @@ import UIKit
 import Rswift
 
 class DetailViewController: UIViewController {
-    
+
     @IBOutlet weak var detailRoomFields: DetailRoomFields!
     @IBOutlet weak var detailTransparent: UIView! {
         didSet {
