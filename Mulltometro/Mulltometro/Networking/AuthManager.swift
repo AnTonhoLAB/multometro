@@ -30,9 +30,6 @@ class AuthManager {
         })
  }
     
-    static func garb() {
-       print( Auth.auth().currentUser?.refreshToken)
-    }
     
     static func configureService() {
          FirebaseApp.configure()
@@ -88,6 +85,15 @@ class AuthManager {
                      completion(Response.failure(error))
                 }
             }
+        }
+    }
+    
+    static func logout(completion: @escaping(Response<Bool>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(true))
+        } catch {
+            completion(.failure(error))
         }
     }
 }

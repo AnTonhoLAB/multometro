@@ -76,6 +76,19 @@ class CDManager: CDManagerProtocol{
         }
     }
     
+    static func logout(completion: @escaping(Response<Bool>) -> Void) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try  getContext().execute(deleteRequest)
+            completion(.success(true))
+            //myPersistentStoreCoordinator.executeRequest(deleteRequest, withContext: getContext())
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
     static func Object<T>() -> T where T: NSManagedObject{
         return T(context: getContext())
     }

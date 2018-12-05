@@ -53,7 +53,7 @@ class UserRequester {
     }
     
     class func getMyUser(completion: @escaping (Response<MulltometroUser>) -> Void) {
-        
+        print("TODO GET USER IN DB")
     }
     
     class func checkUser(completion: @escaping (Bool) -> Void) {
