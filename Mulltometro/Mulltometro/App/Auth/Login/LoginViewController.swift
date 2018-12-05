@@ -35,6 +35,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
     }
     
     @IBAction func btLogin(_ sender: Any) {
@@ -90,3 +93,27 @@ class LoginViewController: UIViewController {
     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
 
 }
+
+extension LoginViewController {
+    @objc func keyboardWillShow(sender: NSNotification) {
+        let sizeToKeyboard = view.frame.maxY - fieldsView.frame.maxY
+        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyBoardheight = keyboardSize.height
+            UIView.animate(withDuration: 0.8) { [weak self] in
+                guard let self = self else { return }
+                let constant = (sizeToKeyboard - keyBoardheight)
+                self.constraintToBot.constant = Swift.abs(constant) + 40
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(sender: NSNotification) {
+        UIView.animate(withDuration: 0.8) { [weak self] in
+            guard let self = self else { return }
+            self.constraintToBot.constant = 0
+            self.view.layoutIfNeeded()
+        }
+    }
+}
+

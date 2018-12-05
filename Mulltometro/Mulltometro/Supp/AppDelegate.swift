@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-import UserNotifications 
+import UserNotifications
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
+        IQKeyboardManager.shared().isEnabled = true
         AuthManager.configureService()
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last as! URL)
-        
-//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         if !launchedBefore  { //First time in app
