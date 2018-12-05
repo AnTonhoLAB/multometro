@@ -35,9 +35,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
     }
     
     @IBAction func btLogin(_ sender: Any) {
@@ -79,19 +76,25 @@ class LoginViewController: UIViewController {
     }
     
     func openApp() {
-        guard let window = UIApplication.shared.keyWindow else { return }
-        let mainStoryboard: UIStoryboard = R.storyboard.main()
-        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
-        window.rootViewController = tabBarController
-        
-        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = tabBarController
-        }, completion: nil)
-        
+        UserRequester.getMyUser {[weak self] response in
+            guard let self = self else { return }
+            switch response {
+            case .success(let userRes):
+                UserRequester.saveLocally(user: userRes)
+                guard let window = UIApplication.shared.keyWindow else { return }
+                let mainStoryboard: UIStoryboard = R.storyboard.main()
+                guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
+                window.rootViewController = tabBarController
+                
+                UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                    window.rootViewController = tabBarController
+                }, completion: nil)
+            case .failure(let error):
+                self.alertSimpleMessage(message: error.localizedDescription)
+            }
+        }
     }
-    
     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
-
 }
 
 extension LoginViewController {

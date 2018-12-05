@@ -47,7 +47,7 @@ class RegisterUserViewController: UIViewController {
     }
         
     @IBAction func didTapSkip(_ sender: Any) {
-        openApp()
+        sync(with: AuthManager.getCurrentEmail())
     }
     
     @IBAction func didTapSaveUser(_ sender: Any) {
@@ -56,9 +56,12 @@ class RegisterUserViewController: UIViewController {
     }
     
     func setUserName(with name: String) {
-        
+        sync(with: name)
+    }
+    
+    func sync(with name: String) {
         if name.count <= 3 {
-            
+            alertSimpleMessage(message: "choose a name with more than 2 letters")
         } else {
             UserRequester.uploadUser(name: name) {res in
                 switch res {
@@ -71,7 +74,7 @@ class RegisterUserViewController: UIViewController {
             }
         }
     }
-    
+
     func openApp() {
         self.dismissLoader()
         guard let window = UIApplication.shared.keyWindow else { return }

@@ -52,6 +52,10 @@ class UserRequester {
         }
     }
     
+    class func getMyUser(completion: @escaping (Response<MulltometroUser>) -> Void) {
+        
+    }
+    
     class func checkUser(completion: @escaping (Bool) -> Void) {
         let uid = ["uid": AuthManager.getCurrentUserId()]
         
