@@ -51,8 +51,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func didTapRegister(_ sender: Any) {
@@ -97,29 +95,5 @@ class RegisterViewController: UIViewController {
     
     func unwindToLogin() {
         self.performSegue(withIdentifier: R.segue.registerViewController.unwindToLogin.identifier, sender: nil)
-    }
-}
-
-extension RegisterViewController {
-    @objc func keyboardWillShow(sender: NSNotification) {
-        let sizeToKeyboard = view.frame.maxY - (fieldsView.frame.origin.y + fieldsView.frame.size.height)
-        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let keyBoardheight = keyboardSize.height
-            UIView.animate(withDuration: 0.8) { [weak self] in
-                guard let self = self else { return }
-                let constant = (sizeToKeyboard - keyBoardheight)
-                let positiveConstant = Swift.abs(constant) - 20
-                self.constraintToBot.constant = positiveConstant// Swift.abs(constant)
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(sender: NSNotification) {
-        UIView.animate(withDuration: 0.8) { [weak self] in
-            guard let self = self else { return }
-            self.constraintToBot.constant = 0
-            self.view.layoutIfNeeded()
-        }
     }
 }
