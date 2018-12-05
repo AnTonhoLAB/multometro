@@ -53,8 +53,14 @@ class DetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationNavigationController = segue.destination as? QRViewController{
-                destinationNavigationController.QRString = sender as? String
+        if let destinationNavigationController = segue.destination as? QRViewController {
+            destinationNavigationController.QRString = sender as? String
+        }
+    
+        if let destinationNavigationController = segue.destination as? ApplyFeeViewController, let room = room, let user = sender as? MulltometroUser{
+//            destinationNavigationController.QRString = sender as? String
+            destinationNavigationController.fees = room.fees
+            destinationNavigationController.user = user
         }
     }
 }
@@ -88,7 +94,7 @@ extension DetailViewController: UITableViewDataSource {
             
             if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-                cell.setup(with: users[indexPath.row - 1], admin: room?.admin)
+            cell.setup(with: users[indexPath.row - 1], admin: room?.admin, on: self)
                 return cell
             }
         
@@ -124,6 +130,12 @@ extension DetailViewController: UITableViewDelegate {
              tableView.reloadSections(sections, with: .none)
           }
        }
+    }
+}
+
+extension DetailViewController: ApplyFeeDelegate {
+    func applyFee(in user: MulltometroUser) {
+        performSegue(withIdentifier: "toApplyFee", sender: user)
     }
 }
 

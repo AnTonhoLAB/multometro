@@ -18,7 +18,8 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var imageUser: UIImageView!
     @IBOutlet weak var btAddFee: UIButton!
     
-    var name: String?
+    var user: MulltometroUser?
+    weak var delegate: ApplyFeeDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +33,13 @@ class UserCell: UITableViewCell {
     }
     
     @IBAction func didTapApplyFee(_ sender: Any) {
-        print("DID TA APPLY")
+        guard let delegate = delegate, let user = user else { return }
+        delegate.applyFee(in: user)
     }
     
-    func setup(with user: MulltometroUser, admin: MulltometroUser?) {
+    func setup(with user: MulltometroUser, admin: MulltometroUser?, on delegate: ApplyFeeDelegate) {
+        self.user = user
+        self.delegate = delegate
         var urlString: String
         if let userImageURL = user.photoURL {
             if userImageURL == "" {
@@ -57,4 +61,8 @@ class UserCell: UITableViewCell {
         
         lbUserName.text = user.name
     }
+}
+
+protocol ApplyFeeDelegate: class {
+    func applyFee(in user: MulltometroUser)
 }

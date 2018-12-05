@@ -208,13 +208,44 @@
                     <view key="view" contentMode="scaleToFill" id="WRQ-Vf-Gvp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Hq-v2-Pyy">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-Yy-tbR">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Y6p-Bi-dtd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="CANCEL"/>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="rjH-b4-7lU" eventType="touchUpInside" id="3pd-nY-5c1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UU3-Tf-yem" firstAttribute="trailing" secondItem="qfk-Yy-tbR" secondAttribute="trailing" id="6Ug-be-1dL"/>
+                            <constraint firstItem="7Hq-v2-Pyy" firstAttribute="top" secondItem="UU3-Tf-yem" secondAttribute="top" id="CmL-M8-Z0i"/>
+                            <constraint firstItem="UU3-Tf-yem" firstAttribute="bottom" secondItem="qfk-Yy-tbR" secondAttribute="bottom" id="F5G-wy-LHa"/>
+                            <constraint firstItem="UU3-Tf-yem" firstAttribute="trailing" secondItem="7Hq-v2-Pyy" secondAttribute="trailing" id="Lgt-Vj-FI5"/>
+                            <constraint firstItem="qfk-Yy-tbR" firstAttribute="leading" secondItem="UU3-Tf-yem" secondAttribute="leading" id="YD1-20-jOh"/>
+                            <constraint firstItem="7Hq-v2-Pyy" firstAttribute="leading" secondItem="UU3-Tf-yem" secondAttribute="leading" id="i1h-5g-GTx"/>
+                            <constraint firstItem="qfk-Yy-tbR" firstAttribute="top" secondItem="7Hq-v2-Pyy" secondAttribute="bottom" id="z7o-On-8t7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UU3-Tf-yem"/>
                     </view>
+                    <connections>
+                        <outlet property="tvFees" destination="7Hq-v2-Pyy" id="spu-zg-pPL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huN-kZ-XM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="1424"/>
+            <point key="canvasLocation" x="1892" y="1423.5382308845578"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wj9-y0-miG">
