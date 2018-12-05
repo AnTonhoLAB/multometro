@@ -63,12 +63,15 @@ class RegisterUserViewController: UIViewController {
         if name.count <= 3 {
             alertSimpleMessage(message: "choose a name with more than 2 letters")
         } else {
+            showLoader()
             UserRequester.uploadUser(name: name) {res in
                 switch res {
                 case .success(let userRes):
+                    self.dismissLoader()
                     UserRequester.saveLocally(user: userRes)
                     self.openApp()
                 case .failure(_):
+                    self.dismissLoader()
                     self.alertSimpleMessage(message: "Upload image error")
                 }
             }
@@ -76,7 +79,6 @@ class RegisterUserViewController: UIViewController {
     }
 
     func openApp() {
-        self.dismissLoader()
         guard let window = UIApplication.shared.keyWindow else { return }
         let mainStoryboard: UIStoryboard = R.storyboard.main()
         guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
