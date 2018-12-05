@@ -15,13 +15,17 @@ class UserRequester {
     
     private static var timer = Timer()
     class func startSync(){
+//         syncUser()
+        //timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
+    }
+    
+    class func oneSyncUser() {
 //        syncUser()
-//        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(UserRequester.syncUser), userInfo: nil, repeats: true)
     }
     
     @objc private class func syncUser() {
         let uid = ["uid": AuthManager.getCurrentUserId()]
-        function.httpsCallable("syncUser").call(uid) { res, _ in
+        function.httpsCallable("syncUser").call(uid) { res, err in
             
             if let res = res {
                 do {
@@ -30,13 +34,17 @@ class UserRequester {
                     let user = try JSONDecoder().decode(MulltometroUser.self, from: jsonData)
                     
                     let userToSave = user.toCDObject()
-                    CDManager.saveThis(userToSave, .user, completionHandler: { (err) in
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 240 , execute: {
-                            syncUser()
-                        })
+                    
+                    CDManager.saveThis(userToSave, completionHandler: { (err) in
+                        guard (err == nil) else {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                                syncUser()
+                            })
+                            return
+                        }
                     })
                 } catch {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 240 , execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
                         syncUser()
                     })
                 }
@@ -55,76 +63,60 @@ class UserRequester {
             }
         }
     }
-
-    class func createUser(with user: MulltometroUser, and image: UIImage, completion: @escaping (SaveUserResponse<MulltometroUser?>) -> Void) {
+    
+    class func uploadUser(image: UIImage, completion: @escaping (Response<Bool>) -> Void) {
+        let reference = Storage.storage().reference()
         let uid = AuthManager.getCurrentUserId()
         let imageName:String = String("\(uid).png")
-        let reference = Storage.storage().reference()
         let storageRef = reference.child(imageName)
         
-        var imageRes = 0
-        var saveUserRes = 0
-        user.photoURL = imageName
-        user.uid = uid
-        user.email = AuthManager.getCurrentEmail()
-        
-        var userRes: MulltometroUser?
-        
-        // SEMAFORO
-        
-        // SEMAFORO DOWN
-        // Fazer upload da imagem { // SE ERRO = Chamar Completion ELSE SEMAFORO UP }
-        // SEMAFORO DOWN
-        // Criar usuário { // SE ERRO = Chamar Completion ELSE SEMAFORO UP}
-        
-        //SEMAFORO DOWN
-        // Chamar completion
         
         if let uploadData = image.jpegData(compressionQuality: 0.5){
-            storageRef.putData(uploadData, metadata: nil, completion: { metadata, err in
-                if err == nil {
-                    imageRes = 1
-                    if saveUserRes == 1 {
-                        completion(.success(userRes))
-                    } else if saveUserRes == -1 {
-                        completion(.errorOnUser(SaveUserError.errorOnUser))
-                    }
+            storageRef.putData(uploadData, metadata: nil, completion: { _, err in
+                if let err = err {
+                   completion(Response.failure(err))
                 } else {
-                    imageRes = -1
-                    if saveUserRes == 1 {
-                        completion(.errorOnImage(SaveUserError.errorOnImage))
-                    } else if saveUserRes == -1 {
-                        completion(.error(SaveUserError.error))
-                    }
+                   completion(Response.success(true))
                 }
             })
         } else {
-            imageRes = -1
+            completion(.failure(SaveUserError.errorOnImage))
         }
+    }
+    
+    class func uploadUser(name: String, completion: @escaping (Response<MulltometroUser>) -> Void ) {
+        let userName = ["name": name,
+                        "uid": AuthManager.getCurrentUserId()
+                        ]
         
-        let userToSave = user.dictionary
-     
-        function.httpsCallable("addUser").call(userToSave) { (res, err) in
-            if err == nil {
-                var value = res!.data as! [String: Any]
-                value["firstTime"] = false
-                let jsonData = try! JSONSerialization.data(withJSONObject: value, options: [])
-                userRes = try! JSONDecoder().decode(MulltometroUser.self, from: jsonData)
-                saveUserRes = 1
-                if imageRes == 1 {
+        function.httpsCallable("addUser").call(userName) { (res, err) in
+            if let err = err {
+                completion(.failure(err))
+            }
+            
+            if let res = res {
+                let value = res.data as! [String: Any]
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                    let userRes = try JSONDecoder().decode(MulltometroUser.self, from: jsonData)
                     completion(.success(userRes))
-                } else if imageRes == -1 {
-                    completion(.errorOnImage(SaveUserError.errorOnImage))
-                }
-            } else {
-                saveUserRes = -1
-                if imageRes == 1 {
-                    completion(.error(SaveUserError.error))
-                } else if imageRes == -1 {
-                    completion(.error(SaveUserError.error))
+                } catch {
+                    completion(.failure(error))
                 }
             }
         }
+    }
+    
+    class func saveLocally(user: MulltometroUser) {
+        let userToSave = user.toCDObject()
+        CDManager.saveThis(userToSave, completionHandler: { (err) in
+            guard (err == nil) else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 20 , execute: {
+                    self.saveLocally(user: user)
+                })
+                return
+            }
+        })
     }
 }
 

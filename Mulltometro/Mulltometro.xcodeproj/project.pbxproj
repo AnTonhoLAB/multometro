@@ -15,6 +15,7 @@
 		5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA8921A0861F0005FA43 /* UserCell.swift */; };
 		5E01AA8C21A0861F0005FA43 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA8A21A0861F0005FA43 /* UserCell.xib */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
+		5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
@@ -99,6 +100,7 @@
 		5E01AA8921A0861F0005FA43 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5E01AA8A21A0861F0005FA43 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; indentWidth = 0; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
+		5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhotoViewController.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				5E6D0D13219754F200186390 /* RegisterUser.storyboard */,
+				5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */,
 				5E6D0D152197551800186390 /* RegisterUserViewController.swift */,
 			);
 			path = OnBoarding;
@@ -403,9 +406,9 @@
 		5ED085C6215B003B00293516 /* Supp */ = {
 			isa = PBXGroup;
 			children = (
+				5ED08592215AFF9B00293516 /* AppDelegate.swift */,
 				5E7FE6332176B3740029E035 /* R.generated.swift */,
 				5E92EAB321627F57000E0EE4 /* Assets.xcassets */,
-				5ED08592215AFF9B00293516 /* AppDelegate.swift */,
 				5ED085A1215AFF9D00293516 /* Info.plist */,
 				5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */,
 				5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */,
@@ -828,6 +831,7 @@
 				5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */,
 				5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
+				5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */,
 				5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

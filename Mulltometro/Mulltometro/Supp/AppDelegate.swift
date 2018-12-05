@@ -18,12 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
         AuthManager.configureService()
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last as! URL)
         
-        let user: User =  CDManager.Object()
-        
-        CDManager.fetchAll(user, completionHandler: { (t, err) in
-            print("A", t.last)
-        })
+//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         if !launchedBefore  { //First time in app

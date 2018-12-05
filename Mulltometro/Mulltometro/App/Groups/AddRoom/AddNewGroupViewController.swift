@@ -48,22 +48,35 @@ class AddNewGroupViewController: UIViewController {
     }
     
     @IBAction func didTapCreate(_ sender: Any) {
-        let cell = registerTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! RoomRegisterCell
-        let newRoom = cell.createRoom(with: fees)
-        showLoader()
-        RoomRequester.addRoom(with: newRoom.dictionary) { [weak self] response in
-            guard let self = self else { return }
-
-            switch response {
-            case .success(let group):
-                if let delegate = self.delegate {
-                    delegate.added(new: group)
+        
+        AuthManager.selfUser { response in
+            let cell = self.registerTableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! RoomRegisterCell
+            let fields = cell.requireNameAndDue()
+            
+            switch response{
+                
+            case .success(let admin):
+                let room = fields.participate ? Room(likeUserTo: admin, name: fields.name, fees: self.fees, dueDate: fields.due) :
+                                                Room(admin: admin, name: fields.name, fees: self.fees, dueDate: fields.due)
+                self.showLoader()
+                RoomRequester.addRoom(with: room.dictionary) { [weak self] response in
+                    guard let self = self else { return }
+                    
+                    switch response {
+                    case .success(let group):
+                        if let delegate = self.delegate {
+                            delegate.added(new: group)
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    case .failure(let err):
+                        self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
+                    }
+                    self.dismissLoader()
                 }
-                self.dismiss(animated: true, completion: nil)
             case .failure(let err):
+                self.dismissLoader()
                 self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
             }
-            self.dismissLoader()
         }
     }
 }

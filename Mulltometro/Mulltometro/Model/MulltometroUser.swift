@@ -31,6 +31,14 @@ class MulltometroUser: Codable {
         self.firstTime = false
     }
     
+    init(uid: String, name: String, email: String, photoURL: String) {
+        self.uid = uid
+        self.name = name
+        self.email = email
+        self.photoURL = photoURL
+        self.firstTime = false
+    }
+    
     init() {
         
     }
@@ -41,6 +49,7 @@ class MulltometroUser: Codable {
         user.uid = self.uid
         user.firstTime = false
         user.name = self.name
+        user.pthotoURL = self.photoURL
         
         return user
     }

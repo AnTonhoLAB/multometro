@@ -17,15 +17,18 @@ class AuthManager {
     
     private init() {}
     
-    static var selfUser: MulltometroUser = {
-//
+    static func selfUser(completion: @escaping (Response<User>) -> Void) {
         let user: User =  CDManager.Object()
-        
-        CDManager.fetchAll(user, completionHandler: { (t, err) in
-            print("Amigo estou aqui", t)
+    
+        CDManager.getSinlgeObject(user, completionHandler: { response in
+            switch response {
+            case .success(let user):
+                completion(.success(user))
+            case .failure(let err):
+                completion(.failure(err))
+            }
         })
-        return MulltometroUser(uid: AuthManager.getCurrentUserId(), name: AuthManager.getCurrentEmail(), email: AuthManager.getCurrentEmail())
-    }()
+ }
     
     static func garb() {
        print( Auth.auth().currentUser?.refreshToken)

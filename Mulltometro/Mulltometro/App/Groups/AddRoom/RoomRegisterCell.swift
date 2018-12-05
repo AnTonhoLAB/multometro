@@ -39,13 +39,21 @@ class RoomRegisterCell: UITableViewCell {
         }
     }
     
-    func createRoom(with fees: [Fee]?) -> Room {
+//    func createRoom(with fees: [Fee]?) -> Room {
+//        let roomName = tfRoomName.text!
+//        let dueDate = (dayPicker.selectedRow(inComponent: 0) + 1) % 30
+//        
+//        let room = stParticipate.isOn ? Room(likeUserTo: roomName, fees: fees, dueDate: dueDate)
+//                                      : Room(name: roomName, fees: fees, dueDate: dueDate)
+//        return room
+//    }
+    
+    func requireNameAndDue() -> (name: String, due: Int, participate: Bool) {
         let roomName = tfRoomName.text!
         let dueDate = (dayPicker.selectedRow(inComponent: 0) + 1) % 30
+        let participate = stParticipate.isOn
         
-        let room = stParticipate.isOn ? Room(likeUserTo: roomName, fees: fees, dueDate: dueDate)
-                                      : Room(name: roomName, fees: fees, dueDate: dueDate)
-        return room
+        return (roomName, dueDate, participate)
     }
 }
 
