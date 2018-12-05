@@ -33,7 +33,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapCreateQR))
         
         if let room = room {
             navigationItem.title = room.nameRoom
@@ -41,6 +40,10 @@ class DetailViewController: UIViewController {
                              TableViewData(opened: false,title: "Fees", sectionData: room.fees)]
             detailRoomFields.roomFields = room
             detailRoomFields.setupFields()
+        }
+        
+        if room?.admin?.uid == AuthManager.getCurrentUserId() {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapCreateQR))
         }
     }
     
