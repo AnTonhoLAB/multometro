@@ -62,6 +62,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btAddFee" destination="spz-IX-8bc" id="NeJ-gX-TYm"/>
                 <outlet property="imageUser" destination="0Ua-6m-8fm" id="8hf-Nh-VXt"/>
                 <outlet property="lbUserName" destination="7ix-wT-n0i" id="ny1-dF-ZJh"/>
             </connections>

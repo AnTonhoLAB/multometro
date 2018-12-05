@@ -16,7 +16,7 @@ class GroupCell: UITableViewCell {
         }
     }
     @IBOutlet weak var lbNameRoom: UILabel!
-    @IBOutlet weak var lbUsersCount: UILabel!
+//    @IBOutlet weak var lbUsersCount: UILabel!
     @IBOutlet weak var lbNumberOfUsers: UILabel!
     
     @IBOutlet weak var lbIsAdmin: UILabel!
@@ -32,7 +32,9 @@ class GroupCell: UITableViewCell {
         
         lbNameRoom.text = group.nameRoom
         if let users = group.users {
-            lbNumberOfUsers.text =  String(users.count)
+            lbNumberOfUsers.text = String(users.count)
+        } else {
+            lbNumberOfUsers.text = "0"
         }
         
         if group.admin?.uid == AuthManager.getCurrentUserId() {

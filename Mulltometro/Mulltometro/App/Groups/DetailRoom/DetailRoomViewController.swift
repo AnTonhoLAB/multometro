@@ -85,17 +85,17 @@ extension DetailViewController: UITableViewDataSource {
             cell.setup()
             return cell
         } else {
+            
+            if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
+                let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
+                cell.setup(with: users[indexPath.row - 1], admin: room?.admin)
+                return cell
+            }
         
             if let fees = tableViewData[indexPath.section].sectionData as? [Fee] {
                 let cell = Bundle.main.loadNibNamed(FeeCell.identifier, owner: self, options: nil)?.first as! FeeCell
                 cell.setup(with: fees[indexPath.row - 1])
                 return cell
-            }
-        
-            if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
-                let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-            cell.setup(with: users[indexPath.row - 1])
-            return cell
             }
         
             let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell

@@ -16,6 +16,7 @@ class UserCell: UITableViewCell {
 
     @IBOutlet weak var lbUserName: UILabel!
     @IBOutlet weak var imageUser: UIImageView!
+    @IBOutlet weak var btAddFee: UIButton!
     
     var name: String?
     
@@ -34,15 +35,24 @@ class UserCell: UITableViewCell {
         print("DID TA APPLY")
     }
     
-    func setup(with user: MulltometroUser) {
+    func setup(with user: MulltometroUser, admin: MulltometroUser?) {
         var urlString: String
         if let userImageURL = user.photoURL {
-            urlString = userImageURL
-            let url = URL(string: urlString)
-            imageUser.kf.setImage(with: url)
+            if userImageURL == "" {
+                imageUser.image = R.image.profile()
+            } else {
+                urlString = userImageURL
+                let url = URL(string: urlString)
+                imageUser.kf.setImage(with: url)
+            }
         } else {
-            urlString = "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/4/4/4/2/44426ec60227fed134090948322b475d.jpg"
-            imageUser.image = R.image.addImage()
+            imageUser.image = R.image.profile()
+        }
+        
+        if let admin = admin {
+            if admin.uid != AuthManager.getCurrentUserId() {
+                self.btAddFee.isHidden = true
+            }
         }
         
         lbUserName.text = user.name
