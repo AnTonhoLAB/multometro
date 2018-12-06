@@ -10,7 +10,7 @@ import UIKit
 import Rswift
 
 class DetailViewController: UIViewController {
-    
+
     @IBOutlet weak var detailRoomFields: DetailRoomFields!
     @IBOutlet weak var detailTransparent: UIView! {
         didSet {
@@ -33,7 +33,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapCreateQR))
         
         if let room = room {
             navigationItem.title = room.nameRoom
@@ -41,6 +40,10 @@ class DetailViewController: UIViewController {
                              TableViewData(opened: false,title: "Fees", sectionData: room.fees)]
             detailRoomFields.roomFields = room
             detailRoomFields.setupFields()
+        }
+        
+        if room?.admin?.uid == AuthManager.getCurrentUserId() {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapCreateQR))
         }
     }
     
@@ -50,8 +53,14 @@ class DetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationNavigationController = segue.destination as? QRViewController{
-                destinationNavigationController.QRString = sender as? String
+        if let destinationNavigationController = segue.destination as? QRViewController {
+            destinationNavigationController.QRString = sender as? String
+        }
+    
+        if let destinationNavigationController = segue.destination as? ApplyFeeViewController, let room = room, let user = sender as? MulltometroUser{
+//            destinationNavigationController.QRString = sender as? String
+            destinationNavigationController.fees = room.fees
+            destinationNavigationController.user = user
         }
     }
 }
@@ -82,17 +91,17 @@ extension DetailViewController: UITableViewDataSource {
             cell.setup()
             return cell
         } else {
+            
+            if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
+                let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
+            cell.setup(with: users[indexPath.row - 1], admin: room?.admin, on: self)
+                return cell
+            }
         
             if let fees = tableViewData[indexPath.section].sectionData as? [Fee] {
                 let cell = Bundle.main.loadNibNamed(FeeCell.identifier, owner: self, options: nil)?.first as! FeeCell
                 cell.setup(with: fees[indexPath.row - 1])
                 return cell
-            }
-        
-            if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
-                let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-            cell.setup(with: users[indexPath.row - 1])
-            return cell
             }
         
             let cell = Bundle.main.loadNibNamed(HeaderCell.identifier, owner: self, options: nil)?.first as! HeaderCell
@@ -121,6 +130,12 @@ extension DetailViewController: UITableViewDelegate {
              tableView.reloadSections(sections, with: .none)
           }
        }
+    }
+}
+
+extension DetailViewController: ApplyFeeDelegate {
+    func applyFee(in user: MulltometroUser) {
+        performSegue(withIdentifier: "toApplyFee", sender: user)
     }
 }
 

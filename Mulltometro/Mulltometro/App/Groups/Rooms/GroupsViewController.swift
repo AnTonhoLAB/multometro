@@ -10,6 +10,13 @@ import UIKit
 
 class GroupsViewController: UIViewController {
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .red
+        refreshControl.addTarget(self, action: #selector(requestRooms), for: .valueChanged)
+        return refreshControl
+    }()
+    
     @IBOutlet weak var btAddRoom: UIButton! {
         didSet {
             btAddRoom.backgroundColor = .redSystem
@@ -24,6 +31,7 @@ class GroupsViewController: UIViewController {
             tableViewRooms.estimatedRowHeight = 180
             tableViewRooms.rowHeight = UITableView.automaticDimension
             tableViewRooms.allowsSelection = true
+            tableViewRooms.refreshControl = refreshControl
         }
     }
     
@@ -37,24 +45,7 @@ class GroupsViewController: UIViewController {
             self.navigationController?.navigationBar.backItem?.title = ""
         }
         showLoader()
-        if NetworkingManager.isConnected {
-            RoomRequester.getAllRooms {[weak self] res in
-                guard let self = self else { return }
-                
-                switch res {
-                case .success(let rooms):
-                    self.rooms = rooms
-                    self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
-                case .failure(_):
-                    self.alertSimpleWarning(title: "Error to get rooms", message: "error", action: nil)
-                }
-                self.dismissLoader()
-            }
-        } else {
-            self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
-            self.dismissLoader()
-        }
-        
+        requestRooms()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +65,28 @@ class GroupsViewController: UIViewController {
         
         if let destinationController = segue.destination as? SearchRoomViewController {
             destinationController.delegate = self
+        }
+    }
+    
+    @objc func requestRooms() {
+        if NetworkingManager.isConnected {
+            RoomRequester.getAllRooms {[weak self] res in
+                guard let self = self else { return }
+                
+                switch res {
+                case .success(let rooms):
+                    self.rooms = rooms
+                    self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
+                case .failure(_):
+                    self.alertSimpleWarning(title: "Error to get rooms", message: "error", action: nil)
+                }
+                self.refreshControl.endRefreshing()
+                self.dismissLoader()
+            }
+        } else {
+            self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
+            self.refreshControl.endRefreshing()
+            self.dismissLoader()
         }
     }
     

@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
                     window.rootViewController = viewController
                 }, completion: nil)
             } else {
-              self.openApp()
+                self.openApp()
             }
         }
     }

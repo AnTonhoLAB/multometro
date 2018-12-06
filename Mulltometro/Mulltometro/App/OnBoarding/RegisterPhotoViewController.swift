@@ -60,7 +60,7 @@ class RegisterPhotoViewController: UIViewController {
     }
     
     @IBAction func didTapSkip(_ sender: Any) {
-      
+        self.performSegue(withIdentifier: "toRegisterName", sender: nil)
     }
     
     @IBAction func didTapNext(_ sender: Any) {

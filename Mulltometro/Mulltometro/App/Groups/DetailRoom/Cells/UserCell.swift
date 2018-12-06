@@ -16,8 +16,10 @@ class UserCell: UITableViewCell {
 
     @IBOutlet weak var lbUserName: UILabel!
     @IBOutlet weak var imageUser: UIImageView!
+    @IBOutlet weak var btAddFee: UIButton!
     
-    var name: String?
+    var user: MulltometroUser?
+    weak var delegate: ApplyFeeDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,20 +33,36 @@ class UserCell: UITableViewCell {
     }
     
     @IBAction func didTapApplyFee(_ sender: Any) {
-        print("DID TA APPLY")
+        guard let delegate = delegate, let user = user else { return }
+        delegate.applyFee(in: user)
     }
     
-    func setup(with user: MulltometroUser) {
+    func setup(with user: MulltometroUser, admin: MulltometroUser?, on delegate: ApplyFeeDelegate) {
+        self.user = user
+        self.delegate = delegate
         var urlString: String
         if let userImageURL = user.photoURL {
-            urlString = userImageURL
-            let url = URL(string: urlString)
-            imageUser.kf.setImage(with: url)
+            if userImageURL == "" {
+                imageUser.image = R.image.profile()
+            } else {
+                urlString = userImageURL
+                let url = URL(string: urlString)
+                imageUser.kf.setImage(with: url)
+            }
         } else {
-            urlString = "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/4/4/4/2/44426ec60227fed134090948322b475d.jpg"
-            imageUser.image = R.image.addImage()
+            imageUser.image = R.image.profile()
+        }
+        
+        if let admin = admin {
+            if admin.uid != AuthManager.getCurrentUserId() {
+                self.btAddFee.isHidden = true
+            }
         }
         
         lbUserName.text = user.name
     }
+}
+
+protocol ApplyFeeDelegate: class {
+    func applyFee(in user: MulltometroUser)
 }

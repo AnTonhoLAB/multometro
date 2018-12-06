@@ -53,7 +53,26 @@ class UserRequester {
     }
     
     class func getMyUser(completion: @escaping (Response<MulltometroUser>) -> Void) {
+        print("TODO GET USER IN DB")
         
+        let uid = ["uid": AuthManager.getCurrentUserId()]
+        
+        function.httpsCallable("syncUser").call(uid) { res, err in
+            if let res = res {
+                do {
+                    guard let value = res.data as? [String: Any] else { return }
+                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                    let user = try JSONDecoder().decode(MulltometroUser.self, from: jsonData)
+                    completion(.success(user))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            
+            if let err = err {
+                completion(.failure(err))
+            }
+        }
     }
     
     class func checkUser(completion: @escaping (Bool) -> Void) {

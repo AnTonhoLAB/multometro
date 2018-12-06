@@ -90,6 +90,7 @@ class RegisterViewController: UIViewController {
     }
     
     func errorRegister(error: Error){
+         self.dismissLoader()
          alertSimpleMessage(message: error.localizedDescription)
     }
     
