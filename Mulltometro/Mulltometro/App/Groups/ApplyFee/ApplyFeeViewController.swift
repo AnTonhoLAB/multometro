@@ -13,6 +13,7 @@ class ApplyFeeViewController: UIViewController {
     @IBOutlet weak var tvFees: UITableView! {
         didSet {
             tvFees.dataSource = self
+            tvFees.delegate = self
             let nib = UINib(nibName: FeeCell.identifier, bundle: nil)
             tvFees.register(nib, forCellReuseIdentifier: FeeCell.identifier)
             tvFees.estimatedRowHeight = 180
@@ -20,6 +21,7 @@ class ApplyFeeViewController: UIViewController {
         }
     }
     
+//    var 
     var user: MulltometroUser?
     var fees: [Fee]?
     
@@ -50,5 +52,10 @@ extension ApplyFeeViewController: UITableViewDataSource {
         cell.setup(with: fees[indexPath.row])
         return cell
     }
+}
 
+extension ApplyFeeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
