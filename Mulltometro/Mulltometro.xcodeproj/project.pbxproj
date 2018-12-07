@@ -16,6 +16,7 @@
 		5E01AA8C21A0861F0005FA43 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA8A21A0861F0005FA43 /* UserCell.xib */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */; };
+		5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55B35D21BB0C990076333B /* AppliedFee.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
@@ -101,6 +102,7 @@
 		5E01AA8A21A0861F0005FA43 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; indentWidth = 0; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhotoViewController.swift; sourceTree = "<group>"; };
+		5E55B35D21BB0C990076333B /* AppliedFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedFee.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
 				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E6C7E99216388D100AE8260 /* Fee.swift */,
+				5E55B35D21BB0C990076333B /* AppliedFee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				5E6BC3DF2180B2BD004DD9A7 /* QRViewController.swift in Sources */,
 				5E6D0D11219753D400186390 /* CoreDataManager.swift in Sources */,
 				5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */,
+				5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */,
 				5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,

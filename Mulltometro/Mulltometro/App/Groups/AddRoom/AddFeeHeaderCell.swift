@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class AddFeeHeaderCell: UITableViewCell {
     
@@ -24,7 +25,11 @@ class AddFeeHeaderCell: UITableViewCell {
     
     var delegate: RegisterRequester!
 
-    @IBOutlet weak var lbFeeType: UILabel!
+    @IBOutlet weak var lbFeeType: UILabel! {
+        didSet {
+            lbFeeType.text = R.string.localizable.rules()
+        }
+    }
     
     @IBAction func didTapAdd(_ sender: Any) {
         

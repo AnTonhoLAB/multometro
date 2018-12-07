@@ -26,16 +26,21 @@ Camera="Camera";
     ImageErrorDescription="Your photo was not saved but you can try again later";
     UserErrorDescription="Your user was not saved but you can try again later";
 
-//NewRoomViewController
-RoomName="Room Name";
-WillParticipate="Will you participate?";
-DueDate="Due Date";
-
 //RegisterViewController
 PlaceholderUsername="Choose your username";
 PlaceholderEmail="Type your E-mail";
 PlaceholderPassowrd="Type your Password";
 PlaceholderRepeatPassword="Repeat your Password";
+
+
+//NewRoomViewController
+RoomName="Room Name";
+WillParticipate="Will you participate?";
+DueDate="Due Date";
+CreateRoom="Create a new Room";
+
+//Header add rule
+Rules="Rules";
 
 // Detail
 

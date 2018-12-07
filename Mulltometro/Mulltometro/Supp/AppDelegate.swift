@@ -15,7 +15,6 @@ import IQKeyboardManager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-let error =
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
         AuthManager.configureService()
