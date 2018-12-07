@@ -20,24 +20,28 @@ platform :ios do
 
   lane :generateIPA do
 
-	begin   
-	    build_ios_app(
+	build_ios_app(
 	 
-  		configuration: "Release",
+  	   configuration: "Release",
       		scheme: "Mulltometro",
      		clean: true,
      		export_method: 'app-store',
      		output_directory: "~/Desktop", # Destination directory. Defaults to current directory.
      		output_name: "mulltometroBuild.ipa",
-    	     )
+    	    )
 
-	     slackMessage(
-		success: true
-	     )
-	rescue
-	     slackMessage(
-		success: false
-	     )     
+	slackMessage(
+	   success: true
+	)
+  end
+	error do |lane, exception|
+	slack(
+       	
+       		message: exception.to_s, 
+       		success: false, 
+		slack_url: "https://hooks.slack.com/services/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",
+       		payload: { "Output" => exception.error_info.to_s } 
+    	) 
   end
 
   lane :uploadToTestFlight do
