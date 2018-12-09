@@ -33,6 +33,4 @@ class AppliedFee{
         self.user = user
         self.room = room
     }
-    
-    
 }
