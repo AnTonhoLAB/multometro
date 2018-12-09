@@ -539,10 +539,12 @@
 			buildPhases = (
 				5C12BAD3C222E0F83EB9E432 /* [CP] Check Pods Manifest.lock */,
 				5EE20D59215EE069000FCF61 /* Rswift */,
+				5E55B35F21BB14950076333B /* Start timer */,
 				5ED0858B215AFF9A00293516 /* Sources */,
 				5ED0858C215AFF9A00293516 /* Frameworks */,
 				5ED0858D215AFF9A00293516 /* Resources */,
 				CE627939D3488A934B8D6D8D /* [CP] Embed Pods Frameworks */,
+				5E55B36021BB14E80076333B /* Finish timer */,
 			);
 			buildRules = (
 			);
@@ -692,6 +694,42 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5E55B35F21BB14950076333B /* Start timer */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start timer";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n \necho \"________________________________ START HERE _____________________________________\"\necho \"$(date +%s)\" > \"buildtimes.log\"\n\n";
+		};
+		5E55B36021BB14E80076333B /* Finish timer */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Finish timer";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nstartime=$(<buildtimes.log)\nendtime=$(date +%s)\ndeltatime=$((endtime-startime))\nnewline=$'\\n'\necho \"________________________________ END HERE _____________________________________\"\necho \"[Start] $startime$newline[End] $endtime$newline[Delta] $deltatime\" > \"buildtimes.log\"\n\n\n\n";
 		};
 		5EE20D59215EE069000FCF61 /* Rswift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -948,6 +986,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-expression-type-checking=200 -Xfrontend -warn-long-function-bodies=200";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1023,6 +1062,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = developmentProfile;
@@ -1045,6 +1085,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distributionProfile;

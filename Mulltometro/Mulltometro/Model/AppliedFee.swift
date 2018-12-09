@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AppliedFee{
+class AppliedFee: Codable {
     
     var nameFee: String!
     var valuePerType: Int!

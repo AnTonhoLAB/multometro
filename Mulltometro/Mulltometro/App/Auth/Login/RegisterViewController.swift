@@ -66,7 +66,7 @@ class RegisterViewController: UIViewController {
             AuthManager.createUser(with: email, password: password) { [weak self] res in
                 guard let self = self else { return }
                 switch res {
-                case .success(let user):
+                case .success(_):
                     self.finishRegister()
                 case .failure(let error):
                     self.errorRegister(error: error)
