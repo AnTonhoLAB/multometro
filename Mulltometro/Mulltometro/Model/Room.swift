@@ -14,6 +14,7 @@ class Room: Codable {
     var admin: MulltometroUser?
     var nameRoom: String!
     var fees: [Fee]?
+    var appliedFee: [AppliedFee]?
     var users: [MulltometroUser]?
     var dueDate: Int!
     var created: Date!

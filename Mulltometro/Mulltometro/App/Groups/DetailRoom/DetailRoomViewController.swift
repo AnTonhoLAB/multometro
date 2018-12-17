@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         if let room = room {
             navigationItem.title = room.nameRoom
             tableViewData = [TableViewData(opened: true, title: "Participants", sectionData: room.users),
-                             TableViewData(opened: false,title: "Fees", sectionData: room.fees)]
+                             TableViewData(opened: false,title: R.string.localizable.rules(), sectionData: room.fees)]
             detailRoomFields.roomFields = room
             detailRoomFields.setupFields()
         }

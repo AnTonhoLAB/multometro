@@ -20,7 +20,7 @@ class GroupsViewController: UIViewController {
     @IBOutlet weak var btAddRoom: UIButton! {
         didSet {
             btAddRoom.backgroundColor = .redSystem
-            btAddRoom.setTitle("Add Room", for: .normal)
+            btAddRoom.setTitle(R.string.localizable.createRoom(), for: .normal)
             btAddRoom.roundedCornerColor(radius: 8)
         }
     }
