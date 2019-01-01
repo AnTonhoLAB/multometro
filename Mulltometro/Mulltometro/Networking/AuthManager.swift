@@ -28,7 +28,7 @@ class AuthManager {
                 completion(.failure(err))
             }
         })
- }
+    }
     
     
     static func configureService() {

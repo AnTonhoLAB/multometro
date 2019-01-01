@@ -16,6 +16,7 @@
 		5E01AA8C21A0861F0005FA43 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA8A21A0861F0005FA43 /* UserCell.xib */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */; };
+		5E2C83B821DC24360014A4DE /* HTTPRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C83B721DC24360014A4DE /* HTTPRequester.swift */; };
 		5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55B35D21BB0C990076333B /* AppliedFee.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
@@ -102,6 +103,7 @@
 		5E01AA8A21A0861F0005FA43 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; indentWidth = 0; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhotoViewController.swift; sourceTree = "<group>"; };
+		5E2C83B721DC24360014A4DE /* HTTPRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequester.swift; sourceTree = "<group>"; };
 		5E55B35D21BB0C990076333B /* AppliedFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedFee.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				5ED085CB215B00E900293516 /* AuthManager.swift */,
 				5E6D0D0E219736CD00186390 /* UserRequester.swift */,
 				5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */,
+				5E2C83B721DC24360014A4DE /* HTTPRequester.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */,
 				5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */,
 				5EC8976C217A7C0700C65CF9 /* AddFeeRegisterCell.swift in Sources */,
+				5E2C83B821DC24360014A4DE /* HTTPRequester.swift in Sources */,
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */,
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
@@ -1063,7 +1067,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Mulltometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = developmentProfile;
 				SWIFT_VERSION = 4.2;
@@ -1086,7 +1090,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Multometro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.Mulltometro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distributionProfile;
 				SWIFT_VERSION = 4.2;
