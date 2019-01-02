@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum Routes {
+    case room
+    case auth
+    case user 
+}
+
 final class HTTPRequester {
     
     
