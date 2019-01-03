@@ -7,13 +7,10 @@
 //
 
 import Foundation
-import Firebase
-import FirebaseAuth
 import Rswift
 
 class AuthManager {
     
-    private static var function = Functions.functions()
     
     private init() {}
     
@@ -30,70 +27,38 @@ class AuthManager {
         })
     }
     
-    
-    static func configureService() {
-         FirebaseApp.configure()
-    }
-    
     static func isLogged() -> Bool {
-        return Auth.auth().currentUser == nil ? false : true
+        // TODO: - REFACTORING FIREBAE
+        return true
     }
     
     static func getCurrentUserId() -> String {
-        return Auth.auth().currentUser?.uid ?? ""
+        // TODO: - REFACTORING FIREBAE
+        return "TODO"
     }
     
     static func setUser(name: String, completion: @escaping (Error?) -> Void) {
-        guard let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() else { return completion(nil) }
-        
-        changeRequest.displayName = name
-        changeRequest.commitChanges { err in
-            completion(err)
-        }
+       // TODO: - REFACTORING FIREBAE
     }
     
     static func getCurrentEmail() -> String {
-        return Auth.auth().currentUser?.email ?? ""
+        // TODO: - REFACTORING FIREBAE
+        return "TODO"
     }
     
     static func eraseLogData() {
-        do {
-            try Auth.auth().signOut()
-        } catch { }
+       // TODO: - REFACTORING FIREBAE
     }
     
     static func login (user: String, password: String, completion: @escaping (Response<Any>) -> Void) {
-        Auth.auth().signIn(withEmail: user, password: password) { (res, err) in
-            if let err = err {
-                completion(Response.failure(err))
-            } else if let res = res {
-                guard let user = res.user.email else { return }
-                completion(Response.success(user))
-            }
-        }
+        // TODO: - REFACTORING FIREBAE
     }
     
-    static func createUser(with email: String, password: String, completion: @escaping(Response<AuthDataResult>) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (res, error) in
-            if let error = error {
-                completion(Response.failure(error))
-            } else if let res = res {
-                do{
-                    try Auth.auth().signOut()
-                    completion(Response.success(res))
-                }catch{
-                     completion(Response.failure(error))
-                }
-            }
-        }
+    static func createUser(with email: String, password: String, completion: @escaping(Response<MulltometroUser>) -> Void) {
+       // TODO: - REFACTORING FIREBAE
     }
     
     static func logout(completion: @escaping(Response<Bool>) -> Void) {
-        do {
-            try Auth.auth().signOut()
-            completion(.success(true))
-        } catch {
-            completion(.failure(error))
-        }
+        // TODO: - REFACTORING FIREBAE
     }
 }

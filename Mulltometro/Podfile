@@ -6,12 +6,6 @@ target 'Mulltometro' do
   use_frameworks!
 
   # Pods for Mulltometro
-	pod 'Firebase/Core'
-	pod 'Firebase/Firestore'
-	pod 'Firebase/Functions'
-	pod 'Firebase/Database'
-	pod 'Firebase/Auth'
-	pod 'Firebase/Storage'
 	pod 'R.swift', '5.0.0.alpha.2'
 	pod 'Kingfisher', '~> 4.0'
 	pod 'IQKeyboardManager'
