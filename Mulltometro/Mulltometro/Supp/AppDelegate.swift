@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
         
+        let param = [
+            "email": "georgegomees@gmail.com",
+            "password": "SolMaior"
+            ]
+        
+        HTTPRequester.request(route: .auth, function: .login, parameters: param, completion: { response in 
+            
+        })
+        
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         
         if !launchedBefore  { //First time in app
