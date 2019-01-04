@@ -29,7 +29,7 @@ class AuthManager {
     
     static func isLogged() -> Bool {
         // TODO: - REFACTORING FIREBAE
-        return true
+        return false
     }
     
     static func getCurrentUserId() -> String {

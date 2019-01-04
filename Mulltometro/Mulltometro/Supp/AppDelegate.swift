@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
+        
         if !launchedBefore  { //First time in app
             AuthManager.eraseLogData()
             UserDefaults.standard.set(true, forKey: R.string.strings.launchedBefore())
