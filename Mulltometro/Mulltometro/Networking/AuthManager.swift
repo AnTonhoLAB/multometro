@@ -50,8 +50,7 @@ class AuthManager {
        // TODO: - REFACTORING FIREBAE
     }
     
-    static func login (email: String, password: String, completion: @escaping (Response<Any>) -> Void) {
-        // TODO: - REFACTORING FIREBAE
+    static func login (email: String, password: String, completion: @escaping (Response<MulltometroUser>) -> Void) {
         let param = [
             "email": email,
             "password": password
