@@ -68,6 +68,7 @@
 		5EE430BA219255C200923BD6 /* DetailRoomFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE430B8219255C200923BD6 /* DetailRoomFields.swift */; };
 		5EE430BB219255C200923BD6 /* DetailRoomFields.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE430B9219255C200923BD6 /* DetailRoomFields.xib */; };
 		5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */; };
+		5EE5860D21ED298700A824A7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5860C21ED298700A824A7 /* KeychainHelper.swift */; };
 		CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */; };
 		E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */; };
 /* End PBXBuildFile section */
@@ -161,6 +162,7 @@
 		5EE430B8219255C200923BD6 /* DetailRoomFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRoomFields.swift; sourceTree = "<group>"; };
 		5EE430B9219255C200923BD6 /* DetailRoomFields.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailRoomFields.xib; sourceTree = "<group>"; };
 		5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
+		5EE5860C21ED298700A824A7 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.debug.xcconfig"; sourceTree = "<group>"; };
 		922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mulltometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 			children = (
 				5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */,
 				5E6D0D10219753D400186390 /* CoreDataManager.swift */,
+				5EE5860C21ED298700A824A7 /* KeychainHelper.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */,
 				5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
+				5EE5860D21ED298700A824A7 /* KeychainHelper.swift in Sources */,
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
 				5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */,
 				5E66B86D217C0BAA002BB3AF /* GroupCell.swift in Sources */,
