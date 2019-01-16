@@ -10,5 +10,6 @@ import Foundation
 
 struct KeychainConfiguration {
     static let serviceName = "Mulltometro"
+    static let account = "Token"
     static let accessGroup: String? = nil
 }
