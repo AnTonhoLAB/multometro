@@ -1,6 +1,6 @@
 # multometro
 
-Aplicação feita em swift para a versão mobile e node para o servidor web utilizando firebase.
+Aplicação feita em swift para a versão mobile e node para o servidor web utilizando Heroku.
 É um trabalho elaborada para a conclusão da cadeira de estágio supervisionado do aluno
 <b> <a href="https://www.linkedin.com/in/georgegomees/"> George Vilnei Arboite Gomes</a></b> na QI Faculdade e Escola Técnica 
 
