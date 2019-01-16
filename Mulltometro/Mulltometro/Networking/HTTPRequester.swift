@@ -42,16 +42,20 @@ final class HTTPRequester {
         }
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.addValue(authorization(), forHTTPHeaderField: "Authorization")
+        request.addValue(authorization(), forHTTPHeaderField: "Authorization")
         //create dataTask using the session object to send data to the server
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
             if let error = error {
                 completion(Response.failure(error))
             }
-            
-            if let data = data {
-                completion(Response.success(data))
+
+            if let response = response, let statusCode = response.getStatusCode(), let data = data {
+                if statusCode == 200 {
+                    completion(Response.success(data))
+                } else {
+                    completion(Response.failure(RequestError.fail))
+                }
             }
         })
         task.resume()
@@ -62,6 +66,22 @@ final class HTTPRequester {
     }
     
     private static func authorization() -> String {
-        return String("Bearer eyJhbGciOiJIUzI1NiJ9.Z2VvcmdlZ29tZWVzQGdtYWlsLmNvbQ.vNQvD5qwmN0dEOX5U3Svo12e2YAbLkK3wJDLZI1Yr8s")
+        let tokenItem = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
+        do {
+            let token = try tokenItem.readPassword()
+            return String("Bearer " + token)
+        } catch {
+            return ""
+        }
+    }
+}
+
+extension URLResponse {
+    
+    func getStatusCode() -> Int? {
+        if let httpResponse = self as? HTTPURLResponse {
+            return httpResponse.statusCode
+        }
+        return nil
     }
 }

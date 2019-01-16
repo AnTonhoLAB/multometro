@@ -63,6 +63,9 @@ class AuthManager {
                 do {
                     let userAndToken = try JSONDecoder().decode(UserAndToken.self, from: data)
                     let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
+                   
+                    let stringDic = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                    
                     try keychainToken.savePassword(userAndToken.token)
 
                     completion(.success(userAndToken.user))

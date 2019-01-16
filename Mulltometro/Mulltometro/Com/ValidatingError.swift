@@ -30,3 +30,16 @@ extension ValidatingError: LocalizedError {
         }
     }
 }
+
+enum RequestError: Error {
+    case fail
+}
+
+extension RequestError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .fail:
+            return NSLocalizedString(R.string.localizable.errorName(), comment: R.string.localizable.error())
+        }
+    }
+}

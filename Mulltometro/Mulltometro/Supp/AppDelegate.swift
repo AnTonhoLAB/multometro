@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let param = [
             "email": "georgegomees@gmail.com",
-            "password": "SolMaior"
+            "password": "SolMaio"
             ]
         
         HTTPRequester.request(route: .auth, function: .login, parameters: param, completion: { response in 
