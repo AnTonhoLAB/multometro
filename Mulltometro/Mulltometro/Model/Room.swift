@@ -38,8 +38,9 @@ class Room: Codable {
         self.fees = fees
         self.dueDate = dueDate
         self.created = created
-        if let uidAdm = admin.uid, let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
-            let user = MulltometroUser(uid: uidAdm, name: name, email: email, photoURL: photo)
+        
+        if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
+            let user = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
             self.admin = user
             self.users = [user]
         }
@@ -50,8 +51,8 @@ class Room: Codable {
         self.fees = fees
         self.dueDate = dueDate
         self.created = created
-        if let uidAdm = admin.uid, let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
-            self.admin = MulltometroUser(uid: uidAdm, name: name, email: email, photoURL: photo)
+        if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
+            self.admin = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
         }
     }
     

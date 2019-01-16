@@ -38,10 +38,10 @@ class DetailRoomFields: UIView {
     
     func setupFields() {
         if let room = roomFields, let admin = room.admin {
-            if admin.uid == AuthManager.getCurrentUserId() {
+            if admin.id == AuthManager.getCurrentUserId() {
                 lbAdmin.text = "You"
             } else {
-                lbAdmin.text = admin.name
+                lbAdmin.text = admin.userName
             }
             lbDueDate.text = String(room.dueDate)
         }

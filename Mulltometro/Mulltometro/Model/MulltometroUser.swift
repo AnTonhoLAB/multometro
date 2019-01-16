@@ -11,29 +11,37 @@ import CoreData
 
 class MulltometroUser: Codable {
    
-    var uid: String?
-    var name: String!
+    var id: Int!
+    var userName: String!
     var email: String!
     var photoURL: String?
     var rooms: [Room]?
-    var firstTime: Bool?
+    var firstTime: Bool!
+    var bio: String?
+    var password: String?
+
+//    "password": "$2a$10$HkwS3CICU4qQWRjoD757s.pd6SOdcmdu/tm7MPqx5vX0jrH2BLCzu",
+//    "bio": null,
+//    "firstTime": true,
+//    "createdAt": "2019-01-04T19:06:53.000Z",
+//    "updatedAt": "2019-01-04T19:06:53.000Z"
     
     init(name: String, email: String, rooms: [Room]) {
-        self.name = name
+        self.userName = name
         self.email = email
         self.rooms = rooms
     }
     
-    init(uid: String, name: String, email: String) {
-        self.uid = uid
-        self.name = name
+    init(uid: Int, name: String, email: String) {
+        self.id = uid
+        self.userName = name
         self.email = email
         self.firstTime = false
     }
     
-    init(uid: String, name: String, email: String, photoURL: String) {
-        self.uid = uid
-        self.name = name
+    init(uid: Int, name: String, email: String, photoURL: String) {
+        self.id = uid
+        self.userName = name
         self.email = email
         self.photoURL = photoURL
         self.firstTime = false
@@ -46,11 +54,15 @@ class MulltometroUser: Codable {
     func toCDObject() -> User {
         let user: User = CDManager.Object()
         user.email = self.email
-        user.uid = self.uid
+        user.uid = Int64(self.id)
         user.firstTime = false
-        user.name = self.name
+        user.name = self.userName
         user.pthotoURL = self.photoURL
         
         return user
+    }
+    
+    init(from json: [String:Any]) {
+        
     }
 }

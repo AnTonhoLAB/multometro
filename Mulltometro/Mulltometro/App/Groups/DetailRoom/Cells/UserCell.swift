@@ -54,12 +54,12 @@ class UserCell: UITableViewCell {
         }
         
         if let admin = admin {
-            if admin.uid != AuthManager.getCurrentUserId() {
+            if admin.id != AuthManager.getCurrentUserId() {
                 self.btAddFee.isHidden = true
             }
         }
         
-        lbUserName.text = user.name
+        lbUserName.text = user.userName
     }
 }
 

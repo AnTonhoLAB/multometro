@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         guard let tfEmail = tfEmail.text, let tfPassword = tfPassword.text else { return }
 
         self.showLoader()
-        AuthManager.login(user: tfEmail, password: tfPassword) { [weak self] in
+        AuthManager.login(email: tfEmail, password: tfPassword) { [weak self] in
             guard let self = self else { return }
             switch $0 {
             case .success(_):
