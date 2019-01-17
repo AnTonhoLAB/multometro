@@ -9,6 +9,7 @@
 import Foundation
 
 enum RequestError: Error {
+    case noConnection
     case fail
     case failServerCrip
     case wrongUserOrPassword
@@ -19,6 +20,8 @@ extension RequestError: LocalizedError {
     public var errorDescription: String? {
         let empty = ""
         switch self {
+        case .noConnection:
+             return NSLocalizedString(R.string.localizable.errorNoConnection(), comment: empty)
         case .fail:
             return NSLocalizedString(R.string.localizable.errorName(), comment: empty)
         case .failServerCrip:
@@ -35,6 +38,7 @@ extension RequestError {
     
     init(code: Int) {
         switch code {
+            case 1: self = .noConnection
             case 101: self = .wrongUserOrPassword
             case 102: self = .emailAlreadyBeingUsed
             default: self = .fail

@@ -26,6 +26,7 @@ final class HTTPRequester {
     
     static func request(route: Route, function: Function, parameters: [String: Any], completion: @escaping (Response<Data>) -> Void) {
         
+        if !NetworkingManager.isConnected { completion(.failure(RequestError.noConnection)) }
         //create the url with URL
         let url = URL(string: generateUrl(with: route, function: function))!
         
