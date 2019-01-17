@@ -10,14 +10,19 @@ import Foundation
 
 class Room: Codable {
     
-    var uid: String?
+    var id: Int!
     var admin: MulltometroUser?
-    var nameRoom: String!
+    var name: String!
     var fees: [Fee]?
     var appliedFee: [AppliedFee]?
     var users: [MulltometroUser]?
     var dueDate: Int!
-    var created: Date!
+//    var createdAt: Date?
+    
+    
+//    "color": "red",
+//    "createdAt": "2019-01-17T17:56:03.000Z",
+//    "userInRooms"
     
     init() {
  
@@ -25,19 +30,19 @@ class Room: Codable {
     
     init(admin: MulltometroUser, name: String, dueDate: Int, created: Date? = Date()) {
         self.admin = admin
-        self.nameRoom = name
+        self.name = name
         self.dueDate = dueDate
-        self.created = created
+//        self.createdAt = created
     }
     
     init(likeUserTo admin: User, name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
         
 //        self.admin = admin
 //        self.users = [admin]
-        self.nameRoom = name
+        self.name = name
         self.fees = fees
         self.dueDate = dueDate
-        self.created = created
+//        self.createdAt = created
         
         if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
             let user = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
@@ -47,10 +52,10 @@ class Room: Codable {
     }
     
     init(admin: User, name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
-        self.nameRoom = name
+        self.name = name
         self.fees = fees
         self.dueDate = dueDate
-        self.created = created
+//        self.createdAt = created
         if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
             self.admin = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
         }
@@ -58,12 +63,12 @@ class Room: Codable {
     
     init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
 //        self.admin = AuthManager.selfUser
-        self.nameRoom = name
+        self.name = name
         self.dueDate = dueDate
         self.fees = fees
 //        self.adminId = adminUid
 //        self.users = users
-        self.created = created
+//        self.createdAt = created
     }
     
     init(completion: @escaping (Response<Bool>) -> Void) {

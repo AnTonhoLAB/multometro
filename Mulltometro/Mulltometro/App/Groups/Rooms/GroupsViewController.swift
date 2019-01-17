@@ -69,23 +69,22 @@ class GroupsViewController: UIViewController {
     }
     
     @objc func requestRooms() {
-        if NetworkingManager.isConnected {
-            RoomRequester.getAllRooms {[weak self] res in
-                guard let self = self else { return }
-                
-                switch res {
-                case .success(let rooms):
+        RoomRequester.getAllRooms {[weak self] res in
+            guard let self = self else { return }
+            
+            switch res {
+            case .success(let rooms):
+                DispatchQueue.main.async {
                     self.rooms = rooms
                     self.tableViewRooms.reloadSections(IndexSet(integer: 0), with: .bottom)
-                case .failure(_):
-                    self.alertSimpleWarning(title: "Error to get rooms", message: "error", action: nil)
                 }
-                self.refreshControl.endRefreshing()
-                self.dismissLoader()
+            case .failure(let error):
+                self.alertSimpleWarning(title: "Error to get rooms", message: error.localizedDescription, action: nil)
             }
-        } else {
-            self.alertSimpleWarning(title: "Error, Have No Connection!", message: "Check your connection and return try!", action: nil)
-            self.refreshControl.endRefreshing()
+            
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
             self.dismissLoader()
         }
     }

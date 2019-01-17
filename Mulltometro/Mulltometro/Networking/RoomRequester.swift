@@ -41,9 +41,26 @@ class RoomRequester {
                 
             case .success(let admin):
                 print(admin)
+                let param = ["id": admin.uid]
+                
+                HTTPRequester.request(route: .room, function: .getMyRooms, parameters: param, completion: { response  in
+                    switch response {
+                        
+                    case .success(let data):
+                        do {
+                            let roomFromData = try JSONDecoder().decode([Room].self, from: data.getArrayOfObject(with: "rooms"))
+                            completion(.success(roomFromData))
+                        } catch {
+                            completion(.failure(error))
+                        }
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                })
+
                 break
             case .failure(let error):
-                completion(.failure(error))
+                fatalError(error.localizedDescription)
             }
         }
     }
@@ -62,4 +79,8 @@ class RoomRequester {
             }
         }
     }
+}
+
+struct ResponseRooms: Codable {
+    var rooms: [Room]!
 }

@@ -47,7 +47,7 @@ class RegisterUserViewController: UIViewController {
     }
         
     @IBAction func didTapSkip(_ sender: Any) {
-        sync(with: AuthManager.getCurrentEmail())
+        openApp()
     }
     
     @IBAction func didTapSaveUser(_ sender: Any) {

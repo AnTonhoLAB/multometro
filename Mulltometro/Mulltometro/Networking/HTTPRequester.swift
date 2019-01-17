@@ -9,15 +9,16 @@
 import Foundation
 
 enum Route: String {
-    case room = "room"
-    case auth = "auth"
-    case user = "user"
+    case room
+    case auth
+    case user
 }
 
 enum Function: String {
     case login
     case register
-    case create 
+    case create
+    case getMyRooms
 }
 
 final class HTTPRequester {
@@ -97,6 +98,19 @@ extension Data {
             return codeBind
         } catch {
             return 0
+        }
+    }
+    
+    func getArrayOfObject(with name: String) throws -> Data {
+        do {
+            let responseObject = try JSONSerialization.jsonObject(with: self, options: []) as? [String: Any]
+            guard let responseBind = responseObject,
+                let objectAny = responseBind[name] as? [[String: Any]] else { throw RequestError(code: 0) }
+            
+            let jsonData = try JSONSerialization.data(withJSONObject:objectAny)
+            return jsonData
+        } catch {
+            throw RequestError(code: 0)
         }
     }
 }

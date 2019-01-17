@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let room = room {
-            navigationItem.title = room.nameRoom
+            navigationItem.title = room.name
             tableViewData = [TableViewData(opened: true, title: "Participants", sectionData: room.users),
                              TableViewData(opened: false,title: R.string.localizable.rules(), sectionData: room.fees)]
             detailRoomFields.roomFields = room
@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
     }
     
     @objc func didTapCreateQR() {
-        guard let room = room, let id = room.uid else { return }
+        guard let room = room, let id = room.id else { return }
         performSegue(withIdentifier: R.segue.detailViewController.toQRView, sender: id)
     }
     
