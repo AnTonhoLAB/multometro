@@ -18,6 +18,7 @@
 		5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */; };
 		5E2C83B821DC24360014A4DE /* HTTPRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C83B721DC24360014A4DE /* HTTPRequester.swift */; };
 		5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55B35D21BB0C990076333B /* AppliedFee.swift */; };
+		5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E578A6E21F10849006B24C5 /* UserInRoom.swift */; };
 		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
@@ -26,7 +27,7 @@
 		5E6BC3DF2180B2BD004DD9A7 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BC3DD2180AFC6004DD9A7 /* QRViewController.swift */; };
 		5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */; };
 		5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E972163815600AE8260 /* MulltometroUser.swift */; };
-		5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Fee.swift */; };
+		5E6C7E9A216388D100AE8260 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Rule.swift */; };
 		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
 		5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */; };
 		5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D0C2195F49000186390 /* NetworkingManager.swift */; };
@@ -108,6 +109,7 @@
 		5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhotoViewController.swift; sourceTree = "<group>"; };
 		5E2C83B721DC24360014A4DE /* HTTPRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequester.swift; sourceTree = "<group>"; };
 		5E55B35D21BB0C990076333B /* AppliedFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedFee.swift; sourceTree = "<group>"; };
+		5E578A6E21F10849006B24C5 /* UserInRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInRoom.swift; sourceTree = "<group>"; };
 		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
@@ -116,7 +118,7 @@
 		5E6BC3DD2180AFC6004DD9A7 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomViewController.swift; sourceTree = "<group>"; };
 		5E6C7E972163815600AE8260 /* MulltometroUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUser.swift; sourceTree = "<group>"; };
-		5E6C7E99216388D100AE8260 /* Fee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fee.swift; sourceTree = "<group>"; };
+		5E6C7E99216388D100AE8260 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequester.swift; sourceTree = "<group>"; };
 		5E6D0D0C2195F49000186390 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -397,7 +399,8 @@
 			children = (
 				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
 				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
-				5E6C7E99216388D100AE8260 /* Fee.swift */,
+				5E578A6E21F10849006B24C5 /* UserInRoom.swift */,
+				5E6C7E99216388D100AE8260 /* Rule.swift */,
 				5E55B35D21BB0C990076333B /* AppliedFee.swift */,
 			);
 			path = Model;
@@ -842,6 +845,7 @@
 				5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */,
 				5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */,
 				5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */,
+				5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
 				5EE5860D21ED298700A824A7 /* KeychainHelper.swift in Sources */,
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
@@ -875,7 +879,7 @@
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
 				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
 				5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */,
-				5E6C7E9A216388D100AE8260 /* Fee.swift in Sources */,
+				5E6C7E9A216388D100AE8260 /* Rule.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
 				5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */,
 				5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */,

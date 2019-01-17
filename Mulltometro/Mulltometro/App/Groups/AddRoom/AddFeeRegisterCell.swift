@@ -81,13 +81,13 @@ class AddFeeRegisterCelll: UITableViewCell {
         }
     }
     
-    func createFee() -> Fee {
+    func createFee() -> Rule {
         let name = tfName.text?.count == 0 ? "New Fee" : tfName.text!
         let valuePerType = tfValuePerFee.text?.count == 0 ? 0 : Int(tfValuePerFee.text ?? "0")
         let valueType = tfValueType.text!
         let simble = tfSimble.text!
         
-        let fee = Fee(name: name, valuePerType: valuePerType!, valueType: valueType, simbleType: simble)
+        let fee = Rule(name: name, valuePerType: valuePerType!, valueType: valueType, simbleType: simble)
         return fee
     }
 }

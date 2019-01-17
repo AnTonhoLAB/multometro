@@ -16,7 +16,7 @@ class HeaderCell: UITableViewCell {
     
     var title: String? 
     var users: [String]?
-    var fees: [Fee]?
+    var fees: [Rule]?
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -23,16 +23,16 @@ class FeeCell: UITableViewCell {
     @IBOutlet weak var lbValuePerFee: UILabel!
     @IBOutlet weak var lbSybol: UILabel!
     
-    var fee: Fee?
+    var fee: Rule?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func setup(with fee: Fee) {
-        lbFeeName.text = fee.nameFee
-        lbValuePerFee.text = String(fee.valuePerType)
-        lbSybol.text = fee.simbleType
+    func setup(with fee: Rule) {
+        lbFeeName.text = fee.name
+        lbValuePerFee.text = String(fee.valuePerFee)
+        lbSybol.text = fee.symbol
     }
 }

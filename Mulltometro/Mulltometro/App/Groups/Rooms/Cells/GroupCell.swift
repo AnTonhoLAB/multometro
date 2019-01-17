@@ -31,7 +31,7 @@ class GroupCell: UITableViewCell {
         guard let group = group else { return }
         
         lbNameRoom.text = group.name
-        if let users = group.users {
+        if let users = group.userInRooms {
             lbNumberOfUsers.text = String(users.count)
         } else {
             lbNumberOfUsers.text = "0"

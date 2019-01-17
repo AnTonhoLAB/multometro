@@ -23,7 +23,7 @@ class ApplyFeeViewController: UIViewController {
     
 //    var 
     var user: MulltometroUser?
-    var fees: [Fee]?
+    var fees: [Rule]?
     
     override func viewDidLoad() {
         super.viewDidLoad()

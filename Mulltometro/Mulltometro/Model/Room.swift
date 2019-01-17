@@ -13,16 +13,16 @@ class Room: Codable {
     var id: Int!
     var admin: MulltometroUser?
     var name: String!
-    var fees: [Fee]?
+    var rules: [Rule]?
     var appliedFee: [AppliedFee]?
-    var users: [MulltometroUser]?
     var dueDate: Int!
 //    var createdAt: Date?
     
     
 //    "color": "red",
 //    "createdAt": "2019-01-17T17:56:03.000Z",
-//    "userInRooms"
+    // rules
+    var userInRooms: [UserInRoom]?
     
     init() {
  
@@ -35,25 +35,25 @@ class Room: Codable {
 //        self.createdAt = created
     }
     
-    init(likeUserTo admin: User, name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
+    init(likeUserTo admin: User, name: String, fees: [Rule]?, dueDate: Int, created: Date? = Date()) {
         
 //        self.admin = admin
 //        self.users = [admin]
         self.name = name
-        self.fees = fees
+        self.rules = fees
         self.dueDate = dueDate
 //        self.createdAt = created
         
         if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
             let user = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
             self.admin = user
-            self.users = [user]
+//            self.users = [user]
         }
     }
     
-    init(admin: User, name: String, fees: [Fee]?, dueDate: Int, created: Date? = Date()) {
+    init(admin: User, name: String, fees: [Rule]?, dueDate: Int, created: Date? = Date()) {
         self.name = name
-        self.fees = fees
+        self.rules = fees
         self.dueDate = dueDate
 //        self.createdAt = created
         if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
@@ -61,11 +61,11 @@ class Room: Codable {
         }
     }
     
-    init(name: String, fees: [Fee]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
+    init(name: String, fees: [Rule]?, adminUid: String, users: [String]?, dueDate:Int, created: Date? = Date()) {
 //        self.admin = AuthManager.selfUser
         self.name = name
         self.dueDate = dueDate
-        self.fees = fees
+        self.rules = fees
 //        self.adminId = adminUid
 //        self.users = users
 //        self.createdAt = created

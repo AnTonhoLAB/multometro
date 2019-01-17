@@ -36,8 +36,8 @@ class DetailViewController: UIViewController {
         
         if let room = room {
             navigationItem.title = room.name
-            tableViewData = [TableViewData(opened: true, title: "Participants", sectionData: room.users),
-                             TableViewData(opened: false,title: R.string.localizable.rules(), sectionData: room.fees)]
+            tableViewData = [TableViewData(opened: true, title: "Participants", sectionData: room.userInRooms),
+                             TableViewData(opened: false,title: R.string.localizable.rules(), sectionData: room.rules)]
             detailRoomFields.roomFields = room
             detailRoomFields.setupFields()
         }
@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
     
         if let destinationNavigationController = segue.destination as? ApplyFeeViewController, let room = room, let user = sender as? MulltometroUser{
 //            destinationNavigationController.QRString = sender as? String
-            destinationNavigationController.fees = room.fees
+            destinationNavigationController.fees = room.rules
             destinationNavigationController.user = user
         }
     }
@@ -98,7 +98,7 @@ extension DetailViewController: UITableViewDataSource {
                 return cell
             }
         
-            if let fees = tableViewData[indexPath.section].sectionData as? [Fee] {
+            if let fees = tableViewData[indexPath.section].sectionData as? [Rule] {
                 let cell = Bundle.main.loadNibNamed(FeeCell.identifier, owner: self, options: nil)?.first as! FeeCell
                 cell.setup(with: fees[indexPath.row - 1])
                 return cell
