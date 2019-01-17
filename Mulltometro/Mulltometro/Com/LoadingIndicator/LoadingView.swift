@@ -33,8 +33,10 @@ extension UIViewController {
     }
 
     func dismissLoader(){
-        if let view = view.viewWithTag(-888754) {
-            view.removeFromSuperview()
+        DispatchQueue.main.async {
+            if let view = self.view.viewWithTag(-888754) {
+                view.removeFromSuperview()
+            }
         }
     }
 }

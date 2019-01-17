@@ -16,7 +16,7 @@ enum Route: String {
 
 enum Function: String {
     case login = "login"
-    case registr = "register"
+    case register = "register"
     case create = "create"
 }
 

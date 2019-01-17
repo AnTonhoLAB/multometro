@@ -81,8 +81,16 @@ class AuthManager {
         })
     }
     
-    static func createUser(with email: String, password: String, completion: @escaping(Response<MulltometroUser>) -> Void) {
-       // TODO: - REFACTORING FIREBAE
+    static func createUser(with email: String, password: String, completion: @escaping(Response<Data>) -> Void) {
+        let param = [
+            "user": [
+                "email": email,
+                "password": password
+            ]
+        ]
+        HTTPRequester.request(route: .auth, function: .register, parameters: param) { response in
+            completion(response)
+        }
     }
     
     static func logout(completion: @escaping(Response<Bool>) -> Void) {

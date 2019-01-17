@@ -62,8 +62,10 @@ ErrorPasswordSame="Passwords do not match";
 
 
 //Networking Errors
-
-ERRORWrongEmailOrPassowrd="Wrong email or password";
+ERRORN ="ERRO N %d";
+ERRORServer="ERRO %d Something was wrong with the server, please try again later...";
+ERRORWrongEmailOrPassowrd="ERRO %d Wrong email or password";
+ERROREmailAlreadyBeingUsed="ERRO %d This email is already being used";
 
 
 
