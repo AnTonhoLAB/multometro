@@ -39,22 +39,30 @@ class LoginViewController: UIViewController {
     
     @IBAction func btLogin(_ sender: Any) {
         guard let tfEmail = tfEmail.text, let tfPassword = tfPassword.text else { return }
-
-        self.showLoader()
-        AuthManager.login(email: tfEmail, password: tfPassword) { [weak self] in
+        login(email: tfEmail, password: tfPassword)
+    }
+    
+    @IBAction func didTapRegister(_ sender: Any) {
+        performSegue(withIdentifier: "toRegister", sender: nil)
+    }
+    
+    func login(email: String, password: String) {
+        showLoader()
+        AuthManager.login(email: email, password: password) { [weak self] in
             guard let self = self else { return }
             switch $0 {
-            case .success(_):
-                self.checkUser()
+            case .success(let user):
+                UserRequester.saveLocally(user: user)
+                if user.firstTime == false {
+                    self.openApp()
+                } else {
+                    self.openOnboarding()
+                }
             case .failure(let err):
                 self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
                 self.dismissLoader()
             }
         }
-    }
-    
-    @IBAction func didTapRegister(_ sender: Any) {
-        performSegue(withIdentifier: "toRegister", sender: nil)
     }
     
     func checkUser() {
@@ -75,7 +83,21 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func openOnboarding() {
+        DispatchQueue.main.sync {
+            guard let window = UIApplication.shared.keyWindow else { return }
+            let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
+            let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
+            
+            UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                window.rootViewController = viewController
+            }, completion: nil)
+        }
+    }
+    
     func openApp() {
+        
+        //TODO REFACTORING
         UserRequester.getMyUser {[weak self] response in
             guard let self = self else { return }
             switch response {

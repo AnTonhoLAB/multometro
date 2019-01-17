@@ -61,4 +61,9 @@ ErrorPassword="Password must be at least 6 characters";
 ErrorPasswordSame="Passwords do not match";
 
 
+//Networking Errors
+
+ERRORWrongEmailOrPassowrd="Wrong email or password";
+
+
 

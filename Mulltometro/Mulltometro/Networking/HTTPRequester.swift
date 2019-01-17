@@ -49,12 +49,12 @@ final class HTTPRequester {
             if let error = error {
                 completion(Response.failure(error))
             }
-
+            
             if let response = response, let statusCode = response.getStatusCode(), let data = data {
                 if statusCode == 200 {
                     completion(Response.success(data))
                 } else {
-                    completion(Response.failure(RequestError.fail))
+                    completion(Response.failure(RequestError(code: data.getCode())))
                 }
             }
         })
@@ -83,5 +83,17 @@ extension URLResponse {
             return httpResponse.statusCode
         }
         return nil
+    }
+}
+
+extension Data {
+    func getCode() -> Int {
+        do {
+            let responseObject = try JSONSerialization.jsonObject(with: self, options: []) as? [String: Any]
+            guard let responseBind = responseObject, let code = responseBind["code"], let codeBind = code as? Int else { return 0 }
+            return codeBind
+        } catch {
+            return 0
+        }
     }
 }
