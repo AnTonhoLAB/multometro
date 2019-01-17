@@ -65,24 +65,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func checkUser() {
-        UserRequester.checkUser { isFirstTimeInApp in
-            guard let window = UIApplication.shared.keyWindow else { return }
-            self.dismissLoader()
-            if isFirstTimeInApp {
-                
-                let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
-                let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
-                
-                UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                    window.rootViewController = viewController
-                }, completion: nil)
-            } else {
-                self.openApp()
-            }
-        }
-    }
-    
     func openOnboarding() {
         DispatchQueue.main.sync {
             guard let window = UIApplication.shared.keyWindow else { return }
@@ -96,26 +78,16 @@ class LoginViewController: UIViewController {
     }
     
     func openApp() {
-        
-        //TODO REFACTORING
-        UserRequester.getMyUser {[weak self] response in
-            guard let self = self else { return }
-            switch response {
-            case .success(let userRes):
-                UserRequester.saveLocally(user: userRes)
-                guard let window = UIApplication.shared.keyWindow else { return }
-                let mainStoryboard: UIStoryboard = R.storyboard.main()
-                guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
-                window.rootViewController = tabBarController
-                
-                UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                    window.rootViewController = tabBarController
-                }, completion: nil)
-            case .failure(let error):
-                self.alertSimpleMessage(message: error.localizedDescription)
-            }
-        }
+    
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let mainStoryboard: UIStoryboard = R.storyboard.main()
+        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
+
+        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = tabBarController
+        })
     }
+    
     @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
 }
 
