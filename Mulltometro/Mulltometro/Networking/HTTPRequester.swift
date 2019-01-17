@@ -15,14 +15,15 @@ enum Route: String {
 }
 
 enum Function: String {
-    case login = "login"
-    case register = "register"
-    case create = "create"
+    case login
+    case register
+    case create 
 }
 
 final class HTTPRequester {
     
     static let host = "https://mulltometro.herokuapp.com/"
+    static let method = "POST"
     
     static func request(route: Route, function: Function, parameters: [String: Any], completion: @escaping (Response<Data>) -> Void) {
         
@@ -33,7 +34,7 @@ final class HTTPRequester {
         //create the session object
         let session = URLSession.shared
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = method
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
@@ -88,6 +89,7 @@ extension URLResponse {
 }
 
 extension Data {
+    // Only works with errors returns
     func getCode() -> Int {
         do {
             let responseObject = try JSONSerialization.jsonObject(with: self, options: []) as? [String: Any]
