@@ -10,6 +10,8 @@ import UIKit
 
 class DetailRoomFields: UIView {
     
+    static let identifier: String = "DetailRoomFields"
+    
 //    @IBOutlet var contentView: DetailRoomFields!
     @IBOutlet weak var lbAdmin: UILabel!
     @IBOutlet weak var lbDueDate: UILabel!
@@ -30,7 +32,7 @@ class DetailRoomFields: UIView {
     private func commonInit() {
         
         let bundle = Bundle.init(for: type(of: self))
-        let nib = UINib(nibName: "DetailRoomFields", bundle: bundle)
+        let nib = UINib(nibName: DetailRoomFields.identifier , bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         view.frame = bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
