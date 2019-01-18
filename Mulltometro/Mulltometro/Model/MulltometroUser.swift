@@ -16,7 +16,7 @@ class MulltometroUser: Codable {
     var email: String!
     var photoURL: String?
     var rooms: [Room]?
-    var firstTime: Bool!
+    var firstTime: Bool?
     var bio: String?
     var password: String?
 

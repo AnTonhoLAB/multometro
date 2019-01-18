@@ -39,7 +39,7 @@ class AuthManager {
     
     static func getCurrentUserId() -> Int {
         // TODO: - REFACTORING FIREBAE
-        return 0 //"TODO"
+        return 1 //"TODO"
     }
     
     static func setUser(name: String, completion: @escaping (Error?) -> Void) {

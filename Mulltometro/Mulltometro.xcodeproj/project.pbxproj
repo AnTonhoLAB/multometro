@@ -398,8 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
-				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E578A6E21F10849006B24C5 /* UserInRoom.swift */,
+				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E6C7E99216388D100AE8260 /* Rule.swift */,
 				5E55B35D21BB0C990076333B /* AppliedFee.swift */,
 			);

@@ -37,7 +37,7 @@ class GroupCell: UITableViewCell {
             lbNumberOfUsers.text = "0"
         }
         
-        lbIsAdmin.text = group.admin?.user.id == AuthManager.getCurrentUserId() ? "Admin" : "Member"
+        lbIsAdmin.text = group.admin?.mulltometroUserId == AuthManager.getCurrentUserId() ? "Admin" : "Member"
         
     }
 

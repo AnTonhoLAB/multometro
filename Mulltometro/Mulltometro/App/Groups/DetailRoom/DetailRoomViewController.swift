@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
             detailRoomFields.setupFields()
         }
         
-        if room?.admin?.user.id == AuthManager.getCurrentUserId() {
+    if room?.admin?.user?.id == AuthManager.getCurrentUserId() {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapCreateQR))
         }
     }
