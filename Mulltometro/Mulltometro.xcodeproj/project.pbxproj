@@ -14,6 +14,7 @@
 		5E01AA82219F684F0005FA43 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA80219F684F0005FA43 /* HeaderCell.xib */; };
 		5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA8921A0861F0005FA43 /* UserCell.swift */; };
 		5E01AA8C21A0861F0005FA43 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA8A21A0861F0005FA43 /* UserCell.xib */; };
+		5E0796BE21F24F3000927021 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0796BD21F24F3000927021 /* ExtensionDate.swift */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */; };
 		5E2C83B821DC24360014A4DE /* HTTPRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C83B721DC24360014A4DE /* HTTPRequester.swift */; };
@@ -105,6 +106,7 @@
 		5E01AA80219F684F0005FA43 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		5E01AA8921A0861F0005FA43 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5E01AA8A21A0861F0005FA43 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		5E0796BD21F24F3000927021 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; indentWidth = 0; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhotoViewController.swift; sourceTree = "<group>"; };
 		5E2C83B721DC24360014A4DE /* HTTPRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequester.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				5EC89765217A501500C65CF9 /* ExtensionUIView.swift */,
 				5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */,
 				5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */,
+				5E0796BD21F24F3000927021 /* ExtensionDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				5E6D0D11219753D400186390 /* CoreDataManager.swift in Sources */,
 				5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */,
 				5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */,
+				5E0796BE21F24F3000927021 /* ExtensionDate.swift in Sources */,
 				5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */,
 				5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,

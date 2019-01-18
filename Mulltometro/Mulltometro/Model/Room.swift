@@ -16,7 +16,7 @@ class Room: Codable {
     var rules: [Rule]?
     var appliedFee: [AppliedFee]?
     var dueDate: Int!
-    var createdAt: Date?
+    var createdAt: Date!
     
 //    "color": "red",
 //    "createdAt": "2019-01-17T17:56:03.000Z",

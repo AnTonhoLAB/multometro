@@ -13,6 +13,7 @@ class DetailRoomFields: UIView {
 //    @IBOutlet var contentView: DetailRoomFields!
     @IBOutlet weak var lbAdmin: UILabel!
     @IBOutlet weak var lbDueDate: UILabel!
+    @IBOutlet weak var lbCreatedAt: UILabel!
     
     var roomFields: Room?
     
@@ -44,6 +45,7 @@ class DetailRoomFields: UIView {
                 lbAdmin.text = admin.user?.userName ?? "Have no name"
             }
             lbDueDate.text = String(room.dueDate)
+            lbCreatedAt.text = room.createdAt.localizedString
         }
     }
 }
