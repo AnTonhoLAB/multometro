@@ -16,20 +16,27 @@ class Room: Codable {
     var rules: [Rule]?
     var appliedFee: [AppliedFee]?
     var dueDate: Int!
-//    var createdAt: Date?
-    
+    var createdAt: Date?
     
 //    "color": "red",
 //    "createdAt": "2019-01-17T17:56:03.000Z",
     // rules
     var userInRooms: [UserInRoom]?
     
+     var admin2 = {
+//        guard let self = self else { return }
+        if let users = self.userInRooms {
+            let i = users.filter { $0.userType == "ADMIN"}
+           return i.first
+        }
+    }
+    
     init() {
  
     }
     
     init(admin: MulltometroUser, name: String, dueDate: Int, created: Date? = Date()) {
-        self.admin = admin
+//        self.admin = admin
         self.name = name
         self.dueDate = dueDate
 //        self.createdAt = created
@@ -46,7 +53,7 @@ class Room: Codable {
         
         if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
             let user = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
-            self.admin = user
+//            self.admin = user
 //            self.users = [user]
         }
     }
@@ -57,7 +64,7 @@ class Room: Codable {
         self.dueDate = dueDate
 //        self.createdAt = created
         if  let name = admin.name, let email = admin.email, let photo = admin.pthotoURL {
-            self.admin = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
+//            self.admin = MulltometroUser(uid: Int(admin.uid), name: name, email: email, photoURL: photo)
         }
     }
     

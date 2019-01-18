@@ -48,7 +48,10 @@ class RoomRequester {
                         
                     case .success(let data):
                         do {
-                            let roomFromData = try JSONDecoder().decode([Room].self, from: data.getArrayOfObject(with: "rooms"))
+                            let decoder = JSONDecoder()
+                            decoder.dateDecodingStrategy = try decoder.getDecodeStrategy()
+                            
+                            let roomFromData = try decoder.decode([Room].self, from: data.getArrayOfObject(with: "rooms"))
                             completion(.success(roomFromData))
                         } catch {
                             completion(.failure(error))
@@ -83,4 +86,35 @@ class RoomRequester {
 
 struct ResponseRooms: Codable {
     var rooms: [Room]!
+}
+
+enum DateError: String, Error {
+    case invalidDate
+}
+
+extension JSONDecoder {
+    func getDecodeStrategy() throws -> JSONDecoder.DateDecodingStrategy {
+        do {
+          return  try DateDecodingStrategy.custom({ (decoder) -> Date in
+                let container = try decoder.singleValueContainer()
+                let dateStr = try container.decode(String.self)
+                
+                let formatter = DateFormatter()
+                formatter.calendar = Calendar(identifier: .iso8601)
+                formatter.locale = Locale(identifier: "en_US_POSIX")
+                formatter.timeZone = TimeZone(secondsFromGMT: 0)
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+                if let date = formatter.date(from: dateStr) {
+                    return date
+                }
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXXXX"
+                if let date = formatter.date(from: dateStr) {
+                    return date
+                }
+                throw DateError.invalidDate
+            })
+        } catch {
+            throw error
+        }
+    }
 }
