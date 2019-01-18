@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
             detailRoomFields.setupFields()
         }
         
-        if room?.admin?.id == AuthManager.getCurrentUserId() {
+        if room?.admin?.user.id == AuthManager.getCurrentUserId() {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapCreateQR))
         }
     }
@@ -94,7 +94,7 @@ extension DetailViewController: UITableViewDataSource {
             
             if let users = tableViewData[indexPath.section].sectionData as? [MulltometroUser] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-            cell.setup(with: users[indexPath.row - 1], admin: room?.admin, on: self)
+            cell.setup(with: users[indexPath.row - 1], admin: room?.admin?.user, on: self)
                 return cell
             }
         

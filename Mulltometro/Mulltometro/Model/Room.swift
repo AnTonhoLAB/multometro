@@ -11,7 +11,7 @@ import Foundation
 class Room: Codable {
     
     var id: Int!
-    var admin: MulltometroUser?
+//    var admin: MulltometroUser?
     var name: String!
     var rules: [Rule]?
     var appliedFee: [AppliedFee]?
@@ -23,13 +23,13 @@ class Room: Codable {
     // rules
     var userInRooms: [UserInRoom]?
     
-     var admin2 = {
-//        guard let self = self else { return }
+    lazy var admin: UserInRoom? = {
         if let users = self.userInRooms {
             let i = users.filter { $0.userType == "ADMIN"}
-           return i.first
+            return i.first
         }
-    }
+        return nil
+    }()
     
     init() {
  
