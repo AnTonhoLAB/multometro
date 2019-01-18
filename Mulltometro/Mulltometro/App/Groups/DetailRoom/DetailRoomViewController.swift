@@ -42,14 +42,14 @@ class DetailViewController: UIViewController {
             detailRoomFields.setupFields()
         }
         
-    if room?.admin?.user?.id == AuthManager.getCurrentUserId() {
+        if room?.admin?.mulltometroUserId == AuthManager.getCurrentUserId() {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapCreateQR))
         }
     }
     
     @objc func didTapCreateQR() {
         guard let room = room, let id = room.id else { return }
-        performSegue(withIdentifier: R.segue.detailViewController.toQRView, sender: id)
+        performSegue(withIdentifier: R.segue.detailViewController.toQRView, sender: String(id))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
