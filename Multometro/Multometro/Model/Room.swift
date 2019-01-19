@@ -21,7 +21,7 @@ class Room: Codable {
 //    "color": "red",
 //    "createdAt": "2019-01-17T17:56:03.000Z",
     // rules
-    var userInRooms: [UserInRoom]?
+    var userInRooms: [UserInRoom]!
     
     lazy var admin: UserInRoom? = {
         if let users = self.userInRooms {

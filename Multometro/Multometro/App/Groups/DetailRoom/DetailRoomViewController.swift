@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
             tableView.register(nib, forCellReuseIdentifier: HeaderCell.identifier)
             tableView.estimatedRowHeight = 180
             tableView.rowHeight = UITableView.automaticDimension
+            tableView.tableFooterView = UIView()
        }
     }
     
@@ -92,9 +93,9 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         } else {
             
-            if let users = tableViewData[indexPath.section].sectionData as? [MultometroUser] {
+            if let users = tableViewData[indexPath.section].sectionData as? [UserInRoom] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-            cell.setup(with: users[indexPath.row - 1], admin: room?.admin?.user, on: self)
+            cell.setup(with: users[indexPath.row - 1], admin: room?.admin?.mulltometroUser, on: self)
                 return cell
             }
         

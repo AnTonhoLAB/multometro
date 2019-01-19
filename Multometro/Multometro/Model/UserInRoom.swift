@@ -13,5 +13,5 @@ class UserInRoom: Codable {
 //    "enterDate": "2019-01-17T18:48:22.000Z",
     var mulltometroUserId: Int
     var roomId: Int
-    var user: MultometroUser?
+    var mulltometroUser: MultometroUser!
 }
