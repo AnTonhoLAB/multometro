@@ -30,12 +30,16 @@ class DetailViewController: UIViewController {
     }
     
     var room: Room?
+    var admin: MultometroUser?
     var tableViewData: [TableViewData]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let room = room {
+            admin = room.admin?.mulltometroUser
+        
+            self.room?.userInRooms = room.userInRooms.filter{ $0.userType != .ADMIN}
             navigationItem.title = room.name
             tableViewData = [TableViewData(opened: true, title: "Participants", sectionData: room.userInRooms),
                              TableViewData(opened: false,title: R.string.localizable.rules(), sectionData: room.rules)]

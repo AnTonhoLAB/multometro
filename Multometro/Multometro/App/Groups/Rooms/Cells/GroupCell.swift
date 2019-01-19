@@ -16,7 +16,6 @@ class GroupCell: UITableViewCell {
         }
     }
     @IBOutlet weak var lbNameRoom: UILabel!
-//    @IBOutlet weak var lbUsersCount: UILabel!
     @IBOutlet weak var lbNumberOfUsers: UILabel!
     
     @IBOutlet weak var lbIsAdmin: UILabel!
@@ -32,7 +31,8 @@ class GroupCell: UITableViewCell {
         
         lbNameRoom.text = group.name.decode()
         if let users = group.userInRooms {
-            lbNumberOfUsers.text = String(users.count)
+            let validUsers = users.filter{ $0.userType != UserType.ADMIN }
+            lbNumberOfUsers.text = String(validUsers.count)
         } else {
             lbNumberOfUsers.text = "0"
         }

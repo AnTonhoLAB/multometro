@@ -25,7 +25,7 @@ class Room: Codable {
     
     lazy var admin: UserInRoom? = {
         if let users = self.userInRooms {
-            let i = users.filter { $0.userType == "ADMIN"}
+            let i = users.filter { $0.userType == UserType.ADMIN}
             return i.first
         }
         return nil

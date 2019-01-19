@@ -8,10 +8,17 @@
 
 import Foundation
 
+enum UserType: String, Codable{
+    case ADMIN
+    case UserAdmin = "USER/ADMIN"
+    case USER
+}
+
 class UserInRoom: Codable {
-    var userType: String
+    var userType: UserType!
 //    "enterDate": "2019-01-17T18:48:22.000Z",
     var mulltometroUserId: Int
     var roomId: Int
     var mulltometroUser: MultometroUser!
 }
+
