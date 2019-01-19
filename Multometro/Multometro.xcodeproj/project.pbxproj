@@ -38,6 +38,7 @@
 		5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6D0D152197551800186390 /* RegisterUserViewController.swift */; };
 		5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E755C1221A0A40500E405FB /* FeeCell.swift */; };
 		5E755C1521A0A40500E405FB /* FeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E755C1321A0A40500E405FB /* FeeCell.xib */; };
+		5E7DDF5E21F3BF6100C15320 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DDF5D21F3BF6100C15320 /* ExtensionString.swift */; };
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
 		5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6352176B8100029E035 /* RegisterViewController.swift */; };
 		5E7FE6382176B9940029E035 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FE6372176B9940029E035 /* Localizable.strings */; };
@@ -134,6 +135,7 @@
 		5E6D0D152197551800186390 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		5E755C1221A0A40500E405FB /* FeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeCell.swift; sourceTree = "<group>"; };
 		5E755C1321A0A40500E405FB /* FeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeCell.xib; sourceTree = "<group>"; };
+		5E7DDF5D21F3BF6100C15320 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E7FE6352176B8100029E035 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E7FE6372176B9940029E035 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */,
 				5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */,
 				5E0796BD21F24F3000927021 /* ExtensionDate.swift */,
+				5E7DDF5D21F3BF6100C15320 /* ExtensionString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */,
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
 				5E67EBEF21F005DA005F8CC4 /* Errors.swift in Sources */,
+				5E7DDF5E21F3BF6100C15320 /* ExtensionString.swift in Sources */,
 				5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */,
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
 				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
