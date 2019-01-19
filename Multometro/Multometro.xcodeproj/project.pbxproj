@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
+		18DB6BD2094A7622008B6D21 /* Pods_MultometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MultometroTests.framework */; };
 		38C5FBF0209F62EDC9B22C01 /* Pods_Multometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */; };
 		5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA73219F32E80005FA43 /* LoadingView.xib */; };
 		5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA75219F32FD0005FA43 /* LoadingView.swift */; };
@@ -27,7 +27,7 @@
 		5E67EBEF21F005DA005F8CC4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67EBEE21F005DA005F8CC4 /* Errors.swift */; };
 		5E6BC3DF2180B2BD004DD9A7 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BC3DD2180AFC6004DD9A7 /* QRViewController.swift */; };
 		5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */; };
-		5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E972163815600AE8260 /* MulltometroUser.swift */; };
+		5E6C7E982163815700AE8260 /* MultometroUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E972163815600AE8260 /* MultometroUser.swift */; };
 		5E6C7E9A216388D100AE8260 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E99216388D100AE8260 /* Rule.swift */; };
 		5E6C7E9C21638A9B00AE8260 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9B21638A9B00AE8260 /* Room.swift */; };
 		5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */; };
@@ -59,7 +59,7 @@
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
 		5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* MainTabBarController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
-		5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */; };
+		5ED0859B215AFF9B00293516 /* Multometro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08599215AFF9B00293516 /* Multometro.xcdatamodeld */; };
 		5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */; };
 		5ED085AB215AFF9D00293516 /* MultometroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085AA215AFF9D00293516 /* MultometroTests.swift */; };
 		5ED085B6215AFF9D00293516 /* MultometroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085B5215AFF9D00293516 /* MultometroUITests.swift */; };
@@ -73,8 +73,8 @@
 		5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */; };
 		5EE5860D21ED298700A824A7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5860C21ED298700A824A7 /* KeychainHelper.swift */; };
 		5EE5861021EEBDFE00A824A7 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5860F21EEBDFE00A824A7 /* KeychainConfiguration.swift */; };
-		CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */; };
-		E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */; };
+		CEC5AD808382BF3041C510A3 /* Pods_Multometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Multometro.framework */; };
+		E277A32AE133940FB1D0926A /* Pods_MultometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MultometroUITests.framework */; };
 		F01AB2D75F5621FEB00A5CA2 /* Pods_MultometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39773D3CE987184892F7695 /* Pods_MultometroUITests.framework */; };
 		F3361A8D85308F41BB709A9D /* Pods_MultometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2ED132441702B9CFDA1E /* Pods_MultometroTests.framework */; };
 /* End PBXBuildFile section */
@@ -85,26 +85,26 @@
 			containerPortal = 5ED08587215AFF9A00293516 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5ED0858E215AFF9A00293516;
-			remoteInfo = Mulltometro;
+			remoteInfo = Multometro;
 		};
 		5ED085B2215AFF9D00293516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5ED08587215AFF9A00293516 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5ED0858E215AFF9A00293516;
-			remoteInfo = Mulltometro;
+			remoteInfo = Multometro;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		19FD342F7116218C05B39022 /* Pods-Multometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multometro/Pods-Multometro.debug.xcconfig"; sourceTree = "<group>"; };
-		2F08C7932CEF7CB7AD10D441 /* Pods-MulltometroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.debug.xcconfig"; sourceTree = "<group>"; };
-		42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MulltometroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F08C7932CEF7CB7AD10D441 /* Pods-MultometroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroTests/Pods-MultometroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		42AE93D4EB5A1BE7162EA08A /* Pods_MultometroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultometroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49810E5BCFEC3EAA1B416F4A /* Pods-MultometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroTests/Pods-MultometroTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E422BF04BEBA59CE16332DB /* Pods-MultometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroTests/Pods-MultometroTests.release.xcconfig"; sourceTree = "<group>"; };
-		541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		541B769493D760DCEBD15E1E /* Pods-MultometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroUITests/Pods-MultometroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
+		586FC67C8E0C3FD87643AB44 /* Pods-Multometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multometro/Pods-Multometro.release.xcconfig"; sourceTree = "<group>"; };
 		5E01AA73219F32E80005FA43 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		5E01AA75219F32FD0005FA43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5E01AA7F219F684F0005FA43 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		5E67EBEE21F005DA005F8CC4 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5E6BC3DD2180AFC6004DD9A7 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		5E6BC3E12180E39C004DD9A7 /* SearchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomViewController.swift; sourceTree = "<group>"; };
-		5E6C7E972163815600AE8260 /* MulltometroUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUser.swift; sourceTree = "<group>"; };
+		5E6C7E972163815600AE8260 /* MultometroUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultometroUser.swift; sourceTree = "<group>"; };
 		5E6C7E99216388D100AE8260 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		5E6C7E9B21638A9B00AE8260 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRequester.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED08594215AFF9B00293516 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5ED08597215AFF9B00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5ED0859A215AFF9B00293516 /* Mulltometro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mulltometro.xcdatamodel; sourceTree = "<group>"; };
+		5ED0859A215AFF9B00293516 /* Multometro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Multometro.xcdatamodel; sourceTree = "<group>"; };
 		5ED0859F215AFF9D00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ED085A1215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085A6215AFF9D00293516 /* MultometroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultometroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,10 +178,10 @@
 		5EE5860F21EEBDFE00A824A7 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		64BABFB87EAE151B221EA73E /* Pods-MultometroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroTests/Pods-MultometroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8CAAA12C16AFEEED10E5F8A0 /* Pods-MultometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroUITests/Pods-MultometroUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.debug.xcconfig"; sourceTree = "<group>"; };
-		922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mulltometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MulltometroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEA998E5EF4D9AA79F81CC0 /* Pods-Multometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multometro/Pods-Multometro.debug.xcconfig"; sourceTree = "<group>"; };
+		922650C100286DFA7AB6E632 /* Pods_Multometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0B0B1CEA1074289B76F9C4D /* Pods-MultometroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroUITests/Pods-MultometroUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3CD887A0BCB54B401EE2B4E /* Pods_MultometroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultometroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F2CDD5CF6FB99CE6593BA9 /* Pods-Multometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multometro/Pods-Multometro.release.xcconfig"; sourceTree = "<group>"; };
 		E39773D3CE987184892F7695 /* Pods_MultometroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultometroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3B2ED132441702B9CFDA1E /* Pods_MultometroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultometroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */,
+				CEC5AD808382BF3041C510A3 /* Pods_Multometro.framework in Frameworks */,
 				38C5FBF0209F62EDC9B22C01 /* Pods_Multometro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */,
+				18DB6BD2094A7622008B6D21 /* Pods_MultometroTests.framework in Frameworks */,
 				F3361A8D85308F41BB709A9D /* Pods_MultometroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */,
+				E277A32AE133940FB1D0926A /* Pods_MultometroUITests.framework in Frameworks */,
 				F01AB2D75F5621FEB00A5CA2 /* Pods_MultometroUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +412,7 @@
 		5ED085C4215B000B00293516 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E6C7E972163815600AE8260 /* MulltometroUser.swift */,
+				5E6C7E972163815600AE8260 /* MultometroUser.swift */,
 				5E578A6E21F10849006B24C5 /* UserInRoom.swift */,
 				5E6C7E9B21638A9B00AE8260 /* Room.swift */,
 				5E6C7E99216388D100AE8260 /* Rule.swift */,
@@ -450,7 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				5EE5860E21EEBD1A00A824A7 /* Keychain */,
-				5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */,
+				5ED08599215AFF9B00293516 /* Multometro.xcdatamodeld */,
 				5E6D0D10219753D400186390 /* CoreDataManager.swift */,
 			);
 			path = Persistence;
@@ -548,9 +548,9 @@
 		A972C9646904D407794A56DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */,
-				C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */,
-				42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */,
+				922650C100286DFA7AB6E632 /* Pods_Multometro.framework */,
+				C3CD887A0BCB54B401EE2B4E /* Pods_MultometroTests.framework */,
+				42AE93D4EB5A1BE7162EA08A /* Pods_MultometroUITests.framework */,
 				568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */,
 				EF3B2ED132441702B9CFDA1E /* Pods_MultometroTests.framework */,
 				E39773D3CE987184892F7695 /* Pods_MultometroUITests.framework */,
@@ -561,12 +561,12 @@
 		CABD2F06C91C903A33796186 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */,
-				586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */,
-				2F08C7932CEF7CB7AD10D441 /* Pods-MulltometroTests.debug.xcconfig */,
-				49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */,
-				A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */,
-				541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */,
+				8CEA998E5EF4D9AA79F81CC0 /* Pods-Multometro.debug.xcconfig */,
+				586FC67C8E0C3FD87643AB44 /* Pods-Multometro.release.xcconfig */,
+				2F08C7932CEF7CB7AD10D441 /* Pods-MultometroTests.debug.xcconfig */,
+				49810E5BCFEC3EAA1B416F4A /* Pods-MultometroTests.release.xcconfig */,
+				A0B0B1CEA1074289B76F9C4D /* Pods-MultometroUITests.debug.xcconfig */,
+				541B769493D760DCEBD15E1E /* Pods-MultometroUITests.release.xcconfig */,
 				19FD342F7116218C05B39022 /* Pods-Multometro.debug.xcconfig */,
 				C7F2CDD5CF6FB99CE6593BA9 /* Pods-Multometro.release.xcconfig */,
 				64BABFB87EAE151B221EA73E /* Pods-MultometroTests.debug.xcconfig */,
@@ -598,7 +598,7 @@
 			dependencies = (
 			);
 			name = Multometro;
-			productName = Mulltometro;
+			productName = Multometro;
 			productReference = 5ED0858F215AFF9A00293516 /* Multometro.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -617,7 +617,7 @@
 				5ED085A8215AFF9D00293516 /* PBXTargetDependency */,
 			);
 			name = MultometroTests;
-			productName = MulltometroTests;
+			productName = MultometroTests;
 			productReference = 5ED085A6215AFF9D00293516 /* MultometroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -636,7 +636,7 @@
 				5ED085B3215AFF9D00293516 /* PBXTargetDependency */,
 			);
 			name = MultometroUITests;
-			productName = MulltometroUITests;
+			productName = MultometroUITests;
 			productReference = 5ED085B1215AFF9D00293516 /* MultometroUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -860,7 +860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6C7E982163815700AE8260 /* MulltometroUser.swift in Sources */,
+				5E6C7E982163815700AE8260 /* MultometroUser.swift in Sources */,
 				5E85F14C215ECAD000918BA5 /* Response.swift in Sources */,
 				5EE56AFE2177E61A006CC532 /* ExtensionViewController.swift in Sources */,
 				5E6BC3DF2180B2BD004DD9A7 /* QRViewController.swift in Sources */,
@@ -901,7 +901,7 @@
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */,
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
-				5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */,
+				5ED0859B215AFF9B00293516 /* Multometro.xcdatamodeld in Sources */,
 				5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */,
 				5E6C7E9A216388D100AE8260 /* Rule.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
@@ -1252,13 +1252,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */ = {
+		5ED08599215AFF9B00293516 /* Multometro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5ED0859A215AFF9B00293516 /* Mulltometro.xcdatamodel */,
+				5ED0859A215AFF9B00293516 /* Multometro.xcdatamodel */,
 			);
-			currentVersion = 5ED0859A215AFF9B00293516 /* Mulltometro.xcdatamodel */;
-			path = Mulltometro.xcdatamodeld;
+			currentVersion = 5ED0859A215AFF9B00293516 /* Multometro.xcdatamodel */;
+			path = Multometro.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
