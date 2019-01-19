@@ -61,8 +61,8 @@
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
 		5ED0859B215AFF9B00293516 /* Mulltometro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08599215AFF9B00293516 /* Mulltometro.xcdatamodeld */; };
 		5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */; };
-		5ED085AB215AFF9D00293516 /* MulltometroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085AA215AFF9D00293516 /* MulltometroTests.swift */; };
-		5ED085B6215AFF9D00293516 /* MulltometroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085B5215AFF9D00293516 /* MulltometroUITests.swift */; };
+		5ED085AB215AFF9D00293516 /* MultometroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085AA215AFF9D00293516 /* MultometroTests.swift */; };
+		5ED085B6215AFF9D00293516 /* MultometroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085B5215AFF9D00293516 /* MultometroUITests.swift */; };
 		5ED085CC215B00E900293516 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085CB215B00E900293516 /* AuthManager.swift */; };
 		5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085D4215B06E300293516 /* LoginViewController.swift */; };
 		5ED085D7215B06F300293516 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED085D6215B06F300293516 /* Login.storyboard */; };
@@ -161,10 +161,10 @@
 		5ED0859F215AFF9D00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ED085A1215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085A6215AFF9D00293516 /* MultometroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultometroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ED085AA215AFF9D00293516 /* MulltometroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroTests.swift; sourceTree = "<group>"; };
+		5ED085AA215AFF9D00293516 /* MultometroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultometroTests.swift; sourceTree = "<group>"; };
 		5ED085AC215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085B1215AFF9D00293516 /* MultometroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultometroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ED085B5215AFF9D00293516 /* MulltometroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulltometroUITests.swift; sourceTree = "<group>"; };
+		5ED085B5215AFF9D00293516 /* MultometroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultometroUITests.swift; sourceTree = "<group>"; };
 		5ED085B7215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085CB215B00E900293516 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5ED085D4215B06E300293516 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		5ED085A9215AFF9D00293516 /* MultometroTests */ = {
 			isa = PBXGroup;
 			children = (
-				5ED085AA215AFF9D00293516 /* MulltometroTests.swift */,
+				5ED085AA215AFF9D00293516 /* MultometroTests.swift */,
 				5ED085AC215AFF9D00293516 /* Info.plist */,
 			);
 			path = MultometroTests;
@@ -391,7 +391,7 @@
 		5ED085B4215AFF9D00293516 /* MultometroUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5ED085B5215AFF9D00293516 /* MulltometroUITests.swift */,
+				5ED085B5215AFF9D00293516 /* MultometroUITests.swift */,
 				5ED085B7215AFF9D00293516 /* Info.plist */,
 			);
 			path = MultometroUITests;
@@ -914,7 +914,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ED085AB215AFF9D00293516 /* MulltometroTests.swift in Sources */,
+				5ED085AB215AFF9D00293516 /* MultometroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,7 +922,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ED085B6215AFF9D00293516 /* MulltometroUITests.swift in Sources */,
+				5ED085B6215AFF9D00293516 /* MultometroUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
