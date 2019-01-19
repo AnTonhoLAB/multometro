@@ -17,6 +17,7 @@
 		5E0796BE21F24F3000927021 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0796BD21F24F3000927021 /* ExtensionDate.swift */; };
 		5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */; };
 		5E13008021B68BF7006B07F8 /* RegisterPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */; };
+		5E28267F21F389CF00CE68C7 /* Multometro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E28267D21F389CF00CE68C7 /* Multometro.xcdatamodeld */; };
 		5E2C83B821DC24360014A4DE /* HTTPRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C83B721DC24360014A4DE /* HTTPRequester.swift */; };
 		5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55B35D21BB0C990076333B /* AppliedFee.swift */; };
 		5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E578A6E21F10849006B24C5 /* UserInRoom.swift */; };
@@ -58,7 +59,6 @@
 		5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08592215AFF9B00293516 /* AppDelegate.swift */; };
 		5ED08595215AFF9B00293516 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08594215AFF9B00293516 /* MainTabBarController.swift */; };
 		5ED08598215AFF9B00293516 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED08596215AFF9B00293516 /* Main.storyboard */; };
-		5ED0859B215AFF9B00293516 /* Multometro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ED08599215AFF9B00293516 /* Multometro.xcdatamodeld */; };
 		5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */; };
 		5ED085AB215AFF9D00293516 /* MultometroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085AA215AFF9D00293516 /* MultometroTests.swift */; };
 		5ED085B6215AFF9D00293516 /* MultometroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED085B5215AFF9D00293516 /* MultometroUITests.swift */; };
@@ -113,6 +113,7 @@
 		5E0796BD21F24F3000927021 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		5E0AE3A3217FD24200E49FA4 /* DetailRoomViewController.swift */ = {isa = PBXFileReference; indentWidth = 0; lastKnownFileType = sourcecode.swift; path = DetailRoomViewController.swift; sourceTree = "<group>"; };
 		5E13007F21B68BF7006B07F8 /* RegisterPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhotoViewController.swift; sourceTree = "<group>"; };
+		5E28267E21F389CF00CE68C7 /* Multometro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Multometro.xcdatamodel; sourceTree = "<group>"; };
 		5E2C83B721DC24360014A4DE /* HTTPRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequester.swift; sourceTree = "<group>"; };
 		5E55B35D21BB0C990076333B /* AppliedFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedFee.swift; sourceTree = "<group>"; };
 		5E578A6E21F10849006B24C5 /* UserInRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInRoom.swift; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		5ED08592215AFF9B00293516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ED08594215AFF9B00293516 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5ED08597215AFF9B00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5ED0859A215AFF9B00293516 /* Multometro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Multometro.xcdatamodel; sourceTree = "<group>"; };
 		5ED0859F215AFF9D00293516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ED085A1215AFF9D00293516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED085A6215AFF9D00293516 /* MultometroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultometroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -448,8 +448,8 @@
 			isa = PBXGroup;
 			children = (
 				5EE5860E21EEBD1A00A824A7 /* Keychain */,
-				5ED08599215AFF9B00293516 /* Multometro.xcdatamodeld */,
 				5E6D0D10219753D400186390 /* CoreDataManager.swift */,
+				5E28267D21F389CF00CE68C7 /* Multometro.xcdatamodeld */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -866,6 +866,7 @@
 				5EDAD5672178FAA9008E4609 /* AddNewGroupViewController.swift in Sources */,
 				5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */,
 				5E0796BE21F24F3000927021 /* ExtensionDate.swift in Sources */,
+				5E28267F21F389CF00CE68C7 /* Multometro.xcdatamodeld in Sources */,
 				5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */,
 				5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
@@ -899,7 +900,6 @@
 				5EC8976A217A73DB00C65CF9 /* AddFeeHeaderCell.swift in Sources */,
 				5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */,
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
-				5ED0859B215AFF9B00293516 /* Multometro.xcdatamodeld in Sources */,
 				5ED462B821A86A730041EE23 /* ApplyFeeViewController.swift in Sources */,
 				5E6C7E9A216388D100AE8260 /* Rule.swift in Sources */,
 				5ED085CC215B00E900293516 /* AuthManager.swift in Sources */,
@@ -1250,12 +1250,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5ED08599215AFF9B00293516 /* Multometro.xcdatamodeld */ = {
+		5E28267D21F389CF00CE68C7 /* Multometro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5ED0859A215AFF9B00293516 /* Multometro.xcdatamodel */,
+				5E28267E21F389CF00CE68C7 /* Multometro.xcdatamodel */,
 			);
-			currentVersion = 5ED0859A215AFF9B00293516 /* Multometro.xcdatamodel */;
+			currentVersion = 5E28267E21F389CF00CE68C7 /* Multometro.xcdatamodel */;
 			path = Multometro.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
