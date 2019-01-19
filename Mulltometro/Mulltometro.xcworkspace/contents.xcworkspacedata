@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Mulltometro.xcodeproj">
+      location = "group:/Users/George/Desktop/myApps.nosync/multometro/Mulltometro/Multometro.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
