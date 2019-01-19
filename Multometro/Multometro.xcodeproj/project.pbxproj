@@ -1093,7 +1093,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
-				PRODUCT_BUNDLE_IDENTIFIER = m;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Multometro Dev profile";
 				SWIFT_VERSION = 4.2;
@@ -1116,7 +1116,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
-				PRODUCT_BUNDLE_IDENTIFIER = m;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Multometro Dis profile";
 				SWIFT_VERSION = 4.2;
