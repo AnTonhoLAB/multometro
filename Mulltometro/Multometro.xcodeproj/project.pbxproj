@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */; };
+		38C5FBF0209F62EDC9B22C01 /* Pods_Multometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */; };
 		5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA73219F32E80005FA43 /* LoadingView.xib */; };
 		5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA75219F32FD0005FA43 /* LoadingView.swift */; };
 		5E01AA81219F684F0005FA43 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA7F219F684F0005FA43 /* HeaderCell.swift */; };
@@ -20,7 +21,6 @@
 		5E2C83B821DC24360014A4DE /* HTTPRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C83B721DC24360014A4DE /* HTTPRequester.swift */; };
 		5E55B35E21BB0C990076333B /* AppliedFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55B35D21BB0C990076333B /* AppliedFee.swift */; };
 		5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E578A6E21F10849006B24C5 /* UserInRoom.swift */; };
-		5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */; };
 		5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */; };
 		5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */; };
 		5E66B86D217C0BAA002BB3AF /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B86C217C0BAA002BB3AF /* GroupCell.swift */; };
@@ -75,6 +75,8 @@
 		5EE5861021EEBDFE00A824A7 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5860F21EEBDFE00A824A7 /* KeychainConfiguration.swift */; };
 		CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */; };
 		E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */; };
+		F01AB2D75F5621FEB00A5CA2 /* Pods_MultometroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39773D3CE987184892F7695 /* Pods_MultometroUITests.framework */; };
+		F3361A8D85308F41BB709A9D /* Pods_MultometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2ED132441702B9CFDA1E /* Pods_MultometroTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,10 +97,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19FD342F7116218C05B39022 /* Pods-Multometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multometro/Pods-Multometro.debug.xcconfig"; sourceTree = "<group>"; };
 		2F08C7932CEF7CB7AD10D441 /* Pods-MulltometroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MulltometroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroTests/Pods-MulltometroTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E422BF04BEBA59CE16332DB /* Pods-MultometroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroTests/Pods-MultometroTests.release.xcconfig"; sourceTree = "<group>"; };
 		541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.release.xcconfig"; sourceTree = "<group>"; };
 		5E01AA73219F32E80005FA43 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		5E01AA75219F32FD0005FA43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -112,7 +117,6 @@
 		5E2C83B721DC24360014A4DE /* HTTPRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequester.swift; sourceTree = "<group>"; };
 		5E55B35D21BB0C990076333B /* AppliedFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedFee.swift; sourceTree = "<group>"; };
 		5E578A6E21F10849006B24C5 /* UserInRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInRoom.swift; sourceTree = "<group>"; };
-		5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E66B866217BA3EF002BB3AF /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		5E66B86A217BFF5A002BB3AF /* ExtensionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCodable.swift; sourceTree = "<group>"; };
 		5E66B86C217C0BAA002BB3AF /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		5E92EAA921624324000E0EE4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5E92EAAB21624333000E0EE4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5E92EAB321627F57000E0EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EC836E94FF0D9E4A167754D /* Pods-MultometroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroUITests/Pods-MultometroUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EC89765217A501500C65CF9 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		5EC89767217A69AD00C65CF9 /* RoomRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRegisterCell.swift; sourceTree = "<group>"; };
 		5EC89769217A73DB00C65CF9 /* AddFeeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeeHeaderCell.swift; sourceTree = "<group>"; };
@@ -171,10 +176,15 @@
 		5EE56AFD2177E61A006CC532 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		5EE5860C21ED298700A824A7 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		5EE5860F21EEBDFE00A824A7 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		64BABFB87EAE151B221EA73E /* Pods-MultometroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroTests/Pods-MultometroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8CAAA12C16AFEEED10E5F8A0 /* Pods-MultometroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultometroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultometroUITests/Pods-MultometroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mulltometro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro.debug.xcconfig"; sourceTree = "<group>"; };
 		922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mulltometro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MulltometroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MulltometroUITests/Pods-MulltometroUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MulltometroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7F2CDD5CF6FB99CE6593BA9 /* Pods-Multometro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multometro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multometro/Pods-Multometro.release.xcconfig"; sourceTree = "<group>"; };
+		E39773D3CE987184892F7695 /* Pods_MultometroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultometroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3B2ED132441702B9CFDA1E /* Pods_MultometroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultometroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC5AD808382BF3041C510A3 /* Pods_Mulltometro.framework in Frameworks */,
+				38C5FBF0209F62EDC9B22C01 /* Pods_Multometro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DB6BD2094A7622008B6D21 /* Pods_MulltometroTests.framework in Frameworks */,
+				F3361A8D85308F41BB709A9D /* Pods_MultometroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E277A32AE133940FB1D0926A /* Pods_MulltometroUITests.framework in Frameworks */,
+				F01AB2D75F5621FEB00A5CA2 /* Pods_MultometroUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +441,6 @@
 				5E7FE6332176B3740029E035 /* R.generated.swift */,
 				5E92EAB321627F57000E0EE4 /* Assets.xcassets */,
 				5ED085A1215AFF9D00293516 /* Info.plist */,
-				5E5FB08F215C051A0004EB3D /* GoogleService-Info.plist */,
 				5ED0859E215AFF9D00293516 /* LaunchScreen.storyboard */,
 			);
 			path = Supp;
@@ -539,6 +551,9 @@
 				922650C100286DFA7AB6E632 /* Pods_Mulltometro.framework */,
 				C3CD887A0BCB54B401EE2B4E /* Pods_MulltometroTests.framework */,
 				42AE93D4EB5A1BE7162EA08A /* Pods_MulltometroUITests.framework */,
+				568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */,
+				EF3B2ED132441702B9CFDA1E /* Pods_MultometroTests.framework */,
+				E39773D3CE987184892F7695 /* Pods_MultometroUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -552,6 +567,12 @@
 				49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */,
 				A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */,
 				541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */,
+				19FD342F7116218C05B39022 /* Pods-Multometro.debug.xcconfig */,
+				C7F2CDD5CF6FB99CE6593BA9 /* Pods-Multometro.release.xcconfig */,
+				64BABFB87EAE151B221EA73E /* Pods-MultometroTests.debug.xcconfig */,
+				4E422BF04BEBA59CE16332DB /* Pods-MultometroTests.release.xcconfig */,
+				5EC836E94FF0D9E4A167754D /* Pods-MultometroUITests.debug.xcconfig */,
+				8CAAA12C16AFEEED10E5F8A0 /* Pods-MultometroUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -668,7 +689,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED085A0215AFF9D00293516 /* LaunchScreen.storyboard in Resources */,
-				5E5FB090215C051A0004EB3D /* GoogleService-Info.plist in Resources */,
 				5ED08598215AFF9B00293516 /* Main.storyboard in Resources */,
 				5ED085D7215B06F300293516 /* Login.storyboard in Resources */,
 				5E92EAA6216242A6000E0EE4 /* Statistics.storyboard in Resources */,
@@ -714,7 +734,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mulltometro-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Multometro-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -786,7 +806,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MulltometroTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MultometroTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -799,7 +819,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Multometro/Pods-Multometro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -812,7 +832,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mulltometro/Pods-Mulltometro-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multometro/Pods-Multometro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1ADBB8B2F539D001C53F9BB /* [CP] Check Pods Manifest.lock */ = {
@@ -826,7 +846,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MulltometroUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MultometroUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1060,7 +1080,7 @@
 		};
 		5ED085BB215AFF9D00293516 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CEA998E5EF4D9AA79F81CC0 /* Pods-Mulltometro.debug.xcconfig */;
+			baseConfigurationReference = 19FD342F7116218C05B39022 /* Pods-Multometro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1073,9 +1093,9 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroApp;
+				PRODUCT_BUNDLE_IDENTIFIER = m;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Mulltometro Dev profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Multometro Dev profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1083,7 +1103,7 @@
 		};
 		5ED085BC215AFF9D00293516 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 586FC67C8E0C3FD87643AB44 /* Pods-Mulltometro.release.xcconfig */;
+			baseConfigurationReference = C7F2CDD5CF6FB99CE6593BA9 /* Pods-Multometro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1096,9 +1116,9 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -warn-long-function-bodies=500";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroApp;
+				PRODUCT_BUNDLE_IDENTIFIER = m;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Mulltometro Dis profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Multometro Dis profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1106,87 +1126,87 @@
 		};
 		5ED085BE215AFF9D00293516 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F08C7932CEF7CB7AD10D441 /* Pods-MulltometroTests.debug.xcconfig */;
+			baseConfigurationReference = 64BABFB87EAE151B221EA73E /* Pods-MultometroTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8JPD2534R;
-				INFOPLIST_FILE = MulltometroTests/Info.plist;
+				INFOPLIST_FILE = MultometroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MulltometroTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mulltometro.app/Mulltometro";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multometro.app/Multometro";
 			};
 			name = Debug;
 		};
 		5ED085BF215AFF9D00293516 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49810E5BCFEC3EAA1B416F4A /* Pods-MulltometroTests.release.xcconfig */;
+			baseConfigurationReference = 4E422BF04BEBA59CE16332DB /* Pods-MultometroTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8JPD2534R;
-				INFOPLIST_FILE = MulltometroTests/Info.plist;
+				INFOPLIST_FILE = MultometroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MulltometroTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mulltometro.app/Mulltometro";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multometro.app/Multometro";
 			};
 			name = Release;
 		};
 		5ED085C1215AFF9D00293516 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0B0B1CEA1074289B76F9C4D /* Pods-MulltometroUITests.debug.xcconfig */;
+			baseConfigurationReference = 5EC836E94FF0D9E4A167754D /* Pods-MultometroUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8JPD2534R;
-				INFOPLIST_FILE = MulltometroUITests/Info.plist;
+				INFOPLIST_FILE = MultometroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MulltometroUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Mulltometro;
+				TEST_TARGET_NAME = Multometro;
 			};
 			name = Debug;
 		};
 		5ED085C2215AFF9D00293516 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 541B769493D760DCEBD15E1E /* Pods-MulltometroUITests.release.xcconfig */;
+			baseConfigurationReference = 8CAAA12C16AFEEED10E5F8A0 /* Pods-MultometroUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8JPD2534R;
-				INFOPLIST_FILE = MulltometroUITests/Info.plist;
+				INFOPLIST_FILE = MultometroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MulltometroUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crowcode.MultometroUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Mulltometro;
+				TEST_TARGET_NAME = Multometro;
 			};
 			name = Release;
 		};
