@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            
 //        }
         
+        let i = "☑️ 🛋 👨‍👧"
+        print(i.encode())
+        
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         
         if !launchedBefore  { //First time in app

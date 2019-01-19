@@ -30,7 +30,7 @@ class GroupCell: UITableViewCell {
     func setUpRoom() {
         guard let group = group else { return }
         
-        lbNameRoom.text = group.name
+        lbNameRoom.text = group.name.decode()
         if let users = group.userInRooms {
             lbNumberOfUsers.text = String(users.count)
         } else {

@@ -59,7 +59,7 @@ class UserCell: UITableViewCell {
             }
         }
         
-        lbUserName.text = user.mulltometroUser.userName
+        lbUserName.text = user.mulltometroUser.userName.decode()
     }
 }
 

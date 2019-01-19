@@ -20,6 +20,7 @@ class MultometroUser: Codable {
     var bio: String?
     var password: String?
 
+
 //    "password": "$2a$10$HkwS3CICU4qQWRjoD757s.pd6SOdcmdu/tm7MPqx5vX0jrH2BLCzu",
 //    "bio": null,
 //    "firstTime": true,

@@ -44,7 +44,7 @@ class DetailRoomFields: UIView {
             if admin.mulltometroUserId == AuthManager.getCurrentUserId() {
                 lbAdmin.text = "You"
             } else {
-                lbAdmin.text = admin.mulltometroUser.userName
+                lbAdmin.text = admin.mulltometroUser.userName.decode()
             }
             lbDueDate.text = String(room.dueDate)
             lbCreatedAt.text = room.createdAt.localizedString

@@ -31,7 +31,7 @@ class FeeCell: UITableViewCell {
     }
 
     func setup(with fee: Rule) {
-        lbFeeName.text = fee.name
+        lbFeeName.text = fee.name.decode()
         lbValuePerFee.text = String(fee.valuePerFee)
         lbSybol.text = fee.symbol.decode()
     }
