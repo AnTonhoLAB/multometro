@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18DB6BD2094A7622008B6D21 /* Pods_MultometroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CD887A0BCB54B401EE2B4E /* Pods_MultometroTests.framework */; };
-		38C5FBF0209F62EDC9B22C01 /* Pods_Multometro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568CF35A213F92ECB4C21DE0 /* Pods_Multometro.framework */; };
 		5E01AA74219F32E80005FA43 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E01AA73219F32E80005FA43 /* LoadingView.xib */; };
 		5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA75219F32FD0005FA43 /* LoadingView.swift */; };
 		5E01AA81219F684F0005FA43 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01AA7F219F684F0005FA43 /* HeaderCell.swift */; };
@@ -193,7 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC5AD808382BF3041C510A3 /* Pods_Multometro.framework in Frameworks */,
-				38C5FBF0209F62EDC9B22C01 /* Pods_Multometro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +645,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = CrowCode;
 				TargetAttributes = {
 					5ED0858E215AFF9A00293516 = {
