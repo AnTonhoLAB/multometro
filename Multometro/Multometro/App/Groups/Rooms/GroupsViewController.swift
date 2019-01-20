@@ -120,8 +120,8 @@ extension GroupsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
-        cell.group = rooms[(rooms.count - 1) - indexPath.row]
-        cell.setUpRoom()
+        let groupToSend = rooms[(rooms.count - 1) - indexPath.row]
+        cell.setUpRoom(group: groupToSend)
         return cell
     }
 }

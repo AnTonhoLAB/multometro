@@ -10,7 +10,7 @@ import Foundation
 
 enum UserType: String, Codable{
     case ADMIN
-    case UserAdmin = "USER/ADMIN"
+    case ADMINUSER = "ADMIN/USER"
     case USER
 }
 

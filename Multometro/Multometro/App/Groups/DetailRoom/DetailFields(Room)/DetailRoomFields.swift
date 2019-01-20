@@ -40,7 +40,8 @@ class DetailRoomFields: UIView {
     }
     
     func setupFields() {
-        if let room = roomFields, let admin = room.admin {
+        if let room = roomFields {
+            let admin = room.admin 
             if admin.mulltometroUserId == AuthManager.getCurrentUserId() {
                 lbAdmin.text = "You"
             } else {

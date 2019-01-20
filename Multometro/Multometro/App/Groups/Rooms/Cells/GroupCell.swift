@@ -20,14 +20,11 @@ class GroupCell: UITableViewCell {
     
     @IBOutlet weak var lbIsAdmin: UILabel!
     
-    var group: Room?
-    
     override func awakeFromNib() {
         self.selectionStyle = .none
     }
     
-    func setUpRoom() {
-        guard let group = group else { return }
+    func setUpRoom(group: Room) {
         
         lbNameRoom.text = group.name.decode()
         if let users = group.userInRooms {
@@ -37,7 +34,8 @@ class GroupCell: UITableViewCell {
             lbNumberOfUsers.text = "0"
         }
         
-        lbIsAdmin.text = group.admin?.mulltometroUserId == AuthManager.getCurrentUserId() ? "Admin" : "Member"
+//        let maUser =
+            lbIsAdmin.text = group.myUser.userType.rawValue// group.admin?.mulltometroUserId == AuthManager.getCurrentUserId() ? "Admin" : "Member"
         
     }
 

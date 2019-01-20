@@ -11,24 +11,23 @@ import Foundation
 class Room: Codable {
     
     var id: Int!
-//    var admin: MultometroUser?
     var name: String!
     var rules: [Rule]?
     var appliedFee: [AppliedFee]?
     var dueDate: Int!
     var createdAt: Date!
+//    "color": "red"
     
-//    "color": "red",
-//    "createdAt": "2019-01-17T17:56:03.000Z",
-    // rules
     var userInRooms: [UserInRoom]!
     
-    lazy var admin: UserInRoom? = {
-        if let users = self.userInRooms {
-            let i = users.filter { $0.userType == UserType.ADMIN}
-            return i.first
-        }
-        return nil
+    lazy var admin: UserInRoom = {
+        let user = userInRooms.filter { $0.userType != .USER}
+        return user[0]
+    }()
+    
+    lazy var myUser: UserInRoom = {
+        let user = userInRooms.filter { $0.mulltometroUserId == AuthManager.getCurrentUserId() }
+        return user[0]
     }()
     
     init() {

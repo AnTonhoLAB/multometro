@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let room = room {
-            admin = room.admin?.mulltometroUser
+            admin = room.admin.mulltometroUser
         
             self.room?.userInRooms = room.userInRooms.filter{ $0.userType != .ADMIN}
             navigationItem.title = room.name
@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
             detailRoomFields.setupFields()
         }
         
-        if room?.admin?.mulltometroUserId == AuthManager.getCurrentUserId() {
+        if room?.admin.mulltometroUserId == AuthManager.getCurrentUserId() {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapCreateQR))
         }
     }
@@ -99,7 +99,7 @@ extension DetailViewController: UITableViewDataSource {
             
             if let users = tableViewData[indexPath.section].sectionData as? [UserInRoom] {
                 let cell = Bundle.main.loadNibNamed(UserCell.identifier, owner: self, options: nil)?.first as! UserCell
-            cell.setup(with: users[indexPath.row - 1], admin: room?.admin?.mulltometroUser, on: self)
+            cell.setup(with: users[indexPath.row - 1], admin: room?.admin.mulltometroUser, on: self)
                 return cell
             }
         
