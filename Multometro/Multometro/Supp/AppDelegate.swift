@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
-//        let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
-//        do {
-//            _ = try keychainToken.deleteItem()
-//        } catch  {
-//            
-//        }
+        let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
+        do {
+            _ = try keychainToken.deleteItem()
+        } catch  {
+            
+        }
         
         let launchedBefore = UserDefaults.standard.bool(forKey: R.string.strings.launchedBefore())
         
