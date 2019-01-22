@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  Multometro
+
+  Created by George Gomes on 16/10/18.
+  Copyright © 2018 CrowCode. All rights reserved.
+*/
+
+Cancel="Cancel";
+Create="Create";
+Save="Save";
+
+Success="Success";
+Error="Error";
+Ok="Ok";
+
+//RegisterUserViewController
+ChosePhoto="Chose Phote";
+Galery="Gallery";
+Camera="Camera";
+
+    //Errors
+    ImageError="Error while saving the image.";
+    UserError="Error while saving the user";
+
+    ImageErrorDescription="Your photo was not saved but you can try again later";
+    UserErrorDescription="Your user was not saved but you can try again later";
+
+//RegisterViewController
+PlaceholderUsername="Choose your username";
+PlaceholderEmail="Type your E-mail";
+PlaceholderPassowrd="Type your Password";
+PlaceholderRepeatPassword="Repeat your Password";
+
+
+//NewRoomViewController
+RoomName="Room Name";
+WillParticipate="Will you participate?";
+DueDate="Due Date";
+CreateRoom="Create a new Room";
+
+//Header add rule
+Rules="Rules";
+
+// Detail
+
+
+//Fee
+ValuePerFee="ValuePerFee";
+ValueType="ValueType";
+Symbol="Symbol";
+
+
+//Done
+RegisterSucess="Registered user successfully";
+
+//RegisterErrors
+ErrorName="The name must have at least one letter";
+ErrorEmail="Invalid email, complete the field with a valid email.";
+ErrorPassword="Password must be at least 6 characters";
+ErrorPasswordSame="Passwords do not match";
+
+
+//Networking Errors
+ERRORN ="ERRO N %d";
+ERRORNoConnection="You are not connected to the internet, please check and try again...";
+ERRORServer="ERRO %d Something was wrong with the server, please try again later...";
+ERRORWrongEmailOrPassowrd="ERRO %d Wrong email or password";
+ERROREmailAlreadyBeingUsed="ERRO %d This email is already being used";
+
+
+
