@@ -18,7 +18,7 @@ protocol LoginFlowDelegate: class {
 class LoginViewController: UIViewController {
 
     private let disposeBag: DisposeBag = DisposeBag()
-    private var loginView: LoginView!
+    private var loginView: LoginViewComponents!
     private var viewModel: LoginViewModel!
 
     weak var flowDelegate: LoginFlowDelegate?

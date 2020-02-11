@@ -11,7 +11,6 @@ import Rswift
 
 class AuthManager {
     
-    
     private init() {}
     
     static func selfUser(completion: @escaping (Response<User>) -> Void) {

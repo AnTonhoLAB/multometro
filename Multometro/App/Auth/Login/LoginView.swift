@@ -8,11 +8,13 @@
 
 import UIKit
 
-protocol LoginViewComponents {
-
+protocol LoginViewComponents: UIView {
+    var emailTextField: UITextField { get }
+    var passwordTextField: UITextField { get }
+    var enterButton: UIButton { get }
 }
 
-class LoginView: UIView, CodeView {
+class LoginView: UIView, LoginViewComponents {
 
     //MARK: - Constants
     private let roundRadius: CGFloat = 8.0
@@ -52,7 +54,7 @@ class LoginView: UIView, CodeView {
         return view
     }()
 
-    private lazy var registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .darkGray
         return view
@@ -66,7 +68,9 @@ class LoginView: UIView, CodeView {
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
 
+extension LoginView: CodeView {
     //MARK: - UISetup
     func buildViewHierarchy() {
         self.addSubview(fieldsView)
