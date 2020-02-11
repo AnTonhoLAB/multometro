@@ -39,17 +39,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
-
-        let inputs = LoginViewModel.Input(name: self.loginView.emailTextField.rx.text.orEmpty.asObservable(),
-                                          password: self.loginView.passwordTextField.rx.text.orEmpty.asObservable(),
-                                          didTapLogin: self.loginView.enterButton.rx.tap.asObservable())
+        let inputs = LoginViewModel.Input(name: self.loginView.emailObservable,
+                                          password: self.loginView.passwordObservable,
+                                          didTapLogin: self.loginView.enterObservable)
 
         let outputs = viewModel.transform(input: inputs)
 
         outputs.isValid
-            .drive(self.loginView.enterButton.rx.valid)
+            .drive(self.loginView.enterIsValide)
             .disposed(by: disposeBag)
-
 
         outputs.open.drive(onNext: { (_) in
             print("Taped")

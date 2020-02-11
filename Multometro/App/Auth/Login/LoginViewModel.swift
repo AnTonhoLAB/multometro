@@ -35,7 +35,7 @@ final class LoginViewModel: ViewModelType {
     }
 
     func transform(input: LoginViewModel.Input) -> LoginViewModel.Output {
-        let isValid = Observable
+        let isValidLogin = Observable
             .combineLatest(input.name.asObservable(), input.password.asObservable()) {
             return self.isValidEmail($0) && $1.count >= 6
         }
@@ -43,7 +43,7 @@ final class LoginViewModel: ViewModelType {
 
         let open = input.didTapLogin.asDriver(onErrorJustReturn: ())
 
-        return Output(isValid: isValid, open: open)
+        return Output(isValid: isValidLogin, open: open)
     }
 
     private func isValidEmail(_ email: String) -> Bool {

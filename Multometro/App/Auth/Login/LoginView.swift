@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol LoginViewComponents: UIView {
-    var emailTextField: UITextField { get }
-    var passwordTextField: UITextField { get }
-    var enterButton: UIButton { get }
+    var emailObservable: Observable<String> { get }
+    var passwordObservable: Observable<String> { get }
+    var enterObservable: Observable<Void> { get }
+    var enterIsValide: Binder<Bool> { get }
 }
 
 class LoginView: UIView, LoginViewComponents {
+    //MARK: Observable Components
+    lazy var emailObservable: Observable<String> = {
+        return self.emailTextField.rx.text.orEmpty.asObservable()
+    }()
+
+    lazy var passwordObservable: Observable<String> = {
+        return self.passwordTextField.rx.text.orEmpty.asObservable()
+    }()
+
+    lazy var enterObservable: Observable<Void> = {
+        return self.enterButton.rx.tap.asObservable()
+    }()
+
+    lazy var enterIsValide: Binder<Bool> = {
+        return  self.enterButton.rx.valid
+    }()
 
     //MARK: - Constants
     private let roundRadius: CGFloat = 8.0
@@ -27,7 +46,7 @@ class LoginView: UIView, LoginViewComponents {
         return view
     }()
 
-    lazy var emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let view = UITextField()
         view.backgroundColor = .lightGray
         view.borderStyle = .roundedRect
@@ -36,7 +55,7 @@ class LoginView: UIView, LoginViewComponents {
         return view
     }()
 
-    lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let view = UITextField()
         view.backgroundColor = .lightGray
         view.borderStyle = .roundedRect
@@ -54,7 +73,7 @@ class LoginView: UIView, LoginViewComponents {
         return view
     }()
 
-    lazy var registerButton: UIButton = {
+    private lazy var registerButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .darkGray
         return view
