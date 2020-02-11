@@ -1,0 +1,4 @@
+github "ReactiveX/RxSwift" "5.0.1"
+github "SnapKit/SnapKit" "5.0.1"
+github "hackiftekhar/IQKeyboardManager" "v6.5.5"
+github "onevcat/Kingfisher" "5.13.0"
