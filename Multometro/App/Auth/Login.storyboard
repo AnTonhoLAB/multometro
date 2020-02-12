@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xG8-85-5bH">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xG8-85-5bH">
+    <device id="retina4_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,19 +11,19 @@
         <!--Login View Controller-->
         <scene sceneID="cby-4d-e9r">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="xG8-85-5bH" customClass="LoginViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="xG8-85-5bH" customClass="LoginViewController" customModule="Multometro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vY5-aK-6gF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGg-ZS-pR8" userLabel="backGroudView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQI-KM-phw">
-                                        <rect key="frame" x="16" y="213.5" width="343" height="240"/>
+                                        <rect key="frame" x="84" y="0.0" width="400" height="240"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-HK-dk5">
-                                                <rect key="frame" x="16" y="100" width="311" height="30"/>
+                                                <rect key="frame" x="16" y="100" width="368" height="30"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="5i7-h9-BxH"/>
@@ -35,7 +33,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter e-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-Np-QyR">
-                                                <rect key="frame" x="16" y="50" width="311" height="30"/>
+                                                <rect key="frame" x="16" y="50" width="368" height="30"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="j0E-B6-Y0x"/>
@@ -45,7 +43,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLy-JU-cye">
-                                                <rect key="frame" x="16" y="160" width="311" height="50"/>
+                                                <rect key="frame" x="16" y="160" width="368" height="50"/>
                                                 <color key="backgroundColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FTn-vY-dKF"/>
@@ -81,11 +79,12 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="250"/>
                                     </constraint>
                                     <constraint firstItem="QQI-KM-phw" firstAttribute="centerX" secondItem="zGg-ZS-pR8" secondAttribute="centerX" id="Ggs-LG-6P1"/>
-                                    <constraint firstItem="QQI-KM-phw" firstAttribute="centerY" secondItem="zGg-ZS-pR8" secondAttribute="centerY" id="nDg-yG-NPn"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QQI-KM-phw" secondAttribute="bottom" constant="80" id="S0r-ad-oRc"/>
+                                    <constraint firstItem="QQI-KM-phw" firstAttribute="centerY" secondItem="zGg-ZS-pR8" secondAttribute="centerY" priority="750" id="nDg-yG-NPn"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHl-WK-AHt">
-                                <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                <rect key="frame" x="20" y="260" width="528" height="40"/>
                                 <color key="backgroundColor" red="0.66659259796142578" green="0.666709303855896" blue="0.66658520698547363" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1pP-uo-BH5"/>
@@ -129,19 +128,19 @@
         <!--Register View Controller-->
         <scene sceneID="eYk-AT-X8c">
             <objects>
-                <viewController id="njV-UD-hWv" customClass="RegisterViewController" customModule="Mulltometro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="njV-UD-hWv" customClass="RegisterViewController" customModule="Multometro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qur-rm-Q9q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-eh-ZdJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAj-WV-HsW">
-                                        <rect key="frame" x="16" y="192.5" width="343" height="282"/>
+                                        <rect key="frame" x="84" y="19" width="400" height="282"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxH-pK-EKF">
-                                                <rect key="frame" x="16" y="50" width="311" height="30"/>
+                                                <rect key="frame" x="16" y="50" width="368" height="30"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="YlA-Ed-bbo"/>
@@ -151,7 +150,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfA-ew-BbP">
-                                                <rect key="frame" x="16" y="100" width="311" height="30"/>
+                                                <rect key="frame" x="16" y="100" width="368" height="30"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Hx1-27-ooy"/>
@@ -161,7 +160,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-oo-NWk">
-                                                <rect key="frame" x="16" y="150" width="311" height="30"/>
+                                                <rect key="frame" x="16" y="150" width="368" height="30"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="8o3-1v-u0z"/>
@@ -171,7 +170,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-zc-cbx">
-                                                <rect key="frame" x="16" y="202" width="311" height="50"/>
+                                                <rect key="frame" x="16" y="202" width="368" height="50"/>
                                                 <color key="backgroundColor" red="0.79215686269999996" green="0.20784313730000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="5TF-PA-FIH"/>
@@ -204,7 +203,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-Rw-ACp">
-                                        <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                        <rect key="frame" x="20" y="260" width="528" height="40"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="A2o-dy-22H"/>

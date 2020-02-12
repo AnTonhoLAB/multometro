@@ -11,9 +11,11 @@ import RxSwift
 import RxCocoa
 
 protocol LoginViewComponents: UIView {
+    /// To read UI informations
     var emailObservable: Observable<String> { get }
     var passwordObservable: Observable<String> { get }
     var enterObservable: Observable<Void> { get }
+    /// To change UI informations
     var enterIsValide: Binder<Bool> { get }
 }
 
@@ -64,7 +66,7 @@ class LoginView: UIView, LoginViewComponents {
         return view
     }()
 
-    lazy var enterButton: UIButton = {
+    private lazy var enterButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .red
         view.setTitle(R.string.localizable.login(), for: .normal)
@@ -96,6 +98,7 @@ extension LoginView: CodeView {
         self.fieldsView.addSubview(emailTextField)
         self.fieldsView.addSubview(passwordTextField)
         self.fieldsView.addSubview(enterButton)
+        
     }
 
     func setupConstraints() {
