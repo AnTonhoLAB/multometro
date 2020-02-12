@@ -20,6 +20,7 @@
 		3F9738AE23F322E5004D93C9 /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9738A623F322E5004D93C9 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F9738B023F32368004D93C9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9738AF23F32368004D93C9 /* RxCocoa.framework */; };
 		3F9738B123F32368004D93C9 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9738AF23F32368004D93C9 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FA1459123F4AFE80050F9BB /* NetworkingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1459023F4AFE80050F9BB /* NetworkingState.swift */; };
 		3FCCD24123F34D460068C3D4 /* ViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD24023F34D460068C3D4 /* ViewController+Presentable.swift */; };
 		3FCCD24823F34DEF0068C3D4 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD24723F34DEF0068C3D4 /* Reactive.swift */; };
 		3FCCD24A23F479A70068C3D4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD24923F479A70068C3D4 /* LoginUseCase.swift */; };
@@ -192,6 +193,7 @@
 		3F9738A523F322E5004D93C9 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		3F9738A623F322E5004D93C9 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
 		3F9738AF23F32368004D93C9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		3FA1459023F4AFE80050F9BB /* NetworkingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingState.swift; sourceTree = "<group>"; };
 		3FCCD24023F34D460068C3D4 /* ViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Presentable.swift"; sourceTree = "<group>"; };
 		3FCCD24723F34DEF0068C3D4 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		3FCCD24923F479A70068C3D4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -628,13 +630,14 @@
 		5ED085C5215B001200293516 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3FA1459023F4AFE80050F9BB /* NetworkingState.swift */,
+				5E67EBEE21F005DA005F8CC4 /* Errors.swift */,
 				3FCCD25823F483E00068C3D4 /* ToDelete */,
 				5E6D0D0C2195F49000186390 /* NetworkingManager.swift */,
 				3FCCD25623F483DB0068C3D4 /* AuthRequester.swift */,
 				5E6D0D0E219736CD00186390 /* UserRequester.swift */,
 				5E6C7E9D21638BAF00AE8260 /* RoomRequester.swift */,
 				5E2C83B721DC24360014A4DE /* HTTPRequester.swift */,
-				5E67EBEE21F005DA005F8CC4 /* Errors.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1090,6 +1093,7 @@
 				5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */,
 				5E6D0D0F219736CD00186390 /* UserRequester.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */,
+				3FA1459123F4AFE80050F9BB /* NetworkingState.swift in Sources */,
 				5E66B86B217BFF5A002BB3AF /* ExtensionCodable.swift in Sources */,
 				5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */,
 				3FF84E6623EDEA3F001E7D0A /* AppCoordinator.swift in Sources */,

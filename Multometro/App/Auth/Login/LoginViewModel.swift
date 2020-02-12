@@ -19,6 +19,8 @@ protocol ViewModelType {
 
 final class LoginViewModel: ViewModelType {
 
+    private var loginUseCase: LoginUseCase
+
     struct Input {
         let name: Observable<String>
         let password: Observable<String>
@@ -27,23 +29,35 @@ final class LoginViewModel: ViewModelType {
 
     struct Output {
         let isValid: Driver<Bool>
-        let open: Driver<Void>
+        let open: Driver<NetworkingState<MultometroUser>>
     }
 
-    init() {
-
+    init(_ loginUseCase: LoginUseCase) {
+        self.loginUseCase = loginUseCase
     }
 
     func transform(input: LoginViewModel.Input) -> LoginViewModel.Output {
+
+        /// Check fields to enable login button
         let isValidLogin = Observable
             .combineLatest(input.name.asObservable(), input.password.asObservable()) {
             return self.isValidEmail($0) && $1.count >= 6
         }
         .asDriver(onErrorJustReturn: false)
 
-        let open = input.didTapLogin.asDriver(onErrorJustReturn: ())
+        /// Execute Login after did tap button
 
-        return Output(isValid: isValidLogin, open: open)
+        let userInputs = Observable.combineLatest(input.name, input.password) { (login, password) -> (String, String) in
+            return (login, password)
+        }
+
+        let authResponse = input.didTapLogin
+            .withLatestFrom(userInputs)
+            .flatMap { (email, password) in
+                return self.loginUseCase.rxLogin(email: email, password: password)
+        }.asDriver(onErrorJustReturn: (.fail(RequestError.fail)))
+
+        return Output(isValid: isValidLogin, open: authResponse)
     }
 
     private func isValidEmail(_ email: String) -> Bool {

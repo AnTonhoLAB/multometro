@@ -15,7 +15,7 @@ protocol LoginFlowDelegate: class {
     func onChangePassword()
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UpdatableViewController {
 
     private let disposeBag: DisposeBag = DisposeBag()
     private var loginView: LoginViewComponents!
@@ -27,9 +27,9 @@ class LoginViewController: UIViewController {
         self.view = loginView
     }
 
-    init(with viewModel: LoginViewModel) {
+    init(with view: LoginView, and viewModel: LoginViewModel) {
         super.init(nibName: nil, bundle: nil)
-        self.loginView = LoginView()
+        self.loginView = view
         self.viewModel = viewModel
     }
 
@@ -49,9 +49,18 @@ class LoginViewController: UIViewController {
             .drive(self.loginView.enterIsValide)
             .disposed(by: disposeBag)
 
-        outputs.open.drive(onNext: { (_) in
-            print("Taped")
-        }).disposed(by: disposeBag)
+//        outputs.open.asDriver().drive(onNext: { (response) in
+//            print(response)
+//        }, onCompleted: {
+//            print("completo")
+//        }) {
+//            print("Disposado")
+//        }
+//        .disposed(by: disposeBag)
+
+        outputs.open
+            .drive(self.rx.netState)
+            .disposed(by: disposeBag)
     }
     
     func login(email: String, password: String) {

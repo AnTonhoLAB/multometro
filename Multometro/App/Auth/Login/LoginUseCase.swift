@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol LoginUseCaseProtocol: BaseUseCase {
     func login(email: String, password: String, completion: @escaping (Response<MultometroUser>) -> Void)
+    func rxLogin(email: String, password: String) -> Observable<NetworkingState<MultometroUser>>
 }
 
 final class LoginUseCase: LoginUseCaseProtocol {
@@ -22,19 +24,62 @@ final class LoginUseCase: LoginUseCaseProtocol {
     
     func login(email: String, password: String, completion: @escaping (Response<MultometroUser>) -> Void) {
         guard hasNetworking else { completion(.failure(RequestError.noConnection)); return }
-        authRequester.login(email: email, password: password) { (response) in
 
+        authRequester.login(email: email, password: password) { (response) in
             switch response {
             case .success(let userAndToken):
-                completion(self.save(userAndToken))
+                let savedResult = self.saveFail(userAndToken)//(userAndToken)
+                completion(savedResult)
             case .failure(let error):
                 completion(.failure(error))
             }
-
         }
     }
 
-    private func save(_ userAndToken: UserAndToken) -> Response<MultometroUser> {
+    func rxLogin(email: String, password: String) -> Observable<NetworkingState<MultometroUser>>  {
+        return Observable<NetworkingState>.create{ observer in
+            observer.onNext(.loading)
+            self.authRequester.login(email: email, password: password) { (response) in
+                switch response {
+                    case .success(let userAndToken):
+                        self.save(userAndToken, observer: observer)
+                    case .failure(let error):
+                        observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    private func save(_ userAndToken: UserAndToken, observer: AnyObserver<NetworkingState<MultometroUser>>) {
+        let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
+        do {
+            try keychainToken.savePassword(userAndToken.token)
+            observer.onNext(.success(userAndToken.user))
+        } catch {
+            observer.onError(KeychainError.notPossibleToSave)
+        }
+    }
+
+    ///APAGAR
+    func rxLoginFail(email: String, password: String) -> Observable<Response<MultometroUser>>  {
+        return Observable<Response<MultometroUser>>.create{ observer in
+
+            self.authRequester.login(email: email, password: password) { (response) in
+
+                switch response {
+                    case .success(let userAndToken):
+                        let savedResult = self.saveFail(userAndToken)
+                        observer.onNext(savedResult)
+                    case .failure(let error):
+                        observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    private func saveFail(_ userAndToken: UserAndToken) -> Response<MultometroUser> {
         let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
         do {
             try keychainToken.savePassword(userAndToken.token)

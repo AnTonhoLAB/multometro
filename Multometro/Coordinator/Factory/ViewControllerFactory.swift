@@ -12,8 +12,10 @@ final class ViewControllerFactory {
 
     func instantiateLoginViewController() -> LoginViewController {
         let loginView = LoginView()
-        let loginViewModel = LoginViewModel()
-        let loginVC = LoginViewController(with: loginViewModel)
+        let authRequester = AuthRequester()
+        let loginUseCase = LoginUseCase(authRequester: authRequester)
+        let loginViewModel = LoginViewModel(loginUseCase)
+        let loginVC = LoginViewController(with: loginView, and: loginViewModel)
         return loginVC
     }
 

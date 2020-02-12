@@ -14,6 +14,7 @@ enum RequestError: Error {
     case failServerCrip
     case wrongUserOrPassword
     case emailAlreadyBeingUsed
+    case decodeError
 }
 
 extension RequestError: LocalizedError {
@@ -29,6 +30,8 @@ extension RequestError: LocalizedError {
         case .wrongUserOrPassword:
             return NSLocalizedString(R.string.localizable.errorWrongEmailOrPassowrd(101), comment: empty)
         case .emailAlreadyBeingUsed:
+            return  NSLocalizedString(R.string.localizable.errorEmailAlreadyBeingUsed(102), comment: empty)
+        case .decodeError:
             return  NSLocalizedString(R.string.localizable.errorEmailAlreadyBeingUsed(102), comment: empty)
         }
     }
