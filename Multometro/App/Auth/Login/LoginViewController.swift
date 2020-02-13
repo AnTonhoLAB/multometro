@@ -50,27 +50,29 @@ class LoginViewController: UpdatableViewController {
             .disposed(by: disposeBag)
 
         outputs.networkingStatus
-            .drive(self.rx.netState)
+            .map({ (state) -> NetworkingState<Any> in
+                state.toAny()
+            })
+            .drive(self.rx.loadingState)
             .disposed(by: disposeBag)
     }
     
-    func login(email: String, password: String) {
-        showLoader()
-        AuthManager.login(email: email, password: password) { [weak self] in
-            guard let self = self else { return }
-            switch $0 {
-            case .success(let user):
-                UserRequester.saveLocally(user: user)
-                if user.firstTime == false {
-//                    self.openApp()
-                } else {
-//                    self.openOnboarding()
-                }
-            case .failure(let err):
-                self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
-                self.dismissLoader()
-            }
-        }
-    }
-
+//    func login(email: String, password: String) {
+//        showLoader()
+//        AuthManager.login(email: email, password: password) { [weak self] in
+//            guard let self = self else { return }
+//            switch $0 {
+//            case .success(let user):
+//                UserRequester.saveLocally(user: user)
+//                if user.firstTime == false {
+////                    self.openApp()
+//                } else {
+////                    self.openOnboarding()
+//                }
+//            case .failure(let err):
+//                self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
+//                self.dismissLoader()
+//            }
+//        }
+//    }
 }

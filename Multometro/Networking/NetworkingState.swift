@@ -31,3 +31,18 @@ enum NetworkingState<T> {
         }
     }
 }
+
+extension NetworkingState {
+    func toAny() -> NetworkingState<Any> {
+        switch self{
+            case .loading:
+                return .loading
+            case .success(let object):
+                return .success(object)
+            case .fail(let error):
+                return .fail(error)
+            case .default:
+                return .default
+        }
+    }
+}

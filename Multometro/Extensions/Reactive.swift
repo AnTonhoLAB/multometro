@@ -20,7 +20,7 @@ extension Reactive where Base : UIButton {
 }
 
 extension Reactive where Base : UpdatableViewController {
-    var netState : Binder<NetworkingState<MultometroUser>> {
+    var loadingState : Binder<NetworkingState<Any>> {
         return Binder(self.base) { vc, state in
            switch state {
             case .loading:
@@ -35,6 +35,22 @@ extension Reactive where Base : UpdatableViewController {
             }
         }
     }
+
+    var loadWarning : Binder<NetworkingState<Any>> {
+           return Binder(self.base) { vc, state in
+              switch state {
+               case .loading:
+                   vc.showLoading()
+               case .success:
+                   vc.removeLoading()
+               case .fail(let error):
+                   print(error)
+                   vc.removeLoading()
+               case .default:
+                   break
+               }
+           }
+       }
 }
 
 class UpdatableViewController: UIViewController {

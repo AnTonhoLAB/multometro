@@ -48,9 +48,9 @@ class MultometroUser: Codable {
         self.firstTime = false
     }
     
-    init() {
-        
-    }
+//    init() {
+//        
+//    }
     
     func toCDObject() -> User {
         let user: User = CDManager.Object()
