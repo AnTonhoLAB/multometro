@@ -49,22 +49,9 @@ class LoginViewController: UpdatableViewController {
             .drive(self.loginView.enterIsValide)
             .disposed(by: disposeBag)
 
-//        outputs.networkingStatus
-//            .drive(onNext: { (response) in
-//            print(response)
-//        }, onCompleted: {
-//            print("completo")
-//        }) {
-//            print("Disposado")
-//        }
-//        .disposed(by: disposeBag)
-
-        outputs.networkingStatus.subscribe(self.rx.netState)
-
-
-//        outputs.networkingStatus
-//            .drive(self.rx.netState)
-//            .disposed(by: disposeBag)
+        outputs.networkingStatus
+            .drive(self.rx.netState)
+            .disposed(by: disposeBag)
     }
     
     func login(email: String, password: String) {
@@ -75,9 +62,9 @@ class LoginViewController: UpdatableViewController {
             case .success(let user):
                 UserRequester.saveLocally(user: user)
                 if user.firstTime == false {
-                    self.openApp()
+//                    self.openApp()
                 } else {
-                    self.openOnboarding()
+//                    self.openOnboarding()
                 }
             case .failure(let err):
                 self.alertSimpleWarning(title: "Error", message: err.localizedDescription, action: nil)
@@ -85,27 +72,5 @@ class LoginViewController: UpdatableViewController {
             }
         }
     }
-    
-    func openOnboarding() {
-        DispatchQueue.main.sync {
-            guard let window = UIApplication.shared.keyWindow else { return }
-            let retisterUserStoryboard: UIStoryboard = R.storyboard.registerUser()
-            let viewController = retisterUserStoryboard.instantiateViewController(withIdentifier : "RegisterUserViewController")
-            
-            UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                window.rootViewController = viewController
-            }, completion: nil)
-        }
-    }
-    
-    func openApp() {
-    
-        guard let window = UIApplication.shared.keyWindow else { return }
-        let mainStoryboard: UIStoryboard = R.storyboard.main()
-        guard let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: R.string.strings.mainIdentifier()) as? UITabBarController else { return }
 
-        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = tabBarController
-        })
-    }
 }

@@ -29,7 +29,7 @@ final class LoginViewModel: ViewModelType {
 
     struct Output {
         let isValid: Driver<Bool>
-        let networkingStatus: Observable<NetworkingState<MultometroUser>>
+        let networkingStatus: Driver<NetworkingState<MultometroUser>>
     }
 
     init(_ loginUseCase: LoginUseCase) {
@@ -46,7 +46,6 @@ final class LoginViewModel: ViewModelType {
         .asDriver(onErrorJustReturn: false)
 
         /// Execute Login after did tap button
-
         let userInputs = Observable.combineLatest(input.name, input.password) { (login, password) -> (String, String) in
             return (login, password)
         }
@@ -55,21 +54,8 @@ final class LoginViewModel: ViewModelType {
             .withLatestFrom(userInputs)
             .flatMap { (email, password) in
                 return self.loginUseCase.rxLogin(email: email, password: password)
-        }.asObservable()
-
-//        .asDriver(onErrorJustReturn: (
-//                .fail(RequestError.fail)
-//            ))
-
-
-//        var open: Driver<NetworkingState<MultometroUser>>
-//
-//        input.didTapLogin.bind(onNext: { (_) in
-//            open = self.loginUseCase.rxLogin(email: "", password:"").asDriver(onErrorJustReturn: .fail(RequestError.failServerCrip))
-//        })
-
-//            .asDriver(onErrorJustReturn: ())
-
+            }
+            .asDriver(onErrorJustReturn: (.fail(RequestError.fail)))
 
         return Output(isValid: isValidLogin, networkingStatus: authResponse)
     }
