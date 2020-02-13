@@ -22,7 +22,7 @@ class TabBarCoordinator: BaseCoordinator {
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let viewControllerFactory: ViewControllerFactory
 
-    private let tabBarController: UITabBarController
+    private let tabBarController: MainTabBarController
 
     weak var delegate: TabBarCoordinatorFlowProtocol?
 

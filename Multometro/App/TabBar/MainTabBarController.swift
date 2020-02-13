@@ -10,9 +10,9 @@ import UIKit
 import Rswift
 
 class MainTabBarController: UITabBarController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
     }
     
@@ -24,17 +24,18 @@ class MainTabBarController: UITabBarController {
             switch index {
             case 0:
                 viewController.tabBarItem.tag = 0//Controller.supplier.rawValue
-                viewController.tabBarItem.image = R.image.group()
+                viewController.tabBarItem.image = #imageLiteral(resourceName: "group")
             case 1:
-                viewController.tabBarItem.tag = 0//Controller.supplier.rawValue
-                viewController.tabBarItem.image = R.image.stats()
+                viewController.tabBarItem.tag = 1//Controller.supplier.rawValue
+                viewController.tabBarItem.image = #imageLiteral(resourceName: "group")
             case 2:
-                viewController.tabBarItem.tag = 0//Controller.supplier.rawValue
-                viewController.tabBarItem.image = R.image.profile()
+                viewController.tabBarItem.tag = 2//Controller.supplier.rawValue
+                viewController.tabBarItem.image = #imageLiteral(resourceName: "group")
             default:  break
             }
             viewController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)
         }
+        self.tabBarController?.tabBar.backgroundColor = .red
     }
     
     override func viewDidAppear(_ animated: Bool) {

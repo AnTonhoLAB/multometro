@@ -19,7 +19,7 @@ final class ViewControllerFactory {
         return loginVC
     }
 
-    func instantiateTabBarrController() -> UITabBarController {
+    func instantiateTabBarrController() -> MainTabBarController {
         let tabBarController = MainTabBarController()
         return  tabBarController
     }
