@@ -54,7 +54,7 @@ final class LoginViewModel: ViewModelType {
         let authResponse = input.didTapLogin
             .withLatestFrom(userInputs)
             .flatMap { (email, password) in
-                return self.loginUseCase.rxLogin(email: email, password: password)
+                return self.loginUseCase.login(email: email, password: password)
             }
             .asDriver(onErrorJustReturn: (.fail(RequestError.fail)))
 

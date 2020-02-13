@@ -10,8 +10,7 @@ import Foundation
 import RxSwift
 
 protocol LoginUseCaseProtocol: BaseUseCase {
-    func login(email: String, password: String, completion: @escaping (Response<MultometroUser>) -> Void)
-    func rxLogin(email: String, password: String) -> Observable<NetworkingState<MultometroUser>>
+    func login(email: String, password: String) -> Observable<NetworkingState<MultometroUser>>
 }
 
 final class LoginUseCase: LoginUseCaseProtocol {
@@ -22,7 +21,7 @@ final class LoginUseCase: LoginUseCaseProtocol {
         self.authRequester = authRequester
     }
 
-    func rxLogin(email: String, password: String) -> Observable<NetworkingState<MultometroUser>>  {
+    func login(email: String, password: String) -> Observable<NetworkingState<MultometroUser>>  {
         return Observable<NetworkingState>.create{ observer in
             observer.onNext(.loading)
             self.authRequester.login(email: email, password: password) { (response) in
