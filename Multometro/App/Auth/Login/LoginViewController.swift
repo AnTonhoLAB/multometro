@@ -39,7 +39,7 @@ class LoginViewController: UpdatableViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
-        let inputs = LoginViewModel.Input(name: self.loginView.emailObservable,
+        let inputs = LoginViewModel.Input(name: self.loginView!.emailObservable,
                                           password: self.loginView.passwordObservable,
                                           didTapLogin: self.loginView.enterObservable)
 
@@ -49,7 +49,8 @@ class LoginViewController: UpdatableViewController {
             .drive(self.loginView.enterIsValide)
             .disposed(by: disposeBag)
 
-//        outputs.open.asDriver().drive(onNext: { (response) in
+//        outputs.networkingStatus
+//            .drive(onNext: { (response) in
 //            print(response)
 //        }, onCompleted: {
 //            print("completo")
@@ -58,9 +59,12 @@ class LoginViewController: UpdatableViewController {
 //        }
 //        .disposed(by: disposeBag)
 
-        outputs.open
-            .drive(self.rx.netState)
-            .disposed(by: disposeBag)
+        outputs.networkingStatus.subscribe(self.rx.netState)
+
+
+//        outputs.networkingStatus
+//            .drive(self.rx.netState)
+//            .disposed(by: disposeBag)
     }
     
     func login(email: String, password: String) {

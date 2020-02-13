@@ -80,34 +80,6 @@ class AuthRequester: AuthRequestable {
         })
     }
 
-//    func rxLogin(email: String, password: String) -> Observable<Response<UserAndToken>>  {
-//        let param = [
-//                 "email": email,
-//                 "password": password
-//             ]
-//
-//        return Observable<Response<UserAndToken>>.create{ observer in
-//
-//            HTTPRequester.request(route: .auth, function: .login, parameters: param, completion: { response in
-//
-//                switch response {
-//                    case .success(let data):
-//                        do {
-//                            let userAndToken = try JSONDecoder().decode(UserAndToken.self, from: data)
-//                            observer.onNext(.success(userAndToken))
-//                            observer.onCompleted()
-//                        } catch {
-//                            observer.onNext(.failure(RequestError.decodeError))
-//                            observer.onCompleted()
-//                        }
-//                    case .failure(let error):
-//                        observer.onError(error)
-//                }
-//            })
-//            return Disposables.create()
-//        }
-//    }
-
     func createUser(with email: String, password: String, completion: @escaping(Response<Data>) -> Void) {
         let param = [
             "user": [

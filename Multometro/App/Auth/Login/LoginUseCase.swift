@@ -44,7 +44,7 @@ final class LoginUseCase: LoginUseCaseProtocol {
                     case .success(let userAndToken):
                         self.save(userAndToken, observer: observer)
                     case .failure(let error):
-                        observer.onError(error)
+                        observer.onNext(.fail(error))
                 }
             }
             return Disposables.create()
@@ -57,7 +57,7 @@ final class LoginUseCase: LoginUseCaseProtocol {
             try keychainToken.savePassword(userAndToken.token)
             observer.onNext(.success(userAndToken.user))
         } catch {
-            observer.onError(KeychainError.notPossibleToSave)
+            observer.onNext(.fail(error))
         }
     }
 

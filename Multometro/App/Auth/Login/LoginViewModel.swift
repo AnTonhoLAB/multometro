@@ -29,7 +29,7 @@ final class LoginViewModel: ViewModelType {
 
     struct Output {
         let isValid: Driver<Bool>
-        let open: Driver<NetworkingState<MultometroUser>>
+        let networkingStatus: Observable<NetworkingState<MultometroUser>>
     }
 
     init(_ loginUseCase: LoginUseCase) {
@@ -55,9 +55,23 @@ final class LoginViewModel: ViewModelType {
             .withLatestFrom(userInputs)
             .flatMap { (email, password) in
                 return self.loginUseCase.rxLogin(email: email, password: password)
-        }.asDriver(onErrorJustReturn: (.fail(RequestError.fail)))
+        }.asObservable()
 
-        return Output(isValid: isValidLogin, open: authResponse)
+//        .asDriver(onErrorJustReturn: (
+//                .fail(RequestError.fail)
+//            ))
+
+
+//        var open: Driver<NetworkingState<MultometroUser>>
+//
+//        input.didTapLogin.bind(onNext: { (_) in
+//            open = self.loginUseCase.rxLogin(email: "", password:"").asDriver(onErrorJustReturn: .fail(RequestError.failServerCrip))
+//        })
+
+//            .asDriver(onErrorJustReturn: ())
+
+
+        return Output(isValid: isValidLogin, networkingStatus: authResponse)
     }
 
     private func isValidEmail(_ email: String) -> Bool {
