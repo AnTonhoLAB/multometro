@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupsViewController: UIViewController {
+class GroupsViewControllerToErase: UIViewController {
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -90,15 +90,15 @@ class GroupsViewController: UIViewController {
     }
     
     @IBAction func didTapAddRoom(_ sender: Any) {
-        performSegue(withIdentifier: R.segue.groupsViewController.toAddGroup, sender: nil)
+//        performSegue(withIdentifier: R.segue.groupsViewController.toAddGroup, sender: nil)
     }
     
     @IBAction func didTapScanQR(_ sender: Any) {
-        performSegue(withIdentifier: R.segue.groupsViewController.toScanQR, sender: nil)
+//        performSegue(withIdentifier: R.segue.groupsViewController.toScanQR, sender: nil)
     }
 }
 
-extension GroupsViewController: RegisterForNewGroup {
+extension GroupsViewControllerToErase: RegisterForNewGroup {
     func added(new group: Room) {
         newAddFlag.toggle()
         rooms.append(group)
@@ -112,7 +112,7 @@ extension GroupsViewController: RegisterForNewGroup {
     }
 }
 
-extension GroupsViewController: UITableViewDataSource {
+extension GroupsViewControllerToErase: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rooms.count
     }
@@ -126,10 +126,10 @@ extension GroupsViewController: UITableViewDataSource {
     }
 }
 
-extension GroupsViewController: UITableViewDelegate {
+extension GroupsViewControllerToErase: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         performSegue(withIdentifier: R.segue.groupsViewController.toRoomDetail, sender: rooms[(rooms.count - 1) - indexPath.row])
+//         performSegue(withIdentifier: R.segue.groupsViewController.toRoomDetail, sender: rooms[(rooms.count - 1) - indexPath.row])
     }
     
 }

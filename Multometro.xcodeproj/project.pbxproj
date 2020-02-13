@@ -21,6 +21,11 @@
 		3F9738B023F32368004D93C9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9738AF23F32368004D93C9 /* RxCocoa.framework */; };
 		3F9738B123F32368004D93C9 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9738AF23F32368004D93C9 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FA1459123F4AFE80050F9BB /* NetworkingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1459023F4AFE80050F9BB /* NetworkingState.swift */; };
+		3FA1459823F5C21A0050F9BB /* GroupsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1459723F5C21A0050F9BB /* GroupsCoordinator.swift */; };
+		3FA1459C23F5C2FF0050F9BB /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1459B23F5C2FF0050F9BB /* GroupsViewController.swift */; };
+		3FA1459E23F5C30A0050F9BB /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1459D23F5C30A0050F9BB /* GroupsView.swift */; };
+		3FA145A023F5C3150050F9BB /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1459F23F5C3150050F9BB /* GroupsViewModel.swift */; };
+		3FA145A223F5C33E0050F9BB /* GroupsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA145A123F5C33E0050F9BB /* GroupsUseCase.swift */; };
 		3FCCD24123F34D460068C3D4 /* ViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD24023F34D460068C3D4 /* ViewController+Presentable.swift */; };
 		3FCCD24823F34DEF0068C3D4 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD24723F34DEF0068C3D4 /* Reactive.swift */; };
 		3FCCD24A23F479A70068C3D4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD24923F479A70068C3D4 /* LoginUseCase.swift */; };
@@ -39,7 +44,6 @@
 		3FF84E6F23EDF359001E7D0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E6E23EDF359001E7D0A /* LoginView.swift */; };
 		3FF84E7223EDF403001E7D0A /* StartableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E7123EDF403001E7D0A /* StartableViewController.swift */; };
 		3FF84E7423EDF41E001E7D0A /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E7323EDF41E001E7D0A /* CodeView.swift */; };
-		3FF84E7623EDFA54001E7D0A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E7523EDFA54001E7D0A /* TabBarController.swift */; };
 		3FF84E7823EE053F001E7D0A /* LaunchInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E7723EE053E001E7D0A /* LaunchInstructor.swift */; };
 		3FF84E7B23F1F59E001E7D0A /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E7A23F1F59E001E7D0A /* ViewControllerFactory.swift */; };
 		3FF84E7E23F20100001E7D0A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E7D23F20100001E7D0A /* Router.swift */; };
@@ -86,7 +90,7 @@
 		5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14F215ED2A300918BA5 /* ValidatingError.swift */; };
 		5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EA9B21607437000E0EE4 /* Strings.strings */; };
 		5E92EAA221624235000E0EE4 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA121624235000E0EE4 /* Groups.storyboard */; };
-		5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */; };
+		5E92EAA42162427D000E0EE4 /* GroupsViewControllerToErase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAA32162427D000E0EE4 /* GroupsViewControllerToErase.swift */; };
 		5E92EAA6216242A6000E0EE4 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA5216242A6000E0EE4 /* Statistics.storyboard */; };
 		5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92EAA7216242E7000E0EE4 /* StatisticsViewController.swift */; };
 		5E92EAAA21624324000E0EE4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EAA921624324000E0EE4 /* Profile.storyboard */; };
@@ -194,6 +198,11 @@
 		3F9738A623F322E5004D93C9 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
 		3F9738AF23F32368004D93C9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		3FA1459023F4AFE80050F9BB /* NetworkingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingState.swift; sourceTree = "<group>"; };
+		3FA1459723F5C21A0050F9BB /* GroupsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCoordinator.swift; sourceTree = "<group>"; };
+		3FA1459B23F5C2FF0050F9BB /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		3FA1459D23F5C30A0050F9BB /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
+		3FA1459F23F5C3150050F9BB /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
+		3FA145A123F5C33E0050F9BB /* GroupsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsUseCase.swift; sourceTree = "<group>"; };
 		3FCCD24023F34D460068C3D4 /* ViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Presentable.swift"; sourceTree = "<group>"; };
 		3FCCD24723F34DEF0068C3D4 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		3FCCD24923F479A70068C3D4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -210,7 +219,6 @@
 		3FF84E6E23EDF359001E7D0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FF84E7123EDF403001E7D0A /* StartableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartableViewController.swift; sourceTree = "<group>"; };
 		3FF84E7323EDF41E001E7D0A /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
-		3FF84E7523EDFA54001E7D0A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3FF84E7723EE053E001E7D0A /* LaunchInstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInstructor.swift; sourceTree = "<group>"; };
 		3FF84E7A23F1F59E001E7D0A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		3FF84E7D23F20100001E7D0A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -257,7 +265,7 @@
 		5E85F14F215ED2A300918BA5 /* ValidatingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatingError.swift; sourceTree = "<group>"; };
 		5E92EA9B21607437000E0EE4 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 		5E92EAA121624235000E0EE4 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
-		5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		5E92EAA32162427D000E0EE4 /* GroupsViewControllerToErase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewControllerToErase.swift; sourceTree = "<group>"; };
 		5E92EAA5216242A6000E0EE4 /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		5E92EAA7216242E7000E0EE4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		5E92EAA921624324000E0EE4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -336,6 +344,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3FA1459923F5C2D30050F9BB /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				3FA1459723F5C21A0050F9BB /* GroupsCoordinator.swift */,
+				3FA1459A23F5C2E10050F9BB /* Groups */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		3FA1459A23F5C2E10050F9BB /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				3FA1459D23F5C30A0050F9BB /* GroupsView.swift */,
+				3FA1459B23F5C2FF0050F9BB /* GroupsViewController.swift */,
+				3FA1459F23F5C3150050F9BB /* GroupsViewModel.swift */,
+				3FA145A123F5C33E0050F9BB /* GroupsUseCase.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
 		3FCCD24B23F47BD40068C3D4 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +413,9 @@
 		3FF84E6723EDEA67001E7D0A /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				5ED08596215AFF9B00293516 /* Main.storyboard */,
 				3FF84E6823EDEA74001E7D0A /* TabBarCoordinator.swift */,
-				3FF84E7523EDFA54001E7D0A /* TabBarController.swift */,
+				5ED08594215AFF9B00293516 /* MainTabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -470,7 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				5ED462B921A8A3EC0041EE23 /* Cells */,
-				5E92EAA32162427D000E0EE4 /* GroupsViewController.swift */,
+				5E92EAA32162427D000E0EE4 /* GroupsViewControllerToErase.swift */,
 			);
 			path = Rooms;
 			sourceTree = "<group>";
@@ -523,7 +552,7 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		5E92EA9F21624075000E0EE4 /* Groups */ = {
+		5E92EA9F21624075000E0EE4 /* GroupsToErase */ = {
 			isa = PBXGroup;
 			children = (
 				5E92EAA121624235000E0EE4 /* Groups.storyboard */,
@@ -534,7 +563,7 @@
 				5E6BC3E02180E368004DD9A7 /* SearchRoom */,
 				5EDAD568217922FE008E4609 /* AddRoom */,
 			);
-			path = Groups;
+			path = GroupsToErase;
 			sourceTree = "<group>";
 		};
 		5E92EAA0216241FF000E0EE4 /* Statistics */ = {
@@ -670,7 +699,8 @@
 				5ED085D3215B06CE00293516 /* Auth */,
 				5E6D0D12219754CB00186390 /* OnBoarding */,
 				5ED085D0215B059000293516 /* Main */,
-				5E92EA9F21624075000E0EE4 /* Groups */,
+				3FA1459923F5C2D30050F9BB /* Groups */,
+				5E92EA9F21624075000E0EE4 /* GroupsToErase */,
 				5E92EAA0216241FF000E0EE4 /* Statistics */,
 				5E92EA9D21623ECF000E0EE4 /* Profile */,
 			);
@@ -680,8 +710,6 @@
 		5ED085D0215B059000293516 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				5ED08596215AFF9B00293516 /* Main.storyboard */,
-				5ED08594215AFF9B00293516 /* MainTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1061,9 +1089,9 @@
 				5E28267F21F389CF00CE68C7 /* Multometro.xcdatamodeld in Sources */,
 				5E01AA8B21A0861F0005FA43 /* UserCell.swift in Sources */,
 				3FF84E7823EE053F001E7D0A /* LaunchInstructor.swift in Sources */,
+				3FA1459823F5C21A0050F9BB /* GroupsCoordinator.swift in Sources */,
 				5E578A6F21F10849006B24C5 /* UserInRoom.swift in Sources */,
 				3FCCD24823F34DEF0068C3D4 /* Reactive.swift in Sources */,
-				3FF84E7623EDFA54001E7D0A /* TabBarController.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
 				5EE5860D21ED298700A824A7 /* KeychainHelper.swift in Sources */,
 				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
@@ -1087,10 +1115,13 @@
 				5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */,
 				5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */,
 				5E01AA81219F684F0005FA43 /* HeaderCell.swift in Sources */,
-				5E92EAA42162427D000E0EE4 /* GroupsViewController.swift in Sources */,
+				5E92EAA42162427D000E0EE4 /* GroupsViewControllerToErase.swift in Sources */,
 				5E92EAA8216242E7000E0EE4 /* StatisticsViewController.swift in Sources */,
 				5E92EAAC21624333000E0EE4 /* ProfileViewController.swift in Sources */,
+				3FA1459E23F5C30A0050F9BB /* GroupsView.swift in Sources */,
 				5E6C7E9E21638BAF00AE8260 /* RoomRequester.swift in Sources */,
+				3FA1459C23F5C2FF0050F9BB /* GroupsViewController.swift in Sources */,
+				3FA145A023F5C3150050F9BB /* GroupsViewModel.swift in Sources */,
 				5E6D0D0F219736CD00186390 /* UserRequester.swift in Sources */,
 				5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */,
 				3FA1459123F4AFE80050F9BB /* NetworkingState.swift in Sources */,
@@ -1098,6 +1129,7 @@
 				5E6D0D0D2195F49000186390 /* NetworkingManager.swift in Sources */,
 				3FF84E6623EDEA3F001E7D0A /* AppCoordinator.swift in Sources */,
 				5EE5861021EEBDFE00A824A7 /* KeychainConfiguration.swift in Sources */,
+				3FA145A223F5C33E0050F9BB /* GroupsUseCase.swift in Sources */,
 				3FCCD24A23F479A70068C3D4 /* LoginUseCase.swift in Sources */,
 				5EC89766217A501500C65CF9 /* ExtensionUIView.swift in Sources */,
 				5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */,

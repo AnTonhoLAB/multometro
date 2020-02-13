@@ -27,6 +27,7 @@ protocol RouterProtocol: Presentable {
 
     func setRootModule(_ module: Presentable?)
     func setRootModule(_ module: Presentable?, hideBar: Bool)
+    func setRootModuleToTab(_ module: Presentable?, hideBar: Bool)
 
     func popToRootModule(animated: Bool)
     func popToModule(module: Presentable?, animated: Bool)
@@ -39,6 +40,7 @@ final class Router: NSObject, RouterProtocol {
     private var rootController: UINavigationController
     private var completions: [UIViewController : () -> Void]
     private var transition: UIViewControllerAnimatedTransitioning?
+    private var window: UIWindow?
 
     // MARK: - Presentable
 
@@ -122,9 +124,21 @@ final class Router: NSObject, RouterProtocol {
 
     func setRootModule(_ module: Presentable?, hideBar: Bool) {
         guard let controller = module?.toPresent() else { return }
-        self.rootController.setViewControllers([controller], animated: false)
+        self.rootController.setViewControllers([controller], animated: true)
         self.rootController.isNavigationBarHidden = hideBar
     }
+
+    func setRootModuleToTab(_ module: Presentable?, hideBar: Bool) {
+        guard let controller = module?.toPresent() else { return }
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+//        window.rootViewController = controller
+        self.window=window
+        window.makeKeyAndVisible()
+
+        window.rootViewController?.present(controller, animated: true, completion: nil)
+    }
+
 
     func popToRootModule(animated: Bool) {
         if let controllers = self.rootController.popToRootViewController(animated: animated) {
@@ -144,12 +158,15 @@ final class Router: NSObject, RouterProtocol {
 
     // MARK: - Init methods
 
-    init(rootController: UINavigationController) {
+    init(window: UIWindow?, rootController: UINavigationController) {
         self.rootController = rootController
+        self.window = window
         self.completions = [:]
         super.init()
         self.rootController.delegate = self
     }
+
+    
 }
 
 // MARK: - Extensions

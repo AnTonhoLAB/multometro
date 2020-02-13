@@ -60,15 +60,18 @@ final class AppCoordinator: BaseCoordinator {
         authCoordinator.authFlowDelegate = self
         authCoordinator.finishFlow = { [unowned self, unowned authCoordinator] in
             self.removeDependency(authCoordinator)
-            self.launchInstructor = LaunchInstructor.configure(tutorialWasShown: false, isAutorized: true)
-            self.start()
+            self.launchInstructor = LaunchInstructor.configure(tutorialWasShown: true, isAutorized: true)
+            self.start(with: nil)
         }
         self.addChild(coordinator: authCoordinator)
         authCoordinator.start()
     }
 
     private func runMainFlow() {
-//        tabCoordinator = TabBarCoordinator()
+        let tabCoordinator = coordinatorFactory.makeTabBarCoordinatorBox(router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
+
+
+//        tabCoordinator.
 //        tabCoordinator.delegate = self
 //        self.addChild(coordinator: tabCoordinator)
 //        tabCoordinator.start()
@@ -79,6 +82,8 @@ final class AppCoordinator: BaseCoordinator {
 //            }
 //            weakSelf.removeChild(coordinator: weakSelf.tabCoordinator!)
 //        }
+        self.addChild(coordinator: tabCoordinator)
+        tabCoordinator.start()
     }
 }
 

@@ -10,6 +10,8 @@ import Foundation
 
 protocol CoordinatorFactoryProtocol {
     func makeAuthCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) -> AuthCoordinator
+    func makeTabBarCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) -> TabBarCoordinator
+    func makeGroupsCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) -> GroupsCoordinator 
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -18,6 +20,18 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
 
     func makeAuthCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) -> AuthCoordinator {
         let coordinator = AuthCoordinator(router: router, coordinatorFactory: coordinatorFactory, viewControllerFactory: viewControllerFactory)
+        return coordinator
+    }
+
+    func makeTabBarCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) -> TabBarCoordinator {
+
+        let coordinator = TabBarCoordinator(router: router, coordinatorFactory: coordinatorFactory, viewControllerFactory: viewControllerFactory)
+        return coordinator
+    }
+
+    func makeGroupsCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) -> GroupsCoordinator {
+
+        let coordinator = GroupsCoordinator(router: router, coordinatorFactory: coordinatorFactory, viewControllerFactory: viewControllerFactory)
         return coordinator
     }
 }

@@ -55,6 +55,20 @@ class LoginViewController: UpdatableViewController {
             })
             .drive(self.rx.loadingState)
             .disposed(by: disposeBag)
+
+        outputs.networkingStatus.drive(onNext: { (status) in
+            switch status {
+
+            case .loading:
+                break
+            case .success(_):
+                self.flowDelegate?.onLogin()
+            case .fail(_):
+                break
+            case .default:
+                break
+            }
+            }).disposed(by: disposeBag)
     }
     
 //    func login(email: String, password: String) {

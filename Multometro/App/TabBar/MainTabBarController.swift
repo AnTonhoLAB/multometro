@@ -34,7 +34,6 @@ class MainTabBarController: UITabBarController {
             default:  break
             }
             viewController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)
-            
         }
     }
     

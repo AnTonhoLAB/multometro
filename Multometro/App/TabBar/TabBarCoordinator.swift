@@ -14,36 +14,41 @@ protocol TabBarCoordinatorFlowProtocol: class {
 
 fileprivate enum TabBarItem: String {
     case list
-    case profile
+//    case profile
 }
 
 class TabBarCoordinator: BaseCoordinator {
-    let tabBarController: UITabBarController
+    private let router: RouterProtocol
+    private let coordinatorFactory: CoordinatorFactoryProtocol
+    private let viewControllerFactory: ViewControllerFactory
+
+    private let tabBarController: UITabBarController
+
     weak var delegate: TabBarCoordinatorFlowProtocol?
 
+
+    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) {
+        self.router = router
+        self.coordinatorFactory = coordinatorFactory
+        self.viewControllerFactory = viewControllerFactory
+
+
+        self.tabBarController = viewControllerFactory.instantiateTabBarrController()
+   }
+
     override func start() {
-//        let loginCoordinator = LoginCoordinator()
-//        let listTabBarItem = UITabBarItem(title: TabBarItem.list.rawValue, image:  #imageLiteral(resourceName: "list"), selectedImage: #imageLiteral(resourceName: "list"))
-//        listTabBarItem.tag = 0
-//        loginCoordinator.rootViewController.tabBarItem = listTabBarItem
-//
-//        addChild(coordinator: loginCoordinator)
-//        loginCoordinator.start()
+        
+        let groupsCoordinator = self.coordinatorFactory.makeGroupsCoordinatorBox(router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
+        
+        self.addDependency(groupsCoordinator)
+        tabBarController.setViewControllers([groupsCoordinator.rootViewController], animated: true)
+        groupsCoordinator.start()
+        self.router.setRootModule(self.tabBarController, hideBar: true)
+    }
 
-//        let profileCoordinator = ProfileCoordinator()
-//        let profileTabBarItem = UITabBarItem(title: TabBarItem.profile.rawValue, image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile"))
-//        profileTabBarItem.tag = 1
-//        profileCoordinator.rootViewController.tabBarItem = profileTabBarItem
-//
-//        addChild(coordinator: profileCoordinator)
-//        profileCoordinator.start()
+    private func setupGroupsCoordinator() {
+//        let setupGroupsCoordinator = self.coordinatorFactory.makeGroupsCoordinatorBox
 
-//        tabBarController.setViewControllers([loginCoordinator.rootViewController,],
-//                                             animated: true)
-       }
 
-    override init() {
-        tabBarController = UITabBarController()
-        super.init()
     }
 }
