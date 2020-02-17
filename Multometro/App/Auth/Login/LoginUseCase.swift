@@ -25,14 +25,18 @@ final class LoginUseCase: LoginUseCaseProtocol {
         return Observable<NetworkingState>.create{ observer in
             observer.onNext(.loading)
             self.authRequester.login(email: email, password: password) { (response) in
-                switch response {
-                    case .success(let userAndToken):
-                        self.save(userAndToken, observer: observer)
-                    case .failure(let error):
-                        observer.onNext(.fail(error))
-                }
+                self.processResponse(observer: observer, response: response)
             }
             return Disposables.create()
+        }
+    }
+
+    private func processResponse(observer: AnyObserver<NetworkingState<MultometroUser>>, response: Response<UserAndToken>) {
+        switch response {
+            case .success(let userAndToken):
+                self.save(userAndToken, observer: observer)
+            case .failure(let error):
+                observer.onNext(.fail(error))
         }
     }
 

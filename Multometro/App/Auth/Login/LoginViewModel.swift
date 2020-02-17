@@ -45,12 +45,12 @@ final class LoginViewModel: ViewModelType {
         }
         .asDriver(onErrorJustReturn: false)
 
-        /// Execute Login after did tap button
-
+        /// Login Execution
+        /// Get user informations on textfields
         let userInputs = Observable.combineLatest(input.name, input.password) { (login, password) -> (String, String) in
             return (login, password)
         }
-
+        /// Execute Login after did tap button
         let authResponse = input.didTapLogin
             .withLatestFrom(userInputs)
             .flatMap { (email, password) in
@@ -58,7 +58,7 @@ final class LoginViewModel: ViewModelType {
             }
             .asDriver(onErrorJustReturn: (.fail(RequestError.fail)))
 
-
+        /// Return outputs
         return Output(isValid: isValidLogin, networkingStatus: authResponse)
     }
 
