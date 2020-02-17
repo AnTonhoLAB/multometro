@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RouterProtocol: Presentable {
-
+    var rootController: UINavigationController { get }
     func present(_ module: Presentable?)
     func present(_ module: Presentable?, animated: Bool)
 
@@ -37,7 +37,7 @@ final class Router: NSObject, RouterProtocol {
 
     // MARK: - Vars & Lets
 
-    private var rootController: UINavigationController
+    var rootController: UINavigationController
     private var completions: [UIViewController : () -> Void]
     private var transition: UIViewControllerAnimatedTransitioning?
     private var window: UIWindow?

@@ -25,7 +25,7 @@ final class AppCoordinator: BaseCoordinator {
 
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let router: RouterProtocol
-    private var launchInstructor = LaunchInstructor.configure()
+    private var launchInstructor = LaunchInstructor().configure()
     private let viewControllerFactory: ViewControllerFactory = ViewControllerFactory()
 
     init(router: Router, coordinatorFactory: CoordinatorFactory) {
@@ -60,7 +60,7 @@ final class AppCoordinator: BaseCoordinator {
         authCoordinator.authFlowDelegate = self
         authCoordinator.finishFlow = { [unowned self, unowned authCoordinator] in
             self.removeDependency(authCoordinator)
-            self.launchInstructor = LaunchInstructor.configure(tutorialWasShown: true, isAutorized: true)
+            self.launchInstructor = LaunchInstructor().configure(tutorialWasShown: true)
             self.start(with: nil)
         }
         self.addChild(coordinator: authCoordinator)
@@ -73,8 +73,8 @@ final class AppCoordinator: BaseCoordinator {
 
 //        tabCoordinator.
 //        tabCoordinator.delegate = self
-//        self.addChild(coordinator: tabCoordinator)
-//        tabCoordinator.start()
+        self.addChild(coordinator: tabCoordinator)
+        tabCoordinator.start()
 //        window.rootViewController = tabCoordinator.tabBarController
 //        tabCoordinator.isCompleted = { [weak self] in
 //            guard let weakSelf = self else {
@@ -82,8 +82,7 @@ final class AppCoordinator: BaseCoordinator {
 //            }
 //            weakSelf.removeChild(coordinator: weakSelf.tabCoordinator!)
 //        }
-        self.addChild(coordinator: tabCoordinator)
-        tabCoordinator.start()
+
     }
 }
 

@@ -8,10 +8,9 @@
 
 import Foundation
 
-fileprivate var onboardingWasShown = false
-fileprivate var isAutorized = false
+fileprivate var onboardingWasShown = true
 
-enum LaunchInstructor {
+enum LaunchInstructorProtocol {
 
     case main
     case auth
@@ -19,8 +18,12 @@ enum LaunchInstructor {
 
     // MARK: - Public methods
 
-    static func configure( tutorialWasShown: Bool = onboardingWasShown, isAutorized: Bool = isAutorized) -> LaunchInstructor {
+}
 
+class LaunchInstructor: BaseUseCase {
+    
+    func configure( tutorialWasShown: Bool = onboardingWasShown) -> LaunchInstructorProtocol {
+        let isAutorized  = false
         switch (tutorialWasShown, isAutorized) {
         case (true, false), (false, false): return .auth
         case (false, true): return .onboarding
@@ -28,3 +31,4 @@ enum LaunchInstructor {
         }
     }
 }
+

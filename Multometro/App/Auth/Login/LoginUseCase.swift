@@ -37,6 +37,7 @@ final class LoginUseCase: LoginUseCaseProtocol {
     }
 
     private func save(_ userAndToken: UserAndToken, observer: AnyObserver<NetworkingState<MultometroUser>>) {
+
         let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
         do {
             try keychainToken.savePassword(userAndToken.token)
@@ -49,22 +50,3 @@ final class LoginUseCase: LoginUseCaseProtocol {
 
 //import Foundation
 
-protocol BaseUseCase {
-
-}
-
-extension BaseUseCase {
-    private var keyChainManager: KeychainManager  {
-        get {
-            return KeychainManager()
-        }
-    }
-
-    var isLoged: Bool {
-        return keyChainManager.isLogged()
-    }
-
-    var hasNetworking: Bool {
-        return NetworkingManager.isConnected
-    }
-}

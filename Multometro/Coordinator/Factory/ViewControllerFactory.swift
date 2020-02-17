@@ -19,10 +19,10 @@ final class ViewControllerFactory {
         return loginVC
     }
 
-    func instantiateTabBarrController() -> MainTabBarController {
-        let tabBarController = MainTabBarController()
-        return  tabBarController
-    }
+//    func instantiateTabBarrController() -> MainTabBarController {
+//        let tabBarController = MainTabBarController()
+//        return  tabBarController
+//    }
 
     func instantiateGroupsViewController() -> GroupsViewController {
         let groupsView = GroupsView()

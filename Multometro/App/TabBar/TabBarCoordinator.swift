@@ -18,11 +18,10 @@ fileprivate enum TabBarItem: String {
 }
 
 class TabBarCoordinator: BaseCoordinator {
+
     private let router: RouterProtocol
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let viewControllerFactory: ViewControllerFactory
-
-    private let tabBarController: MainTabBarController
 
     weak var delegate: TabBarCoordinatorFlowProtocol?
 
@@ -31,19 +30,24 @@ class TabBarCoordinator: BaseCoordinator {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
         self.viewControllerFactory = viewControllerFactory
-
-
-        self.tabBarController = viewControllerFactory.instantiateTabBarrController()
    }
 
     override func start() {
-        
-        let groupsCoordinator = self.coordinatorFactory.makeGroupsCoordinatorBox(router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
+
+        let groupsCoordinator = self.coordinatorFactory.makeGroupsCoordinatorBox(router: Router(rootController: UINavigationController()), coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
         
         self.addDependency(groupsCoordinator)
-        tabBarController.setViewControllers([groupsCoordinator.rootViewController], animated: true)
         groupsCoordinator.start()
-        self.router.setRootModule(self.tabBarController, hideBar: true)
+
+        let profileCoordinator = self.coordinatorFactory.makeGroupsCoordinatorBox(router: Router(rootController: UINavigationController()), coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
+
+        self.addDependency(profileCoordinator)
+        profileCoordinator.start()
+
+
+        let tabBarController: MainTabBarController = MainTabBarController(with: [groupsCoordinator.router.rootController, profileCoordinator.router.rootController])
+        
+        self.router.setRootModule(tabBarController, hideBar: true)
     }
 
     private func setupGroupsCoordinator() {

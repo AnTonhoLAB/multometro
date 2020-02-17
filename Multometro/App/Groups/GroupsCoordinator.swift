@@ -14,11 +14,11 @@ protocol GroupFlowDelegate: class {
 
 class GroupsCoordinator: BaseCoordinator {
 
-    private let router: RouterProtocol
+    let router: RouterProtocol
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let viewControllerFactory: ViewControllerFactory
 
-    var rootViewController: UIViewController
+//    var rootViewController: UIViewController
 
     var groupFlowDelegate: GroupFlowDelegate?
     var finishFlow: (() -> Void)?
@@ -27,7 +27,6 @@ class GroupsCoordinator: BaseCoordinator {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
         self.viewControllerFactory = viewControllerFactory
-        self.rootViewController = self.viewControllerFactory.instantiateGroupsViewController()
     }
 
     override func start() {
@@ -35,6 +34,8 @@ class GroupsCoordinator: BaseCoordinator {
     }
 
     private func showGroupViewController() {
+        let groupViewController = viewControllerFactory.instantiateGroupsViewController()
+        self.router.setRootModule(groupViewController)
 //        let groupVC =
 //        loginVC.onLogin = { [unowned self] in
 //            self.finishFlow?()
