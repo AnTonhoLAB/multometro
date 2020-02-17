@@ -23,10 +23,6 @@ class LoginViewController: UpdatableViewController {
 
     weak var flowDelegate: LoginFlowDelegate?
 
-    override func loadView() {
-        self.view = loginView
-    }
-
     init(with view: LoginView, and viewModel: LoginViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.loginView = view
@@ -35,39 +31,56 @@ class LoginViewController: UpdatableViewController {
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
+    override func loadView() {
+        self.view = loginView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
-        let inputs = LoginViewModel.Input(name: self.loginView!.emailObservable,
-                                          password: self.loginView.passwordObservable,
-                                          didTapLogin: self.loginView.enterObservable)
+        let inputs = LoginViewModel.Input(name: loginView.emailObservable,
+                                          password: loginView.passwordObservable,
+                                          didTapLogin: loginView.enterObservable,
+                                          didTapRegister: loginView.didTapRegister)
 
         let outputs = viewModel.transform(input: inputs)
 
         outputs.isValid
-            .drive(self.loginView.enterIsValide)
+            .drive(loginView.enterIsValide)
             .disposed(by: disposeBag)
 
         outputs.networkingStatus
             .map({ (state) -> NetworkingState<Any> in
                 state.toAny()
             })
-            .drive(self.rx.loadingState)
+            .drive(rx.loadingState)
             .disposed(by: disposeBag)
 
-        outputs.networkingStatus.drive(onNext: { (status) in
-            switch status {
+        outputs.networkingStatus
+            .drive(onNext: { (status) in
+                switch status {
+                case .loading:
+                    break
+                case .success(_):
+                    self.flowDelegate?.onLogin()
+                case .fail(_):
+                    break
+                case .default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
 
-            case .loading:
-                break
-            case .success(_):
-                self.flowDelegate?.onLogin()
-            case .fail(_):
-                break
-            case .default:
-                break
-            }
-            }).disposed(by: disposeBag)
+        outputs.openRegister
+            .drive(onNext: { (_) in
+                self.flowDelegate?.onRegister()
+            })
+            .disposed(by: disposeBag)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

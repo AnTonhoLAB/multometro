@@ -8,45 +8,29 @@
 
 import UIKit
 import Rswift
+import RxSwift
 
 class RegisterViewController: UIViewController {
-    
-    @IBOutlet weak var constraintToBot: NSLayoutConstraint!
-    @IBOutlet weak var fieldsView: UIView! {
-        didSet {
-            fieldsView.roundedCornerColor(radius: roundRadius)
-        }
+
+    private let disposeBag: DisposeBag = DisposeBag()
+    private var registerView: RegisterViewComponents!
+    private var viewModel: RegisterViewModel!
+
+    weak var flowDelegate: LoginFlowDelegate?
+
+    init(with view: RegisterView, and viewModel: RegisterViewModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.registerView = view
+        self.viewModel = viewModel
     }
-    @IBOutlet weak var tfEmail: UITextField! {
-        didSet{
-            tfEmail.textAlignment = .center
-            tfEmail.placeholder = R.string.localizable.placeholderEmail()
-        }
+
+    override func loadView() {
+        self.view = registerView
     }
-    @IBOutlet weak var tfPassword: UITextField! {
-        didSet{
-            tfPassword.textAlignment = .center
-            tfPassword.placeholder = R.string.localizable.placeholderPassword()
-        }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    @IBOutlet weak var tfConfirmPassoword: UITextField! {
-        didSet{
-            tfConfirmPassoword.textAlignment = .center
-            tfConfirmPassoword.placeholder = R.string.localizable.placeholderRepeatPassword()
-        }
-    }
-    @IBOutlet weak var btRegister: UIButton! {
-        didSet {
-            btRegister.roundedCornerColor(radius: roundRadius)
-        }
-    }
-    @IBOutlet weak var btCancel: UIButton! {
-        didSet {
-            btCancel.roundedCornerColor(radius: roundRadius)
-        }
-    }
-    
-    private let roundRadius: CGFloat = 8.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,27 +39,27 @@ class RegisterViewController: UIViewController {
     
     @IBAction func didTapRegister(_ sender: Any) {
         showLoader()
-        guard let email = tfEmail.text,
-            let password = tfPassword.text,
-            let confirmPassword = tfConfirmPassoword.text else { return }
-        
-        let userRegister = UserRegisterViewModel(email: email, password: password, confirmPassword: confirmPassword)
-        
-        do {
-            try userRegister.validate()
-            AuthManager.createUser(with: email, password: password) { [weak self] res in
-                guard let self = self else { return }
-                switch res {
-                case .success(_):
-                    self.finishRegister()
-                case .failure(let error):
-                    self.errorRegister(error: error)
-                }
-                self.dismissLoader()
-            }
-        } catch {
-            errorRegister(error: error)
-        }
+//        guard let email = tfEmail.text,
+//            let password = tfPassword.text,
+//            let confirmPassword = tfConfirmPassoword.text else { return }
+//
+//        let userRegister = UserRegisterViewModel(email: email, password: password, confirmPassword: confirmPassword)
+//
+//        do {
+//            try userRegister.validate()
+//            AuthManager.createUser(with: email, password: password) { [weak self] res in
+//                guard let self = self else { return }
+//                switch res {
+//                case .success(_):
+//                    self.finishRegister()
+//                case .failure(let error):
+//                    self.errorRegister(error: error)
+//                }
+//                self.dismissLoader()
+//            }
+//        } catch {
+//            errorRegister(error: error)
+//        }
     }
     
     @IBAction func didTapCancel(_ sender: Any) {

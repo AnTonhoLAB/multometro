@@ -19,6 +19,15 @@ final class ViewControllerFactory {
         return loginVC
     }
 
+    func instantiateRegisterViewController() -> RegisterViewController {
+        let registerView = RegisterView()
+        let registerRequester = AuthRequester()
+        let registerUseCase = RegisterUseCase(authRequester: registerRequester)
+        let registerViewModel = RegisterViewModel(registerUseCase)
+        let registerViewController = RegisterViewController(with: registerView, and: registerViewModel)
+        return registerViewController
+    }
+
 //    func instantiateTabBarrController() -> MainTabBarController {
 //        let tabBarController = MainTabBarController()
 //        return  tabBarController

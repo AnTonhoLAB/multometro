@@ -28,6 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
 
+        let keychainManager = KeychainManager()
+        do {
+            try keychainManager.deleteToken()
+        } catch {
+            print("Imporssivel deslogar")
+        }
+        
         self.appCoordinator.start(with: nil)
 
 //        let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)

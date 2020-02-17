@@ -17,8 +17,7 @@ class AuthCoordinator: BaseCoordinator {
     private let router: RouterProtocol
     private let coordinatorFactory: CoordinatorFactoryProtocol
     private let viewControllerFactory: ViewControllerFactory
-    
-    var authFlowDelegate: AuthFlowDelegate?
+
     var finishFlow: (() -> Void)?
 
     init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactory) {
@@ -28,26 +27,34 @@ class AuthCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        self.showLoginViewController()
+        self.openLogin()
     }
 
-    private func showLoginViewController() {
+    private func openLogin() {
         let loginVC = self.viewControllerFactory.instantiateLoginViewController()
-//        loginVC.onLogin = { [unowned self] in
-//            self.finishFlow?()
-//        }
         loginVC.flowDelegate = self
         self.router.setRootModule(loginVC, hideBar: true)
+    }
+
+    private func openRegister() {
+        let registerViewController = viewControllerFactory.instantiateRegisterViewController()
+    //        registerVC.onBack = { [unowned self] in
+    //            self.router.popModule()
+    //        }
+    //        registerVC.onRegister = { [unowned self] in
+    //            self.router.popModule()
+    //        }
+        self.router.push(registerViewController, hideBar: false)
     }
 }
 
 extension AuthCoordinator: LoginFlowDelegate {
     func onLogin() {
-        self.finishFlow?()
+        finishFlow?()
     }
 
     func onRegister() {
-//        self.showRegisterViewController()
+        openRegister()
     }
 
     func onChangePassword() {

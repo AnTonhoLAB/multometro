@@ -57,7 +57,7 @@ final class AppCoordinator: BaseCoordinator {
 
     private func runAuthFlow() {
         let authCoordinator = coordinatorFactory.makeAuthCoordinatorBox(router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
-        authCoordinator.authFlowDelegate = self
+
         authCoordinator.finishFlow = { [unowned self, unowned authCoordinator] in
             self.removeDependency(authCoordinator)
             self.launchInstructor = LaunchInstructor().configure(tutorialWasShown: true)
@@ -69,28 +69,8 @@ final class AppCoordinator: BaseCoordinator {
 
     private func runMainFlow() {
         let tabCoordinator = coordinatorFactory.makeTabBarCoordinatorBox(router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
-
-
-//        tabCoordinator.
-//        tabCoordinator.delegate = self
         self.addChild(coordinator: tabCoordinator)
         tabCoordinator.start()
-//        window.rootViewController = tabCoordinator.tabBarController
-//        tabCoordinator.isCompleted = { [weak self] in
-//            guard let weakSelf = self else {
-//                fatalError("Unable to reference self.")
-//            }
-//            weakSelf.removeChild(coordinator: weakSelf.tabCoordinator!)
-//        }
-
-    }
-}
-
-extension AppCoordinator: AuthFlowDelegate {
-    func finishFlow() {
-//        self.removeDependency(coordinator)
-//        self.launchInstructor = LaunchInstructor.configure(tutorialWasShown: false, isAutorized: true)
-//        self.start()
     }
 }
 

@@ -14,6 +14,7 @@ protocol RouterProtocol: Presentable {
     func present(_ module: Presentable?, animated: Bool)
 
     func push(_ module: Presentable?)
+    func push(_ module: Presentable?, hideBar: Bool)
     func push(_ module: Presentable?, transition: UIViewControllerAnimatedTransitioning?)
     func push(_ module: Presentable?, transition: UIViewControllerAnimatedTransitioning?, animated: Bool)
     func push(_ module: Presentable?, transition: UIViewControllerAnimatedTransitioning?, animated: Bool, completion: (() -> Void)?)
@@ -27,7 +28,6 @@ protocol RouterProtocol: Presentable {
 
     func setRootModule(_ module: Presentable?)
     func setRootModule(_ module: Presentable?, hideBar: Bool)
-    func setRootModuleToTab(_ module: Presentable?, hideBar: Bool)
 
     func popToRootModule(animated: Bool)
     func popToModule(module: Presentable?, animated: Bool)
@@ -59,8 +59,13 @@ final class Router: NSObject, RouterProtocol {
         self.rootController.present(controller, animated: animated, completion: nil)
     }
 
-    func push(_ module: Presentable?)  {
+    func push(_ module: Presentable?) {
         self.push(module, transition: nil)
+    }
+
+    func push(_ module: Presentable?, hideBar: Bool = false)  {
+        self.push(module, transition: nil)
+        self.rootController.isNavigationBarHidden = hideBar
     }
 
     func push(_ module: Presentable?, transition: UIViewControllerAnimatedTransitioning?) {
@@ -127,18 +132,6 @@ final class Router: NSObject, RouterProtocol {
         self.rootController.setViewControllers([controller], animated: true)
         self.rootController.isNavigationBarHidden = hideBar
     }
-
-    func setRootModuleToTab(_ module: Presentable?, hideBar: Bool) {
-        guard let controller = module?.toPresent() else { return }
-
-        let window = UIWindow(frame: UIScreen.main.bounds)
-//        window.rootViewController = controller
-        self.window=window
-        window.makeKeyAndVisible()
-
-        window.rootViewController?.present(controller, animated: true, completion: nil)
-    }
-
 
     func popToRootModule(animated: Bool) {
         if let controllers = self.rootController.popToRootViewController(animated: animated) {

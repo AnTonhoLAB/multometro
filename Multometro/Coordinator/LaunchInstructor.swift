@@ -23,7 +23,7 @@ enum LaunchInstructorProtocol {
 class LaunchInstructor: BaseUseCase {
     
     func configure( tutorialWasShown: Bool = onboardingWasShown) -> LaunchInstructorProtocol {
-        let isAutorized  = false
+        let isAutorized  = self.isLoged
         switch (tutorialWasShown, isAutorized) {
         case (true, false), (false, false): return .auth
         case (false, true): return .onboarding

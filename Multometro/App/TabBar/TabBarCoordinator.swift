@@ -45,7 +45,8 @@ class TabBarCoordinator: BaseCoordinator {
         profileCoordinator.start()
 
 
-        let tabBarController: MainTabBarController = MainTabBarController(with: [groupsCoordinator.router.rootController, profileCoordinator.router.rootController])
+        let tabBarController: MainTabBarController = MainTabBarController(with: [groupsCoordinator.router.rootController,
+                                                                                 profileCoordinator.router.rootController])
         
         self.router.setRootModule(tabBarController, hideBar: true)
     }

@@ -35,6 +35,9 @@
 		3FCCD25323F47F0D0068C3D4 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD25223F47F0D0068C3D4 /* KeychainManager.swift */; };
 		3FCCD25523F480540068C3D4 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD25423F480540068C3D4 /* KeychainError.swift */; };
 		3FCCD25723F483DB0068C3D4 /* AuthRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCD25623F483DB0068C3D4 /* AuthRequester.swift */; };
+		3FDAED2523FB06E4007152A2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDAED2423FB06E4007152A2 /* RegisterView.swift */; };
+		3FDAED2D23FB0706007152A2 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDAED2C23FB0706007152A2 /* RegisterUseCase.swift */; };
+		3FDAED3023FB0B33007152A2 /* AuthForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDAED2F23FB0B33007152A2 /* AuthForm.swift */; };
 		3FF84E6223EDE938001E7D0A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E6123EDE938001E7D0A /* Coordinator.swift */; };
 		3FF84E6423EDEA29001E7D0A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E6323EDEA29001E7D0A /* BaseCoordinator.swift */; };
 		3FF84E6623EDEA3F001E7D0A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF84E6523EDEA3F001E7D0A /* AppCoordinator.swift */; };
@@ -85,7 +88,7 @@
 		5E7FE6342176B3740029E035 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6332176B3740029E035 /* R.generated.swift */; };
 		5E7FE6362176B8100029E035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE6352176B8100029E035 /* RegisterViewController.swift */; };
 		5E7FE6382176B9940029E035 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FE6372176B9940029E035 /* Localizable.strings */; };
-		5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE63B217752920029E035 /* UserRegisterViewModel.swift */; };
+		5E7FE63C217752920029E035 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FE63B217752920029E035 /* RegisterViewModel.swift */; };
 		5E85F14C215ECAD000918BA5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14B215ECAD000918BA5 /* Response.swift */; };
 		5E85F150215ED2A300918BA5 /* ValidatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85F14F215ED2A300918BA5 /* ValidatingError.swift */; };
 		5E92EA9C21607437000E0EE4 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E92EA9B21607437000E0EE4 /* Strings.strings */; };
@@ -210,6 +213,9 @@
 		3FCCD25223F47F0D0068C3D4 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		3FCCD25423F480540068C3D4 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		3FCCD25623F483DB0068C3D4 /* AuthRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequester.swift; sourceTree = "<group>"; };
+		3FDAED2423FB06E4007152A2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		3FDAED2C23FB0706007152A2 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCase.swift; sourceTree = "<group>"; };
+		3FDAED2F23FB0B33007152A2 /* AuthForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthForm.swift; sourceTree = "<group>"; };
 		3FF84E6123EDE938001E7D0A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3FF84E6323EDEA29001E7D0A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		3FF84E6523EDEA3F001E7D0A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -260,7 +266,7 @@
 		5E7FE6332176B3740029E035 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		5E7FE6352176B8100029E035 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E7FE6372176B9940029E035 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		5E7FE63B217752920029E035 /* UserRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewModel.swift; sourceTree = "<group>"; };
+		5E7FE63B217752920029E035 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		5E85F14B215ECAD000918BA5 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5E85F14F215ED2A300918BA5 /* ValidatingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatingError.swift; sourceTree = "<group>"; };
 		5E92EA9B21607437000E0EE4 /* Strings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
@@ -395,6 +401,14 @@
 				5ED085CB215B00E900293516 /* AuthManagerToDelete.swift */,
 			);
 			path = ToDelete;
+			sourceTree = "<group>";
+		};
+		3FDAED2E23FB0B0A007152A2 /* UICustom */ = {
+			isa = PBXGroup;
+			children = (
+				3FDAED2F23FB0B33007152A2 /* AuthForm.swift */,
+			);
+			path = UICustom;
 			sourceTree = "<group>";
 		};
 		3FF84E6023EDE920001E7D0A /* Coordinator */ = {
@@ -536,8 +550,10 @@
 		5E7FE63A2177525F0029E035 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5E7FE63B217752920029E035 /* UserRegisterViewModel.swift */,
+				3FDAED2423FB06E4007152A2 /* RegisterView.swift */,
 				5E7FE6352176B8100029E035 /* RegisterViewController.swift */,
+				5E7FE63B217752920029E035 /* RegisterViewModel.swift */,
+				3FDAED2C23FB0706007152A2 /* RegisterUseCase.swift */,
 			);
 			name = Register;
 			path = Login;
@@ -634,6 +650,7 @@
 		5ED085C3215AFFCC00293516 /* Com */ = {
 			isa = PBXGroup;
 			children = (
+				3FDAED2E23FB0B0A007152A2 /* UICustom */,
 				3FF84E7023EDF3E6001E7D0A /* GeneralProtocols */,
 				5E01AA72219F32C20005FA43 /* LoadingIndicator */,
 				5E85F14F215ED2A300918BA5 /* ValidatingError.swift */,
@@ -1094,7 +1111,7 @@
 				3FCCD24823F34DEF0068C3D4 /* Reactive.swift in Sources */,
 				5E7FE6342176B3740029E035 /* R.generated.swift in Sources */,
 				5EE5860D21ED298700A824A7 /* KeychainHelper.swift in Sources */,
-				5E7FE63C217752920029E035 /* UserRegisterViewModel.swift in Sources */,
+				5E7FE63C217752920029E035 /* RegisterViewModel.swift in Sources */,
 				5ED085D5215B06E300293516 /* LoginViewController.swift in Sources */,
 				3FF84E8023F20133001E7D0A /* Presentable.swift in Sources */,
 				3FF84E6423EDEA29001E7D0A /* BaseCoordinator.swift in Sources */,
@@ -1105,12 +1122,14 @@
 				5ED08593215AFF9B00293516 /* AppDelegate.swift in Sources */,
 				3FF84E7E23F20100001E7D0A /* Router.swift in Sources */,
 				5E67EBEF21F005DA005F8CC4 /* Errors.swift in Sources */,
+				3FDAED2D23FB0706007152A2 /* RegisterUseCase.swift in Sources */,
 				5E7DDF5E21F3BF6100C15320 /* ExtensionString.swift in Sources */,
 				3FCCD25523F480540068C3D4 /* KeychainError.swift in Sources */,
 				5E6BC3E22180E39C004DD9A7 /* SearchRoomViewController.swift in Sources */,
 				3FF84E7223EDF403001E7D0A /* StartableViewController.swift in Sources */,
 				3FCCD25723F483DB0068C3D4 /* AuthRequester.swift in Sources */,
 				5EC89768217A69AD00C65CF9 /* RoomRegisterCell.swift in Sources */,
+				3FDAED3023FB0B33007152A2 /* AuthForm.swift in Sources */,
 				5E0AE3A4217FD24200E49FA4 /* DetailRoomViewController.swift in Sources */,
 				5E6D0D162197551800186390 /* RegisterUserViewController.swift in Sources */,
 				5E01AA76219F32FD0005FA43 /* LoadingView.swift in Sources */,
@@ -1140,6 +1159,7 @@
 				3FF84E8223F20262001E7D0A /* CoordinatorFactory.swift in Sources */,
 				3FCCD24123F34D460068C3D4 /* ViewController+Presentable.swift in Sources */,
 				3FF84E6923EDEA74001E7D0A /* TabBarCoordinator.swift in Sources */,
+				3FDAED2523FB06E4007152A2 /* RegisterView.swift in Sources */,
 				5E66B867217BA3EF002BB3AF /* ExtensionUIColor.swift in Sources */,
 				5E755C1421A0A40500E405FB /* FeeCell.swift in Sources */,
 				3FF84E6223EDE938001E7D0A /* Coordinator.swift in Sources */,

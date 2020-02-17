@@ -33,4 +33,13 @@ struct KeychainManager {
             throw  KeychainError.notPossibleToSave
         }
     }
+
+    func deleteToken() throws {
+        do {
+            let keychainToken = KeychainHelper(service: KeychainConfiguration.serviceName, account: KeychainConfiguration.account, accessGroup: KeychainConfiguration.accessGroup)
+            try keychainToken.deleteItem()
+        }catch {
+            throw KeychainError.notPossibleToSave
+        }
+    }
 }

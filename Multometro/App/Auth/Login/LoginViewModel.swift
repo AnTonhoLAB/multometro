@@ -25,10 +25,12 @@ final class LoginViewModel: ViewModelType {
         let name: Observable<String>
         let password: Observable<String>
         let didTapLogin: Observable<Void>
+        let didTapRegister: Observable<Void>
     }
 
     struct Output {
         let isValid: Driver<Bool>
+        let openRegister: Driver<Void>
         let networkingStatus: Driver<NetworkingState<MultometroUser>>
     }
 
@@ -58,8 +60,13 @@ final class LoginViewModel: ViewModelType {
             }
             .asDriver(onErrorJustReturn: (.fail(RequestError.fail)))
 
+        /// Open register screen
+        let openRegister = input
+            .didTapRegister
+            .asDriver(onErrorJustReturn: ())
+
         /// Return outputs
-        return Output(isValid: isValidLogin, networkingStatus: authResponse)
+        return Output(isValid: isValidLogin, openRegister: openRegister, networkingStatus: authResponse)
     }
 
     private func isValidEmail(_ email: String) -> Bool {
