@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         return controller
     }
-    private lazy var appCoordinator: Coordinator = AppCoordinator(router: Router(window: self.window, rootController: self.rootController), coordinatorFactory: CoordinatorFactory())
+    private lazy var appCoordinator: Coordinator = AppCoordinator(router: Router(rootController: self.rootController), coordinatorFactory: CoordinatorFactory())
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true

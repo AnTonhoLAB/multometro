@@ -158,9 +158,8 @@ final class Router: NSObject, RouterProtocol {
 
     // MARK: - Init methods
 
-    init(window: UIWindow?, rootController: UINavigationController) {
+    init(rootController: UINavigationController) {
         self.rootController = rootController
-        self.window = window
         self.completions = [:]
         super.init()
         self.rootController.delegate = self
