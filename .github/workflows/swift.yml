@@ -18,6 +18,7 @@ jobs:
     - name: POD Install
       run: pod install
     - name: Build
-      run: swift build -v
+      run: |
+           xcodebuild clean build -workspace "Multometro.xcworkspace" -scheme "Multometro" -destination "platform=iOS Simulator,name=iPhone 12 Pro,OS=latest" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
     - name: Run tests
       run: swift test -v
