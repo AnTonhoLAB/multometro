@@ -34,14 +34,15 @@ class DetailViewController: UIViewController {
     var tableViewData: [TableViewData]?
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
 //      let image = UIImage()
 //     image.large
         let image = UIImage()
         navigationController?.navigationBar.backIndicatorImage = image
-       navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
-    navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "backArrow"), style: .plain, target: self, action: nil)
-        self.navigationController?.navigationBar.backIndicatorImage?.large
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "backArrow"), style: .plain, target: self, action: nil)
+//        self.navigationController?.navigationBar.backIndicatorImage?.large
         
         if let room = room {
             admin = room.admin.mulltometroUser

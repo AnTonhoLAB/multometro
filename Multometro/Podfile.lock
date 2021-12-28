@@ -11,7 +11,7 @@ DEPENDENCIES:
   - R.swift (= 5.0.0.alpha.2)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - IQKeyboardManager
     - Kingfisher
     - R.swift
@@ -25,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: fb85a6716576db02bb40d7d14ed5eda09d98e244
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.11.0
