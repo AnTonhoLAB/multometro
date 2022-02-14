@@ -65,7 +65,7 @@ final class HTTPRequester {
     }
     
     private static func generateUrl(with route: Route, function: Function) -> String {
-        return String(stringInterpolation: HTTPRequester.host, route.rawValue, "/", function.rawValue)
+        return String(format: HTTPRequester.host, route.rawValue, "/", function.rawValue)
     }
     
     private static func authorization() -> String {
